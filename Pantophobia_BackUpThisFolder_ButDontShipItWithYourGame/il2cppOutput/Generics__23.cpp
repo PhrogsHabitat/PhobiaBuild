@@ -21568,7 +21568,7 @@ IL_0015:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-// Method Definition Index: 76185
+// Method Definition Index: 76171
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t CoroutineHandle_GetHashCode_mC09193E0D6417086FBAF07E09314B2F01A755CE3_inline (CoroutineHandle_t3AE9412586C1F09B09162663D0239F4E8A43F46F* __this, const RuntimeMethod* method) 
 {
 	{

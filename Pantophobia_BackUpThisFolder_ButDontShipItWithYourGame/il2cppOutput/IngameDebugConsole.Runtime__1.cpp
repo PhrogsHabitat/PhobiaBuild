@@ -755,7 +755,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameObject_SetActive_m638E92E1E75E519E5B
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 103666
+// Method Definition Index: 103673
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogResizeListener_UnityEngine_EventSystems_IBeginDragHandler_OnBeginDrag_mA23891E13947BF5553F8E9463958B5733DCDAEAF (DebugLogResizeListener_tAEB6FDAE1D37AD856CBD82204674E6AC4C1764B5* __this, PointerEventData_t9670F3C7D823CCB738A1604C72A1EB90292396FB* ___0_eventData, const RuntimeMethod* method) 
 {
 	{
@@ -763,7 +763,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogResizeListener_UnityEngine_Event
 		return;
 	}
 }
-// Method Definition Index: 103667
+// Method Definition Index: 103674
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogResizeListener_UnityEngine_EventSystems_IDragHandler_OnDrag_m34D99B83889FBD661DE942A7C59522A8ABB0AD3A (DebugLogResizeListener_tAEB6FDAE1D37AD856CBD82204674E6AC4C1764B5* __this, PointerEventData_t9670F3C7D823CCB738A1604C72A1EB90292396FB* ___0_eventData, const RuntimeMethod* method) 
 {
 	{
@@ -776,7 +776,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogResizeListener_UnityEngine_Event
 		return;
 	}
 }
-// Method Definition Index: 103668
+// Method Definition Index: 103675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogResizeListener__ctor_m9891E2D11D53F3900EB79C88301C937AD4FB8B33 (DebugLogResizeListener_tAEB6FDAE1D37AD856CBD82204674E6AC4C1764B5* __this, const RuntimeMethod* method) 
 {
 	{
@@ -792,7 +792,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogResizeListener__ctor_m9891E2D11D
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 103669
+// Method Definition Index: 103676
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugsOnScrollListener_OnScroll_m12A82295EEFBA395210BFDF1C80BA59B7438D8F2 (DebugsOnScrollListener_t2E15E040AD7FE915FC4F583966EBDE135A4C0DB0* __this, PointerEventData_t9670F3C7D823CCB738A1604C72A1EB90292396FB* ___0_data, const RuntimeMethod* method) 
 {
 	{
@@ -806,7 +806,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugsOnScrollListener_OnScroll_m12A8229
 		return;
 	}
 }
-// Method Definition Index: 103670
+// Method Definition Index: 103677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugsOnScrollListener_OnBeginDrag_mDA693E6910C47EFFFB1C9E749BACF843BE7680DB (DebugsOnScrollListener_t2E15E040AD7FE915FC4F583966EBDE135A4C0DB0* __this, PointerEventData_t9670F3C7D823CCB738A1604C72A1EB90292396FB* ___0_data, const RuntimeMethod* method) 
 {
 	{
@@ -818,7 +818,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugsOnScrollListener_OnBeginDrag_mDA69
 		return;
 	}
 }
-// Method Definition Index: 103671
+// Method Definition Index: 103678
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugsOnScrollListener_OnEndDrag_m73CCC8AC42E0FC185F490DE8829D51554E59968E (DebugsOnScrollListener_t2E15E040AD7FE915FC4F583966EBDE135A4C0DB0* __this, PointerEventData_t9670F3C7D823CCB738A1604C72A1EB90292396FB* ___0_data, const RuntimeMethod* method) 
 {
 	{
@@ -832,7 +832,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugsOnScrollListener_OnEndDrag_m73CCC8
 		return;
 	}
 }
-// Method Definition Index: 103672
+// Method Definition Index: 103679
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugsOnScrollListener_OnScrollbarDragStart_mC24D5BD9F61D0BC49F91808A5D9B20E59A13D30E (DebugsOnScrollListener_t2E15E040AD7FE915FC4F583966EBDE135A4C0DB0* __this, BaseEventData_tE03A848325C0AE8E76C6CA15FD86395EBF83364F* ___0_data, const RuntimeMethod* method) 
 {
 	{
@@ -844,7 +844,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugsOnScrollListener_OnScrollbarDragSt
 		return;
 	}
 }
-// Method Definition Index: 103673
+// Method Definition Index: 103680
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugsOnScrollListener_OnScrollbarDragEnd_mB867BC08242DE9B5EDD968AB6A01DBA5F96626F9 (DebugsOnScrollListener_t2E15E040AD7FE915FC4F583966EBDE135A4C0DB0* __this, BaseEventData_tE03A848325C0AE8E76C6CA15FD86395EBF83364F* ___0_data, const RuntimeMethod* method) 
 {
 	{
@@ -858,7 +858,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugsOnScrollListener_OnScrollbarDragEn
 		return;
 	}
 }
-// Method Definition Index: 103674
+// Method Definition Index: 103681
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool DebugsOnScrollListener_IsScrollbarAtBottom_mD32894983625F436CB103115886010DE782D5A8D (DebugsOnScrollListener_t2E15E040AD7FE915FC4F583966EBDE135A4C0DB0* __this, const RuntimeMethod* method) 
 {
 	{
@@ -870,7 +870,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool DebugsOnScrollListener_IsScrollbarAtBott
 		return (bool)((((int32_t)((!(((float)L_1) <= ((float)(9.99999997E-07f))))? 1 : 0)) == ((int32_t)0))? 1 : 0);
 	}
 }
-// Method Definition Index: 103675
+// Method Definition Index: 103682
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugsOnScrollListener__ctor_mC599E1B72DE41CF49476C9F2C121DDAE4B9F4B1F (DebugsOnScrollListener_t2E15E040AD7FE915FC4F583966EBDE135A4C0DB0* __this, const RuntimeMethod* method) 
 {
 	{
@@ -886,7 +886,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugsOnScrollListener__ctor_mC599E1B72D
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 103676
+// Method Definition Index: 103683
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EventSystemHandler_OnEnable_mBE644BBFCA0529C37CB7C4BDEAA166858EF1545E (EventSystemHandler_t682DE68ECD4C260AC11B771D2754D93C88E2AB5E* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -923,7 +923,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EventSystemHandler_OnEnable_mBE644BBFCA0
 		return;
 	}
 }
-// Method Definition Index: 103677
+// Method Definition Index: 103684
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EventSystemHandler_OnDisable_mEDA7BEC448D249FC070F53363E935967AF5FB97F (EventSystemHandler_t682DE68ECD4C260AC11B771D2754D93C88E2AB5E* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -952,7 +952,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EventSystemHandler_OnDisable_mEDA7BEC448
 		return;
 	}
 }
-// Method Definition Index: 103678
+// Method Definition Index: 103685
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EventSystemHandler_OnSceneLoaded_m3560B76815CA8D42F09021ADB3C1482E117A0030 (EventSystemHandler_t682DE68ECD4C260AC11B771D2754D93C88E2AB5E* __this, Scene_tA1DC762B79745EB5140F054C884855B922318356 ___0_scene, int32_t ___1_mode, const RuntimeMethod* method) 
 {
 	{
@@ -964,7 +964,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EventSystemHandler_OnSceneLoaded_m3560B7
 		return;
 	}
 }
-// Method Definition Index: 103679
+// Method Definition Index: 103686
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EventSystemHandler_OnSceneUnloaded_m8F8FBCA629625A8DDBDBB7865D294FA4E2E4729F (EventSystemHandler_t682DE68ECD4C260AC11B771D2754D93C88E2AB5E* __this, Scene_tA1DC762B79745EB5140F054C884855B922318356 ___0_current, const RuntimeMethod* method) 
 {
 	{
@@ -974,7 +974,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EventSystemHandler_OnSceneUnloaded_m8F8F
 		return;
 	}
 }
-// Method Definition Index: 103680
+// Method Definition Index: 103687
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EventSystemHandler_ActivateEventSystemIfNeeded_m162A2AECC9C9CB151849DD89B25485FAFC30313B (EventSystemHandler_t682DE68ECD4C260AC11B771D2754D93C88E2AB5E* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1020,7 +1020,7 @@ IL_0025:
 		return;
 	}
 }
-// Method Definition Index: 103681
+// Method Definition Index: 103688
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EventSystemHandler_DeactivateEventSystem_m45036C26C5322BD6DF68716964C1C53BB19C90F8 (EventSystemHandler_t682DE68ECD4C260AC11B771D2754D93C88E2AB5E* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -1053,7 +1053,7 @@ IL_0019:
 		return;
 	}
 }
-// Method Definition Index: 103682
+// Method Definition Index: 103689
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EventSystemHandler__ctor_m2FD41F48C7ED26C15E12B40EDFBAAC64C9A40448 (EventSystemHandler_t682DE68ECD4C260AC11B771D2754D93C88E2AB5E* __this, const RuntimeMethod* method) 
 {
 	{
