@@ -2833,7 +2833,7 @@ struct TransformationPoint_tCAB6F579C090EE1E7AB415B72ADECA2365905013  : public R
 	float ___x;
 	float ___y;
 };
-struct U3CPerformZoomU3Ed__213_t3121E2D1C372A43F4407963CA1CC9A8BC8BC4973  : public RuntimeObject
+struct U3CPerformZoomU3Ed__216_tC632CA823C905C8DDA0290F8D31DDB25B729F624  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -21544,7 +21544,7 @@ struct ElementData_tFBB2F8A36AC7DA1C358A48316642E6E5208AEA66  : public RuntimeOb
 	String_t* ___loopType;
 	bool ___reversed;
 };
-struct U3CColorAdjustmentAnimationU3Ed__212_tE71E220DC1ED6B9D547F0C43012361E0D4A25B77  : public RuntimeObject
+struct U3CColorAdjustmentAnimationU3Ed__215_t3C4E87D825D0C5D2AD20A41EE385567FCC54C370  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -26432,6 +26432,7 @@ struct CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18
 {
 	bool ___ortho;
 	bool ___zoom;
+	float ___zoomInt;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___bg;
 	float ___fov;
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___pos;
@@ -26447,6 +26448,7 @@ struct CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18_marshaled_pinvoke
 {
 	int32_t ___ortho;
 	int32_t ___zoom;
+	float ___zoomInt;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___bg;
 	float ___fov;
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___pos;
@@ -26462,6 +26464,7 @@ struct CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18_marshaled_com
 {
 	int32_t ___ortho;
 	int32_t ___zoom;
+	float ___zoomInt;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___bg;
 	float ___fov;
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___pos;
@@ -27264,6 +27267,7 @@ struct Long1024_tEE887C506947419DC829213E6C7483D80AF5659F
 };
 struct MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D  : public EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D
 {
+	float ___zoomInt;
 	CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18 ___baseCam;
 	bool ___hasCam;
 	bool ___readyOn;
@@ -35616,12 +35620,12 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9117[3] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9118[4] = 
 {
 	static_cast<int32_t>(offsetof(EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D, ___playState)),static_cast<int32_t>(offsetof(EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D, ___root)),static_cast<int32_t>(offsetof(EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D, ___environmentId)),static_cast<int32_t>(offsetof(EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D, ___parent)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9119[12] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9119[13] = 
 {
-	static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___ortho)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___zoom)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___bg)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___fov)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___pos)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___rot)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___color)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___bloom)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___dither)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___anaglyph)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___snow)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___light)) + static_cast<int32_t>(sizeof(RuntimeObject)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9120[7] = 
+	static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___ortho)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___zoom)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___zoomInt)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___bg)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___fov)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___pos)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___rot)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___color)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___bloom)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___dither)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___anaglyph)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___snow)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18, ___light)) + static_cast<int32_t>(sizeof(RuntimeObject)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9120[8] = 
 {
-	static_cast<int32_t>(offsetof(MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D_StaticFields, ___MainMenuAnaglyph)),static_cast<int32_t>(offsetof(MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D, ___baseCam)),static_cast<int32_t>(offsetof(MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D, ___hasCam)),static_cast<int32_t>(offsetof(MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D, ___readyOn)),static_cast<int32_t>(offsetof(MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D, ___showOn)),static_cast<int32_t>(offsetof(MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D, ___tweenOn)),static_cast<int32_t>(offsetof(MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D, ___sofa)),};
+	static_cast<int32_t>(offsetof(MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D, ___zoomInt)),static_cast<int32_t>(offsetof(MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D_StaticFields, ___MainMenuAnaglyph)),static_cast<int32_t>(offsetof(MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D, ___baseCam)),static_cast<int32_t>(offsetof(MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D, ___hasCam)),static_cast<int32_t>(offsetof(MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D, ___readyOn)),static_cast<int32_t>(offsetof(MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D, ___showOn)),static_cast<int32_t>(offsetof(MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D, ___tweenOn)),static_cast<int32_t>(offsetof(MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D, ___sofa)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9121[2] = 
 {
 	static_cast<int32_t>(offsetof(OverworldEnv_t40E78907C3221AE02F64F1E474F479281816BAE8, ___baseSnowSettings)),static_cast<int32_t>(offsetof(OverworldEnv_t40E78907C3221AE02F64F1E474F479281816BAE8, ___hasSnowSettings)),};
@@ -35690,10 +35694,10 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9144[21] =
 	static_cast<int32_t>(offsetof(CameraConfig_tFF15A2D18505DEDA88655F015BF589C013CE3F96, ___cameraId)),static_cast<int32_t>(offsetof(CameraConfig_tFF15A2D18505DEDA88655F015BF589C013CE3F96, ___enableBlending)),static_cast<int32_t>(offsetof(CameraConfig_tFF15A2D18505DEDA88655F015BF589C013CE3F96, ___enableFilters)),static_cast<int32_t>(offsetof(CameraConfig_tFF15A2D18505DEDA88655F015BF589C013CE3F96, ___enableTexturePooling)),static_cast<int32_t>(offsetof(CameraConfig_tFF15A2D18505DEDA88655F015BF589C013CE3F96, ___renderTextureDepth)),static_cast<int32_t>(offsetof(CameraConfig_tFF15A2D18505DEDA88655F015BF589C013CE3F96, ___textureFormat)),static_cast<int32_t>(offsetof(CameraConfig_tFF15A2D18505DEDA88655F015BF589C013CE3F96, ___filterMode)),static_cast<int32_t>(offsetof(CameraConfig_tFF15A2D18505DEDA88655F015BF589C013CE3F96, ___maxPoolSize)),static_cast<int32_t>(offsetof(CameraConfig_tFF15A2D18505DEDA88655F015BF589C013CE3F96, ___autoCleanup)),static_cast<int32_t>(offsetof(CameraConfig_tFF15A2D18505DEDA88655F015BF589C013CE3F96, ___cleanupInterval)),static_cast<int32_t>(offsetof(CameraConfig_tFF15A2D18505DEDA88655F015BF589C013CE3F96, ___useAntiAliasing)),static_cast<int32_t>(offsetof(CameraConfig_tFF15A2D18505DEDA88655F015BF589C013CE3F96, ___antiAliasingLevel)),static_cast<int32_t>(offsetof(CameraConfig_tFF15A2D18505DEDA88655F015BF589C013CE3F96, ___shouldZoom)),static_cast<int32_t>(offsetof(CameraConfig_tFF15A2D18505DEDA88655F015BF589C013CE3F96, ___zoomIntensity)),static_cast<int32_t>(offsetof(CameraConfig_tFF15A2D18505DEDA88655F015BF589C013CE3F96, ___zoomDuration)),static_cast<int32_t>(offsetof(CameraConfig_tFF15A2D18505DEDA88655F015BF589C013CE3F96, ___colorAdjustment)),static_cast<int32_t>(offsetof(CameraConfig_tFF15A2D18505DEDA88655F015BF589C013CE3F96, ___bloomSettings)),static_cast<int32_t>(offsetof(CameraConfig_tFF15A2D18505DEDA88655F015BF589C013CE3F96, ___ditherSettings)),static_cast<int32_t>(offsetof(CameraConfig_tFF15A2D18505DEDA88655F015BF589C013CE3F96, ___anaglyphSettings)),static_cast<int32_t>(offsetof(CameraConfig_tFF15A2D18505DEDA88655F015BF589C013CE3F96, ___snowSettings)),static_cast<int32_t>(offsetof(CameraConfig_tFF15A2D18505DEDA88655F015BF589C013CE3F96, ___ambientLightSettings)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9145[5] = 
 {
-	static_cast<int32_t>(offsetof(U3CColorAdjustmentAnimationU3Ed__212_tE71E220DC1ED6B9D547F0C43012361E0D4A25B77, ___U3CU3E1__state)),static_cast<int32_t>(offsetof(U3CColorAdjustmentAnimationU3Ed__212_tE71E220DC1ED6B9D547F0C43012361E0D4A25B77, ___U3CU3E2__current)),static_cast<int32_t>(offsetof(U3CColorAdjustmentAnimationU3Ed__212_tE71E220DC1ED6B9D547F0C43012361E0D4A25B77, ___U3CU3E4__this)),static_cast<int32_t>(offsetof(U3CColorAdjustmentAnimationU3Ed__212_tE71E220DC1ED6B9D547F0C43012361E0D4A25B77, ___U3CelapsedU3E5__2)),static_cast<int32_t>(offsetof(U3CColorAdjustmentAnimationU3Ed__212_tE71E220DC1ED6B9D547F0C43012361E0D4A25B77, ___U3CstartU3E5__3)),};
+	static_cast<int32_t>(offsetof(U3CColorAdjustmentAnimationU3Ed__215_t3C4E87D825D0C5D2AD20A41EE385567FCC54C370, ___U3CU3E1__state)),static_cast<int32_t>(offsetof(U3CColorAdjustmentAnimationU3Ed__215_t3C4E87D825D0C5D2AD20A41EE385567FCC54C370, ___U3CU3E2__current)),static_cast<int32_t>(offsetof(U3CColorAdjustmentAnimationU3Ed__215_t3C4E87D825D0C5D2AD20A41EE385567FCC54C370, ___U3CU3E4__this)),static_cast<int32_t>(offsetof(U3CColorAdjustmentAnimationU3Ed__215_t3C4E87D825D0C5D2AD20A41EE385567FCC54C370, ___U3CelapsedU3E5__2)),static_cast<int32_t>(offsetof(U3CColorAdjustmentAnimationU3Ed__215_t3C4E87D825D0C5D2AD20A41EE385567FCC54C370, ___U3CstartU3E5__3)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9146[3] = 
 {
-	static_cast<int32_t>(offsetof(U3CPerformZoomU3Ed__213_t3121E2D1C372A43F4407963CA1CC9A8BC8BC4973, ___U3CU3E1__state)),static_cast<int32_t>(offsetof(U3CPerformZoomU3Ed__213_t3121E2D1C372A43F4407963CA1CC9A8BC8BC4973, ___U3CU3E2__current)),static_cast<int32_t>(offsetof(U3CPerformZoomU3Ed__213_t3121E2D1C372A43F4407963CA1CC9A8BC8BC4973, ___U3CU3E4__this)),};
+	static_cast<int32_t>(offsetof(U3CPerformZoomU3Ed__216_tC632CA823C905C8DDA0290F8D31DDB25B729F624, ___U3CU3E1__state)),static_cast<int32_t>(offsetof(U3CPerformZoomU3Ed__216_tC632CA823C905C8DDA0290F8D31DDB25B729F624, ___U3CU3E2__current)),static_cast<int32_t>(offsetof(U3CPerformZoomU3Ed__216_tC632CA823C905C8DDA0290F8D31DDB25B729F624, ___U3CU3E4__this)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9147[25] = 
 {
 	static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ____config)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ___id)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ___blendShader)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ___blendMaterial)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ___colorAdjustment)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ___bloomSettings)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ___ditherSettings)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ___anaglyphSettings)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ___snowSettings)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ___ambientLightSettings)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ____camera)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ____colorAdjustmentRoutine)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ____targetColorAdjustment)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ____colorAdjustmentDuration)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ____onColorAdjustmentComplete)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ___texturePool)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ___grabbedTextures)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ____isZooming)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ____zoomTimer)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ____originalOrthoSize)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ____usePerspectiveForZoom)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ____zoomReferenceDistance)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ____zoomBasePosition)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ____zoomOffset)),static_cast<int32_t>(offsetof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244, ____lastAppliedZoomPosition)),};

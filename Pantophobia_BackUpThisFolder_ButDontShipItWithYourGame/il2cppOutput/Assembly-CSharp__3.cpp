@@ -1546,6 +1546,7 @@ struct CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18
 {
 	bool ___ortho;
 	bool ___zoom;
+	float ___zoomInt;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___bg;
 	float ___fov;
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___pos;
@@ -1561,6 +1562,7 @@ struct CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18_marshaled_pinvoke
 {
 	int32_t ___ortho;
 	int32_t ___zoom;
+	float ___zoomInt;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___bg;
 	float ___fov;
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___pos;
@@ -1576,6 +1578,7 @@ struct CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18_marshaled_com
 {
 	int32_t ___ortho;
 	int32_t ___zoom;
+	float ___zoomInt;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___bg;
 	float ___fov;
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___pos;
@@ -1651,6 +1654,7 @@ struct DirectoryInfo_tEAEEC018EB49B4A71907FFEAFE935FAA8F9C1FE2  : public FileSys
 };
 struct MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D  : public EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D
 {
+	float ___zoomInt;
 	CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18 ___baseCam;
 	bool ___hasCam;
 	bool ___readyOn;
@@ -1975,6 +1979,7 @@ struct MainMenu_tF07E8AC09715C2ECF3376472A241319E70235CE0  : public UIBase_tCD5B
 	float ___camPitch;
 	float ___camYaw;
 	float ___camTime;
+	float ___camAmount;
 	float ___hoverSize;
 	float ___hoverTime;
 	float ___outlineScale;
@@ -2665,6 +2670,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool MainMenuEnv_get_Ready_mA15E8
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371 (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1 (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaCamera_set_ShouldZoom_m39F39FBE3CDABC9763EC4F302F18E3EF203809D7 (PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* __this, bool ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MouseUtil_get_available_m409F71A2EFE9E0A8D2F2315894E78D2D6726D277 (const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 MouseUtil_getPosition_m41035B29705683B0C4D4D29066EB148085656CDD (const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MainMenu_isMouseOnScreen_mE3ECA1ECC80F968FBF9F88BBB9805504F348D95A (MainMenu_tF07E8AC09715C2ECF3376472A241319E70235CE0* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_mouse, const RuntimeMethod* method) ;
@@ -5633,10 +5639,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CwaitBeatU3Ed__196_System_Co
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_Initialize_mBCFF6C11F57CAF46B76337AE8C1B3C9E3F47575C (MainMenu_tF07E8AC09715C2ECF3376472A241319E70235CE0* __this, PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* ___0_playRef, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:45>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:46>
 		PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* L_0 = ___0_playRef;
 		UIBase_Initialize_m20DAF0576B866E528AFC56DC1DF0EDA6050CB930(__this, L_0, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:46>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:47>
 		return;
 	}
 }
@@ -5671,7 +5677,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_Create_m5C6603873B34D67CBEF9B6E
 	EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D* G_B11_0 = NULL;
 	MainMenu_tF07E8AC09715C2ECF3376472A241319E70235CE0* G_B11_1 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:50>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:51>
 		bool L_0 = ((UIBase_tCD5B85982419C0F1E9967BB25DACF215E2F45E89*)__this)->___isInitialized;
 		if (L_0)
 		{
@@ -5679,7 +5685,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_Create_m5C6603873B34D67CBEF9B6E
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:52>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:53>
 		PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* L_1;
 		L_1 = PlayState_get_Instance_m1BA06C5C6CEA764092973B6A469F590F1766DD7E_inline(NULL);
 		VirtualActionInvoker1< PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* >::Invoke(10, __this, L_1);
@@ -5687,9 +5693,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_Create_m5C6603873B34D67CBEF9B6E
 
 IL_0013:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:55>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:56>
 		UIBase_Create_m3BB5F2387A4281D771EEDA2318E81A7D5134BBAE(__this, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:57>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:58>
 		PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* L_2 = ((UIBase_tCD5B85982419C0F1E9967BB25DACF215E2F45E89*)__this)->___playState;
 		PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* L_3 = L_2;
 		if (L_3)
@@ -5752,7 +5758,7 @@ IL_0047:
 		NullCheck(G_B8_1);
 		G_B8_1->___sceneCam = G_B8_0;
 		Il2CppCodeGenWriteBarrier((void**)(&G_B8_1->___sceneCam), (void*)G_B8_0);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:58>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:59>
 		int32_t L_9;
 		L_9 = Screen_get_width_mF608FF3252213E7EFA1F0D2F744C28110E9E5AC9(NULL);
 		int32_t L_10;
@@ -5761,7 +5767,7 @@ IL_0047:
 		memset((&L_11), 0, sizeof(L_11));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_11), ((float)il2cpp_codegen_multiply(((float)L_9), (0.5f))), ((float)il2cpp_codegen_multiply(((float)L_10), (0.5f))), NULL);
 		__this->___mousePos = L_11;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:59>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:60>
 		PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* L_12 = ((UIBase_tCD5B85982419C0F1E9967BB25DACF215E2F45E89*)__this)->___playState;
 		PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* L_13 = L_12;
 		if (L_13)
@@ -5793,7 +5799,7 @@ IL_0087:
 		NullCheck(G_B11_1);
 		G_B11_1->___env = ((MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D*)IsInstClass((RuntimeObject*)G_B11_0, MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D_il2cpp_TypeInfo_var));
 		Il2CppCodeGenWriteBarrier((void**)(&G_B11_1->___env), (void*)((MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D*)IsInstClass((RuntimeObject*)G_B11_0, MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D_il2cpp_TypeInfo_var)));
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:60>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:61>
 		MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D* L_15 = __this->___env;
 		if (L_15)
 		{
@@ -5801,22 +5807,22 @@ IL_0087:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:62>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:63>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(_stringLiteralD4959AE196D7FDC8A605CFDF510D3581F62140CC, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:63>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:64>
 		return;
 	}
 
 IL_00a4:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:66>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:67>
 		MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D* L_16 = __this->___env;
 		NullCheck(L_16);
 		VirtualActionInvoker0::Invoke(9, L_16);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:67>
-		MainMenu_createChest_m5C0C0171AD33E5D3A12A166E46F1EB4E89E25E47(__this, NULL);
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:68>
+		MainMenu_createChest_m5C0C0171AD33E5D3A12A166E46F1EB4E89E25E47(__this, NULL);
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:69>
 		return;
 	}
 }
@@ -5830,9 +5836,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_Update_m05A16F2676BF61AD8F3FF21
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:72>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:73>
 		UIBase_Update_m5F1A99BC17002A23B6F73BA8501591434A2CB41C(__this, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:74>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:75>
 		bool L_0 = __this->___loadOn;
 		if (L_0)
 		{
@@ -5865,15 +5871,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_Update_m05A16F2676BF61AD8F3FF21
 
 IL_002e:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:76>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:77>
 		return;
 	}
 
 IL_002f:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:79>
-		MainMenu_syncMenu_m6F62F3849F626CC8347A2F0D69D65DFABD6495B8(__this, NULL);
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:80>
+		MainMenu_syncMenu_m6F62F3849F626CC8347A2F0D69D65DFABD6495B8(__this, NULL);
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:81>
 		bool L_6 = __this->___menuOn;
 		if (L_6)
 		{
@@ -5881,19 +5887,19 @@ IL_002f:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:82>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:83>
 		return;
 	}
 
 IL_003e:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:85>
-		MainMenu_updateMouse_mDEFCCE45A4B656F5EC7C046DDEA70697DB93F584(__this, NULL);
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:86>
-		MainMenu_updateCam_mFE63A2FF13B35B582C0B1A1FD32186A26B9285A6(__this, NULL);
+		MainMenu_updateMouse_mDEFCCE45A4B656F5EC7C046DDEA70697DB93F584(__this, NULL);
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:87>
-		MainMenu_updateHover_m0F66F89E9EFC6F0CD51842E484E6B6BD0374BB23(__this, NULL);
+		MainMenu_updateCam_mFE63A2FF13B35B582C0B1A1FD32186A26B9285A6(__this, NULL);
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:88>
+		MainMenu_updateHover_m0F66F89E9EFC6F0CD51842E484E6B6BD0374BB23(__this, NULL);
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:89>
 		return;
 	}
 }
@@ -5917,7 +5923,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_createChest_m5C0C0171AD33E5D3A1
 	MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D* G_B1_0 = NULL;
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* G_B3_0 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:92>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:93>
 		MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D* L_0 = __this->___env;
 		MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D* L_1 = L_0;
 		if (L_1)
@@ -5963,13 +5969,13 @@ IL_0012:
 
 IL_0028:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:94>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:95>
 		return;
 	}
 
 IL_0029:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:97>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:98>
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_6;
 		memset((&L_6), 0, sizeof(L_6));
 		Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline((&L_6), (-0.5f), (1.03999996f), (-986.700012f), NULL);
@@ -5982,7 +5988,7 @@ IL_0029:
 		L_9 = PhobiaModel_Create_m602E1276FEBBA5BC58F3C285D18D3799A3836869(L_6, _stringLiteral5ACF60AF0008C2BFF3693D14F368917FC9985BFD, L_8, (ModelConfig_t584CE4621E3D6EF2C1E8A0499A38E9777B9F25AB*)NULL, NULL);
 		__this->___chest = L_9;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___chest), (void*)L_9);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:98>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:99>
 		PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* L_10 = __this->___chest;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_11;
@@ -5993,34 +5999,34 @@ IL_0029:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:100>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:101>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(_stringLiteral48799BB676D5E754266D14EF1A643B74324D222F, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:101>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:102>
 		return;
 	}
 
 IL_0072:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:104>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:105>
 		PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* L_12 = __this->___chest;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_13;
 		memset((&L_13), 0, sizeof(L_13));
 		Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline((&L_13), (10.0f), (10.0f), (10.0f), NULL);
 		NullCheck(L_12);
 		PhobiaModel_SetScale_m9F5A1D279CA687989A60D96F845C419D75AB301E(L_12, L_13, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:105>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:106>
 		PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* L_14 = __this->___chest;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_15;
 		L_15 = Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline(NULL);
 		NullCheck(L_14);
 		PhobiaModel_set_OutlineColor_m8B479E39DFDC3DE2B20A297F4DF8A7688E7A58CF(L_14, L_15, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:106>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:107>
 		PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* L_16 = __this->___chest;
 		float L_17 = __this->___outlineScale;
 		NullCheck(L_16);
 		PhobiaModel_set_OutlineScale_m4B7706B21ECF44C42F87EA6450E9BBEEEA64DD44(L_16, L_17, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:108>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:109>
 		PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* L_18 = __this->___chest;
 		NullCheck(L_18);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_19;
@@ -6034,7 +6040,7 @@ IL_0072:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:110>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:111>
 		PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* L_21 = __this->___chest;
 		NullCheck(L_21);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_22;
@@ -6050,14 +6056,14 @@ IL_0072:
 
 IL_00ee:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:113>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:114>
 		PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* L_25 = __this->___chest;
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_26 = (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)il2cpp_codegen_object_new(Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var);
 		Action__ctor_mBDC7B0B4A3F583B64C2896F01BDED360772F67DC(L_26, __this, (intptr_t)((void*)MainMenu_goOffset_mBE3039318EBDA349EA621571CAEE7545EE893A64_RuntimeMethod_var), NULL);
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_27 = (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)il2cpp_codegen_object_new(Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var);
 		Action__ctor_mBDC7B0B4A3F583B64C2896F01BDED360772F67DC(L_27, __this, (intptr_t)((void*)MainMenu_zoomItem_m718A1D5BBF7C7824FCC2ED384F47A3FE17485C5E_RuntimeMethod_var), NULL);
 		MainMenu_addItem_mFC6D6EB0617875EEB8BA2D7CF913C8167FBDB99E(__this, L_25, L_26, L_27, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:114>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:115>
 		return;
 	}
 }
@@ -6079,7 +6085,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_syncMenu_m6F62F3849F626CC8347A2
 	PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* G_B4_0 = NULL;
 	PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* G_B6_0 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:118>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:119>
 		bool L_0 = __this->___menuOn;
 		if (L_0)
 		{
@@ -6139,15 +6145,15 @@ IL_002f:
 
 IL_0037:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:120>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:121>
 		return;
 	}
 
 IL_0038:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:123>
-		__this->___menuOn = (bool)1;
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:124>
+		__this->___menuOn = (bool)1;
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:125>
 		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_8 = __this->___sceneCam;
 		if (L_8)
 		{
@@ -6168,7 +6174,7 @@ IL_0038:
 
 IL_005d:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:125>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:126>
 		PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* L_12 = ((UIBase_tCD5B85982419C0F1E9967BB25DACF215E2F45E89*)__this)->___playState;
 		NullCheck(L_12);
 		PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* L_13;
@@ -6180,7 +6186,7 @@ IL_005d:
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_15;
 		L_15 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_14, NULL);
 		__this->___camPos = L_15;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:126>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:127>
 		PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* L_16 = ((UIBase_tCD5B85982419C0F1E9967BB25DACF215E2F45E89*)__this)->___playState;
 		NullCheck(L_16);
 		PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* L_17;
@@ -6193,67 +6199,92 @@ IL_005d:
 		L_19 = Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C(L_18, NULL);
 		__this->___camRot = L_19;
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:128>
-		bool L_20;
-		L_20 = MouseUtil_get_available_m409F71A2EFE9E0A8D2F2315894E78D2D6726D277(NULL);
-		if (!L_20)
-		{
-			goto IL_00b0;
-		}
-	}
-	{
+		PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* L_20 = ((UIBase_tCD5B85982419C0F1E9967BB25DACF215E2F45E89*)__this)->___playState;
+		NullCheck(L_20);
+		PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* L_21;
+		L_21 = PlayState_get_Cam_m78A817C7D8E6F7BED60F59385FAB5EFB76283CE4_inline(L_20, NULL);
+		NullCheck(L_21);
+		PhobiaCamera_set_ShouldZoom_m39F39FBE3CDABC9763EC4F302F18E3EF203809D7(L_21, (bool)1, NULL);
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:130>
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_21;
-		L_21 = MouseUtil_getPosition_m41035B29705683B0C4D4D29066EB148085656CDD(NULL);
-		V_0 = L_21;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:131>
-		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_22 = V_0;
-		bool L_23;
-		L_23 = MainMenu_isMouseOnScreen_mE3ECA1ECC80F968FBF9F88BBB9805504F348D95A(__this, L_22, NULL);
-		if (!L_23)
+		bool L_22;
+		L_22 = MouseUtil_get_available_m409F71A2EFE9E0A8D2F2315894E78D2D6726D277(NULL);
+		if (!L_22)
 		{
-			goto IL_00b0;
+			goto IL_00c1;
 		}
 	}
 	{
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:132>
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_23;
+		L_23 = MouseUtil_getPosition_m41035B29705683B0C4D4D29066EB148085656CDD(NULL);
+		V_0 = L_23;
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:133>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_24 = V_0;
-		__this->___mousePos = L_24;
+		bool L_25;
+		L_25 = MainMenu_isMouseOnScreen_mE3ECA1ECC80F968FBF9F88BBB9805504F348D95A(__this, L_24, NULL);
+		if (!L_25)
+		{
+			goto IL_00c1;
+		}
+	}
+	{
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:135>
+		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_26 = V_0;
+		__this->___mousePos = L_26;
 	}
 
-IL_00b0:
-	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:137>
-		bool L_25 = __this->___chestAnimOn;
-		if (L_25)
-		{
-			goto IL_00e8;
-		}
-	}
-	{
-		PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* L_26 = __this->___chest;
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_27;
-		L_27 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_26, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_27)
-		{
-			goto IL_00e8;
-		}
-	}
+IL_00c1:
 	{
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:139>
+		bool L_27 = __this->___chestAnimOn;
+		if (L_27)
+		{
+			goto IL_00f9;
+		}
+	}
+	{
 		PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* L_28 = __this->___chest;
-		Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01 L_29;
-		memset((&L_29), 0, sizeof(L_29));
-		Nullable_1__ctor_m4FAA8281CB4EFFD8B817734351FB3AC20A0CD6F5((&L_29), (bool)0, Nullable_1__ctor_m4FAA8281CB4EFFD8B817734351FB3AC20A0CD6F5_RuntimeMethod_var);
-		NullCheck(L_28);
-		PhobiaModel_PlayAnimation_m1EA35FC4205895B4BB7B9CD6E3B3433946DDA7D6(L_28, _stringLiteralB3272BF17B776318EA8571DD17FAF0DF3F78162A, (0.100000001f), L_29, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:140>
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_29;
+		L_29 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_28, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_29)
+		{
+			goto IL_00f9;
+		}
+	}
+	{
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:141>
+		PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* L_30 = __this->___chest;
+		Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01 L_31;
+		memset((&L_31), 0, sizeof(L_31));
+		Nullable_1__ctor_m4FAA8281CB4EFFD8B817734351FB3AC20A0CD6F5((&L_31), (bool)0, Nullable_1__ctor_m4FAA8281CB4EFFD8B817734351FB3AC20A0CD6F5_RuntimeMethod_var);
+		NullCheck(L_30);
+		PhobiaModel_PlayAnimation_m1EA35FC4205895B4BB7B9CD6E3B3433946DDA7D6(L_30, _stringLiteralB3272BF17B776318EA8571DD17FAF0DF3F78162A, (0.100000001f), L_31, NULL);
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:142>
 		__this->___chestAnimOn = (bool)1;
 	}
 
-IL_00e8:
+IL_00f9:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:142>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:145>
+		PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* L_32 = ((UIBase_tCD5B85982419C0F1E9967BB25DACF215E2F45E89*)__this)->___playState;
+		NullCheck(L_32);
+		bool L_33 = L_32->___shouldPlay;
+		if (L_33)
+		{
+			goto IL_0112;
+		}
+	}
+	{
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:147>
+		PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* L_34 = ((UIBase_tCD5B85982419C0F1E9967BB25DACF215E2F45E89*)__this)->___playState;
+		NullCheck(L_34);
+		PlayState_StartSong_m8C1132BCE33FCC5495B2463CD965B38BAD1BEB68(L_34, (bool)0, NULL);
+	}
+
+IL_0112:
+	{
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:149>
 		return;
 	}
 }
@@ -6263,7 +6294,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_updateMouse_mDEFCCE45A4B656F5EC
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:146>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:153>
 		bool L_0;
 		L_0 = MouseUtil_get_available_m409F71A2EFE9E0A8D2F2315894E78D2D6726D277(NULL);
 		if (L_0)
@@ -6272,17 +6303,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_updateMouse_mDEFCCE45A4B656F5EC
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:148>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:155>
 		return;
 	}
 
 IL_0008:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:151>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:158>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_1;
 		L_1 = MouseUtil_getPosition_m41035B29705683B0C4D4D29066EB148085656CDD(NULL);
 		V_0 = L_1;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:152>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:159>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_2 = V_0;
 		bool L_3;
 		L_3 = MainMenu_isMouseOnScreen_mE3ECA1ECC80F968FBF9F88BBB9805504F348D95A(__this, L_2, NULL);
@@ -6292,14 +6323,14 @@ IL_0008:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:154>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:161>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_4 = V_0;
 		__this->___mousePos = L_4;
 	}
 
 IL_001e:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:156>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:163>
 		return;
 	}
 }
@@ -6329,7 +6360,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_updateCam_mFE63A2FF13B35B582C0B
 	float G_B8_0 = 0.0f;
 	float G_B11_0 = 0.0f;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:160>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:167>
 		PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* L_0 = ((UIBase_tCD5B85982419C0F1E9967BB25DACF215E2F45E89*)__this)->___playState;
 		PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* L_1 = L_0;
 		if (L_1)
@@ -6363,13 +6394,13 @@ IL_0012:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:162>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:169>
 		return;
 	}
 
 IL_001b:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:165>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:172>
 		int32_t L_4;
 		L_4 = Screen_get_width_mF608FF3252213E7EFA1F0D2F744C28110E9E5AC9(NULL);
 		if ((((int32_t)L_4) > ((int32_t)0)))
@@ -6396,7 +6427,7 @@ IL_002a:
 IL_0057:
 	{
 		V_0 = G_B8_0;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:166>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:173>
 		int32_t L_9;
 		L_9 = Screen_get_height_m01A3102DE71EE1FBEA51D09D6B0261CF864FE8F9(NULL);
 		if ((((int32_t)L_9) > ((int32_t)0)))
@@ -6423,84 +6454,92 @@ IL_0067:
 IL_0094:
 	{
 		V_1 = G_B11_0;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:168>
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_14 = __this->___camRot;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_15;
-		L_15 = Vector3_get_right_mFF573AFBBB2186E7AFA1BA7CA271A78DF67E4EA0_inline(NULL);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_16;
-		L_16 = Quaternion_op_Multiply_mE1EBA73F9173432B50F8F17CE8190C5A7986FB8C(L_14, L_15, NULL);
-		V_2 = L_16;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:169>
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_17 = __this->___camRot;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_18;
-		L_18 = Vector3_get_up_m128AF3FDC820BF59D5DE86D973E7DE3F20C3AEBA_inline(NULL);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_19;
-		L_19 = Quaternion_op_Multiply_mE1EBA73F9173432B50F8F17CE8190C5A7986FB8C(L_17, L_18, NULL);
-		V_3 = L_19;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:170>
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_20 = __this->___camPos;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_21 = V_2;
-		float L_22 = V_0;
-		float L_23 = __this->___camX;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_24;
-		L_24 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_21, ((float)il2cpp_codegen_multiply(L_22, L_23)), NULL);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_25;
-		L_25 = Vector3_op_Addition_m78C0EC70CB66E8DCAC225743D82B268DAEE92067_inline(L_20, L_24, NULL);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_26 = V_3;
-		float L_27 = V_1;
-		float L_28 = __this->___camY;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_29;
-		L_29 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_26, ((float)il2cpp_codegen_multiply(L_27, L_28)), NULL);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_30;
-		L_30 = Vector3_op_Addition_m78C0EC70CB66E8DCAC225743D82B268DAEE92067_inline(L_25, L_29, NULL);
-		V_4 = L_30;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:171>
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_31 = __this->___camRot;
-		float L_32 = V_1;
-		float L_33 = __this->___camPitch;
-		float L_34 = V_0;
-		float L_35 = __this->___camYaw;
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_36;
-		L_36 = Quaternion_Euler_m9262AB29E3E9CE94EF71051F38A28E82AEC73F90_inline(((float)il2cpp_codegen_multiply(((-L_32)), L_33)), ((float)il2cpp_codegen_multiply(L_34, L_35)), (0.0f), NULL);
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_37;
-		L_37 = Quaternion_op_Multiply_mCB375FCCC12A2EC8F9EB824A1BFB4453B58C2012_inline(L_31, L_36, NULL);
-		V_5 = L_37;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:173>
-		float L_38;
-		L_38 = MainMenu_getCamLerp_mCA42D644AB2066BFF43605526E7ABEB271484B69(__this, NULL);
-		V_6 = L_38;
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:174>
-		PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* L_39 = ((UIBase_tCD5B85982419C0F1E9967BB25DACF215E2F45E89*)__this)->___playState;
-		NullCheck(L_39);
-		PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* L_40;
-		L_40 = PlayState_get_Cam_m78A817C7D8E6F7BED60F59385FAB5EFB76283CE4_inline(L_39, NULL);
-		NullCheck(L_40);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_41;
-		L_41 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(L_40, NULL);
+		float L_14 = V_0;
+		float L_15 = __this->___camAmount;
+		V_0 = ((float)il2cpp_codegen_multiply(L_14, L_15));
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:175>
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_42 = L_41;
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_43 = L_42;
-		NullCheck(L_43);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_44;
-		L_44 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_43, NULL);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_45 = V_4;
-		float L_46 = V_6;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_47;
-		L_47 = Vector3_Lerp_m3A906D0530A94FAABB94F0F905E84D99BE85C3F8_inline(L_44, L_45, L_46, NULL);
-		NullCheck(L_43);
-		Transform_set_position_mA1A817124BB41B685043DED2A9BA48CDF37C4156(L_43, L_47, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:176>
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_48 = L_42;
-		NullCheck(L_48);
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_49;
-		L_49 = Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C(L_48, NULL);
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_50 = V_5;
-		float L_51 = V_6;
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_52;
-		L_52 = Quaternion_Slerp_m0A9969F500E7716EA4F6BC4E7D5464372D8E9E15_inline(L_49, L_50, L_51, NULL);
-		NullCheck(L_48);
-		Transform_set_rotation_m61340DE74726CF0F9946743A727C4D444397331D(L_48, L_52, NULL);
+		float L_16 = V_1;
+		float L_17 = __this->___camAmount;
+		V_1 = ((float)il2cpp_codegen_multiply(L_16, L_17));
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:177>
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_18 = __this->___camRot;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_19;
+		L_19 = Vector3_get_right_mFF573AFBBB2186E7AFA1BA7CA271A78DF67E4EA0_inline(NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_20;
+		L_20 = Quaternion_op_Multiply_mE1EBA73F9173432B50F8F17CE8190C5A7986FB8C(L_18, L_19, NULL);
+		V_2 = L_20;
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:178>
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_21 = __this->___camRot;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_22;
+		L_22 = Vector3_get_up_m128AF3FDC820BF59D5DE86D973E7DE3F20C3AEBA_inline(NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_23;
+		L_23 = Quaternion_op_Multiply_mE1EBA73F9173432B50F8F17CE8190C5A7986FB8C(L_21, L_22, NULL);
+		V_3 = L_23;
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:179>
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_24 = __this->___camPos;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_25 = V_2;
+		float L_26 = V_0;
+		float L_27 = __this->___camX;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_28;
+		L_28 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_25, ((float)il2cpp_codegen_multiply(L_26, L_27)), NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_29;
+		L_29 = Vector3_op_Addition_m78C0EC70CB66E8DCAC225743D82B268DAEE92067_inline(L_24, L_28, NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_30 = V_3;
+		float L_31 = V_1;
+		float L_32 = __this->___camY;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_33;
+		L_33 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_30, ((float)il2cpp_codegen_multiply(L_31, L_32)), NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_34;
+		L_34 = Vector3_op_Addition_m78C0EC70CB66E8DCAC225743D82B268DAEE92067_inline(L_29, L_33, NULL);
+		V_4 = L_34;
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:180>
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_35 = __this->___camRot;
+		float L_36 = V_1;
+		float L_37 = __this->___camPitch;
+		float L_38 = V_0;
+		float L_39 = __this->___camYaw;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_40;
+		L_40 = Quaternion_Euler_m9262AB29E3E9CE94EF71051F38A28E82AEC73F90_inline(((float)il2cpp_codegen_multiply(((-L_36)), L_37)), ((float)il2cpp_codegen_multiply(L_38, L_39)), (0.0f), NULL);
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_41;
+		L_41 = Quaternion_op_Multiply_mCB375FCCC12A2EC8F9EB824A1BFB4453B58C2012_inline(L_35, L_40, NULL);
+		V_5 = L_41;
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:182>
+		float L_42;
+		L_42 = MainMenu_getCamLerp_mCA42D644AB2066BFF43605526E7ABEB271484B69(__this, NULL);
+		V_6 = L_42;
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:183>
+		PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* L_43 = ((UIBase_tCD5B85982419C0F1E9967BB25DACF215E2F45E89*)__this)->___playState;
+		NullCheck(L_43);
+		PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* L_44;
+		L_44 = PlayState_get_Cam_m78A817C7D8E6F7BED60F59385FAB5EFB76283CE4_inline(L_43, NULL);
+		NullCheck(L_44);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_45;
+		L_45 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(L_44, NULL);
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:184>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_46 = L_45;
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_47 = L_46;
+		NullCheck(L_47);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_48;
+		L_48 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_47, NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_49 = V_4;
+		float L_50 = V_6;
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_51;
+		L_51 = Vector3_Lerp_m3A906D0530A94FAABB94F0F905E84D99BE85C3F8_inline(L_48, L_49, L_50, NULL);
+		NullCheck(L_47);
+		Transform_set_position_mA1A817124BB41B685043DED2A9BA48CDF37C4156(L_47, L_51, NULL);
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:185>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_52 = L_46;
+		NullCheck(L_52);
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_53;
+		L_53 = Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C(L_52, NULL);
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_54 = V_5;
+		float L_55 = V_6;
+		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_56;
+		L_56 = Quaternion_Slerp_m0A9969F500E7716EA4F6BC4E7D5464372D8E9E15_inline(L_53, L_54, L_55, NULL);
+		NullCheck(L_52);
+		Transform_set_rotation_m61340DE74726CF0F9946743A727C4D444397331D(L_52, L_56, NULL);
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:186>
 		return;
 	}
 }
@@ -6509,11 +6548,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_updateHover_m0F66F89E9EFC6F0CD5
 {
 	Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* V_0 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:181>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:190>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_0;
 		L_0 = MainMenu_getHover_m1EBFA28F26EB881ED89D9F948B6714A95109EA4C(__this, NULL);
 		V_0 = L_0;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:182>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:191>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_1 = __this->___hoverItem;
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_2 = V_0;
 		if ((((RuntimeObject*)(Item_t5124921961D408F718F306FF10C6D2DA6887FCE1*)L_1) == ((RuntimeObject*)(Item_t5124921961D408F718F306FF10C6D2DA6887FCE1*)L_2)))
@@ -6522,7 +6561,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_updateHover_m0F66F89E9EFC6F0CD5
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:184>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:193>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_3 = __this->___hoverItem;
 		if (!L_3)
 		{
@@ -6530,18 +6569,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_updateHover_m0F66F89E9EFC6F0CD5
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:186>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:195>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_4 = __this->___hoverItem;
 		MainMenu_leaveItem_m4BC83E41181AD8C9B0E3CD2748A6FABB9C779A5C(__this, L_4, NULL);
 	}
 
 IL_0024:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:189>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:198>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_5 = V_0;
 		__this->___hoverItem = L_5;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___hoverItem), (void*)L_5);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:190>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:199>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_6 = __this->___hoverItem;
 		if (!L_6)
 		{
@@ -6549,14 +6588,14 @@ IL_0024:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:192>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:201>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_7 = __this->___hoverItem;
 		MainMenu_enterItem_m2D8DC0CE0EFEDC930048F8076F119338A081C3BF(__this, L_7, NULL);
 	}
 
 IL_003f:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:196>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:205>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_8 = __this->___hoverItem;
 		if (!L_8)
 		{
@@ -6572,14 +6611,14 @@ IL_003f:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:198>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:207>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_10 = __this->___hoverItem;
 		MainMenu_clickItem_m3C954858ED92B09DBDAF61CE95790AE6B7792A7E(__this, L_10, NULL);
 	}
 
 IL_005b:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:200>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:209>
 		return;
 	}
 }
@@ -6595,7 +6634,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_addItem_mFC6D6EB0617875EEB8BA2D
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:204>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:213>
 		PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* L_0 = ___0_model;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -6606,20 +6645,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_addItem_mFC6D6EB0617875EEB8BA2D
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:206>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:215>
 		return;
 	}
 
 IL_000a:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:209>
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:210>
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:211>
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:212>
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:213>
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:214>
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:215>
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:216>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:218>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:219>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:220>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:221>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:222>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:223>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:224>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:225>
 		List_1_tA4944F58357D78BB6E499557D73FF349BACB9E29* L_2 = __this->___items;
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_3 = (Item_t5124921961D408F718F306FF10C6D2DA6887FCE1*)il2cpp_codegen_object_new(Item_t5124921961D408F718F306FF10C6D2DA6887FCE1_il2cpp_TypeInfo_var);
 		Item__ctor_mF736B206D2EF7DE9064CA473353EFCC0DCFC3F44(L_3, NULL);
@@ -6654,7 +6693,7 @@ IL_000a:
 		Il2CppCodeGenWriteBarrier((void**)(&L_14->___onClick), (void*)L_15);
 		NullCheck(L_2);
 		List_1_Add_mAC61B8B222389B3FFA46CFAD4A69E4039AE1619B_inline(L_2, L_14, List_1_Add_mAC61B8B222389B3FFA46CFAD4A69E4039AE1619B_RuntimeMethod_var);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:217>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:226>
 		return;
 	}
 }
@@ -6678,7 +6717,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Item_t5124921961D408F718F306FF10C6D2DA6887FCE
 	float V_5 = 0.0f;
 	PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* G_B7_0 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:221>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:230>
 		bool L_0;
 		L_0 = MouseUtil_get_available_m409F71A2EFE9E0A8D2F2315894E78D2D6726D277(NULL);
 		if (!L_0)
@@ -6699,31 +6738,31 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Item_t5124921961D408F718F306FF10C6D2DA6887FCE
 
 IL_0015:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:223>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:232>
 		return (Item_t5124921961D408F718F306FF10C6D2DA6887FCE1*)NULL;
 	}
 
 IL_0017:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:226>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:235>
 		V_0 = ((std::numeric_limits<float>::max)());
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:227>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:236>
 		V_1 = (Item_t5124921961D408F718F306FF10C6D2DA6887FCE1*)NULL;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:229>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:238>
 		V_2 = 0;
 		goto IL_0096;
 	}
 
 IL_0023:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:231>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:240>
 		List_1_tA4944F58357D78BB6E499557D73FF349BACB9E29* L_3 = __this->___items;
 		int32_t L_4 = V_2;
 		NullCheck(L_3);
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_5;
 		L_5 = List_1_get_Item_m1442E3CBFD4D78D2EE1FFD95D176B5F34432DBFF(L_3, L_4, List_1_get_Item_m1442E3CBFD4D78D2EE1FFD95D176B5F34432DBFF_RuntimeMethod_var);
 		V_3 = L_5;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:232>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:241>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_6 = V_3;
 		if (L_6)
 		{
@@ -6778,7 +6817,7 @@ IL_003c:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:237>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:246>
 		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_17 = __this->___sceneCam;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_18;
 		L_18 = Bounds_get_center_m5B05F81CB835EB6DD8628FDA24B638F477984DC3_inline((&V_4), NULL);
@@ -6787,7 +6826,7 @@ IL_003c:
 		L_19 = Camera_WorldToScreenPoint_m26B4C8945C3B5731F1CC5944CFD96BF17126BAA3(L_17, L_18, NULL);
 		float L_20 = L_19.___z;
 		V_5 = L_20;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:238>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:247>
 		float L_21 = V_5;
 		if ((((float)L_21) <= ((float)(0.0f))))
 		{
@@ -6803,24 +6842,24 @@ IL_003c:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:243>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:252>
 		float L_24 = V_5;
 		V_0 = L_24;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:244>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:253>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_25 = V_3;
 		V_1 = L_25;
 	}
 
 IL_0092:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:229>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:238>
 		int32_t L_26 = V_2;
 		V_2 = ((int32_t)il2cpp_codegen_add(L_26, 1));
 	}
 
 IL_0096:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:229>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:238>
 		int32_t L_27 = V_2;
 		List_1_tA4944F58357D78BB6E499557D73FF349BACB9E29* L_28 = __this->___items;
 		NullCheck(L_28);
@@ -6832,7 +6871,7 @@ IL_0096:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:247>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:256>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_30 = V_1;
 		return L_30;
 	}
@@ -6850,7 +6889,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_enterItem_m2D8DC0CE0EFEDC930048
 	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* G_B8_0 = NULL;
 	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* G_B7_0 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:252>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:261>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_0 = ___0_item;
 		if (L_0)
 		{
@@ -6881,7 +6920,7 @@ IL_000c:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:254>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:263>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_4 = ___0_item;
 		NullCheck(L_4);
 		PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* L_5 = L_4->___model;
@@ -6891,7 +6930,7 @@ IL_000c:
 
 IL_0020:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:257>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:266>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_6 = ___0_item;
 		if (!L_6)
 		{
@@ -6922,7 +6961,7 @@ IL_002e:
 
 IL_0033:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:258>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:267>
 		return;
 	}
 }
@@ -6937,7 +6976,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_leaveItem_m4BC83E41181AD8C9B0E3
 	}
 	PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* G_B3_0 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:262>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:271>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_0 = ___0_item;
 		if (L_0)
 		{
@@ -6968,7 +7007,7 @@ IL_000c:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:264>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:273>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_4 = ___0_item;
 		NullCheck(L_4);
 		PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* L_5 = L_4->___model;
@@ -6978,10 +7017,10 @@ IL_000c:
 
 IL_0020:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:267>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:276>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_6 = ___0_item;
 		MainMenu_resetItem_mA9811001CADAE9336CA53E621BFCF2A6C9766958(__this, L_6, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:268>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:277>
 		return;
 	}
 }
@@ -6991,7 +7030,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_clickItem_m3C954858ED92B09DBDAF
 	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* G_B5_0 = NULL;
 	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* G_B4_0 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:272>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:281>
 		bool L_0 = __this->___loadOn;
 		if (!L_0)
 		{
@@ -6999,13 +7038,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_clickItem_m3C954858ED92B09DBDAF
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:274>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:283>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:277>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:286>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_1 = ___0_item;
 		if (!L_1)
 		{
@@ -7036,7 +7075,7 @@ IL_0017:
 
 IL_001c:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:278>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:287>
 		return;
 	}
 }
@@ -7044,7 +7083,7 @@ IL_001c:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_zoomItem_m718A1D5BBF7C7824FCC2ED384F47A3FE17485C5E (MainMenu_tF07E8AC09715C2ECF3376472A241319E70235CE0* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:282>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:291>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_0 = __this->___hoverItem;
 		if (L_0)
 		{
@@ -7052,13 +7091,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_zoomItem_m718A1D5BBF7C7824FCC2E
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:284>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:293>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:287>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:296>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_1 = __this->___hoverItem;
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_2 = __this->___hoverItem;
 		NullCheck(L_2);
@@ -7069,7 +7108,7 @@ IL_0009:
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_6;
 		L_6 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_3, L_5, NULL);
 		MainMenu_scaleItem_mEA4A98DC9ED3F37ECDB9F6FE550B1892BE6B21C2(__this, L_1, L_6, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:288>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:297>
 		return;
 	}
 }
@@ -7077,13 +7116,13 @@ IL_0009:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_resetItem_mA9811001CADAE9336CA53E621BFCF2A6C9766958 (MainMenu_tF07E8AC09715C2ECF3376472A241319E70235CE0* __this, Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* ___0_item, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:292>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:301>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_0 = ___0_item;
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_1 = ___0_item;
 		NullCheck(L_1);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_2 = L_1->___baseScale;
 		MainMenu_scaleItem_mEA4A98DC9ED3F37ECDB9F6FE550B1892BE6B21C2(__this, L_0, L_2, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:293>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:302>
 		return;
 	}
 }
@@ -7102,7 +7141,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_scaleItem_mEA4A98DC9ED3F37ECDB9
 	memset((&V_0), 0, sizeof(V_0));
 	PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* G_B3_0 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:297>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:306>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_0 = ___0_item;
 		if (L_0)
 		{
@@ -7133,13 +7172,13 @@ IL_000c:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:299>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:308>
 		return;
 	}
 
 IL_0015:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:302>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:311>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_4 = ___0_item;
 		NullCheck(L_4);
 		PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* L_5 = L_4->___model;
@@ -7148,11 +7187,11 @@ IL_0015:
 		L_6 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_5, NULL);
 		il2cpp_codegen_runtime_class_init_inline(PhobiaTween_t617F840B7C1D11C24FFAE162E093C99603405DCB_il2cpp_TypeInfo_var);
 		PhobiaTween_CancelTweens_m5F702753E269D2B434342D949CD55D0767A4EF86(L_6, ((int32_t)39), NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:303>
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:304>
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:305>
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:306>
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:307>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:312>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:313>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:314>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:315>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:316>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_7 = ___0_item;
 		NullCheck(L_7);
 		PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* L_8 = L_7->___model;
@@ -7170,7 +7209,7 @@ IL_0015:
 		Nullable_1__ctor_mE1BC9AE73CD388B6D47553BBFF1384830AAD6F4A((&L_13), L_12, Nullable_1__ctor_mE1BC9AE73CD388B6D47553BBFF1384830AAD6F4A_RuntimeMethod_var);
 		LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* L_14;
 		L_14 = PhobiaTween_Scale_m5F374249A67072F2EA29718714A75CB3A7847016(L_9, L_10, L_11, L_13, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:308>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:317>
 		return;
 	}
 }
@@ -7185,7 +7224,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_goOffset_mBE3039318EBDA349EA621
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:312>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:321>
 		bool L_0 = __this->___loadOn;
 		if (L_0)
 		{
@@ -7205,13 +7244,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_goOffset_mBE3039318EBDA349EA621
 
 IL_0016:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:314>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:323>
 		return;
 	}
 
 IL_0017:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:317>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:326>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_3 = __this->___hoverItem;
 		if (!L_3)
 		{
@@ -7219,27 +7258,27 @@ IL_0017:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:319>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:328>
 		Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* L_4 = __this->___hoverItem;
 		MainMenu_leaveItem_m4BC83E41181AD8C9B0E3CD2748A6FABB9C779A5C(__this, L_4, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:320>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:329>
 		__this->___hoverItem = (Item_t5124921961D408F718F306FF10C6D2DA6887FCE1*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___hoverItem), (void*)(Item_t5124921961D408F718F306FF10C6D2DA6887FCE1*)NULL);
 	}
 
 IL_0032:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:323>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:332>
 		__this->___loadOn = (bool)1;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:324>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:333>
 		PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* L_5 = ((UIBase_tCD5B85982419C0F1E9967BB25DACF215E2F45E89*)__this)->___playState;
 		NullCheck(L_5);
 		PlayState_set_Philia_m810B1717F1B6339865B6A17690DB6611B45CB20D_inline(L_5, (bool)1, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:325>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:334>
 		PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* L_6 = ((UIBase_tCD5B85982419C0F1E9967BB25DACF215E2F45E89*)__this)->___playState;
 		NullCheck(L_6);
 		PlayState_LoadState_m7D9CD19C1D8919BCF69D47A6504FECE5B938C504(L_6, _stringLiteralEF36B46E5F22267BC7BC2469D9FE0AD43C588D48, (0.0f), (1.0f), (5.0f), NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:326>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:335>
 		return;
 	}
 }
@@ -7247,7 +7286,7 @@ IL_0032:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float MainMenu_getCamLerp_mCA42D644AB2066BFF43605526E7ABEB271484B69 (MainMenu_tF07E8AC09715C2ECF3376472A241319E70235CE0* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:330>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:339>
 		float L_0;
 		L_0 = Time_get_unscaledDeltaTime_mF057EECA857E5C0F90A3F910D26D3EE59F27C4B5(NULL);
 		float L_1 = __this->___camTime;
@@ -7262,7 +7301,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float MainMenu_getCamLerp_mCA42D644AB2066BFF4
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MainMenu_isMouseOnScreen_mE3ECA1ECC80F968FBF9F88BBB9805504F348D95A (MainMenu_tF07E8AC09715C2ECF3376472A241319E70235CE0* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_mouse, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:335>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:344>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_0 = ___0_mouse;
 		float L_1 = L_0.___x;
 		if ((!(((float)L_1) >= ((float)(0.0f)))))
@@ -7317,14 +7356,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu_OnDestroy_m4FCD260B621A07B69E1B
 	Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* G_B2_0 = NULL;
 	PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* G_B4_0 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:340>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:349>
 		V_0 = 0;
 		goto IL_003f;
 	}
 
 IL_0004:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:342>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:351>
 		List_1_tA4944F58357D78BB6E499557D73FF349BACB9E29* L_0 = __this->___items;
 		int32_t L_1 = V_0;
 		NullCheck(L_0);
@@ -7361,7 +7400,7 @@ IL_001c:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:344>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:353>
 		List_1_tA4944F58357D78BB6E499557D73FF349BACB9E29* L_6 = __this->___items;
 		int32_t L_7 = V_0;
 		NullCheck(L_6);
@@ -7375,14 +7414,14 @@ IL_001c:
 
 IL_003b:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:340>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:349>
 		int32_t L_10 = V_0;
 		V_0 = ((int32_t)il2cpp_codegen_add(L_10, 1));
 	}
 
 IL_003f:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:340>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:349>
 		int32_t L_11 = V_0;
 		List_1_tA4944F58357D78BB6E499557D73FF349BACB9E29* L_12 = __this->___items;
 		NullCheck(L_12);
@@ -7394,7 +7433,7 @@ IL_003f:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:347>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:356>
 		return;
 	}
 }
@@ -7410,22 +7449,24 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu__ctor_mDAFB608837BA1E9254B6ECC9
 	}
 	{
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:13>
-		__this->___camX = (0.180000007f);
+		__this->___camX = (0.0900000036f);
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:14>
-		__this->___camY = (0.0799999982f);
+		__this->___camY = (0.0399999991f);
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:15>
-		__this->___camPitch = (0.800000012f);
+		__this->___camPitch = (0.400000006f);
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:16>
-		__this->___camYaw = (1.39999998f);
+		__this->___camYaw = (0.699999988f);
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:17>
 		__this->___camTime = (0.349999994f);
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:18>
-		__this->___hoverSize = (1.03999996f);
+		__this->___camAmount = (0.449999988f);
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:19>
-		__this->___hoverTime = (0.5f);
+		__this->___hoverSize = (1.03999996f);
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:20>
+		__this->___hoverTime = (0.5f);
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:21>
 		__this->___outlineScale = (1.02999997f);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:34>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:35>
 		List_1_tA4944F58357D78BB6E499557D73FF349BACB9E29* L_0 = (List_1_tA4944F58357D78BB6E499557D73FF349BACB9E29*)il2cpp_codegen_object_new(List_1_tA4944F58357D78BB6E499557D73FF349BACB9E29_il2cpp_TypeInfo_var);
 		List_1__ctor_mEFC04C83537DCC2AE54E56D695BF15AD82CFD8F9(L_0, List_1__ctor_mEFC04C83537DCC2AE54E56D695BF15AD82CFD8F9_RuntimeMethod_var);
 		__this->___items = L_0;
@@ -7446,7 +7487,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainMenu__ctor_mDAFB608837BA1E9254B6ECC9
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Item__ctor_mF736B206D2EF7DE9064CA473353EFCC0DCFC3F44 (Item_t5124921961D408F718F306FF10C6D2DA6887FCE1* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:26>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/UI/Menu/Main/MainMenu.cs:27>
 		__this->___hoverSize = (1.0f);
 		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
 		return;
@@ -22656,7 +22697,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2D
 		return L_4;
 	}
 }
-// Method Definition Index: 77344
+// Method Definition Index: 77346
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool PhobiaSound_get_IsDestroyed_m2F79A749BB1F38981BC6F990E91B1ECB6195271F_inline (PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* __this, const RuntimeMethod* method) 
 {
 	{

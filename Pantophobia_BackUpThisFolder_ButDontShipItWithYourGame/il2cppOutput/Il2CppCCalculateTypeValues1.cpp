@@ -6557,7 +6557,7 @@ struct TransformationPoint_tCAB6F579C090EE1E7AB415B72ADECA2365905013  : public R
 	float ___x;
 	float ___y;
 };
-struct U3CPerformZoomU3Ed__213_t3121E2D1C372A43F4407963CA1CC9A8BC8BC4973  : public RuntimeObject
+struct U3CPerformZoomU3Ed__216_tC632CA823C905C8DDA0290F8D31DDB25B729F624  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -32409,7 +32409,7 @@ struct ElementData_tFBB2F8A36AC7DA1C358A48316642E6E5208AEA66  : public RuntimeOb
 	String_t* ___loopType;
 	bool ___reversed;
 };
-struct U3CColorAdjustmentAnimationU3Ed__212_tE71E220DC1ED6B9D547F0C43012361E0D4A25B77  : public RuntimeObject
+struct U3CColorAdjustmentAnimationU3Ed__215_t3C4E87D825D0C5D2AD20A41EE385567FCC54C370  : public RuntimeObject
 {
 	int32_t ___U3CU3E1__state;
 	RuntimeObject* ___U3CU3E2__current;
@@ -38690,6 +38690,7 @@ struct CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18
 {
 	bool ___ortho;
 	bool ___zoom;
+	float ___zoomInt;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___bg;
 	float ___fov;
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___pos;
@@ -38705,6 +38706,7 @@ struct CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18_marshaled_pinvoke
 {
 	int32_t ___ortho;
 	int32_t ___zoom;
+	float ___zoomInt;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___bg;
 	float ___fov;
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___pos;
@@ -38720,6 +38722,7 @@ struct CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18_marshaled_com
 {
 	int32_t ___ortho;
 	int32_t ___zoom;
+	float ___zoomInt;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___bg;
 	float ___fov;
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___pos;
@@ -40403,6 +40406,7 @@ struct Long1024_tEE887C506947419DC829213E6C7483D80AF5659F
 };
 struct MainMenuEnv_t46C909A54DBC7DA79B913ECDD61E50035956402D  : public EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D
 {
+	float ___zoomInt;
 	CamState_tFF95E9C197A42ED2CFCBF280E4C2A5E6A936ED18 ___baseCam;
 	bool ___hasCam;
 	bool ___readyOn;
@@ -47294,6 +47298,7 @@ struct MainMenu_tF07E8AC09715C2ECF3376472A241319E70235CE0  : public UIBase_tCD5B
 	float ___camPitch;
 	float ___camYaw;
 	float ___camTime;
+	float ___camAmount;
 	float ___hoverSize;
 	float ___hoverTime;
 	float ___outlineScale;
@@ -61036,9 +61041,9 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize9143 = { sizeof(int32_t)+ si
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize9144;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize9144 = { sizeof(CameraConfig_tFF15A2D18505DEDA88655F015BF589C013CE3F96), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize9145;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize9145 = { sizeof(U3CColorAdjustmentAnimationU3Ed__212_tE71E220DC1ED6B9D547F0C43012361E0D4A25B77), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize9145 = { sizeof(U3CColorAdjustmentAnimationU3Ed__215_t3C4E87D825D0C5D2AD20A41EE385567FCC54C370), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize9146;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize9146 = { sizeof(U3CPerformZoomU3Ed__213_t3121E2D1C372A43F4407963CA1CC9A8BC8BC4973), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize9146 = { sizeof(U3CPerformZoomU3Ed__216_tC632CA823C905C8DDA0290F8D31DDB25B729F624), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize9147;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize9147 = { sizeof(PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244), -1, 0, 0 };
 IL2CPP_EXTERN_C_CONST Il2CppTypeDefinitionSizes g_typeDefinitionSize9148;
