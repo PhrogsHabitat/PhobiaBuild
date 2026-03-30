@@ -2395,6 +2395,7 @@ struct TextureMappingOptions_t0E1A47C529DEB45A875486256E7026E97C940DAE
 struct TransitionState_t11A09E2A9C8DD6E9636A2C1A072AA1A72C3CB871  : public RuntimeObject
 {
 	bool ___U3CDoneU3Ek__BackingField;
+	bool ___U3CLoadingIconDoneU3Ek__BackingField;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___U3CLoadFadeColorU3Ek__BackingField;
 	float ___U3CLoadFadeDurationU3Ek__BackingField;
 	float ___U3CLoadRevealDurationU3Ek__BackingField;
@@ -2405,7 +2406,9 @@ struct TransitionState_t11A09E2A9C8DD6E9636A2C1A072AA1A72C3CB871  : public Runti
 	float ___U3CLoadIconPadU3Ek__BackingField;
 	PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* ___playState;
 	Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* ___transitionRoutine;
+	Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* ___neutralCameraRoutine;
 	LoadOverlay_tB5DA511A28909C071028875C4090B448EA743A2B* ___loadOverlay;
+	bool ___loadingPresencePending;
 };
 struct TweenAction_tF69C3E9C907B1FAC52BDC1450A65DC4229E2D17D 
 {
@@ -5751,7 +5754,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Bounds_SetMinMax_m42AF5C7723
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76338
+// Method Definition Index: 76416
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimAtlas__ctor_m2161AF6F4517BF40893D91DA3DFDE429D0FB9DB1 (AnimAtlas_tA847B48465DC4D45A5930EDA426D7DB1CAA84F23* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5767,7 +5770,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimAtlas__ctor_m2161AF6F4517BF40893D91D
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76339
+// Method Definition Index: 76417
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animation__ctor_m9180C70F4282F4904A1331A764E3282B63B8ADD2 (Animation_t9C973747A2CAD9A181AC7B108308250BC32DB6EE* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5783,7 +5786,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animation__ctor_m9180C70F4282F4904A1331A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76340
+// Method Definition Index: 76418
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StageInstance__ctor_mAE40B2E1B9C87FD29AB59C1AB7E8E693F04F9899 (StageInstance_t2CF560AD9CC512896EB6B80389F9FEAFA86498C3* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5799,7 +5802,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StageInstance__ctor_mAE40B2E1B9C87FD29AB
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76341
+// Method Definition Index: 76419
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SymbolInstance__ctor_m27AA00EB3CF2B3CB9B49FE265E38F204412D05EE (SymbolInstance_t5042AEBED71CE7B0A03487A47797C81302165C0C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5815,7 +5818,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SymbolInstance__ctor_m27AA00EB3CF2B3CB9B
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76342
+// Method Definition Index: 76420
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BitmapData__ctor_m4EDE0DD3C464CF5BE0378A9F0A4C9227A982D542 (BitmapData_t46BF538F449A7B1B989E5200C7E2033D4DB7F94C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5831,7 +5834,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BitmapData__ctor_m4EDE0DD3C464CF5BE0378A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76343
+// Method Definition Index: 76421
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TransformationPoint__ctor_m556EB7D114038482D89F3DF1494C877C721C928B (TransformationPoint_tCAB6F579C090EE1E7AB415B72ADECA2365905013* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5847,7 +5850,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TransformationPoint__ctor_m556EB7D114038
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76344
+// Method Definition Index: 76422
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ColorEffects__ctor_m4D437ECA94FD88EA8E16643C279B00E1C7EC78AE (ColorEffects_tEB7236CC751A1FF28592CB747A747CCA5B16D57C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5863,7 +5866,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ColorEffects__ctor_m4D437ECA94FD88EA8E16
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76345
+// Method Definition Index: 76423
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Timeline__ctor_m91A2A9C912520CE848959B81C5733403F8909F59 (Timeline_t2D4DE692A573C287D8A94786796EE0E444710419* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5879,7 +5882,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Timeline__ctor_m91A2A9C912520CE848959B81
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76346
+// Method Definition Index: 76424
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Layer__ctor_mFADA2AD75D24F8F40394C5FCA910EF2777A2018B (Layer_tD4E19E3A23B69534AFEDA2D31F75D2FA79C61854* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5895,7 +5898,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Layer__ctor_mFADA2AD75D24F8F40394C5FCA91
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76347
+// Method Definition Index: 76425
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Frame__ctor_m678666090C48FD83810F5307AC261F036A756FAE (Frame_tEAA8F5A17A3688C84957495E6C71B2D04FD353C7* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5911,7 +5914,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Frame__ctor_m678666090C48FD83810F5307AC2
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76348
+// Method Definition Index: 76426
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Element__ctor_m9A6FA3AE1DC267B2B867F8B163AA027A844D5653 (Element_t62D2D4E860E5C00690300BF4324A5E69B7DF07A8* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5927,7 +5930,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Element__ctor_m9A6FA3AE1DC267B2B867F8B16
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76349
+// Method Definition Index: 76427
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AtlasSymbolInstance__ctor_mC72227DFDEBB56BE3B487EE4E7CF89CEACE8C83C (AtlasSymbolInstance_t6A16AA16F042FFCFD00A435F678DEF756EB33172* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5943,7 +5946,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AtlasSymbolInstance__ctor_mC72227DFDEBB5
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76350
+// Method Definition Index: 76428
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SymbolDictionary__ctor_m7C236186E3881F35C08440CE5695F71DA163DA0F (SymbolDictionary_t4F570F0C877EBDA253BE84732F1A6E5492BC0821* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5959,7 +5962,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SymbolDictionary__ctor_m7C236186E3881F35
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76351
+// Method Definition Index: 76429
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Symbol__ctor_m16CB5309CD3E4E00B50FD7FE2AE9D4E30C5560AB (Symbol_tAEFBABADFEBDDCDF14174D04CC1B0864874283A9* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5975,7 +5978,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Symbol__ctor_m16CB5309CD3E4E00B50FD7FE2A
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76352
+// Method Definition Index: 76430
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MetaData__ctor_m17AD2BF65D9C88572BA122515039C145F3B45A1A (MetaData_tB80EE907335D75673C3CB13A397314870AD18E39* __this, const RuntimeMethod* method) 
 {
 	{
@@ -5991,7 +5994,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MetaData__ctor_m17AD2BF65D9C88572BA12251
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76353
+// Method Definition Index: 76431
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpriteMap__ctor_m019E31DE66F39286240512B33B5EF5A600AB65DA (SpriteMap_t1F1A347BA8818737BD0B94B9B80CDF394A56BDE4* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6007,7 +6010,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpriteMap__ctor_m019E31DE66F39286240512B
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76354
+// Method Definition Index: 76432
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Atlas__ctor_mBA2FFB229455C03F003CF460A5216AA5C78F467A (Atlas_t91E6F6257466FCF35D67EF8298900D7A18262D4A* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6023,7 +6026,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Atlas__ctor_mBA2FFB229455C03F003CF460A52
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76355
+// Method Definition Index: 76433
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpriteData__ctor_mB82C41D59550DC2232410DB02EFA2B023CB18F44 (SpriteData_t3FB818F76E202C92565362F847583B2080AEB213* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6039,7 +6042,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpriteData__ctor_mB82C41D59550DC2232410D
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76356
+// Method Definition Index: 76434
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpriteInfo__ctor_m76BB93CBBFFA1D6E7727534C48AB03C40DE6294A (SpriteInfo_tA8F343E5ABC6639B77EF2A3A781612F271703E53* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6055,7 +6058,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpriteInfo__ctor_m76BB93CBBFFA1D6E772753
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76357
+// Method Definition Index: 76435
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpriteMapMeta__ctor_m0C97F9B8F9B8C8EF8444752CAB0AC987A8DBC7F5 (SpriteMapMeta_tD2D38784E0CDF8ED6EB88950AEA31640B3FF885D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6071,7 +6074,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpriteMapMeta__ctor_m0C97F9B8F9B8C8EF844
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76358
+// Method Definition Index: 76436
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Size__ctor_mCDCD22EE7C7278C0D25154714CE075DE1DD93499 (Size_t30E45E7B3ECB5F5E6C2AA2E284AC95ECB176E133* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6087,7 +6090,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Size__ctor_mCDCD22EE7C7278C0D25154714CE0
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76359
+// Method Definition Index: 76437
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SymbolData__ctor_m19794D2E3DD81A9ED088C3F30CF4445C00A6E9C1 (SymbolData_t5599D6619CC15A4963B36C0B0276E700138EC7B9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6115,7 +6118,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SymbolData__ctor_m19794D2E3DD81A9ED088C3
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76360
+// Method Definition Index: 76438
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TimelineData__ctor_m049D29D1341B930AB588892CF54D879551563C5F (TimelineData_t0934EE64D50DBF777C58088F42D8F1976BD645A8* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6143,7 +6146,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TimelineData__ctor_m049D29D1341B930AB588
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76361
+// Method Definition Index: 76439
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LayerData__ctor_m42EC9F2B0C3683CB9629D9996256DE0C6061DBB7 (LayerData_t740CC624159EE44DEC772DD474AF9DD49441EF46* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6178,7 +6181,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LayerData__ctor_m42EC9F2B0C3683CB9629D99
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76362
+// Method Definition Index: 76440
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void KeyframeData__ctor_mAA27A6A5C6E11150CFBBFF23DB822B1C94C60AB6 (KeyframeData_t5EA1768DDDB8169537E5FD0CB47D5F0063FAC0A4* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6213,7 +6216,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void KeyframeData__ctor_mAA27A6A5C6E11150CFBB
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76363
+// Method Definition Index: 76441
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ElementData__ctor_m067CCEF12538B19A7479F31FDF4AE6C0AA0799D9 (ElementData_tFBB2F8A36AC7DA1C358A48316642E6E5208AEA66* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6229,7 +6232,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ElementData__ctor_m067CCEF12538B19A7479F
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76364
+// Method Definition Index: 76442
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Animation_tCF831A0952F4E5559E7A143FE7D65A33E945A321* AnimationController_get_curAnim_m9182026C6EA106E70434A055AC8495A8511CDFE3 (AnimationController_t9752FE05C3ED1CFF723C7C9CB4CCE01AC1A7F23D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6238,7 +6241,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Animation_tCF831A0952F4E5559E7A143FE7D65A33E9
 		return L_0;
 	}
 }
-// Method Definition Index: 76365
+// Method Definition Index: 76443
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimationController_set_curAnim_m9EFAF0E3629CBB904C47DEE281CE4261C6B94519 (AnimationController_t9752FE05C3ED1CFF723C7C9CB4CCE01AC1A7F23D* __this, Animation_tCF831A0952F4E5559E7A143FE7D65A33E945A321* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -6249,7 +6252,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimationController_set_curAnim_m9EFAF0E
 		return;
 	}
 }
-// Method Definition Index: 76366
+// Method Definition Index: 76444
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AnimationController_get_finished_mDB3522A0F820A09F1C9BF6318B95680F3430EE55 (AnimationController_t9752FE05C3ED1CFF723C7C9CB4CCE01AC1A7F23D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6258,7 +6261,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AnimationController_get_finished_mDB3522
 		return L_0;
 	}
 }
-// Method Definition Index: 76367
+// Method Definition Index: 76445
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimationController_set_finished_m313E187929F42A07473E25379D05E4AF135A8B64 (AnimationController_t9752FE05C3ED1CFF723C7C9CB4CCE01AC1A7F23D* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -6268,7 +6271,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimationController_set_finished_m313E18
 		return;
 	}
 }
-// Method Definition Index: 76368
+// Method Definition Index: 76446
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* AnimationController_get_currentAnimationName_m177BC54EE01BE08F74830FACCD303C39520F848A (AnimationController_t9752FE05C3ED1CFF723C7C9CB4CCE01AC1A7F23D* __this, const RuntimeMethod* method) 
 {
 	Animation_tCF831A0952F4E5559E7A143FE7D65A33E945A321* G_B2_0 = NULL;
@@ -6296,7 +6299,7 @@ IL_000c:
 		return L_2;
 	}
 }
-// Method Definition Index: 76369
+// Method Definition Index: 76447
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimationController__ctor_mFA9D6450A9F73E1A95AB8243BE4FB23659572CB3 (AnimationController_t9752FE05C3ED1CFF723C7C9CB4CCE01AC1A7F23D* __this, Action_1_tD70E85EAE1F45E5719C8E4FF9A4E894FEDFB6354* ___0_applyFrame, Func_1_t11C3830580201E0A3A3A2C76523B7905EF40BCF7* ___1_getSpeedMultiplier, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6326,7 +6329,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimationController__ctor_mFA9D6450A9F73
 		return;
 	}
 }
-// Method Definition Index: 76370
+// Method Definition Index: 76448
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimationController_Add_mF6097C4E67E294B7FBAA4ECA0650542EB6BD4BBF (AnimationController_t9752FE05C3ED1CFF723C7C9CB4CCE01AC1A7F23D* __this, String_t* ___0_name, SymbolData_t5599D6619CC15A4963B36C0B0276E700138EC7B9* ___1_symbol, float ___2_frameRate, bool ___3_looped, Dictionary_2_t5C8F46F5D57502270DD9E1DA8303B23C7FE85588* ___4_frameLabels, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6453,7 +6456,7 @@ IL_0059:
 		return;
 	}
 }
-// Method Definition Index: 76371
+// Method Definition Index: 76449
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimationController_Play_mDAA0799106D48E7BE28184E901942427EA2CE09B (AnimationController_t9752FE05C3ED1CFF723C7C9CB4CCE01AC1A7F23D* __this, String_t* ___0_name, bool ___1_forceRestart, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___2_onComplete, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6563,7 +6566,7 @@ IL_0067:
 		return;
 	}
 }
-// Method Definition Index: 76372
+// Method Definition Index: 76450
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimationController_Update_mD5F75CB9458263FD8895E6AE27DAE65A684F7B5C (AnimationController_t9752FE05C3ED1CFF723C7C9CB4CCE01AC1A7F23D* __this, float ___0_deltaTime, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
@@ -6668,7 +6671,7 @@ IL_007b:
 		return;
 	}
 }
-// Method Definition Index: 76373
+// Method Definition Index: 76451
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimationController_StepFrame_m86EBFD628CAC789F17BFC5C78FA0E9989D30FCA6 (AnimationController_t9752FE05C3ED1CFF723C7C9CB4CCE01AC1A7F23D* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -6863,7 +6866,7 @@ IL_00f9:
 		return;
 	}
 }
-// Method Definition Index: 76374
+// Method Definition Index: 76452
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AnimationController_ApplyCurrentFrame_m1B0EBF50CC6CCA608315A20846CC81923FB2FE3B (AnimationController_t9752FE05C3ED1CFF723C7C9CB4CCE01AC1A7F23D* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6929,7 +6932,7 @@ IL_0041:
 		return;
 	}
 }
-// Method Definition Index: 76375
+// Method Definition Index: 76453
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_tB0C5440CC6F34CDCD931FE43B76957C8A5916DF2* AnimationController_GetFrameElements_m42988E63707D11748CFB149B8A9AFD192E96F065 (AnimationController_t9752FE05C3ED1CFF723C7C9CB4CCE01AC1A7F23D* __this, SymbolData_t5599D6619CC15A4963B36C0B0276E700138EC7B9* ___0_symbol, int32_t ___1_frame, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7037,7 +7040,7 @@ IL_0052:
 		return L_14;
 	}
 }
-// Method Definition Index: 76376
+// Method Definition Index: 76454
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR KeyframeData_t5EA1768DDDB8169537E5FD0CB47D5F0063FAC0A4* AnimationController_GetKeyframeAtFrame_m830BBF819DA9B1CCF7342A72DD2EA381C55039B5 (AnimationController_t9752FE05C3ED1CFF723C7C9CB4CCE01AC1A7F23D* __this, LayerData_t740CC624159EE44DEC772DD474AF9DD49441EF46* ___0_layer, int32_t ___1_frame, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7148,7 +7151,7 @@ IL_004e:
 		return L_14;
 	}
 }
-// Method Definition Index: 76377
+// Method Definition Index: 76455
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AnimationController_GetAnimationLength_m8A088265D07C5625C75933199ECEB3501E5A8B9A (AnimationController_t9752FE05C3ED1CFF723C7C9CB4CCE01AC1A7F23D* __this, Animation_tCF831A0952F4E5559E7A143FE7D65A33E945A321* ___0_anim, const RuntimeMethod* method) 
 {
 	{
@@ -7163,7 +7166,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t AnimationController_GetAnimationLengt
 		return L_3;
 	}
 }
-// Method Definition Index: 76378
+// Method Definition Index: 76456
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AnimationController_HasAnimation_m05C3F81B2D1081B9731C10AEA89E9F562E45D2E4 (AnimationController_t9752FE05C3ED1CFF723C7C9CB4CCE01AC1A7F23D* __this, String_t* ___0_name, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7182,7 +7185,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool AnimationController_HasAnimation_m05C3F8
 		return L_2;
 	}
 }
-// Method Definition Index: 76379
+// Method Definition Index: 76457
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* AnimationController_GetAnimationNames_m9A88B31282BAF1F2AC2EFD737532860D824E9CF0 (AnimationController_t9752FE05C3ED1CFF723C7C9CB4CCE01AC1A7F23D* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7212,7 +7215,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76380
+// Method Definition Index: 76458
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animation__ctor_m6793383FFB0C719E6EA3DC87B2F41CC06057BD88 (Animation_tCF831A0952F4E5559E7A143FE7D65A33E945A321* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7240,7 +7243,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animation__ctor_m6793383FFB0C719E6EA3DC8
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76381
+// Method Definition Index: 76459
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_ClearCache_m8998EC9E1BF3C7D71D5BE5D22B10BD50FAAECC21 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7268,7 +7271,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_ClearCache_m8998EC9E1BF3C7D7
 		return;
 	}
 }
-// Method Definition Index: 76382
+// Method Definition Index: 76460
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ValueTuple_3_t1A3956B782758FC028515D772875B7F3F2AAD307 PhobiaModel_GetCacheStats_mA0F436BDD6B7BC955F97029A427770DDEF9DC4E5 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7318,7 +7321,7 @@ IL_0028:
 		return L_8;
 	}
 }
-// Method Definition Index: 76383
+// Method Definition Index: 76461
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ModelConfig_t584CE4621E3D6EF2C1E8A0499A38E9777B9F25AB* PhobiaModel_get_Config_m38BFE1C40BE7B0C14E72414E45D13B416B9519EC (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	ModelConfig_t584CE4621E3D6EF2C1E8A0499A38E9777B9F25AB* V_0 = NULL;
@@ -7351,7 +7354,7 @@ IL_0018:
 		return G_B2_0;
 	}
 }
-// Method Definition Index: 76384
+// Method Definition Index: 76462
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_set_Config_m3144E16D8FCE72593882A9D00903B5A51EE7C9B3 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, ModelConfig_t584CE4621E3D6EF2C1E8A0499A38E9777B9F25AB* ___0_value, const RuntimeMethod* method) 
 {
 	ModelConfig_t584CE4621E3D6EF2C1E8A0499A38E9777B9F25AB* G_B2_0 = NULL;
@@ -7389,7 +7392,7 @@ IL_000b:
 		return;
 	}
 }
-// Method Definition Index: 76385
+// Method Definition Index: 76463
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* PhobiaModel_get_ModelInstance_m7D3B0087D86A7A4EA03F5C4CB3387A269C276CB8 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7421,7 +7424,7 @@ IL_0015:
 		return L_3;
 	}
 }
-// Method Definition Index: 76386
+// Method Definition Index: 76464
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Mesh_t6D9C539763A09BC2B12AEAEF36F6DFFC98AE63D4* PhobiaModel_get_Mesh_m7E6E2A1F96B753C86B94F15BB605DB832EA38618 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7474,7 +7477,7 @@ IL_0020:
 		return L_6;
 	}
 }
-// Method Definition Index: 76387
+// Method Definition Index: 76465
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaModel_get_IsSkinned_mE7BCEAE819B1CAD0B83AF1F9EF936CEED1E368E7 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7492,7 +7495,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaModel_get_IsSkinned_mE7BCEAE819B1C
 		return L_1;
 	}
 }
-// Method Definition Index: 76388
+// Method Definition Index: 76466
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* PhobiaModel_get_Animator_m41FD601F04423E55F1199D66F3201B6E233C853B (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7501,7 +7504,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Animator_t8A52E42AE54F76681838FE9E632683EF395
 		return L_0;
 	}
 }
-// Method Definition Index: 76389
+// Method Definition Index: 76467
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RendererU5BU5D_t32FDD782F67917B2291EA4FF242719877440A02A* PhobiaModel_get_Renderers_m4369E15E9903D479AB812161951D6B925CADF4F6 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7510,7 +7513,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RendererU5BU5D_t32FDD782F67917B2291EA4FF24271
 		return L_0;
 	}
 }
-// Method Definition Index: 76390
+// Method Definition Index: 76468
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* PhobiaModel_get_CurrentAnimation_mB32510201DE371E17E0627E90A98751BA94A9239 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7519,7 +7522,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* PhobiaModel_get_CurrentAnimation_mB
 		return L_0;
 	}
 }
-// Method Definition Index: 76391
+// Method Definition Index: 76469
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_set_CurrentAnimation_m510C62C33A2993913CDC20DE689E4D8B81FAA6FB (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -7530,7 +7533,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_set_CurrentAnimation_m510C62
 		return;
 	}
 }
-// Method Definition Index: 76392
+// Method Definition Index: 76470
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaModel_get_OutlineOn_m3A2335D12DE690E40F6FD92F7627480584A92C2A (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7539,7 +7542,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaModel_get_OutlineOn_m3A2335D12DE69
 		return L_0;
 	}
 }
-// Method Definition Index: 76393
+// Method Definition Index: 76471
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_set_OutlineOn_mAF8AA4B917BB614B70053D6C2BE9B2359C8F1371 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -7567,7 +7570,7 @@ IL_0015:
 		return;
 	}
 }
-// Method Definition Index: 76394
+// Method Definition Index: 76472
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F PhobiaModel_get_OutlineColor_m3387C19094283EC4EF653C2F2C5249FD2B88A87A (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7576,7 +7579,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C
 		return L_0;
 	}
 }
-// Method Definition Index: 76395
+// Method Definition Index: 76473
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_set_OutlineColor_m8B479E39DFDC3DE2B20A297F4DF8A7688E7A58CF (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -7605,7 +7608,7 @@ IL_0022:
 		return;
 	}
 }
-// Method Definition Index: 76396
+// Method Definition Index: 76474
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PhobiaModel_get_OutlineScale_mAE7080818F1D57FA4021F391F40E8A485FAA0F46 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7614,7 +7617,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PhobiaModel_get_OutlineScale_mAE7080818
 		return L_0;
 	}
 }
-// Method Definition Index: 76397
+// Method Definition Index: 76475
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_set_OutlineScale_m4B7706B21ECF44C42F87EA6450E9BBEEEA64DD44 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -7647,7 +7650,7 @@ IL_0032:
 		return;
 	}
 }
-// Method Definition Index: 76398
+// Method Definition Index: 76476
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PhobiaModel_get_X_mB381DEC2DF527FFEFDA65A98DB6FD77E37A7E819 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7661,7 +7664,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PhobiaModel_get_X_mB381DEC2DF527FFEFDA6
 		return L_2;
 	}
 }
-// Method Definition Index: 76399
+// Method Definition Index: 76477
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_set_X_m34987737928EFCB4A8B096B7F45AE744F168523E (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
@@ -7687,7 +7690,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_set_X_m34987737928EFCB4A8B09
 		return;
 	}
 }
-// Method Definition Index: 76400
+// Method Definition Index: 76478
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PhobiaModel_get_Y_m3EF490E7E0B8419A6CBBBB316AC80E0A2A54EE64 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7701,7 +7704,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PhobiaModel_get_Y_m3EF490E7E0B8419A6CBB
 		return L_2;
 	}
 }
-// Method Definition Index: 76401
+// Method Definition Index: 76479
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_set_Y_mDD7FDE53E37C85BB3ACF361170B83352571EF787 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
@@ -7727,7 +7730,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_set_Y_mDD7FDE53E37C85BB3ACF3
 		return;
 	}
 }
-// Method Definition Index: 76402
+// Method Definition Index: 76480
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PhobiaModel_get_Z_mFE44017D83ACC0043E5EF33EB8DDC804FBA9F0B5 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7741,7 +7744,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PhobiaModel_get_Z_mFE44017D83ACC0043E5E
 		return L_2;
 	}
 }
-// Method Definition Index: 76403
+// Method Definition Index: 76481
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_set_Z_m3228DD5D01D5FB4EB86B242A0C40E2F71A861B54 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
@@ -7767,7 +7770,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_set_Z_m3228DD5D01D5FB4EB86B2
 		return;
 	}
 }
-// Method Definition Index: 76404
+// Method Definition Index: 76482
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaModel_get_IsVisible_mB2DFCC24374D102CFF851FCF89359E8CB3DEED49 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7841,7 +7844,7 @@ IL_0029:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 76405
+// Method Definition Index: 76483
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaModel_get_IsAnimationPlaying_m1A63D412CB5752C4BF91F80BAD38E4F8756F12F5 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7930,7 +7933,7 @@ IL_0066:
 		return (bool)1;
 	}
 }
-// Method Definition Index: 76406
+// Method Definition Index: 76484
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaModel_TryGetBounds_m946E568D4819D0E9CE807191456C877996F9E919 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3* ___0_bounds, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8029,7 +8032,7 @@ IL_0042:
 		return L_17;
 	}
 }
-// Method Definition Index: 76407
+// Method Definition Index: 76485
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* PhobiaModel_Create_m602E1276FEBBA5BC58F3C285D18D3799A3836869 (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_position, String_t* ___1_modelPath, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___2_parent, ModelConfig_t584CE4621E3D6EF2C1E8A0499A38E9777B9F25AB* ___3_config, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8119,7 +8122,7 @@ IL_0048:
 		return L_19;
 	}
 }
-// Method Definition Index: 76408
+// Method Definition Index: 76486
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* PhobiaModel_CreateCharacter_m1EE6EF920ED71733D8BA61B59938B7586137FA1A (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_position, String_t* ___1_modelPath, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___2_parent, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8145,7 +8148,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB991
 		return L_5;
 	}
 }
-// Method Definition Index: 76409
+// Method Definition Index: 76487
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* PhobiaModel_CreateStatic_mDDAC9DE70A254E9A011CCD1F083955CA7B4AF789 (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_position, String_t* ___1_modelPath, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___2_parent, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8171,7 +8174,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB991
 		return L_5;
 	}
 }
-// Method Definition Index: 76410
+// Method Definition Index: 76488
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_Awake_m8B5FFFC4F28A936F121A74FD60E66C6B24F227D6 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	{
@@ -8185,7 +8188,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_Awake_m8B5FFFC4F28A936F121A7
 		return;
 	}
 }
-// Method Definition Index: 76411
+// Method Definition Index: 76489
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_LoadModel_m369878BB1265AD849DE4B79193E0BADD6A466C3E (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, String_t* ___0_modelPath, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8341,7 +8344,7 @@ IL_00a5:
 		return;
 	}
 }
-// Method Definition Index: 76412
+// Method Definition Index: 76490
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_InstantiateModel_m50E5903F557B756B3FB1EAE6B0FCF5A594370202 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_modelPrefab, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8399,7 +8402,7 @@ IL_005a:
 		return;
 	}
 }
-// Method Definition Index: 76413
+// Method Definition Index: 76491
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_PlayAnimation_m1EA35FC4205895B4BB7B9CD6E3B3433946DDA7D6 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, String_t* ___0_animationName, float ___1_transitionTime, Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01 ___2_shouldLoop, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8750,7 +8753,7 @@ IL_0163:
 		return;
 	}
 }
-// Method Definition Index: 76414
+// Method Definition Index: 76492
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_StopAnimation_mC29DF8F54EEB042B5CFE9528C7324B448675D02C (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8800,7 +8803,7 @@ IL_0032:
 		return;
 	}
 }
-// Method Definition Index: 76415
+// Method Definition Index: 76493
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_ResumeAnimation_mBA8ABF7D1C70C6BCA6DBAC57F208B4A130364E56 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8850,7 +8853,7 @@ IL_0032:
 		return;
 	}
 }
-// Method Definition Index: 76416
+// Method Definition Index: 76494
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_SetAnimationSpeed_mBC804464AA5B3E3A7EA749746D255219563552D2 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, float ___0_speed, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8919,7 +8922,7 @@ IL_004d:
 		return;
 	}
 }
-// Method Definition Index: 76417
+// Method Definition Index: 76495
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_SetMaterial_m0A0C002A5882CEA4E67C98B22AE84EFA9065F874 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___0_newMaterial, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9052,7 +9055,7 @@ IL_004d:
 		return;
 	}
 }
-// Method Definition Index: 76418
+// Method Definition Index: 76496
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_SetMaterialProperty_mB48A129CEAB29DD327206088824E009C4320C3EF (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, String_t* ___0_property, float ___1_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9187,7 +9190,7 @@ IL_0051:
 		return;
 	}
 }
-// Method Definition Index: 76419
+// Method Definition Index: 76497
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_SetMaterialProperty_m07FEA519369C55C305ACD374DF41F258C987B0BF (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, String_t* ___0_property, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___1_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9322,7 +9325,7 @@ IL_0051:
 		return;
 	}
 }
-// Method Definition Index: 76420
+// Method Definition Index: 76498
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_SetMaterialProperty_mB7ABF6AAD63D3913D89A4005428997021D812E1D (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, String_t* ___0_property, Texture_t791CBB51219779964E0E8A2ED7C1AA5F92A4A700* ___1_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9457,7 +9460,7 @@ IL_0051:
 		return;
 	}
 }
-// Method Definition Index: 76421
+// Method Definition Index: 76499
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_SetVisible_mB4D20A849DEB805C19FC212A2DB20167FFA5C002 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, bool ___0_visible, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9524,7 +9527,7 @@ IL_0026:
 		return;
 	}
 }
-// Method Definition Index: 76422
+// Method Definition Index: 76500
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_Fade_mFED3EBC5970350858B8C3013442ED42FCAA7028A (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, float ___0_targetAlpha, float ___1_duration, const RuntimeMethod* method) 
 {
 	{
@@ -9539,7 +9542,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_Fade_mFED3EBC5970350858B8C30
 		return;
 	}
 }
-// Method Definition Index: 76423
+// Method Definition Index: 76501
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* PhobiaModel_FadeRoutine_m1395A78EB66DABB0A606E77ED9D7A7508230668E (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, float ___0_targetAlpha, float ___1_duration, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9566,7 +9569,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* PhobiaModel_FadeRoutine_m1395A
 		return L_4;
 	}
 }
-// Method Definition Index: 76424
+// Method Definition Index: 76502
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_SetPosition_m0EB13947C08EE91F6F0EE39583AD06ACA7EBF0BE (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_position, const RuntimeMethod* method) 
 {
 	{
@@ -9580,7 +9583,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_SetPosition_m0EB13947C08EE91
 		return;
 	}
 }
-// Method Definition Index: 76425
+// Method Definition Index: 76503
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_SetRotation_m6880E6586EAD98620B894F1F8065B28951AF6184 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 ___0_rotation, const RuntimeMethod* method) 
 {
 	{
@@ -9594,7 +9597,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_SetRotation_m6880E6586EAD986
 		return;
 	}
 }
-// Method Definition Index: 76426
+// Method Definition Index: 76504
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_SetRotation_mC4221E7B2CD58EBEBEBA7A97A5110287C348A9FA (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_eulerAngles, const RuntimeMethod* method) 
 {
 	{
@@ -9610,7 +9613,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_SetRotation_mC4221E7B2CD58EB
 		return;
 	}
 }
-// Method Definition Index: 76427
+// Method Definition Index: 76505
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_SetScale_m9F5A1D279CA687989A60D96F845C419D75AB301E (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_scale, const RuntimeMethod* method) 
 {
 	{
@@ -9624,7 +9627,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_SetScale_m9F5A1D279CA687989A
 		return;
 	}
 }
-// Method Definition Index: 76428
+// Method Definition Index: 76506
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_SetScale_m713015C4C5BEAB28EF0090C7AA32802BA4914957 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, float ___0_uniformScale, const RuntimeMethod* method) 
 {
 	{
@@ -9642,7 +9645,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_SetScale_m713015C4C5BEAB28EF
 		return;
 	}
 }
-// Method Definition Index: 76429
+// Method Definition Index: 76507
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_ResetTransform_mDAF1591E3FA3AF3D1A9F5E5C8F501D8B777A7E34 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9671,7 +9674,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_ResetTransform_mDAF1591E3FA3
 		return;
 	}
 }
-// Method Definition Index: 76430
+// Method Definition Index: 76508
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* PhobiaModel_LoadModelPrefab_mD4DCA064FB98416A317E607A492206A29C10AE13 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, String_t* ___0_modelPath, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9791,7 +9794,7 @@ IL_004f:
 		return L_19;
 	}
 }
-// Method Definition Index: 76431
+// Method Definition Index: 76509
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaModel_PrefabHasAnimator_mDFE8A7107B31F28ED3A40F960B545486A8DB3321 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_prefab, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9828,7 +9831,7 @@ IL_0017:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 76432
+// Method Definition Index: 76510
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* PhobiaModel_GetFallbackModelPath_m76BC9E77316EDBE386AF77F6931C9ECE569E1922 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, String_t* ___0_modelPath, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9895,7 +9898,7 @@ IL_0050:
 		return (String_t*)NULL;
 	}
 }
-// Method Definition Index: 76433
+// Method Definition Index: 76511
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_CacheAnimationClips_mADB689BD716B4A057F20B9C885FDFD5E430377B4 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, String_t* ___0_modelPath, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9933,7 +9936,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_CacheAnimationClips_mADB689B
 		return;
 	}
 }
-// Method Definition Index: 76434
+// Method Definition Index: 76512
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_AddAnimationClips_m73CBF47EBE5621F890510A8F359A587165FBCA69 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, String_t* ___0_modelPath, List_1_t8719F82490DCDF6DB697DBD7FDEFED1F6F7B083E* ___1_clips, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10065,7 +10068,7 @@ IL_006c:
 		return;
 	}
 }
-// Method Definition Index: 76435
+// Method Definition Index: 76513
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaModel_TryPlayAnimatorController_m55D4E809FE5290D45C368329D400FE257EC54571 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, String_t* ___0_animationName, float ___1_transitionTime, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10206,7 +10209,7 @@ IL_00a8:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 76436
+// Method Definition Index: 76514
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712* PhobiaModel_FindAnimationClip_m6DA99E6D2CA308B6A370ECB491C90D20C987AA05 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, String_t* ___0_animationName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10359,7 +10362,7 @@ IL_009f:
 		return (AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712*)NULL;
 	}
 }
-// Method Definition Index: 76437
+// Method Definition Index: 76515
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaModel_AnimationNameMatches_m4B3D966FBDA8937AC538CFEFEDCD89B076632B32 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712* ___0_clip, String_t* ___1_animationName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10395,7 +10398,7 @@ IL_0017:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 76438
+// Method Definition Index: 76516
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_PlayClipDirectly_mF8081C679E6BF9538F4F78CAFD4240388ED981E9 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712* ___0_clip, bool ___1_shouldLoop, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10551,7 +10554,7 @@ IL_012c:
 		return;
 	}
 }
-// Method Definition Index: 76439
+// Method Definition Index: 76517
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* PhobiaModel_LoopDirectAnimation_mDF3283B2FA232865445B2902AFC8D73C99A2F3F4 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, float ___0_clipLength, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10574,7 +10577,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* PhobiaModel_LoopDirectAnimatio
 		return L_2;
 	}
 }
-// Method Definition Index: 76440
+// Method Definition Index: 76518
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_EnsureAnimatorForDirectPlayback_m61986F2D598A8D7D824F487AAB722192DCB0C238 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10753,7 +10756,7 @@ IL_0091:
 		return;
 	}
 }
-// Method Definition Index: 76441
+// Method Definition Index: 76519
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* PhobiaModel_FindAvatar_m8BF216CEE2C493EA5366F65C429B5493A6D6D35E (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10822,7 +10825,7 @@ IL_0039:
 		return L_9;
 	}
 }
-// Method Definition Index: 76442
+// Method Definition Index: 76520
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_CacheComponentsFrom_mB945A9DE450CF6FA0F82DA139D1E2518EC9A76C6 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_root, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10893,7 +10896,7 @@ IL_000a:
 		return;
 	}
 }
-// Method Definition Index: 76443
+// Method Definition Index: 76521
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_EnsureOutline_m447471D64839BA6C99D892D1D3BD03D9B4DC1975 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11109,7 +11112,7 @@ IL_00a3:
 		return;
 	}
 }
-// Method Definition Index: 76444
+// Method Definition Index: 76522
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Shader_tADC867D36B7876EE22427FAA2CE485105F4EE692* PhobiaModel_GetOutlineShader_m61A7D9A1B07BC84CA5D2E33F14A7C70C29270C80 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11173,7 +11176,7 @@ IL_0034:
 		return G_B4_0;
 	}
 }
-// Method Definition Index: 76445
+// Method Definition Index: 76523
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_CloneOutline_mE1AEE2140B28D35FF78886D324662D0577FEC8B7 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* ___0_source, List_1_t991BBC5A1D51F59A450367DF944DAA207F22D06D* ___1_parts, List_1_tD435DCC2A88E36DFC551EA5392CE0182F0C50E93* ___2_renderers, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11332,7 +11335,7 @@ IL_0029:
 		return;
 	}
 }
-// Method Definition Index: 76446
+// Method Definition Index: 76524
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_CloneOutline_mDE8C708BF2CA788257D2458FB5AB12E8F600FF56 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, SkinnedMeshRenderer_t020C4E8648EA1C4C6BA5C41502919B387E7E1C2E* ___0_source, List_1_t991BBC5A1D51F59A450367DF944DAA207F22D06D* ___1_parts, List_1_tD435DCC2A88E36DFC551EA5392CE0182F0C50E93* ___2_renderers, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11485,7 +11488,7 @@ IL_0018:
 		return;
 	}
 }
-// Method Definition Index: 76447
+// Method Definition Index: 76525
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MaterialU5BU5D_t2B1D11C42DB07A4400C0535F92DBB87A2E346D3D* PhobiaModel_GetOutlineMaterials_mC7F4BA99A7038253CB2B8B1C3ADDCA7D6B5A3763 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, int32_t ___0_count, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11542,7 +11545,7 @@ IL_0020:
 		return L_10;
 	}
 }
-// Method Definition Index: 76448
+// Method Definition Index: 76526
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_SetupOutlineRenderer_m5AD08827ED9800D376F758EEED7DC618ED44307C (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, Renderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF* ___0_renderer, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11589,7 +11592,7 @@ IL_000a:
 		return;
 	}
 }
-// Method Definition Index: 76449
+// Method Definition Index: 76527
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_ApplyOutlineStyle_mBAA9811E9C245FD1C343C179C2EF7C53D91BE1D3 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11769,7 +11772,7 @@ IL_008e:
 		return;
 	}
 }
-// Method Definition Index: 76450
+// Method Definition Index: 76528
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaModel_ApplyNativeOutline_mB94ACA19F29ADB8CA3995BD0C9F546020D6A0A95 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___0_material, float ___1_width, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12091,7 +12094,7 @@ IL_0135:
 		return (bool)1;
 	}
 }
-// Method Definition Index: 76451
+// Method Definition Index: 76529
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_ApplyFallbackOutline_m030CCA97695A0C957BFFD73BC7F7748489FC5209 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___0_material, float ___1_width, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12286,7 +12289,7 @@ IL_00eb:
 		return;
 	}
 }
-// Method Definition Index: 76452
+// Method Definition Index: 76530
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_ApplyOutlineScale_m097386E81617694DFBFF0EEEC0B59DF997805CB5 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12357,7 +12360,7 @@ IL_0035:
 		return;
 	}
 }
-// Method Definition Index: 76453
+// Method Definition Index: 76531
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_SetOutlineState_mFCEFFFF6397D1BAE42C5D4FA88273A3E0E6A8A67 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, bool ___0_visible, const RuntimeMethod* method) 
 {
 	PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* G_B2_0 = NULL;
@@ -12399,7 +12402,7 @@ IL_001c:
 		return;
 	}
 }
-// Method Definition Index: 76454
+// Method Definition Index: 76532
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_SetOutlineRenderers_mC5961748ED663E85F63033F5540D9504416FFEE6 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, bool ___0_visible, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12466,7 +12469,7 @@ IL_0026:
 		return;
 	}
 }
-// Method Definition Index: 76455
+// Method Definition Index: 76533
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_ClearOutline_m68FE54E79ACB5D8FA498A5278AB69D589C1D7F13 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12621,7 +12624,7 @@ IL_009d:
 		return;
 	}
 }
-// Method Definition Index: 76456
+// Method Definition Index: 76534
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_ApplyConfiguration_m9CA543FD487D6311A4C9333D130B2A101FD172B7 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12806,7 +12809,7 @@ IL_00d3:
 		return;
 	}
 }
-// Method Definition Index: 76457
+// Method Definition Index: 76535
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_ClearModelInstance_mC0093359AF05C9FC48EDA1D58A8376D7EA7E420F (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12891,7 +12894,7 @@ IL_003a:
 		return;
 	}
 }
-// Method Definition Index: 76458
+// Method Definition Index: 76536
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_OnDestroy_mDEC5A1CCE8C754B2F8C9E75CB2AFD20E7B5CFCE7 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	{
@@ -12903,7 +12906,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_OnDestroy_mDEC5A1CCE8C754B2F
 		return;
 	}
 }
-// Method Definition Index: 76459
+// Method Definition Index: 76537
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_DestroyDirectAnimationGraph_m8A56A050BA02FCA31C2E55204A988D6C53260919 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	{
@@ -12952,7 +12955,7 @@ IL_003e:
 		return;
 	}
 }
-// Method Definition Index: 76460
+// Method Definition Index: 76538
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel_EnablePhysics_m7C28A8F7DD715077929AFB4F5BB83EA85991CEE7 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, bool ___0_enable, bool ___1_isKinematic, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13107,7 +13110,7 @@ IL_0091:
 		return;
 	}
 }
-// Method Definition Index: 76461
+// Method Definition Index: 76539
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel__ctor_m7129BF05B1F7D5084DBC88AD66485C2E96A127FA (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13145,7 +13148,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel__ctor_m7129BF05B1F7D5084DBC8
 		return;
 	}
 }
-// Method Definition Index: 76462
+// Method Definition Index: 76540
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel__cctor_m7EC09A1CFBB4795DAB000AC0CDD81B8E2FD13442 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13184,7 +13187,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaModel__cctor_m7EC09A1CFBB4795DAB00
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76463
+// Method Definition Index: 76541
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ModelConfig_t584CE4621E3D6EF2C1E8A0499A38E9777B9F25AB* ModelConfig_CreateDefault_m6483A2AB6A1F18538F54B5C305EBF2C008A54C37 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13200,7 +13203,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ModelConfig_t584CE4621E3D6EF2C1E8A0499A38E977
 		return L_0;
 	}
 }
-// Method Definition Index: 76464
+// Method Definition Index: 76542
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ModelConfig_t584CE4621E3D6EF2C1E8A0499A38E9777B9F25AB* ModelConfig_CreateCharacterConfig_mE827601EBACDEDB7D8B0D739D696AF137C444616 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13238,7 +13241,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ModelConfig_t584CE4621E3D6EF2C1E8A0499A38E977
 		return L_5;
 	}
 }
-// Method Definition Index: 76465
+// Method Definition Index: 76543
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ModelConfig_t584CE4621E3D6EF2C1E8A0499A38E9777B9F25AB* ModelConfig_CreateStaticConfig_m0FFFC79BCEB3AA1B15162FE074B6E6DAA90FE6C4 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13272,7 +13275,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ModelConfig_t584CE4621E3D6EF2C1E8A0499A38E977
 		return L_4;
 	}
 }
-// Method Definition Index: 76466
+// Method Definition Index: 76544
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ModelConfig__ctor_mCA29BE0D1CD9C906D4BD21B4BD212A2FAAFB527E (ModelConfig_t584CE4621E3D6EF2C1E8A0499A38E9777B9F25AB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13306,7 +13309,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ModelConfig__ctor_mCA29BE0D1CD9C906D4BD2
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76467
+// Method Definition Index: 76545
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__cctor_mB6C1FFC56CC2D072214E0C9E7F6C3E511B72BC0C (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13323,7 +13326,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__cctor_mB6C1FFC56CC2D072214E0C9E
 		return;
 	}
 }
-// Method Definition Index: 76468
+// Method Definition Index: 76546
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_mB48AD717B19A1B64D5EF318E1074580C06BB0C44 (U3CU3Ec_t8AC6F8E68697DA2EC07B27122B89A66B8F5D9C5E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13331,7 +13334,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_mB48AD717B19A1B64D5EF318E1
 		return;
 	}
 }
-// Method Definition Index: 76469
+// Method Definition Index: 76547
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* U3CU3Ec_U3CPlayAnimationU3Eb__72_0_m2A9B0EC1D0126F676C7870678628260C170856BD (U3CU3Ec_t8AC6F8E68697DA2EC07B27122B89A66B8F5D9C5E* __this, AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712* ___0_resourceClip, const RuntimeMethod* method) 
 {
 	{
@@ -13343,7 +13346,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* U3CU3Ec_U3CPlayAnimationU3Eb__72_0_
 		return L_1;
 	}
 }
-// Method Definition Index: 76470
+// Method Definition Index: 76548
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CFindAvatarU3Eb__100_0_mDEB2DD5DBAC702A990465DDE4BA7FE9727A7DB01 (U3CU3Ec_t8AC6F8E68697DA2EC07B27122B89A66B8F5D9C5E* __this, Avatar_t7861E57EEE2CF8CC61BD63C09737BA22F7ABCA0F* ___0_avatar, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13384,7 +13387,7 @@ IL_0010:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76471
+// Method Definition Index: 76549
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass93_0__ctor_m6358594EE47969A82F5CAE7DC8E56B8BE08DF3F5 (U3CU3Ec__DisplayClass93_0_tFE29F0F7F90749ADB63B158FBF3612178CB7D369* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13392,7 +13395,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass93_0__ctor_m6358594
 		return;
 	}
 }
-// Method Definition Index: 76472
+// Method Definition Index: 76550
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec__DisplayClass93_0_U3CAddAnimationClipsU3Eb__0_mC1602AC5BA1E0EC2D14CD3ACF0D165D0C3604A42 (U3CU3Ec__DisplayClass93_0_tFE29F0F7F90749ADB63B158FBF3612178CB7D369* __this, AnimationClip_t00BD2F131D308A4AD2C6B0BF66644FC25FECE712* ___0_existingClip, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13439,7 +13442,7 @@ IL_0020:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76473
+// Method Definition Index: 76551
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeRoutineU3Ed__82__ctor_m86E77C9A00724AC4781D492337DD0D240211D866 (U3CFadeRoutineU3Ed__82_tF065F54F32862688CF2CBCFA27426E966BF08A31* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -13449,14 +13452,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeRoutineU3Ed__82__ctor_m86E77C9A00
 		return;
 	}
 }
-// Method Definition Index: 76474
+// Method Definition Index: 76552
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeRoutineU3Ed__82_System_IDisposable_Dispose_mB1E071B8A7E0BD6E25823099CBB9937DF38315AE (U3CFadeRoutineU3Ed__82_tF065F54F32862688CF2CBCFA27426E966BF08A31* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 76475
+// Method Definition Index: 76553
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CFadeRoutineU3Ed__82_MoveNext_mA84F015E5CE2A5BD261DB77D8DCA689247B93959 (U3CFadeRoutineU3Ed__82_tF065F54F32862688CF2CBCFA27426E966BF08A31* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13796,7 +13799,7 @@ IL_0197:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 76476
+// Method Definition Index: 76554
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeRoutineU3Ed__82_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m443C48ABC3EC5151B528ECAD19B8171C5B5C1325 (U3CFadeRoutineU3Ed__82_tF065F54F32862688CF2CBCFA27426E966BF08A31* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13804,7 +13807,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeRoutineU3Ed__82_System_
 		return L_0;
 	}
 }
-// Method Definition Index: 76477
+// Method Definition Index: 76555
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeRoutineU3Ed__82_System_Collections_IEnumerator_Reset_m33D92775A9765618878323FB0F70A4C9FDBD1984 (U3CFadeRoutineU3Ed__82_tF065F54F32862688CF2CBCFA27426E966BF08A31* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13813,7 +13816,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeRoutineU3Ed__82_System_Collection
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CFadeRoutineU3Ed__82_System_Collections_IEnumerator_Reset_m33D92775A9765618878323FB0F70A4C9FDBD1984_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 76478
+// Method Definition Index: 76556
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeRoutineU3Ed__82_System_Collections_IEnumerator_get_Current_m56FFE2E3223723DB7E26E3A7612DFE70A763441B (U3CFadeRoutineU3Ed__82_tF065F54F32862688CF2CBCFA27426E966BF08A31* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13829,7 +13832,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeRoutineU3Ed__82_System_
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76479
+// Method Definition Index: 76557
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoopDirectAnimationU3Ed__98__ctor_mCD83D926FC1E44DBB644B47956ED3C9AA627B527 (U3CLoopDirectAnimationU3Ed__98_t69F6B2E55A20FB0BECA5065C8DD5A8FB9E67CD04* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -13839,14 +13842,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoopDirectAnimationU3Ed__98__ctor_mCD
 		return;
 	}
 }
-// Method Definition Index: 76480
+// Method Definition Index: 76558
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoopDirectAnimationU3Ed__98_System_IDisposable_Dispose_mE98D9AE673D7F32180D2F2E49D7C8231B3F06DE5 (U3CLoopDirectAnimationU3Ed__98_t69F6B2E55A20FB0BECA5065C8DD5A8FB9E67CD04* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 76481
+// Method Definition Index: 76559
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CLoopDirectAnimationU3Ed__98_MoveNext_m82DE4620D8A8407979F43A3D3231B1219871E12B (U3CLoopDirectAnimationU3Ed__98_t69F6B2E55A20FB0BECA5065C8DD5A8FB9E67CD04* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13986,7 +13989,7 @@ IL_00aa:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 76482
+// Method Definition Index: 76560
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CLoopDirectAnimationU3Ed__98_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m3A28ABDC3CFAD6EA12C7072D58CA2C05A9F12DFB (U3CLoopDirectAnimationU3Ed__98_t69F6B2E55A20FB0BECA5065C8DD5A8FB9E67CD04* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13994,7 +13997,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CLoopDirectAnimationU3Ed__98
 		return L_0;
 	}
 }
-// Method Definition Index: 76483
+// Method Definition Index: 76561
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoopDirectAnimationU3Ed__98_System_Collections_IEnumerator_Reset_m69975F4E58E29351C4BF713D4FFAE14B3599DD2F (U3CLoopDirectAnimationU3Ed__98_t69F6B2E55A20FB0BECA5065C8DD5A8FB9E67CD04* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14003,7 +14006,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLoopDirectAnimationU3Ed__98_System_Co
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CLoopDirectAnimationU3Ed__98_System_Collections_IEnumerator_Reset_m69975F4E58E29351C4BF713D4FFAE14B3599DD2F_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 76484
+// Method Definition Index: 76562
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CLoopDirectAnimationU3Ed__98_System_Collections_IEnumerator_get_Current_mEB52121F447E150C479B89BC6EB7495CF037459B (U3CLoopDirectAnimationU3Ed__98_t69F6B2E55A20FB0BECA5065C8DD5A8FB9E67CD04* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14019,7 +14022,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CLoopDirectAnimationU3Ed__98
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76485
+// Method Definition Index: 76563
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SpriteRenderer_t1DD7FE258F072E1FA87D6577BA27225892B8047B* PhobiaSprite_get_renderer_mAD2D74A468B2EDBAE82BCC8D74A985803F766D0C (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14028,7 +14031,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SpriteRenderer_t1DD7FE258F072E1FA87D6577BA272
 		return L_0;
 	}
 }
-// Method Definition Index: 76486
+// Method Definition Index: 76564
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* PhobiaSprite_get_animator_m6EF3047393EC0053A383EC41046D2B17B3B379F4 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14037,7 +14040,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Animator_t8A52E42AE54F76681838FE9E632683EF395
 		return L_0;
 	}
 }
-// Method Definition Index: 76487
+// Method Definition Index: 76565
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* PhobiaSprite_get_currentAnimation_mDD5C13C6C1FE4F11BD40F18A2C3FD737F9A5C24B (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14046,7 +14049,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* PhobiaSprite_get_currentAnimation_m
 		return L_0;
 	}
 }
-// Method Definition Index: 76488
+// Method Definition Index: 76566
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaSprite_get_isPlaying_m7BC83DC5996B18D4A085647DD3CA146CD2480C70 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14055,7 +14058,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaSprite_get_isPlaying_m7BC83DC5996B
 		return L_0;
 	}
 }
-// Method Definition Index: 76489
+// Method Definition Index: 76567
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PhobiaSprite_get_x_mA6F2B62831A011DF52F7DE4B0B47FF16B0EC552D (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14069,7 +14072,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PhobiaSprite_get_x_mA6F2B62831A011DF52F
 		return L_2;
 	}
 }
-// Method Definition Index: 76490
+// Method Definition Index: 76568
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_set_x_mBA0262D011F3523BC8804B3E3BE0B2E07873565C (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -14097,7 +14100,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_set_x_mBA0262D011F3523BC880
 		return;
 	}
 }
-// Method Definition Index: 76491
+// Method Definition Index: 76569
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PhobiaSprite_get_y_m77E227D7F4608C1327FBF3F08FEE392E83E6FD10 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14111,7 +14114,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PhobiaSprite_get_y_m77E227D7F4608C1327F
 		return L_2;
 	}
 }
-// Method Definition Index: 76492
+// Method Definition Index: 76570
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_set_y_mB0C367B324596DFD1BB983A56CD2125442194831 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -14139,7 +14142,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_set_y_mB0C367B324596DFD1BB9
 		return;
 	}
 }
-// Method Definition Index: 76493
+// Method Definition Index: 76571
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PhobiaSprite_get_alpha_mE415440169B0F2A40E986EC226D7E1E51DAFF4D9 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14152,7 +14155,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PhobiaSprite_get_alpha_mE415440169B0F2A
 		return L_2;
 	}
 }
-// Method Definition Index: 76494
+// Method Definition Index: 76572
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_set_alpha_m17D24D5DABFC89CB983C6D8C6F57943634494C5A (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -14162,7 +14165,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_set_alpha_m17D24D5DABFC89CB
 		return;
 	}
 }
-// Method Definition Index: 76495
+// Method Definition Index: 76573
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F PhobiaSprite_get_color_m2E7F1377D4600D98AE49445B9CAB455AF7F05B5D (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14174,7 +14177,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C
 		return L_1;
 	}
 }
-// Method Definition Index: 76496
+// Method Definition Index: 76574
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_set_color_mD413169C1DE8D3BA2F0F19D9251F80716761455C (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -14184,7 +14187,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_set_color_mD413169C1DE8D3BA
 		return;
 	}
 }
-// Method Definition Index: 76497
+// Method Definition Index: 76575
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 PhobiaSprite_get_scale_m016DC938B24C7F9D0A435E7554036C1198D600F9 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14199,7 +14202,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D
 		return L_2;
 	}
 }
-// Method Definition Index: 76498
+// Method Definition Index: 76576
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_set_scale_mAE1F215459C7C5CA2B2A90961032D99DCC57120B (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -14218,7 +14221,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_set_scale_mAE1F215459C7C5CA
 		return;
 	}
 }
-// Method Definition Index: 76499
+// Method Definition Index: 76577
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PhobiaSprite_get_width_m23BEF43EC4438BE8FA51BA880F73123480E2CD51 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14228,7 +14231,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PhobiaSprite_get_width_m23BEF43EC4438BE
 		return L_0;
 	}
 }
-// Method Definition Index: 76500
+// Method Definition Index: 76578
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_set_width_mD5B73D348B26010E6CF8F5BB8751CA301F8F1B6A (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -14238,7 +14241,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_set_width_mD5B73D348B26010E
 		return;
 	}
 }
-// Method Definition Index: 76501
+// Method Definition Index: 76579
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PhobiaSprite_get_height_mCD959B25AD18617D4A146C1CCF3161290E79251C (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14248,7 +14251,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PhobiaSprite_get_height_mCD959B25AD1861
 		return L_0;
 	}
 }
-// Method Definition Index: 76502
+// Method Definition Index: 76580
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_set_height_mA3527CA23DBC20E92AC491216F51A021D936C158 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -14258,7 +14261,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_set_height_mA3527CA23DBC20E
 		return;
 	}
 }
-// Method Definition Index: 76503
+// Method Definition Index: 76581
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaSprite_get_dropShadowEnabled_m36464AF3D40D41DA5B36BEDDD2963BCFFDE8838A (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14267,7 +14270,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaSprite_get_dropShadowEnabled_m3646
 		return L_0;
 	}
 }
-// Method Definition Index: 76504
+// Method Definition Index: 76582
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_set_dropShadowEnabled_m60F12AFAA71C9D9CF3856721E23F583191B91A28 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -14295,7 +14298,7 @@ IL_000a:
 		return;
 	}
 }
-// Method Definition Index: 76505
+// Method Definition Index: 76583
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 PhobiaSprite_get_dropShadowOffset_m248C48BBD83A9DBB502B89115614E438A498A7BD (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14304,7 +14307,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D
 		return L_0;
 	}
 }
-// Method Definition Index: 76506
+// Method Definition Index: 76584
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_set_dropShadowOffset_m05E9666A49B812566E5C6215C5BDFBF4FAA63643 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -14317,7 +14320,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_set_dropShadowOffset_m05E96
 		return;
 	}
 }
-// Method Definition Index: 76507
+// Method Definition Index: 76585
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F PhobiaSprite_get_dropShadowColor_mBDB883F46D9C56EDAF2C428E5A4FB9154F478C4C (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14326,7 +14329,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C
 		return L_0;
 	}
 }
-// Method Definition Index: 76508
+// Method Definition Index: 76586
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_set_dropShadowColor_m855F9BF6A90C9F36D2559621F6EB40A0BB905159 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -14339,7 +14342,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_set_dropShadowColor_m855F9B
 		return;
 	}
 }
-// Method Definition Index: 76509
+// Method Definition Index: 76587
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t PhobiaSprite_get_dropShadowSortingOffset_mEDD18B494D0AEFFC09B3D6F89351317F71772E04 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14348,7 +14351,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t PhobiaSprite_get_dropShadowSortingOff
 		return L_0;
 	}
 }
-// Method Definition Index: 76510
+// Method Definition Index: 76588
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_set_dropShadowSortingOffset_m34808ABBFAEFB5EA8D9338DDD292F38F1441A00F (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -14361,7 +14364,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_set_dropShadowSortingOffset
 		return;
 	}
 }
-// Method Definition Index: 76511
+// Method Definition Index: 76589
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* PhobiaSprite_Create_m72A4493D40AAE2F09E7756E43786B0A2B0E8A442 (String_t* ___0_name, float ___1_x, float ___2_y, String_t* ___3_prefabPath, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14487,7 +14490,7 @@ IL_0051:
 		return L_24;
 	}
 }
-// Method Definition Index: 76512
+// Method Definition Index: 76590
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* PhobiaSprite_Create_mEB4423D95624D286D186007B92F6F2DEE7F8B684 (String_t* ___0_name, String_t* ___1_texturePath, float ___2_x, float ___3_y, float ___4_width, float ___5_height, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14530,7 +14533,7 @@ IL_001a:
 		return L_8;
 	}
 }
-// Method Definition Index: 76513
+// Method Definition Index: 76591
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* PhobiaSprite_Create_m43EE63871EAF9AE0B4C8D2BEBDB4344FC6F77B8F (String_t* ___0_name, float ___1_x, float ___2_y, int32_t ___3_width, int32_t ___4_height, Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* ___5_texture, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14597,7 +14600,7 @@ IL_0054:
 		return L_16;
 	}
 }
-// Method Definition Index: 76514
+// Method Definition Index: 76592
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* PhobiaSprite_CreateSolidColor_m2947EAB07C7E7006E0FEF345AC64C8D0B722047A (String_t* ___0_name, float ___1_x, float ___2_y, float ___3_width, float ___4_height, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___5_color, float ___6_pixelsPerUnit, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14759,7 +14762,7 @@ IL_0074:
 		return L_43;
 	}
 }
-// Method Definition Index: 76515
+// Method Definition Index: 76593
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_InitializeComponents_mD363CDDE2A4670EF04CDF19D028427514AD2686C (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14833,7 +14836,7 @@ IL_0050:
 		return;
 	}
 }
-// Method Definition Index: 76516
+// Method Definition Index: 76594
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_InitializeAnimationMap_m1BFA06046C001A8EFF517F067EFE82209C7A4610 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14930,7 +14933,7 @@ IL_0061:
 		return;
 	}
 }
-// Method Definition Index: 76517
+// Method Definition Index: 76595
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_ApplyConfig_m14126B3AB9C046B34645DCCC7C3F84894267315B (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15003,7 +15006,7 @@ IL_007d:
 		return;
 	}
 }
-// Method Definition Index: 76518
+// Method Definition Index: 76596
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_LoadGraphic_m88D3E8606CF37AD54A22EFEEF5B13B3A446C0C27 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, String_t* ___0_path, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15056,7 +15059,7 @@ IL_0030:
 		return;
 	}
 }
-// Method Definition Index: 76519
+// Method Definition Index: 76597
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_LoadGraphic_m69079036DCF52947340992F3BE7ADB053DCB0E4C (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___0_sprite, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15102,7 +15105,7 @@ IL_0029:
 		return;
 	}
 }
-// Method Definition Index: 76520
+// Method Definition Index: 76598
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_MakeGraphic_m4B4CE3098C38BF1B2799DE6E60DC9BE89DB17BCB (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, int32_t ___0_width, int32_t ___1_height, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___2_color, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15194,7 +15197,7 @@ IL_0023:
 		return;
 	}
 }
-// Method Definition Index: 76521
+// Method Definition Index: 76599
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_LoadPrefab_mECEF8D54D72F6720818536B5E9975138DB4FD2F8 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, String_t* ___0_prefabPath, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15240,7 +15243,7 @@ IL_0019:
 		return;
 	}
 }
-// Method Definition Index: 76522
+// Method Definition Index: 76600
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_PlayAnimation_m3ED5EB13A4B6813ED04F0F09B5E2B5CFFD6D0F99 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, String_t* ___0_animationName, bool ___1_forceRestart, bool ___2_loop, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15404,7 +15407,7 @@ IL_00f3:
 		return;
 	}
 }
-// Method Definition Index: 76523
+// Method Definition Index: 76601
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_StopAnimation_m4B22B50DFB322C902B50004E2EF1CBA4C8676AA7 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15443,7 +15446,7 @@ IL_002d:
 		return;
 	}
 }
-// Method Definition Index: 76524
+// Method Definition Index: 76602
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_SetAnimationSpeed_mFD59F204E7960770B1586DED224955C7F2DFBF92 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, float ___0_speed, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15482,7 +15485,7 @@ IL_0026:
 		return;
 	}
 }
-// Method Definition Index: 76525
+// Method Definition Index: 76603
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaSprite_IsAnimationDynamic_mDE7C7716D25AF2C98F124568EF755CED1C4DACCE (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, String_t* ___0_animationName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15543,7 +15546,7 @@ IL_0034:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 76526
+// Method Definition Index: 76604
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_FadeOut_m44E05E60CDDE593CBB830BE2A9B0C1BA31F5E498 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, float ___0_duration, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___1_onComplete, const RuntimeMethod* method) 
 {
 	{
@@ -15574,7 +15577,7 @@ IL_000e:
 		return;
 	}
 }
-// Method Definition Index: 76527
+// Method Definition Index: 76605
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_FadeIn_m380931444246AC3E31531855E9F12EFF0695C6B0 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, float ___0_duration, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___1_onComplete, const RuntimeMethod* method) 
 {
 	{
@@ -15608,7 +15611,7 @@ IL_000e:
 		return;
 	}
 }
-// Method Definition Index: 76528
+// Method Definition Index: 76606
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* PhobiaSprite_GetAnimationNames_mE734522F93437B63380945C8D695A6B6BA228A3E (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15630,7 +15633,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD
 		return L_2;
 	}
 }
-// Method Definition Index: 76529
+// Method Definition Index: 76607
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaSprite_HasAnimation_m9C366499B1C0EC4770AA2481887D4CFB412000AC (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, String_t* ___0_animationName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15649,7 +15652,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaSprite_HasAnimation_m9C366499B1C0E
 		return L_2;
 	}
 }
-// Method Definition Index: 76530
+// Method Definition Index: 76608
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* PhobiaSprite_Clone_m949A37B816CCB79F7D022A39C71ACA17B86888F9 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15730,7 +15733,7 @@ IL_0023:
 		return L_17;
 	}
 }
-// Method Definition Index: 76531
+// Method Definition Index: 76609
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_SetAlpha_m7734298EB99787956FADB903D84A64C00101AD87 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15779,7 +15782,7 @@ IL_0039:
 		return;
 	}
 }
-// Method Definition Index: 76532
+// Method Definition Index: 76610
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_SetColor_mE89FD7A04C45A25B9FA372D1C353183555D364C7 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15826,7 +15829,7 @@ IL_0039:
 		return;
 	}
 }
-// Method Definition Index: 76533
+// Method Definition Index: 76611
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PhobiaSprite_GetSpriteWidth_mD447E78B9600372EE67AC392E55D716591D790AE (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15884,7 +15887,7 @@ IL_003a:
 		return (0.0f);
 	}
 }
-// Method Definition Index: 76534
+// Method Definition Index: 76612
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_SetSpriteWidth_m43DBCF72D4149D0CFCFBA4D702D64787CA0DB846 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -15979,7 +15982,7 @@ IL_0086:
 		return;
 	}
 }
-// Method Definition Index: 76535
+// Method Definition Index: 76613
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PhobiaSprite_GetSpriteHeight_m1C76BF14995C3B9A97BF05548A1F75396FC47A03 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16037,7 +16040,7 @@ IL_003a:
 		return (0.0f);
 	}
 }
-// Method Definition Index: 76536
+// Method Definition Index: 76614
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_SetSpriteHeight_m90E4387180695E4D179C4FB8D78EE7315A235EC1 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16118,7 +16121,7 @@ IL_006d:
 		return;
 	}
 }
-// Method Definition Index: 76537
+// Method Definition Index: 76615
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_EnsureDropShadowRenderer_m51D08F54033270FEA580E9595AC5D20E60966026 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16211,7 +16214,7 @@ IL_0074:
 		return;
 	}
 }
-// Method Definition Index: 76538
+// Method Definition Index: 76616
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_ApplyDropShadowTransform_mED6C06F993BCF7AF825D0E5734E92F30CDDC0F15 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16274,7 +16277,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 76539
+// Method Definition Index: 76617
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_ApplyDropShadowAppearance_mA47D9319092F2468108C03453B2F2ED2238E4492 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16354,7 +16357,7 @@ IL_001d:
 		return;
 	}
 }
-// Method Definition Index: 76540
+// Method Definition Index: 76618
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_SyncDropShadow_m484336CA2BF36EEB57DEF8013A584B5B0AEDEF98 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16549,7 +16552,7 @@ IL_0086:
 		return;
 	}
 }
-// Method Definition Index: 76541
+// Method Definition Index: 76619
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* PhobiaSprite_FadeRoutine_m44A8E34454CE2BF31FDE9991F2D7A3573BD62E35 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, float ___0_targetAlpha, float ___1_duration, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___2_onComplete, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16581,7 +16584,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* PhobiaSprite_FadeRoutine_m44A8
 		return L_6;
 	}
 }
-// Method Definition Index: 76542
+// Method Definition Index: 76620
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_Update_mC4A05B6612A62B9B5E67BBF1F354F6A4F409C5BC (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16691,7 +16694,7 @@ IL_007e:
 		return;
 	}
 }
-// Method Definition Index: 76543
+// Method Definition Index: 76621
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_Destroy_m64A2EABB4F9C3DB2012B4A399BD61CE650D095A3 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16724,7 +16727,7 @@ IL_0018:
 		return;
 	}
 }
-// Method Definition Index: 76544
+// Method Definition Index: 76622
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_SetConfig_m0FA61B39D610F8A86A339968122082AE3922E132 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, SpriteConfig_t39278F87572A1E44C9BF8002E1A2EB5113E687EE* ___0_config, const RuntimeMethod* method) 
 {
 	{
@@ -16738,7 +16741,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_SetConfig_m0FA61B39D610F8A8
 		return;
 	}
 }
-// Method Definition Index: 76545
+// Method Definition Index: 76623
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SpriteConfig_t39278F87572A1E44C9BF8002E1A2EB5113E687EE* PhobiaSprite_GetConfig_mD6B090242E8E7CFC81EFDCD77001050AA85C211B (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -16747,7 +16750,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SpriteConfig_t39278F87572A1E44C9BF8002E1A2EB5
 		return L_0;
 	}
 }
-// Method Definition Index: 76546
+// Method Definition Index: 76624
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_LoadGraphicFromSparrow_m4BD01AAA9390347B78E45A3A2E2B4DE926C8A4CB (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, String_t* ___0_texturePath, String_t* ___1_xmlPath, bool ___2_animated, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16768,7 +16771,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_LoadGraphicFromSparrow_m4BD
 		return;
 	}
 }
-// Method Definition Index: 76547
+// Method Definition Index: 76625
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_AddAnimationByPrefix_m9B23B719A414E4857C760F9315AB2FA3AC181FF1 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, String_t* ___0_name, String_t* ___1_prefix, float ___2_frameRate, bool ___3_looped, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16786,7 +16789,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite_AddAnimationByPrefix_m9B23B
 		return;
 	}
 }
-// Method Definition Index: 76548
+// Method Definition Index: 76626
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite__ctor_mBCC08784DD77EEADDEEEE23AF292487809F98C02 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16826,7 +16829,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaSprite__ctor_mBCC08784DD77EEADDEEE
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76549
+// Method Definition Index: 76627
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpriteConfig__ctor_m318E173D8547445500A7800A90C1660612473A7E (SpriteConfig_t39278F87572A1E44C9BF8002E1A2EB5113E687EE* __this, const RuntimeMethod* method) 
 {
 	{
@@ -16860,7 +16863,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpriteConfig__ctor_m318E173D8547445500A7
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76550
+// Method Definition Index: 76628
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeRoutineU3Ed__84__ctor_m62495CDE17BDB2CF5AD2720865D2EC610EA56ED5 (U3CFadeRoutineU3Ed__84_t2DA7B0DE266858DC9A1165E6348831367E5B6275* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -16870,14 +16873,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeRoutineU3Ed__84__ctor_m62495CDE17
 		return;
 	}
 }
-// Method Definition Index: 76551
+// Method Definition Index: 76629
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeRoutineU3Ed__84_System_IDisposable_Dispose_m8776C1201DD2589A3A0A7CDAA49553AC9A52995B (U3CFadeRoutineU3Ed__84_t2DA7B0DE266858DC9A1165E6348831367E5B6275* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 76552
+// Method Definition Index: 76630
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CFadeRoutineU3Ed__84_MoveNext_mDA615A38BD7B6F5E49F03623C5A74451DF03CBFC (U3CFadeRoutineU3Ed__84_t2DA7B0DE266858DC9A1165E6348831367E5B6275* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -16991,7 +16994,7 @@ IL_00af:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 76553
+// Method Definition Index: 76631
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeRoutineU3Ed__84_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m5A860E191968F11E1060333D61B81BDCEC66845B (U3CFadeRoutineU3Ed__84_t2DA7B0DE266858DC9A1165E6348831367E5B6275* __this, const RuntimeMethod* method) 
 {
 	{
@@ -16999,7 +17002,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeRoutineU3Ed__84_System_
 		return L_0;
 	}
 }
-// Method Definition Index: 76554
+// Method Definition Index: 76632
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeRoutineU3Ed__84_System_Collections_IEnumerator_Reset_m7D59F465FCF157104424C2DEC53EC915135A7148 (U3CFadeRoutineU3Ed__84_t2DA7B0DE266858DC9A1165E6348831367E5B6275* __this, const RuntimeMethod* method) 
 {
 	{
@@ -17008,7 +17011,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeRoutineU3Ed__84_System_Collection
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CFadeRoutineU3Ed__84_System_Collections_IEnumerator_Reset_m7D59F465FCF157104424C2DEC53EC915135A7148_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 76555
+// Method Definition Index: 76633
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeRoutineU3Ed__84_System_Collections_IEnumerator_get_Current_m5F29A53E13AD293C1C8BE534DE6030D8ED048615 (U3CFadeRoutineU3Ed__84_t2DA7B0DE266858DC9A1165E6348831367E5B6275* __this, const RuntimeMethod* method) 
 {
 	{
@@ -17204,7 +17207,7 @@ IL2CPP_EXTERN_C void FlickerTweenOptions_tB1636207F90F6C8C4968E82C7E19C0CF871FFD
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76556
+// Method Definition Index: 76634
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PhobiaTweenManager_tDEB63512F7E5EE0D63ADB5630F3B174BE573C239* PhobiaTween_get_GlobalManager_m57428D2C5CBBB7B515750E97CCA7AB1437C9C095 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17220,7 +17223,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PhobiaTweenManager_tDEB63512F7E5EE0D63ADB5630
 		return L_0;
 	}
 }
-// Method Definition Index: 76557
+// Method Definition Index: 76635
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTween_set_GlobalManager_m68628E0BCBE77BFEFBCF302B31788D5620DDFA2D (PhobiaTweenManager_tDEB63512F7E5EE0D63ADB5630F3B174BE573C239* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17238,7 +17241,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTween_set_GlobalManager_m68628E0BC
 		return;
 	}
 }
-// Method Definition Index: 76558
+// Method Definition Index: 76636
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTween_Initialize_m3BC2C9E7ADAC17A9A1525A249FF57AF941FA1AED (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17258,7 +17261,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTween_Initialize_m3BC2C9E7ADAC17A9
 		return;
 	}
 }
-// Method Definition Index: 76559
+// Method Definition Index: 76637
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Tween_mAAC757C62D34443D050510DE1DA7807D4F9C3AA2 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, RuntimeObject* ___1_values, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17307,7 +17310,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_13;
 	}
 }
-// Method Definition Index: 76560
+// Method Definition Index: 76638
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Tween_m5B43374C2C65F5D44545E117E018DB3F245BF27C (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* ___0_sprite, RuntimeObject* ___1_values, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17364,7 +17367,7 @@ IL_0019:
 		return L_10;
 	}
 }
-// Method Definition Index: 76561
+// Method Definition Index: 76639
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Num_mC80BFDA523CAD2B2CCDF35A6D68ECEEA700B14B3 (float ___0_fromValue, float ___1_toValue, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* ___4_onUpdate, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17390,7 +17393,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_6;
 	}
 }
-// Method Definition Index: 76562
+// Method Definition Index: 76640
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Num_mE10DEFFA9ADF64D8CC1FD275BCF33AC69921936A (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, float ___1_fromValue, float ___2_toValue, float ___3_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___4_options, Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* ___5_onUpdate, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17453,7 +17456,7 @@ IL_001f:
 		return L_15;
 	}
 }
-// Method Definition Index: 76563
+// Method Definition Index: 76641
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Flicker_mB5F8CBBC1C75DB9D1BC11F261243547429A448CC (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, float ___1_duration, float ___2_interval, Nullable_1_tE161E8B4E55CCC399182BD8B09368B6DFB475152 ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17508,7 +17511,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_14;
 	}
 }
-// Method Definition Index: 76564
+// Method Definition Index: 76642
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Flicker_mA78ABE93CFE11CDBFBEFCEEB0C366DF83E15527D (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* ___0_sprite, float ___1_duration, float ___2_interval, Nullable_1_tE161E8B4E55CCC399182BD8B09368B6DFB475152 ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17565,7 +17568,7 @@ IL_0019:
 		return L_10;
 	}
 }
-// Method Definition Index: 76565
+// Method Definition Index: 76643
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaTween_IsFlickering_m07800888E6202CD2243C328B6635F18F84372CB7 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17583,7 +17586,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaTween_IsFlickering_m07800888E6202C
 		return L_1;
 	}
 }
-// Method Definition Index: 76566
+// Method Definition Index: 76644
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTween_StopFlickering_mA062E421B3D568B265BE9AEAA6E4B945307E8647 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17601,7 +17604,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTween_StopFlickering_mA062E421B3D5
 		return;
 	}
 }
-// Method Definition Index: 76567
+// Method Definition Index: 76645
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Move_m9A36F18B925324745B8ADB331DC4F2A808EE8071 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17645,7 +17648,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_12;
 	}
 }
-// Method Definition Index: 76568
+// Method Definition Index: 76646
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Move_mF46E17D1439E4B7C66AC135B31EC9F5E12F51EB6 (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* ___0_model, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17776,7 +17779,7 @@ IL_0037:
 		return L_33;
 	}
 }
-// Method Definition Index: 76569
+// Method Definition Index: 76647
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_MoveLocal_m30DBB3662AFD7F4E77A93F8F2142B6ECA7CCF713 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17820,7 +17823,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_12;
 	}
 }
-// Method Definition Index: 76570
+// Method Definition Index: 76648
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_MoveX_mEC9E30B24E113215425DB7AEB50C2B5BFED09C91 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, float ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17864,7 +17867,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_12;
 	}
 }
-// Method Definition Index: 76571
+// Method Definition Index: 76649
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_MoveY_mE9735CE940D204E5E833C40DEF2AFA033AA3D04E (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, float ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17908,7 +17911,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_12;
 	}
 }
-// Method Definition Index: 76572
+// Method Definition Index: 76650
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_MoveZ_mF44DF2F674F790840A0D7DDEC1012E6F4022BD04 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, float ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17952,7 +17955,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_12;
 	}
 }
-// Method Definition Index: 76573
+// Method Definition Index: 76651
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Rotate_mA1508E27ECE519F5AE7F8FD18061FCE37988CE55 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17996,7 +17999,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_12;
 	}
 }
-// Method Definition Index: 76574
+// Method Definition Index: 76652
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_RotateLocal_mB7C8AD601595F8D62E392DE1160BA51EA5C6E44D (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18040,7 +18043,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_12;
 	}
 }
-// Method Definition Index: 76575
+// Method Definition Index: 76653
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Scale_m5F374249A67072F2EA29718714A75CB3A7847016 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18084,7 +18087,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_12;
 	}
 }
-// Method Definition Index: 76576
+// Method Definition Index: 76654
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Scale_m5E2F164F7729C32881E4B98125F3F804D9E748BC (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, float ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18128,7 +18131,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_12;
 	}
 }
-// Method Definition Index: 76577
+// Method Definition Index: 76655
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_ScaleX_m27B0D41FDB572575E9C192730158434E6D83C91C (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, float ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18172,7 +18175,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_12;
 	}
 }
-// Method Definition Index: 76578
+// Method Definition Index: 76656
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_ScaleY_m0A17829EAC884416AA438FBBD129D0670CD5B3C0 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, float ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18216,7 +18219,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_12;
 	}
 }
-// Method Definition Index: 76579
+// Method Definition Index: 76657
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_ScaleX_mE61B16A7F85656E51525471535356E4036441D3B (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* ___0_sprite, float ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18273,7 +18276,7 @@ IL_0019:
 		return L_10;
 	}
 }
-// Method Definition Index: 76580
+// Method Definition Index: 76658
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_ScaleY_m0F79FDE01F6F26D3C8068DECEA3D1A6DEFF19459 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* ___0_sprite, float ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18330,7 +18333,7 @@ IL_0019:
 		return L_10;
 	}
 }
-// Method Definition Index: 76581
+// Method Definition Index: 76659
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Move_m3D27EE9B1B775DFAFF5CB7BA425BDDA97E9FF7BF (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* ___0_sprite, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18387,7 +18390,7 @@ IL_0019:
 		return L_10;
 	}
 }
-// Method Definition Index: 76582
+// Method Definition Index: 76660
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_MoveLocal_mA6CF5512E017B387383FD04D7F059506F10C9F95 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* ___0_sprite, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18444,7 +18447,7 @@ IL_0019:
 		return L_10;
 	}
 }
-// Method Definition Index: 76583
+// Method Definition Index: 76661
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_MoveX_m1FDD32691A7321F32D005067EB0205CBCE9F0A68 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* ___0_sprite, float ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18501,7 +18504,7 @@ IL_0019:
 		return L_10;
 	}
 }
-// Method Definition Index: 76584
+// Method Definition Index: 76662
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_MoveY_m0410AA51DF8716D59E63C84781270349147A93C0 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* ___0_sprite, float ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18558,7 +18561,7 @@ IL_0019:
 		return L_10;
 	}
 }
-// Method Definition Index: 76585
+// Method Definition Index: 76663
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_MoveZ_m1C9F36AE174FED56CFBB9E2FB6F57315D4AD5AC3 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* ___0_sprite, float ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18615,7 +18618,7 @@ IL_0019:
 		return L_10;
 	}
 }
-// Method Definition Index: 76586
+// Method Definition Index: 76664
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Rotate_m4F34D7D81C7E67D4C5E36126F08A0455217E9B32 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* ___0_sprite, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18672,7 +18675,7 @@ IL_0019:
 		return L_10;
 	}
 }
-// Method Definition Index: 76587
+// Method Definition Index: 76665
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_RotateLocal_m9E583518B41B9DF9CE3842753402177763D9C3F3 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* ___0_sprite, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18729,7 +18732,7 @@ IL_0019:
 		return L_10;
 	}
 }
-// Method Definition Index: 76588
+// Method Definition Index: 76666
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Scale_m5C0AE901AFDD756BFCA1104952D54BD9C4ED84B5 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* ___0_sprite, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18786,7 +18789,7 @@ IL_0019:
 		return L_10;
 	}
 }
-// Method Definition Index: 76589
+// Method Definition Index: 76667
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Scale_m80609C392174EA802F397039BB3A7ACFC9EAEA85 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* ___0_sprite, float ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18843,7 +18846,7 @@ IL_0019:
 		return L_10;
 	}
 }
-// Method Definition Index: 76590
+// Method Definition Index: 76668
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Fade_m89C938DD7AC8E49027B966B4AD0F75E7CD95451B (CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* ___0_canvasGroup, float ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18890,7 +18893,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_13;
 	}
 }
-// Method Definition Index: 76591
+// Method Definition Index: 76669
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Fade_mBE8A366F56F74A92D8D1510A0CB7F0CC08A574D5 (Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ___0_image, float ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18937,7 +18940,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_13;
 	}
 }
-// Method Definition Index: 76592
+// Method Definition Index: 76670
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Color_mDF6B7D5A9DF756F4996C0E2D6C56D5147FD4CEE9 (Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ___0_image, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -18984,7 +18987,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_13;
 	}
 }
-// Method Definition Index: 76593
+// Method Definition Index: 76671
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Color_mDE736D42AD23617A5C97CB1CA359EDBBD326226F (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* ___0_image, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19031,7 +19034,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_13;
 	}
 }
-// Method Definition Index: 76594
+// Method Definition Index: 76672
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Move_mD46EE2166E55BCC3FEF33BEC5393A10D8EA035E1 (RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* ___0_rectTransform, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19078,7 +19081,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_13;
 	}
 }
-// Method Definition Index: 76595
+// Method Definition Index: 76673
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Scale_mF7E081B4C31815EC87CA35AD38B22ABE206C9039 (RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* ___0_rectTransform, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19125,7 +19128,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_13;
 	}
 }
-// Method Definition Index: 76596
+// Method Definition Index: 76674
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Alpha_m81771E144DA1CD2CAA342399A547824C88BB742F (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* ___0_sprite, float ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19250,7 +19253,7 @@ IL_0030:
 		return L_31;
 	}
 }
-// Method Definition Index: 76597
+// Method Definition Index: 76675
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Alpha_m04EC195A52663DC56340E63168B59C4A9617BB7B (RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* ___0_sprite, float ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19376,7 +19379,7 @@ IL_0030:
 		return L_32;
 	}
 }
-// Method Definition Index: 76598
+// Method Definition Index: 76676
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Alpha_m6FB95F88A4FE2BD5F962BB8DDEFB2D57932FAD7C (Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___0_text, float ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19504,7 +19507,7 @@ IL_0030:
 		return L_32;
 	}
 }
-// Method Definition Index: 76599
+// Method Definition Index: 76677
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Alpha_m9FAB513494C0F54E5495802411BCA8D423CE30D3 (TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* ___0_text, float ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19632,7 +19635,7 @@ IL_0030:
 		return L_32;
 	}
 }
-// Method Definition Index: 76600
+// Method Definition Index: 76678
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Alpha_m9DB3A99A20E77FB248BA0AC91ECFC9BBA3CC9912 (PhobiaText_t71D2F2108F462F80E352A0514D66815F1D33B88D* ___0_phobiaText, float ___1_to, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19757,7 +19760,7 @@ IL_0030:
 		return L_31;
 	}
 }
-// Method Definition Index: 76601
+// Method Definition Index: 76679
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Shake_mDCCB1701755B519756D3F60E290FD13F2E19EC08 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, float ___1_intensity, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19858,7 +19861,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_27;
 	}
 }
-// Method Definition Index: 76602
+// Method Definition Index: 76680
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Pulse_mF20B8F63BA4D1706B6F7D9C366D40D3507F6A063 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, float ___1_scaleFactor, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -19976,7 +19979,7 @@ IL_0082:
 		return L_35;
 	}
 }
-// Method Definition Index: 76603
+// Method Definition Index: 76681
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_Bounce_mED254FED7F8C31A5A325887B98AEC18876F3C013 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, float ___1_bounceHeight, float ___2_duration, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20065,7 +20068,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_31;
 	}
 }
-// Method Definition Index: 76604
+// Method Definition Index: 76682
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaTween_HasTweens_m77DBA20DE02B1F146F041F8470CBAB2AA05D0C41 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20126,7 +20129,7 @@ IL_002c:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 76605
+// Method Definition Index: 76683
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaTween_HasTweens_mB09694A1BD3DDAF1EFEBE3F50022496A131E2890 (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* ___0_sprite, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20180,7 +20183,7 @@ IL_0019:
 		return L_7;
 	}
 }
-// Method Definition Index: 76606
+// Method Definition Index: 76684
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaTween_HasTweens_m525E819EAB4740E9E8DC782A4B167A9A2398546E (Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* ___0_image, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20234,7 +20237,7 @@ IL_0019:
 		return L_7;
 	}
 }
-// Method Definition Index: 76607
+// Method Definition Index: 76685
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaTween_HasTweens_m419B89E94CA06C6B8D19FB2E784F5A79BC67A651 (RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* ___0_rawImage, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20288,7 +20291,7 @@ IL_0019:
 		return L_7;
 	}
 }
-// Method Definition Index: 76608
+// Method Definition Index: 76686
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaTween_IsTweening_mCE06ABCCF3A7755A9C23BB31B3E7A2BCCFAE68AE (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20306,7 +20309,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaTween_IsTweening_mCE06ABCCF3A7755A
 		return L_1;
 	}
 }
-// Method Definition Index: 76609
+// Method Definition Index: 76687
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PhobiaTween_IsTweening_mC1D85A1455CACB53810DB4F6E0A4269BDDECB307 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, int32_t ___1_tweenAction, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20386,7 +20389,7 @@ IL_0027:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 76610
+// Method Definition Index: 76688
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTween_CancelTweens_m3383DF6E85FEF7F02B63FB0B6F496660E2237276 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20431,7 +20434,7 @@ IL_001f:
 		return;
 	}
 }
-// Method Definition Index: 76611
+// Method Definition Index: 76689
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTween_CancelTweens_m5F702753E269D2B434342D949CD55D0767A4EF86 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, int32_t ___1_tweenAction, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20519,7 +20522,7 @@ IL_0032:
 		return;
 	}
 }
-// Method Definition Index: 76612
+// Method Definition Index: 76690
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTween_CancelAllTweens_m416B249FB13F5D4247D2225C2EBDDCBA75F6E76F (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20543,7 +20546,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTween_CancelAllTweens_m416B249FB13
 		return;
 	}
 }
-// Method Definition Index: 76613
+// Method Definition Index: 76691
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTween_PauseTweens_m9EBB3C7F7C237F63C011B45D4BDC78E1E19D6E11 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20561,7 +20564,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTween_PauseTweens_m9EBB3C7F7C237F6
 		return;
 	}
 }
-// Method Definition Index: 76614
+// Method Definition Index: 76692
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTween_ResumeTweens_m34108EAF8681E4537B03435F789207584831B449 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20579,7 +20582,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTween_ResumeTweens_m34108EAF8681E4
 		return;
 	}
 }
-// Method Definition Index: 76615
+// Method Definition Index: 76693
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* PhobiaTween_CreateTween_mB089997FF89E6300EA0915BD4977BE5AE8CE6B2B (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, Func_1_tC8F5091E6FB40538318DA952AFF2E29D6ED91ACD* ___1_tweenCreator, Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B ___2_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -20620,7 +20623,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 		return L_8;
 	}
 }
-// Method Definition Index: 76616
+// Method Definition Index: 76694
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTween_ApplyTweenOptions_m77E6C044CF926D45D9806B96E840C98354DCA891 (LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* ___0_descr, TweenOptions_t3B4ED1F7531F7F4F5C6E8F7FF9C62887448D6398 ___1_options, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -20820,7 +20823,7 @@ IL_00b5:
 		return;
 	}
 }
-// Method Definition Index: 76617
+// Method Definition Index: 76695
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTween_ApplyFlickerOptions_m534917621F0BD9C07DFE57301E53F599CDDC6AE5 (LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* ___0_descr, FlickerTweenOptions_tB1636207F90F6C8C4968E82C7E19C0CF871FFD3F ___1_options, const RuntimeMethod* method) 
 {
 	{
@@ -20908,7 +20911,7 @@ IL_0059:
 		return;
 	}
 }
-// Method Definition Index: 76618
+// Method Definition Index: 76696
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTween_SetupPropertyTween_m5604D5EAD04AD2D36CE7E66231D7C300C41CA69F (LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* ___0_descr, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___1_gameObject, RuntimeObject* ___2_values, TweenOptions_t3B4ED1F7531F7F4F5C6E8F7FF9C62887448D6398 ___3_options, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21192,7 +21195,7 @@ IL_012c:
 		return;
 	}
 }
-// Method Definition Index: 76619
+// Method Definition Index: 76697
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PhobiaTween_GetFloatProperty_mBCCA99A48BDC35C91FE3464E7AC9E4BED59A89DA (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_obj, String_t* ___1_propertyName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21341,7 +21344,7 @@ IL_008e:
 		return (0.0f);
 	}
 }
-// Method Definition Index: 76620
+// Method Definition Index: 76698
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTween_SetFloatProperty_m96C73988A99326874F91CA366071393902C2EECE (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_obj, String_t* ___1_propertyName, float ___2_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21496,7 +21499,7 @@ IL_0090:
 		return;
 	}
 }
-// Method Definition Index: 76621
+// Method Definition Index: 76699
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTween_RegisterTween_mBD758D9F04FA4E5A6693324AD559678E957C8348 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_gameObject, int32_t ___1_tweenId, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21551,7 +21554,7 @@ IL_001d:
 		return;
 	}
 }
-// Method Definition Index: 76622
+// Method Definition Index: 76700
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTween__cctor_mE4A1D86F9D5B0B534869C0B5A3C7172DFDB84F2A (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21579,7 +21582,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTween__cctor_mE4A1D86F9D5B0B534869
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76623
+// Method Definition Index: 76701
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass14_0__ctor_m497E284A6E229848B208C5FE59F462D787E70265 (U3CU3Ec__DisplayClass14_0_tCE0DABF42E2973AF58DE77351EA281F2D076F892* __this, const RuntimeMethod* method) 
 {
 	{
@@ -21587,7 +21590,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass14_0__ctor_m497E284
 		return;
 	}
 }
-// Method Definition Index: 76624
+// Method Definition Index: 76702
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* U3CU3Ec__DisplayClass14_0_U3CMoveU3Eb__0_m698BEB4CBB0945B93DB14541141A1A775845CDF2 (U3CU3Ec__DisplayClass14_0_tCE0DABF42E2973AF58DE77351EA281F2D076F892* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21615,7 +21618,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76625
+// Method Definition Index: 76703
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass15_0__ctor_m710D23FC97065D4D80BBB835A1495A77175BC191 (U3CU3Ec__DisplayClass15_0_tC7F3A0C589963C8EC9A61DC1DBC950957F9FFB0C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -21623,7 +21626,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass15_0__ctor_m710D23F
 		return;
 	}
 }
-// Method Definition Index: 76626
+// Method Definition Index: 76704
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass15_0_U3CMoveU3Eb__0_mD3C916984256A91187F64F2E2671EC79BF8C76D5 (U3CU3Ec__DisplayClass15_0_tC7F3A0C589963C8EC9A61DC1DBC950957F9FFB0C* __this, float ___0_t, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21669,7 +21672,7 @@ IL_002b:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76627
+// Method Definition Index: 76705
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass16_0__ctor_mE36A3D1EB078BBB3ACF68296542FF0887DE3227A (U3CU3Ec__DisplayClass16_0_tF28CBE9ECB896427A341D24902519C8E466FC0C9* __this, const RuntimeMethod* method) 
 {
 	{
@@ -21677,7 +21680,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass16_0__ctor_mE36A3D1
 		return;
 	}
 }
-// Method Definition Index: 76628
+// Method Definition Index: 76706
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* U3CU3Ec__DisplayClass16_0_U3CMoveLocalU3Eb__0_m69463E012EB14F39CF19BB8187420B550231B3B1 (U3CU3Ec__DisplayClass16_0_tF28CBE9ECB896427A341D24902519C8E466FC0C9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21705,7 +21708,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76629
+// Method Definition Index: 76707
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass17_0__ctor_m39C7FF9D1230FE10B68D7029213941288C2ED648 (U3CU3Ec__DisplayClass17_0_t44A3398D9AAB3A6641D2A7E9DB9E7525E3411D47* __this, const RuntimeMethod* method) 
 {
 	{
@@ -21713,7 +21716,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass17_0__ctor_m39C7FF9
 		return;
 	}
 }
-// Method Definition Index: 76630
+// Method Definition Index: 76708
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* U3CU3Ec__DisplayClass17_0_U3CMoveXU3Eb__0_m89BA9B9793E77F316FB9D9066A8E97DFDE747837 (U3CU3Ec__DisplayClass17_0_t44A3398D9AAB3A6641D2A7E9DB9E7525E3411D47* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21741,7 +21744,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76631
+// Method Definition Index: 76709
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass18_0__ctor_m21C2C242BDCF8E83B0ED5215A87B1CF687D9C97B (U3CU3Ec__DisplayClass18_0_t11F5ED66DFA9A126710D4B63288D6CAC0EC61D16* __this, const RuntimeMethod* method) 
 {
 	{
@@ -21749,7 +21752,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass18_0__ctor_m21C2C24
 		return;
 	}
 }
-// Method Definition Index: 76632
+// Method Definition Index: 76710
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* U3CU3Ec__DisplayClass18_0_U3CMoveYU3Eb__0_mC69D474B0D5307E0C5214BFDAC9CE1D9E6C81B15 (U3CU3Ec__DisplayClass18_0_t11F5ED66DFA9A126710D4B63288D6CAC0EC61D16* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21777,7 +21780,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76633
+// Method Definition Index: 76711
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass19_0__ctor_m1DA23A1D3D0953C43B94BDF2294FA1B555498F38 (U3CU3Ec__DisplayClass19_0_tE7C43732936F2F51AAD60966DE2D7286DEC35063* __this, const RuntimeMethod* method) 
 {
 	{
@@ -21785,7 +21788,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass19_0__ctor_m1DA23A1
 		return;
 	}
 }
-// Method Definition Index: 76634
+// Method Definition Index: 76712
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* U3CU3Ec__DisplayClass19_0_U3CMoveZU3Eb__0_m4AAE17758D4A4D26AF35BEFE273079ED22BD0358 (U3CU3Ec__DisplayClass19_0_tE7C43732936F2F51AAD60966DE2D7286DEC35063* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21813,7 +21816,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76635
+// Method Definition Index: 76713
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass20_0__ctor_mE352034D1117D5CE3685E5DADE4AC684E035B777 (U3CU3Ec__DisplayClass20_0_t87A8CB1D9B26DB0810E966758DE39C6D4E2A94C1* __this, const RuntimeMethod* method) 
 {
 	{
@@ -21821,7 +21824,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass20_0__ctor_mE352034
 		return;
 	}
 }
-// Method Definition Index: 76636
+// Method Definition Index: 76714
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* U3CU3Ec__DisplayClass20_0_U3CRotateU3Eb__0_m79C842CC377BCCCA975DE0D8FEF8F36933C4920F (U3CU3Ec__DisplayClass20_0_t87A8CB1D9B26DB0810E966758DE39C6D4E2A94C1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21849,7 +21852,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76637
+// Method Definition Index: 76715
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass21_0__ctor_m41838110C7A50B5F96614EAC7E939329DF48B586 (U3CU3Ec__DisplayClass21_0_t77BCC23BE9905EAC50202C694F59B7E2F5BF5E92* __this, const RuntimeMethod* method) 
 {
 	{
@@ -21857,7 +21860,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass21_0__ctor_m4183811
 		return;
 	}
 }
-// Method Definition Index: 76638
+// Method Definition Index: 76716
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* U3CU3Ec__DisplayClass21_0_U3CRotateLocalU3Eb__0_mEBB83D23B98ADC1870532A35E7CA77C9C628374E (U3CU3Ec__DisplayClass21_0_t77BCC23BE9905EAC50202C694F59B7E2F5BF5E92* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21885,7 +21888,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76639
+// Method Definition Index: 76717
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass22_0__ctor_mEEC5D86FCC89F9E96D24BCAFAB793FFEC3E22419 (U3CU3Ec__DisplayClass22_0_tF19C1DBAB8ADF0DF170E876652D0D75491237C86* __this, const RuntimeMethod* method) 
 {
 	{
@@ -21893,7 +21896,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass22_0__ctor_mEEC5D86
 		return;
 	}
 }
-// Method Definition Index: 76640
+// Method Definition Index: 76718
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* U3CU3Ec__DisplayClass22_0_U3CScaleU3Eb__0_m0AD389F6607CCBC615788CC7F19454BBEB043FAF (U3CU3Ec__DisplayClass22_0_tF19C1DBAB8ADF0DF170E876652D0D75491237C86* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21921,7 +21924,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76641
+// Method Definition Index: 76719
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass23_0__ctor_m4AE5651C99D7B9C719B8C4C015D818D94561C413 (U3CU3Ec__DisplayClass23_0_t261B72176689D4D93676DD6F8049E8A00CDE3104* __this, const RuntimeMethod* method) 
 {
 	{
@@ -21929,7 +21932,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass23_0__ctor_m4AE5651
 		return;
 	}
 }
-// Method Definition Index: 76642
+// Method Definition Index: 76720
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* U3CU3Ec__DisplayClass23_0_U3CScaleU3Eb__0_mAD7A7E2B1852DD566117CD6291311D480EF9D835 (U3CU3Ec__DisplayClass23_0_t261B72176689D4D93676DD6F8049E8A00CDE3104* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21961,7 +21964,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76643
+// Method Definition Index: 76721
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass24_0__ctor_m3EC35A38B0031A07DFF45453F4D1EA0356920CDA (U3CU3Ec__DisplayClass24_0_t883564B7B0C095CE1F98FAED23AEAA0CB87F1D45* __this, const RuntimeMethod* method) 
 {
 	{
@@ -21969,7 +21972,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass24_0__ctor_m3EC35A3
 		return;
 	}
 }
-// Method Definition Index: 76644
+// Method Definition Index: 76722
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* U3CU3Ec__DisplayClass24_0_U3CScaleXU3Eb__0_m07AF5E976B9DB713D2AEE88D6BF097E00B319B1C (U3CU3Ec__DisplayClass24_0_t883564B7B0C095CE1F98FAED23AEAA0CB87F1D45* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21997,7 +22000,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76645
+// Method Definition Index: 76723
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass25_0__ctor_m4E63294D3B9810C0D13DC36BD661C8D7EDAD8ED4 (U3CU3Ec__DisplayClass25_0_t295BCA864CA00371130BBED694EC28836680D48F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22005,7 +22008,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass25_0__ctor_m4E63294
 		return;
 	}
 }
-// Method Definition Index: 76646
+// Method Definition Index: 76724
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* U3CU3Ec__DisplayClass25_0_U3CScaleYU3Eb__0_m1D371DCA44B22CF1ABA0974ABF47AC4C1F4AA770 (U3CU3Ec__DisplayClass25_0_t295BCA864CA00371130BBED694EC28836680D48F* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22033,7 +22036,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76647
+// Method Definition Index: 76725
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass37_0__ctor_m948A3479A8FFFC1540D1A3D0B6973D8F8BE9E9F7 (U3CU3Ec__DisplayClass37_0_t5527D90E3BC418C78AE122B2DBCC0CD588C9F2C2* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22041,7 +22044,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass37_0__ctor_m948A347
 		return;
 	}
 }
-// Method Definition Index: 76648
+// Method Definition Index: 76726
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* U3CU3Ec__DisplayClass37_0_U3CFadeU3Eb__0_mA9C59B7C690A0E14560774E49CD4D7BDFC2E27E9 (U3CU3Ec__DisplayClass37_0_t5527D90E3BC418C78AE122B2DBCC0CD588C9F2C2* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22069,7 +22072,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76649
+// Method Definition Index: 76727
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass38_0__ctor_m0C41213D9456DA7375BDDFDBDDE0F3473DA59AB5 (U3CU3Ec__DisplayClass38_0_t0C8559C491EC2B68042BB020E86E1835B5C29762* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22077,7 +22080,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass38_0__ctor_m0C41213
 		return;
 	}
 }
-// Method Definition Index: 76650
+// Method Definition Index: 76728
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* U3CU3Ec__DisplayClass38_0_U3CFadeU3Eb__0_m16B39D3EDE344CBEA30AB69B7E983066EB050E9B (U3CU3Ec__DisplayClass38_0_t0C8559C491EC2B68042BB020E86E1835B5C29762* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22108,7 +22111,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76651
+// Method Definition Index: 76729
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass39_0__ctor_mDDDECCFBC265E9B42EA8B61D1DBBF18E8D34335D (U3CU3Ec__DisplayClass39_0_t7E8BB89AED68D92EE3E58967A2A855A8C42CE010* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22116,7 +22119,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass39_0__ctor_mDDDECCF
 		return;
 	}
 }
-// Method Definition Index: 76652
+// Method Definition Index: 76730
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* U3CU3Ec__DisplayClass39_0_U3CColorU3Eb__0_m772839F2ECFF7A40C9F545C6A83F568756AA7772 (U3CU3Ec__DisplayClass39_0_t7E8BB89AED68D92EE3E58967A2A855A8C42CE010* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22147,7 +22150,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76653
+// Method Definition Index: 76731
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass40_0__ctor_m706C1A5AF58D61841EE8CCD1D696D57E79A2E20C (U3CU3Ec__DisplayClass40_0_t33C5FE15796D64EB5541512ABC6B4D3D99D5F601* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22155,7 +22158,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass40_0__ctor_m706C1A5
 		return;
 	}
 }
-// Method Definition Index: 76654
+// Method Definition Index: 76732
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* U3CU3Ec__DisplayClass40_0_U3CColorU3Eb__0_m415DB94AF18CE0BAA1B2F5C1C15DE72CEB608575 (U3CU3Ec__DisplayClass40_0_t33C5FE15796D64EB5541512ABC6B4D3D99D5F601* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22186,7 +22189,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76655
+// Method Definition Index: 76733
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass41_0__ctor_m861FC421FBC36DB1C58E8A608373D5A74F20E742 (U3CU3Ec__DisplayClass41_0_t6A28E93C3ADFA1F06019BE45EBBF1385EDCF4A7F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22194,7 +22197,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass41_0__ctor_m861FC42
 		return;
 	}
 }
-// Method Definition Index: 76656
+// Method Definition Index: 76734
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* U3CU3Ec__DisplayClass41_0_U3CMoveU3Eb__0_m0923CE9A483CBE3FE639C6279E733574AA440E91 (U3CU3Ec__DisplayClass41_0_t6A28E93C3ADFA1F06019BE45EBBF1385EDCF4A7F* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22224,7 +22227,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76657
+// Method Definition Index: 76735
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass42_0__ctor_m2C1478976672E3024A3C1E30E2F668A52B957014 (U3CU3Ec__DisplayClass42_0_tC5D623165A8C92FE4E273DD64B3AE1FF11310424* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22232,7 +22235,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass42_0__ctor_m2C14789
 		return;
 	}
 }
-// Method Definition Index: 76658
+// Method Definition Index: 76736
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C396696* U3CU3Ec__DisplayClass42_0_U3CScaleU3Eb__0_mA9AD3845B6B1E311905C7E92ADEDE9E06F54C422 (U3CU3Ec__DisplayClass42_0_tC5D623165A8C92FE4E273DD64B3AE1FF11310424* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22262,7 +22265,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LTDescr_t7D2535016B50E5B777CEA4DA359DF39A6C39
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76659
+// Method Definition Index: 76737
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass43_0__ctor_m67F65E74995EC40E190FFB8691A1315606892AC1 (U3CU3Ec__DisplayClass43_0_tF57DCC65D43F9CA1DDB214D5907F20AB0C2CED2D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22270,7 +22273,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass43_0__ctor_m67F65E7
 		return;
 	}
 }
-// Method Definition Index: 76660
+// Method Definition Index: 76738
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass43_0_U3CAlphaU3Eb__0_m7D41CF8E7691D3D037AE12463A6B27C28B18EE89 (U3CU3Ec__DisplayClass43_0_tF57DCC65D43F9CA1DDB214D5907F20AB0C2CED2D* __this, float ___0_val, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22312,7 +22315,7 @@ IL_001a:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76661
+// Method Definition Index: 76739
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass44_0__ctor_mC44E2905F05FC8159EB79DE07E6AB3DDDDFD65F1 (U3CU3Ec__DisplayClass44_0_t6F85165DB0D50A28E3F7229295D2D0AA5933331D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22320,7 +22323,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass44_0__ctor_mC44E290
 		return;
 	}
 }
-// Method Definition Index: 76662
+// Method Definition Index: 76740
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass44_0_U3CAlphaU3Eb__0_m9E5C60F8EEADB30B5556489D3E532D8F590B6D38 (U3CU3Ec__DisplayClass44_0_t6F85165DB0D50A28E3F7229295D2D0AA5933331D* __this, float ___0_val, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22380,7 +22383,7 @@ IL_004f:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76663
+// Method Definition Index: 76741
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass45_0__ctor_m95420991FCB3A2C4B7324BF4386950744F64BF51 (U3CU3Ec__DisplayClass45_0_tA2FBC6C29E703B412C47D742C56B58DBAFD93AED* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22388,7 +22391,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass45_0__ctor_m9542099
 		return;
 	}
 }
-// Method Definition Index: 76664
+// Method Definition Index: 76742
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass45_0_U3CAlphaU3Eb__0_m930FD4625C0E04B3780CBD3FC7CF6713044B83DD (U3CU3Ec__DisplayClass45_0_tA2FBC6C29E703B412C47D742C56B58DBAFD93AED* __this, float ___0_val, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22441,7 +22444,7 @@ IL_002e:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76665
+// Method Definition Index: 76743
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass46_0__ctor_m9D78B32F25FD9000E8F878CB4AACD607B34EC94A (U3CU3Ec__DisplayClass46_0_tE620E9315BA27D19CD27501E73EEF0445A3DCEE5* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22449,7 +22452,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass46_0__ctor_m9D78B32
 		return;
 	}
 }
-// Method Definition Index: 76666
+// Method Definition Index: 76744
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass46_0_U3CAlphaU3Eb__0_mEF6317217ABB2FEF7997153F80BB51D831E1EC79 (U3CU3Ec__DisplayClass46_0_tE620E9315BA27D19CD27501E73EEF0445A3DCEE5* __this, float ___0_val, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22502,7 +22505,7 @@ IL_002e:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76667
+// Method Definition Index: 76745
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass47_0__ctor_m3A9E97F935DFBB03F4635BF9B087E55E3209BF82 (U3CU3Ec__DisplayClass47_0_t1D790AC433B0A8215643CB395079C8A1582B064B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22510,7 +22513,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass47_0__ctor_m3A9E97F
 		return;
 	}
 }
-// Method Definition Index: 76668
+// Method Definition Index: 76746
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass47_0_U3CAlphaU3Eb__0_m29B388B2D42331C0F2C3C32BC06DFD67BC8BFB2D (U3CU3Ec__DisplayClass47_0_t1D790AC433B0A8215643CB395079C8A1582B064B* __this, float ___0_val, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22552,7 +22555,7 @@ IL_001a:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76669
+// Method Definition Index: 76747
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass48_0__ctor_m71769EAE7FC03034FBFD44908671395BD96CDE09 (U3CU3Ec__DisplayClass48_0_t0250A2610CA6AA7C9BA3474599F2BC8F2E641AB0* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22560,7 +22563,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass48_0__ctor_m71769EA
 		return;
 	}
 }
-// Method Definition Index: 76670
+// Method Definition Index: 76748
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass48_0_U3CShakeU3Eb__0_m241D3B4944D599DC6AF1CCF619260D6648BFA3CD (U3CU3Ec__DisplayClass48_0_t0250A2610CA6AA7C9BA3474599F2BC8F2E641AB0* __this, float ___0_val, const RuntimeMethod* method) 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
@@ -22595,7 +22598,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass48_0_U3CShakeU3Eb__
 		return;
 	}
 }
-// Method Definition Index: 76671
+// Method Definition Index: 76749
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass48_0_U3CShakeU3Eb__1_m2051795CD300A8DD389B233D4C431D9C4E9CE839 (U3CU3Ec__DisplayClass48_0_t0250A2610CA6AA7C9BA3474599F2BC8F2E641AB0* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22619,7 +22622,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass48_0_U3CShakeU3Eb__
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76672
+// Method Definition Index: 76750
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass49_0__ctor_mB73F4644A0DBBB453C79171D80C23C6DB5776F74 (U3CU3Ec__DisplayClass49_0_t86952A5B5565BC86AF49726E07D85C901A9E7A79* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22627,7 +22630,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass49_0__ctor_mB73F464
 		return;
 	}
 }
-// Method Definition Index: 76673
+// Method Definition Index: 76751
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass49_0_U3CPulseU3Eb__0_m2466C0CC23F967B6BAB4B24E58565F308F88E258 (U3CU3Ec__DisplayClass49_0_t86952A5B5565BC86AF49726E07D85C901A9E7A79* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22647,7 +22650,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass49_0_U3CPulseU3Eb__
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76674
+// Method Definition Index: 76752
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass65_0__ctor_m29221FF3A6C1F2BC597F3B8895F608AF5F7F3B07 (U3CU3Ec__DisplayClass65_0_t14EEBD229F5D2F248D50557E85AE74B4D0023364* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22655,7 +22658,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass65_0__ctor_m29221FF
 		return;
 	}
 }
-// Method Definition Index: 76675
+// Method Definition Index: 76753
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass65_0_U3CSetupPropertyTweenU3Eb__0_m7FE130295DCFCF6E8960115D6B4B36E472F85B9C (U3CU3Ec__DisplayClass65_0_t14EEBD229F5D2F248D50557E85AE74B4D0023364* __this, float ___0_t, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22784,7 +22787,7 @@ IL_0072:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76676
+// Method Definition Index: 76754
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTweenManager_Update_m807F6ADA4879E9575720937949F6EF485CA4A503 (PhobiaTweenManager_tDEB63512F7E5EE0D63ADB5630F3B174BE573C239* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22792,7 +22795,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTweenManager_Update_m807F6ADA4879E
 		return;
 	}
 }
-// Method Definition Index: 76677
+// Method Definition Index: 76755
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTweenManager__ctor_mAB760B1241ADF2538FEE7C6473203775DC570F0F (PhobiaTweenManager_tDEB63512F7E5EE0D63ADB5630F3B174BE573C239* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22808,7 +22811,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PhobiaTweenManager__ctor_mAB760B1241ADF2
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76678
+// Method Definition Index: 76756
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* Score_get_Instance_m3EDC9C3B9B5823E0D0F45C3CCA2EB22F33C8367B (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22823,7 +22826,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC8
 		return L_0;
 	}
 }
-// Method Definition Index: 76679
+// Method Definition Index: 76757
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_set_Instance_m0EF7A5866C2E81B8BA3A4682CE0FA937682F443A (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -22840,7 +22843,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_set_Instance_m0EF7A5866C2E81B8BA3A
 		return;
 	}
 }
-// Method Definition Index: 76680
+// Method Definition Index: 76758
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Score_get_songScore_m708EC4BF18D1DA7679D089A3673740997263D0B9 (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22849,7 +22852,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Score_get_songScore_m708EC4BF18D1DA76
 		return L_0;
 	}
 }
-// Method Definition Index: 76681
+// Method Definition Index: 76759
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_set_songScore_mD31FE70B7AE5C26D2D1BC73F32F556FC6BA90FF7 (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -22859,7 +22862,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_set_songScore_mD31FE70B7AE5C26D2D1
 		return;
 	}
 }
-// Method Definition Index: 76682
+// Method Definition Index: 76760
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Score_get_combo_m6976505710C8266F704543042D0E2D2719249D94 (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22868,7 +22871,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Score_get_combo_m6976505710C8266F7045
 		return L_0;
 	}
 }
-// Method Definition Index: 76683
+// Method Definition Index: 76761
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_set_combo_mFE4195F9D184B2DA01111A8CBD2A4C3909FD4B0B (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -22878,7 +22881,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_set_combo_mFE4195F9D184B2DA01111A8
 		return;
 	}
 }
-// Method Definition Index: 76684
+// Method Definition Index: 76762
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Score_get_maxCombo_m852320051312973E57DC6A45D9740B1EE3372042 (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22887,7 +22890,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Score_get_maxCombo_m852320051312973E5
 		return L_0;
 	}
 }
-// Method Definition Index: 76685
+// Method Definition Index: 76763
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_set_maxCombo_mBE95EC69EF4DC3FDC1602FD9038B131066E27806 (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -22897,7 +22900,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_set_maxCombo_mBE95EC69EF4DC3FDC160
 		return;
 	}
 }
-// Method Definition Index: 76686
+// Method Definition Index: 76764
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Score_get_totalNotes_mED19ACDA1FD32F76B40D6260BF40C3BF57F5D9B2 (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22906,7 +22909,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Score_get_totalNotes_mED19ACDA1FD32F7
 		return L_0;
 	}
 }
-// Method Definition Index: 76687
+// Method Definition Index: 76765
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_set_totalNotes_m258BDFC71DD7010A3BA89C9BF29C2B1D1442FF9D (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -22916,7 +22919,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_set_totalNotes_m258BDFC71DD7010A3B
 		return;
 	}
 }
-// Method Definition Index: 76688
+// Method Definition Index: 76766
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Score_get_perfectHits_m756D56ECE34CFBA8026558ADF6ADC918F5B81046 (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22925,7 +22928,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Score_get_perfectHits_m756D56ECE34CFB
 		return L_0;
 	}
 }
-// Method Definition Index: 76689
+// Method Definition Index: 76767
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_set_perfectHits_m7135F111745AA45906F74AEA672EA31DE0E328D6 (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -22935,7 +22938,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_set_perfectHits_m7135F111745AA4590
 		return;
 	}
 }
-// Method Definition Index: 76690
+// Method Definition Index: 76768
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Score_get_earlyHits_mAE5693DB1439057EB551E4B8C2C1BC9600E933D9 (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22944,7 +22947,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Score_get_earlyHits_mAE5693DB1439057E
 		return L_0;
 	}
 }
-// Method Definition Index: 76691
+// Method Definition Index: 76769
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_set_earlyHits_m48A068688A41CCB688E2517F061838666A63588E (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -22954,7 +22957,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_set_earlyHits_m48A068688A41CCB688E
 		return;
 	}
 }
-// Method Definition Index: 76692
+// Method Definition Index: 76770
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Score_get_lateHits_m86FC5D568332B5CDF54B0793AEE43F2557D545CB (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22963,7 +22966,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Score_get_lateHits_m86FC5D568332B5CDF
 		return L_0;
 	}
 }
-// Method Definition Index: 76693
+// Method Definition Index: 76771
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_set_lateHits_m085EB95D6BF5CDDF22E91593AF9C321B4C31F738 (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -22973,7 +22976,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_set_lateHits_m085EB95D6BF5CDDF22E9
 		return;
 	}
 }
-// Method Definition Index: 76694
+// Method Definition Index: 76772
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Score_get_misses_mEA2DDE73BD6110C14C33033DBD4F2A87F2BF9C9C (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	{
@@ -22982,7 +22985,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Score_get_misses_mEA2DDE73BD6110C14C3
 		return L_0;
 	}
 }
-// Method Definition Index: 76695
+// Method Definition Index: 76773
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_set_misses_m47489E27E3A59AB3377F7805A16C3B26AC6D1974 (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -22992,7 +22995,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_set_misses_m47489E27E3A59AB3377F78
 		return;
 	}
 }
-// Method Definition Index: 76696
+// Method Definition Index: 76774
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Score_get_accuracy_m5DB9D68FB3477F9929FBCDF4BCDA077B3B25E106 (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	{
@@ -23001,7 +23004,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Score_get_accuracy_m5DB9D68FB3477F9929F
 		return L_0;
 	}
 }
-// Method Definition Index: 76697
+// Method Definition Index: 76775
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_set_accuracy_mA2FAAE948E62B15518091987FAC36A9025FF5E47 (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -23011,7 +23014,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_set_accuracy_mA2FAAE948E62B1551809
 		return;
 	}
 }
-// Method Definition Index: 76698
+// Method Definition Index: 76776
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* Score_get_windows_m879200FFC69E0FF334C7843B3392CD3BC5905E69 (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23038,7 +23041,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52C
 		return L_5;
 	}
 }
-// Method Definition Index: 76699
+// Method Definition Index: 76777
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_Init_mC4BA297F4E0D25EDB302EB386802482DC029CB63 (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23083,7 +23086,7 @@ IL_0025:
 		return;
 	}
 }
-// Method Definition Index: 76700
+// Method Definition Index: 76778
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_Reset_m187E2D6C036EF685BF89E177A9F10784C6041EDA (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23119,7 +23122,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_Reset_m187E2D6C036EF685BF89E177A9F
 		return;
 	}
 }
-// Method Definition Index: 76701
+// Method Definition Index: 76779
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_SetWindows_m452358B47C644F480C7D7E668CC7F893F372AC7B (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, float ___0_early, float ___1_perfect, float ___2_late, const RuntimeMethod* method) 
 {
 	{
@@ -23136,7 +23139,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_SetWindows_m452358B47C644F480C7D7E
 		return;
 	}
 }
-// Method Definition Index: 76702
+// Method Definition Index: 76780
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ValueTuple_2_t07DDAD74EE305111D8FABD66611ABC4F5296511A Score_ProcessHit_mAA98B705D63440C439F051E6F1811166F20FA9CE (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, float ___0_expectedTime, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23383,7 +23386,7 @@ IL_017b:
 		return L_49;
 	}
 }
-// Method Definition Index: 76703
+// Method Definition Index: 76781
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_ProcessMiss_mD45A6A1638EE6BBE875F0D867C91C7D870DB9ADD (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23445,7 +23448,7 @@ IL_0062:
 		return;
 	}
 }
-// Method Definition Index: 76704
+// Method Definition Index: 76782
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score_UpdateAccuracy_mD9DBCDD18B3BB896B8B1ECC051074A9D51ACC2FD (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
@@ -23504,7 +23507,7 @@ IL_003a:
 		return;
 	}
 }
-// Method Definition Index: 76705
+// Method Definition Index: 76783
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1AC8EC4F710* Score_GetResults_m1B3BD2F3B946447151065B32878BF8DCA090E179 (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23605,7 +23608,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Dictionary_2_tA348003A3C1CEFB3096E9D2A0BC7F1A
 		return L_33;
 	}
 }
-// Method Definition Index: 76706
+// Method Definition Index: 76784
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ValueTuple_2_t07DDAD74EE305111D8FABD66611ABC4F5296511A Score_GetLastHit_m437D999714EC838CF5C94998F81AF39F0F7F3E55 (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23644,7 +23647,7 @@ IL_001e:
 		return L_4;
 	}
 }
-// Method Definition Index: 76707
+// Method Definition Index: 76785
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Queue_1_tB394A54B2705EE9D0B7F6D0366B092A2C5B2505E* Score_GetRecentHits_mFD528AE22F7B068C5A476E4F0F3A8990D54410A6 (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23662,7 +23665,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Queue_1_tB394A54B2705EE9D0B7F6D0366B092A2C5B2
 		return L_1;
 	}
 }
-// Method Definition Index: 76708
+// Method Definition Index: 76786
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Score_IsInWindow_mFC9934BE467D093694BB25B59F87EA5D6135D2D8 (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, float ___0_latency, const RuntimeMethod* method) 
 {
 	{
@@ -23678,7 +23681,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Score_IsInWindow_mFC9934BE467D093694BB25
 		return (bool)((((int32_t)((!(((float)L_1) <= ((float)L_4)))? 1 : 0)) == ((int32_t)0))? 1 : 0);
 	}
 }
-// Method Definition Index: 76709
+// Method Definition Index: 76787
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Score_GetWindowForLatency_mBB8349B6E85C94D93D1ECAB039DC180E13618EF0 (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, float ___0_latency, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23760,7 +23763,7 @@ IL_0044:
 		return _stringLiteral0469116788B8626C8DA3C69F79F8A3DD1B3DAF94;
 	}
 }
-// Method Definition Index: 76710
+// Method Definition Index: 76788
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score__ctor_m426D71ED3CE25651C5FD6D93049923BA0775A18A (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23800,7 +23803,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Score__ctor_m426D71ED3CE25651C5FD6D93049
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76714
+// Method Definition Index: 76792
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* PlayState_get_Instance_m1BA06C5C6CEA764092973B6A469F590F1766DD7E (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23810,12 +23813,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:30>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:31>
 		PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* L_0 = ((PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568_StaticFields*)il2cpp_codegen_static_fields_for(PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568_il2cpp_TypeInfo_var))->___U3CInstanceU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 76715
+// Method Definition Index: 76793
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_set_Instance_m2E8E92B6745F31DC9A0C93824FDB2A89C1856421 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23825,141 +23828,141 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_set_Instance_m2E8E92B6745F31DC
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:30>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:31>
 		PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* L_0 = ___0_value;
 		((PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568_StaticFields*)il2cpp_codegen_static_fields_for(PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568_il2cpp_TypeInfo_var))->___U3CInstanceU3Ek__BackingField = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&((PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568_StaticFields*)il2cpp_codegen_static_fields_for(PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568_il2cpp_TypeInfo_var))->___U3CInstanceU3Ek__BackingField), (void*)L_0);
 		return;
 	}
 }
-// Method Definition Index: 76716
+// Method Definition Index: 76794
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* PlayState_get_SceneId_m682C42F557B92646770F145D26F0388FCF731396 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:36>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:37>
 		String_t* L_0 = __this->___U3CSceneIdU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 76717
+// Method Definition Index: 76795
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_set_SceneId_mEB98B964F0B9BE8F2801CB609798005D896E4A69 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:36>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:37>
 		String_t* L_0 = ___0_value;
 		__this->___U3CSceneIdU3Ek__BackingField = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CSceneIdU3Ek__BackingField), (void*)L_0);
 		return;
 	}
 }
-// Method Definition Index: 76718
+// Method Definition Index: 76796
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* PlayState_get_ContentId_m219D8D5FE3C7761E08D3238F46B3D67B1942E2A2 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:37>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:38>
 		String_t* L_0 = __this->___U3CContentIdU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 76719
+// Method Definition Index: 76797
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_set_ContentId_mA9F4954EF2375DA556C8960C2469121242ACED2D (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:37>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:38>
 		String_t* L_0 = ___0_value;
 		__this->___U3CContentIdU3Ek__BackingField = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CContentIdU3Ek__BackingField), (void*)L_0);
 		return;
 	}
 }
-// Method Definition Index: 76720
+// Method Definition Index: 76798
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_t06870C3374FE29764510AC48BC626054BF316CA7* PlayState_get_Music_mE9FC6AA70A3DD86FCB3BBD46E232AA5B97015BE4 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:38>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:39>
 		List_1_t06870C3374FE29764510AC48BC626054BF316CA7* L_0 = __this->___musicList;
 		return L_0;
 	}
 }
-// Method Definition Index: 76721
+// Method Definition Index: 76799
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* PlayState_get_Cam_m78A817C7D8E6F7BED60F59385FAB5EFB76283CE4 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:39>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:40>
 		PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* L_0 = __this->___U3CCamU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 76722
+// Method Definition Index: 76800
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_set_Cam_mDFFA7E5E53E42C59C0A8F082C43E63644616A613 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* ___0_value, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:39>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:40>
 		PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* L_0 = ___0_value;
 		__this->___U3CCamU3Ek__BackingField = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CCamU3Ek__BackingField), (void*)L_0);
 		return;
 	}
 }
-// Method Definition Index: 76723
+// Method Definition Index: 76801
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* PlayState_get_ScoreSystem_mA3B6AD26B31C0B18D68B5242F472040C554DF842 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:40>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:41>
 		Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* L_0 = __this->___U3CScoreSystemU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 76724
+// Method Definition Index: 76802
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_set_ScoreSystem_mBA356F612417302034FF4F1E4732507F052CCC9B (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* ___0_value, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:40>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:41>
 		Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* L_0 = ___0_value;
 		__this->___U3CScoreSystemU3Ek__BackingField = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CScoreSystemU3Ek__BackingField), (void*)L_0);
 		return;
 	}
 }
-// Method Definition Index: 76725
+// Method Definition Index: 76803
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PlayState_get_Philia_m56F68EE809CDE8B1554BCB260AA91519CAA149CE (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:43>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:44>
 		bool L_0 = __this->___pendingPhilia;
 		return L_0;
 	}
 }
-// Method Definition Index: 76726
+// Method Definition Index: 76804
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_set_Philia_m810B1717F1B6339865B6A17690DB6611B45CB20D (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:44>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:45>
 		bool L_0 = ___0_value;
 		__this->___pendingPhilia = L_0;
 		return;
 	}
 }
-// Method Definition Index: 76727
+// Method Definition Index: 76805
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PlayState_get_LoadedPhilia_mEDC68CD9A6334817544F7E085B52CC8F93BCE223 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:46>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:47>
 		bool L_0 = __this->___U3CLoadedPhiliaU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 76728
+// Method Definition Index: 76806
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_set_LoadedPhilia_mB24C95333E3B4AEB2740F5D9B218E26D3E6029A4 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:46>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:47>
 		bool L_0 = ___0_value;
 		__this->___U3CLoadedPhiliaU3Ek__BackingField = L_0;
 		return;
 	}
 }
-// Method Definition Index: 76729
+// Method Definition Index: 76807
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* PlayState_get_phobiaCamera_mBDB040314B033FC23B4DB050F546BC12BF053E8F (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -23969,7 +23972,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:59>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:60>
 		PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* L_0;
 		L_0 = PlayState_get_Cam_m78A817C7D8E6F7BED60F59385FAB5EFB76283CE4_inline(__this, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -23994,7 +23997,7 @@ IL_000f:
 		return L_3;
 	}
 }
-// Method Definition Index: 76730
+// Method Definition Index: 76808
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* PlayState_get_heartBeatMusic_mA295B8A059D8010BC82CB67CA622FCA227AD2D86 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24005,7 +24008,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA6
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:60>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:61>
 		List_1_t06870C3374FE29764510AC48BC626054BF316CA7* L_0 = __this->___musicList;
 		NullCheck(L_0);
 		int32_t L_1;
@@ -24028,7 +24031,7 @@ IL_0010:
 		return L_3;
 	}
 }
-// Method Definition Index: 76731
+// Method Definition Index: 76809
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TransitionState_t11A09E2A9C8DD6E9636A2C1A072AA1A72C3CB871* PlayState_get_Transition_m3333BCD14447431A97D66DB425AB5D162C39A96C (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24041,7 +24044,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TransitionState_t11A09E2A9C8DD6E9636A2C1A072A
 	TransitionState_t11A09E2A9C8DD6E9636A2C1A072AA1A72C3CB871* G_B2_0 = NULL;
 	TransitionState_t11A09E2A9C8DD6E9636A2C1A072AA1A72C3CB871* G_B1_0 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:61>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:62>
 		TransitionState_t11A09E2A9C8DD6E9636A2C1A072AA1A72C3CB871* L_0 = __this->___transitionState;
 		TransitionState_t11A09E2A9C8DD6E9636A2C1A072AA1A72C3CB871* L_1 = L_0;
 		if (L_1)
@@ -24067,7 +24070,7 @@ IL_0019:
 		return G_B2_0;
 	}
 }
-// Method Definition Index: 76732
+// Method Definition Index: 76810
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_Awake_mB5F7849F062B3121736C6CFBA89FB3FEB87F5E20 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24081,7 +24084,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_Awake_mB5F7849F062B3121736C6CF
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:65>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:66>
 		PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* L_0;
 		L_0 = PlayState_get_Instance_m1BA06C5C6CEA764092973B6A469F590F1766DD7E_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -24093,25 +24096,25 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_Awake_mB5F7849F062B3121736C6CF
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:67>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:68>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2;
 		L_2 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_2, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:69>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:70>
 		return;
 	}
 
 IL_0019:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:72>
-		PlayState_set_Instance_m2E8E92B6745F31DC9A0C93824FDB2A89C1856421_inline(__this, NULL);
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:73>
+		PlayState_set_Instance_m2E8E92B6745F31DC9A0C93824FDB2A89C1856421_inline(__this, NULL);
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:74>
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* L_3;
 		L_3 = Object_FindFirstObjectByType_TisPhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244_m0320C915BDA9B5AEB96B8420AFA46F052EC9FD88(Object_FindFirstObjectByType_TisPhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244_m0320C915BDA9B5AEB96B8420AFA46F052EC9FD88_RuntimeMethod_var);
 		PlayState_set_Cam_mDFFA7E5E53E42C59C0A8F082C43E63644616A613_inline(__this, L_3, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:75>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:76>
 		PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* L_4;
 		L_4 = PlayState_get_Cam_m78A817C7D8E6F7BED60F59385FAB5EFB76283CE4_inline(__this, NULL);
 		bool L_5;
@@ -24122,14 +24125,14 @@ IL_0019:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:77>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:78>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(_stringLiteral55320C3CF8F47C5017AF22C4CFF58DF6CEFB34C7, NULL);
 	}
 
 IL_0042:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:80>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:81>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6;
 		L_6 = CanvasManager_get_GameContainer_m072F65A2AEDC26A43AF3B2A0A622AE11777C67ED_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -24141,7 +24144,7 @@ IL_0042:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:82>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:83>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_8;
 		L_8 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_9;
@@ -24155,18 +24158,18 @@ IL_0042:
 
 IL_0065:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:85>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:86>
 		TransitionState_t11A09E2A9C8DD6E9636A2C1A072AA1A72C3CB871* L_11 = (TransitionState_t11A09E2A9C8DD6E9636A2C1A072AA1A72C3CB871*)il2cpp_codegen_object_new(TransitionState_t11A09E2A9C8DD6E9636A2C1A072AA1A72C3CB871_il2cpp_TypeInfo_var);
 		TransitionState__ctor_mE5A105B8AF558D66CA75287A580092E4CB8876F1(L_11, __this, NULL);
 		__this->___transitionState = L_11;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___transitionState), (void*)L_11);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:86>
-		PlayState_initializeScore_m578436C1257583D2C59B5BFA29F5D37B32D75ED2(__this, NULL);
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:87>
+		PlayState_initializeScore_m578436C1257583D2C59B5BFA29F5D37B32D75ED2(__this, NULL);
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:88>
 		return;
 	}
 }
-// Method Definition Index: 76733
+// Method Definition Index: 76811
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_Update_m11025D7C32746D7DF93744FDFE7C2607492F057C (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24179,21 +24182,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_Update_m11025D7C32746D7DF93744
 	int32_t V_0 = 0;
 	EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D* V_1 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:91>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:92>
 		V_0 = 0;
 		goto IL_001e;
 	}
 
 IL_0004:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:93>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:94>
 		List_1_tA7856D1541AA7A065687B80A1430DD261F05590A* L_0 = __this->___environments;
 		int32_t L_1 = V_0;
 		NullCheck(L_0);
 		EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D* L_2;
 		L_2 = List_1_get_Item_m43F50ACE1A99486FAA1B2EAD237BEDD93BBCD23D(L_0, L_1, List_1_get_Item_m43F50ACE1A99486FAA1B2EAD237BEDD93BBCD23D_RuntimeMethod_var);
 		V_1 = L_2;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:94>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:95>
 		EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D* L_3 = V_1;
 		if (!L_3)
 		{
@@ -24201,7 +24204,7 @@ IL_0004:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:99>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:100>
 		EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D* L_4 = V_1;
 		NullCheck(L_4);
 		VirtualActionInvoker0::Invoke(6, L_4);
@@ -24209,14 +24212,14 @@ IL_0004:
 
 IL_001a:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:91>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:92>
 		int32_t L_5 = V_0;
 		V_0 = ((int32_t)il2cpp_codegen_add(L_5, 1));
 	}
 
 IL_001e:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:91>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:92>
 		int32_t L_6 = V_0;
 		List_1_tA7856D1541AA7A065687B80A1430DD261F05590A* L_7 = __this->___environments;
 		NullCheck(L_7);
@@ -24228,21 +24231,21 @@ IL_001e:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:101>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:102>
 		return;
 	}
 }
-// Method Definition Index: 76734
+// Method Definition Index: 76812
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_LateUpdate_m0AA9949BB9195F22B6F543AC817B47BBD13B5D2E (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:105>
-		PlayState_SyncExtraTracksToConductor_m45C2418267C02B064DE473EF96F69B9075E6027C(__this, NULL);
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:106>
+		PlayState_SyncExtraTracksToConductor_m45C2418267C02B064DE473EF96F69B9075E6027C(__this, NULL);
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:107>
 		return;
 	}
 }
-// Method Definition Index: 76735
+// Method Definition Index: 76813
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_LoadStateInternal_mC8DD06F810090501032BA88D0AB51621039C6515 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, String_t* ___0_id, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24258,19 +24261,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_LoadStateInternal_mC8DD06F8100
 	Exception_t* V_2 = NULL;
 	il2cpp::utils::ExceptionSupportStack<RuntimeObject*, 1> __active_exceptions;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:110>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:111>
 		String_t* L_0 = ___0_id;
 		PlayState_set_SceneId_mEB98B964F0B9BE8F2801CB609798005D896E4A69_inline(__this, L_0, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:111>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:112>
 		String_t* L_1 = ___0_id;
 		PlayState_set_ContentId_mA9F4954EF2375DA556C8960C2469121242ACED2D_inline(__this, L_1, NULL);
 	}
 	try
 	{
 		{
-			//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:115>
+			//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:116>
 			PlayState_clear_mDD926DB82FE3D61521B0382406BD4C5E0EB15F8B(__this, NULL);
-			//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:117>
+			//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:118>
 			String_t* L_2 = ___0_id;
 			il2cpp_codegen_runtime_class_init_inline(SceneRegistry_t3D3BAE3D52C446AB2DB5B5821503B8DA25ED38C2_il2cpp_TypeInfo_var);
 			bool L_3;
@@ -24281,31 +24284,31 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_LoadStateInternal_mC8DD06F8100
 			}
 		}
 		{
-			//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:119>
+			//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:120>
 			String_t* L_4 = ___0_id;
 			String_t* L_5;
 			L_5 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteral7D0085A7C39EAC54C62D820ABFC7513F5B00F5B6, L_4, NULL);
 			il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 			Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(L_5, NULL);
-			//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:121>
+			//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:122>
 			goto IL_0064;
 		}
 
 IL_0031_1:
 		{
-			//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:124>
+			//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:125>
 			bool L_6 = __this->___pendingPhilia;
 			V_1 = L_6;
-			//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:125>
+			//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:126>
 			__this->___pendingPhilia = (bool)0;
-			//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:127>
+			//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:128>
 			MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* L_7 = V_0;
 			bool L_8 = V_1;
 			PlayState_initScene_m2A0F8DBD286BBFEF4C8E1857416E1AF5BBB9D5B8(__this, L_7, L_8, NULL);
-			//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:128>
+			//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:129>
 			MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* L_9 = V_0;
 			PlayState_setup_mD64A666CE054AF269B530FC71303E9C4B7BF5196(__this, L_9, NULL);
-			//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:129>
+			//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:130>
 			goto IL_0064;
 		}
 	}
@@ -24322,31 +24325,31 @@ IL_0031_1:
 CATCH_0050:
 	{
 		Exception_t* L_10 = ((Exception_t*)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t*));;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:130>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:131>
 		V_2 = L_10;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:132>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:133>
 		String_t* L_11 = ___0_id;
 		Exception_t* L_12 = V_2;
 		String_t* L_13;
 		L_13 = String_Format_mFB7DA489BD99F4670881FF50EC017BFB0A5C0987(((String_t*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&_stringLiteralD125B18F94DE6FC54F76B5793F3444E5240E4AE4)), L_11, L_12, NULL);
 		il2cpp_codegen_runtime_class_init_inline(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var)));
 		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(L_13, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:133>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:134>
 		IL2CPP_POP_ACTIVE_EXCEPTION(Exception_t*);
 		goto IL_0064;
 	}
 
 IL_0064:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:134>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:135>
 		return;
 	}
 }
-// Method Definition Index: 76736
+// Method Definition Index: 76814
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_SwitchState_mCF2F427E503AF20B9217A348A36CB713CA9269EC (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, String_t* ___0_id, float ___1_delay, float ___2_duration, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:138>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:139>
 		TransitionState_t11A09E2A9C8DD6E9636A2C1A072AA1A72C3CB871* L_0;
 		L_0 = PlayState_get_Transition_m3333BCD14447431A97D66DB425AB5D162C39A96C(__this, NULL);
 		String_t* L_1 = ___0_id;
@@ -24354,15 +24357,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_SwitchState_mCF2F427E503AF20B9
 		float L_3 = ___2_duration;
 		NullCheck(L_0);
 		TransitionState_SwitchState_mBC465A688A3F0F0F5A4DBE8B6D1D3A475C7DE437(L_0, L_1, L_2, L_3, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:139>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:140>
 		return;
 	}
 }
-// Method Definition Index: 76737
+// Method Definition Index: 76815
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_LoadState_m7D9CD19C1D8919BCF69D47A6504FECE5B938C504 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, String_t* ___0_id, float ___1_delay, float ___2_duration, float ___3_minimumLoadTime, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:143>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:144>
 		TransitionState_t11A09E2A9C8DD6E9636A2C1A072AA1A72C3CB871* L_0;
 		L_0 = PlayState_get_Transition_m3333BCD14447431A97D66DB425AB5D162C39A96C(__this, NULL);
 		String_t* L_1 = ___0_id;
@@ -24371,11 +24374,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_LoadState_m7D9CD19C1D8919BCF69
 		float L_4 = ___3_minimumLoadTime;
 		NullCheck(L_0);
 		TransitionState_LoadState_m72967D7612174E746A0C2246478FF9B6406E8131(L_0, L_1, L_2, L_3, L_4, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:144>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:145>
 		return;
 	}
 }
-// Method Definition Index: 76738
+// Method Definition Index: 76816
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_StartSong_m8C1132BCE33FCC5495B2463CD965B38BAD1BEB68 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, bool ___0_useCountdown, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24387,7 +24390,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_StartSong_m8C1132BCE33FCC5495B
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:151>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:152>
 		bool L_0 = __this->___musicStarted;
 		if (!L_0)
 		{
@@ -24395,17 +24398,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_StartSong_m8C1132BCE33FCC5495B
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:153>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:154>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:156>
-		__this->___musicStarted = (bool)1;
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:157>
+		__this->___musicStarted = (bool)1;
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:158>
 		__this->___shouldPlay = (bool)1;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:159>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:160>
 		List_1_t06870C3374FE29764510AC48BC626054BF316CA7* L_1 = __this->___musicList;
 		NullCheck(L_1);
 		int32_t L_2;
@@ -24416,13 +24419,13 @@ IL_0009:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:161>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:162>
 		return;
 	}
 
 IL_0025:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:164>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:165>
 		bool L_3 = ___0_useCountdown;
 		if (!L_3)
 		{
@@ -24430,26 +24433,26 @@ IL_0025:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:166>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:167>
 		Countdown_t40405C8F34C2C3A726795D2CFA302C74459BE09C* L_4;
 		L_4 = Countdown_get_Instance_mCF647D0AFA072AAB156F616FD467439502420764(NULL);
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_5 = (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)il2cpp_codegen_object_new(Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var);
 		Action__ctor_mBDC7B0B4A3F583B64C2896F01BDED360772F67DC(L_5, __this, (intptr_t)((void*)PlayState_onCountdownComplete_mDD0B32FBE84B580E6F6B2452CFA7680836E25D84_RuntimeMethod_var), NULL);
 		NullCheck(L_4);
 		Countdown_StartCountdown_mAD1F436DD5AFF029CE408C22AD0084780561498E(L_4, L_5, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:168>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:169>
 		return;
 	}
 
 IL_003f:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:171>
-		PlayState_onCountdownComplete_mDD0B32FBE84B580E6F6B2452CFA7680836E25D84(__this, NULL);
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:172>
+		PlayState_onCountdownComplete_mDD0B32FBE84B580E6F6B2452CFA7680836E25D84(__this, NULL);
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:173>
 		return;
 	}
 }
-// Method Definition Index: 76739
+// Method Definition Index: 76817
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D* PlayState_GetEnvironment_mA28B9FC663021A9145F886647BCD5A21CD8C6A51 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, String_t* ___0_environmentId, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24462,7 +24465,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6A
 	int32_t V_0 = 0;
 	EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D* V_1 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:179>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:180>
 		String_t* L_0 = ___0_environmentId;
 		bool L_1;
 		L_1 = String_IsNullOrWhiteSpace_m42E1F3B2C358068D645E46F01CF1834DC77A5A10(L_0, NULL);
@@ -24472,27 +24475,27 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6A
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:181>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:182>
 		return (EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D*)NULL;
 	}
 
 IL_000a:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:184>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:185>
 		V_0 = 0;
 		goto IL_0033;
 	}
 
 IL_000e:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:186>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:187>
 		List_1_tA7856D1541AA7A065687B80A1430DD261F05590A* L_2 = __this->___environments;
 		int32_t L_3 = V_0;
 		NullCheck(L_2);
 		EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D* L_4;
 		L_4 = List_1_get_Item_m43F50ACE1A99486FAA1B2EAD237BEDD93BBCD23D(L_2, L_3, List_1_get_Item_m43F50ACE1A99486FAA1B2EAD237BEDD93BBCD23D_RuntimeMethod_var);
 		V_1 = L_4;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:187>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:188>
 		EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D* L_5 = V_1;
 		if (!L_5)
 		{
@@ -24500,7 +24503,7 @@ IL_000e:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:192>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:193>
 		EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D* L_6 = V_1;
 		NullCheck(L_6);
 		String_t* L_7 = L_6->___environmentId;
@@ -24513,21 +24516,21 @@ IL_000e:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:194>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:195>
 		EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D* L_10 = V_1;
 		return L_10;
 	}
 
 IL_002f:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:184>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:185>
 		int32_t L_11 = V_0;
 		V_0 = ((int32_t)il2cpp_codegen_add(L_11, 1));
 	}
 
 IL_0033:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:184>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:185>
 		int32_t L_12 = V_0;
 		List_1_tA7856D1541AA7A065687B80A1430DD261F05590A* L_13 = __this->___environments;
 		NullCheck(L_13);
@@ -24539,11 +24542,11 @@ IL_0033:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:198>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:199>
 		return (EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D*)NULL;
 	}
 }
-// Method Definition Index: 76740
+// Method Definition Index: 76818
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_setup_mD64A666CE054AF269B530FC71303E9C4B7BF5196 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* ___0_newScene, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24574,18 +24577,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_setup_mD64A666CE054AF269B530FC
 	Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* G_B16_0 = NULL;
 	Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* G_B15_0 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:203>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:204>
 		MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* L_0 = ___0_newScene;
 		__this->___scene = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___scene), (void*)L_0);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:204>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:205>
 		MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* L_1 = __this->___scene;
 		NullCheck(L_1);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2;
 		L_2 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_1, NULL);
 		NullCheck(L_2);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_2, (bool)1, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:206>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:207>
 		String_t* L_3;
 		L_3 = PlayState_get_SceneId_m682C42F557B92646770F145D26F0388FCF731396_inline(__this, NULL);
 		LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC0C7BB9* L_4;
@@ -24607,7 +24610,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_setup_mD64A666CE054AF269B530FC
 IL_002d:
 	{
 		V_0 = G_B2_0;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:207>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:208>
 		LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC0C7BB9* L_7 = V_0;
 		NullCheck(L_7);
 		String_t* L_8 = L_7->___levelId;
@@ -24641,12 +24644,12 @@ IL_004a:
 	{
 		NullCheck(G_B5_1);
 		PlayState_set_ContentId_mA9F4954EF2375DA556C8960C2469121242ACED2D_inline(G_B5_1, G_B5_0, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:208>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:209>
 		LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC0C7BB9* L_13 = V_0;
 		NullCheck(L_13);
 		float L_14 = L_13->___defaultZoom;
 		__this->___camZoom = L_14;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:210>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:211>
 		LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC0C7BB9* L_15 = V_0;
 		NullCheck(L_15);
 		bool L_16 = L_15->___forceNoMusic;
@@ -24656,10 +24659,10 @@ IL_004a:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:212>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:213>
 		MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* L_17 = __this->___scene;
 		V_2 = (bool)((!(((RuntimeObject*)(OffsetMenu_t6E157BDCBB6562FC00D2A8E76D563C6647981E77*)((OffsetMenu_t6E157BDCBB6562FC00D2A8E76D563C6647981E77*)IsInstClass((RuntimeObject*)L_17, OffsetMenu_t6E157BDCBB6562FC00D2A8E76D563C6647981E77_il2cpp_TypeInfo_var))) <= ((RuntimeObject*)(RuntimeObject*)NULL)))? 1 : 0);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:213>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:214>
 		LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC0C7BB9* L_18 = V_0;
 		bool L_19 = V_2;
 		if (L_19)
@@ -24694,10 +24697,10 @@ IL_0083:
 
 IL_0089:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:216>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:217>
 		LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC0C7BB9* L_21 = V_0;
 		PlayState_setupEnvironments_mDE86FEEE90B398D0290561CF834D98E1059190C7(__this, L_21, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:218>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:219>
 		MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* L_22 = __this->___scene;
 		V_1 = ((LevelBase_t0B668D8A7F13C953354F444E4F518D8AB736F28D*)IsInstClass((RuntimeObject*)L_22, LevelBase_t0B668D8A7F13C953354F444E4F518D8AB736F28D_il2cpp_TypeInfo_var));
 		LevelBase_t0B668D8A7F13C953354F444E4F518D8AB736F28D* L_23 = V_1;
@@ -24707,7 +24710,7 @@ IL_0089:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:220>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:221>
 		LevelBase_t0B668D8A7F13C953354F444E4F518D8AB736F28D* L_24 = V_1;
 		NullCheck(L_24);
 		VirtualActionInvoker0::Invoke(13, L_24);
@@ -24716,7 +24719,7 @@ IL_0089:
 
 IL_00a7:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:222>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:223>
 		MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* L_25 = __this->___scene;
 		V_3 = ((UIBase_tCD5B85982419C0F1E9967BB25DACF215E2F45E89*)IsInstClass((RuntimeObject*)L_25, UIBase_tCD5B85982419C0F1E9967BB25DACF215E2F45E89_il2cpp_TypeInfo_var));
 		UIBase_tCD5B85982419C0F1E9967BB25DACF215E2F45E89* L_26 = V_3;
@@ -24726,7 +24729,7 @@ IL_00a7:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:224>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:225>
 		UIBase_tCD5B85982419C0F1E9967BB25DACF215E2F45E89* L_27 = V_3;
 		NullCheck(L_27);
 		VirtualActionInvoker0::Invoke(13, L_27);
@@ -24734,9 +24737,9 @@ IL_00a7:
 
 IL_00bc:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:227>
-		PlayState_setupEvents_m91EB5CB980A7E7CA702909FF35540B1BDC4F32D1(__this, NULL);
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:228>
+		PlayState_setupEvents_m91EB5CB980A7E7CA702909FF35540B1BDC4F32D1(__this, NULL);
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:229>
 		Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* L_28;
 		L_28 = PlayState_get_ScoreSystem_mA3B6AD26B31C0B18D68B5242F472040C554DF842_inline(__this, NULL);
 		Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* L_29 = L_28;
@@ -24755,11 +24758,11 @@ IL_00cd:
 	{
 		NullCheck(G_B16_0);
 		Score_Reset_m187E2D6C036EF685BF89E177A9F10784C6041EDA(G_B16_0, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:229>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:230>
 		return;
 	}
 }
-// Method Definition Index: 76741
+// Method Definition Index: 76819
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_initScene_m2A0F8DBD286BBFEF4C8E1857416E1AF5BBB9D5B8 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* ___0_newScene, bool ___1_usePhilia, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24774,7 +24777,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_initScene_m2A0F8DBD286BBFEF4C8
 	LevelBase_t0B668D8A7F13C953354F444E4F518D8AB736F28D* V_1 = NULL;
 	UIBase_tCD5B85982419C0F1E9967BB25DACF215E2F45E89* V_2 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:233>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:234>
 		PlayState_set_LoadedPhilia_mB24C95333E3B4AEB2740F5D9B218E26D3E6029A4_inline(__this, (bool)0, NULL);
 		MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* L_0 = ___0_newScene;
 		V_1 = ((LevelBase_t0B668D8A7F13C953354F444E4F518D8AB736F28D*)IsInstClass((RuntimeObject*)L_0, LevelBase_t0B668D8A7F13C953354F444E4F518D8AB736F28D_il2cpp_TypeInfo_var));
@@ -24799,17 +24802,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_initScene_m2A0F8DBD286BBFEF4C8
 
 IL_001d:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:238>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:239>
 		LevelBase_t0B668D8A7F13C953354F444E4F518D8AB736F28D* L_4 = V_1;
 		NullCheck(L_4);
 		VirtualActionInvoker1< PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* >::Invoke(11, L_4, __this);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:239>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:240>
 		goto IL_002d;
 	}
 
 IL_0026:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:241>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:242>
 		UIBase_tCD5B85982419C0F1E9967BB25DACF215E2F45E89* L_5 = V_2;
 		NullCheck(L_5);
 		VirtualActionInvoker1< PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* >::Invoke(10, L_5, __this);
@@ -24817,7 +24820,7 @@ IL_0026:
 
 IL_002d:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:245>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:246>
 		MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* L_6 = ___0_newScene;
 		V_0 = ((RuntimeObject*)IsInst((RuntimeObject*)L_6, IPhiliaState_t527FA5D7823AAB2F821CAA2756AE04824FE61578_il2cpp_TypeInfo_var));
 		RuntimeObject* L_7 = V_0;
@@ -24827,28 +24830,28 @@ IL_002d:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:247>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:248>
 		return;
 	}
 
 IL_0038:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:250>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:251>
 		RuntimeObject* L_8 = V_0;
 		bool L_9 = ___1_usePhilia;
 		NullCheck(L_8);
 		InterfaceActionInvoker1< bool >::Invoke(2, IPhiliaState_t527FA5D7823AAB2F821CAA2756AE04824FE61578_il2cpp_TypeInfo_var, L_8, L_9);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:251>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:252>
 		RuntimeObject* L_10 = V_0;
 		NullCheck(L_10);
 		bool L_11;
 		L_11 = InterfaceFuncInvoker0< bool >::Invoke(1, IPhiliaState_t527FA5D7823AAB2F821CAA2756AE04824FE61578_il2cpp_TypeInfo_var, L_10);
 		PlayState_set_LoadedPhilia_mB24C95333E3B4AEB2740F5D9B218E26D3E6029A4_inline(__this, L_11, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:252>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:253>
 		return;
 	}
 }
-// Method Definition Index: 76742
+// Method Definition Index: 76820
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_setupEnvironments_mDE86FEEE90B398D0290561CF834D98E1059190C7 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC0C7BB9* ___0_data, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -24866,7 +24869,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_setupEnvironments_mDE86FEEE90B
 	String_t* V_1 = NULL;
 	EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D* V_2 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:256>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:257>
 		MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* L_0 = __this->___scene;
 		if (((LevelBase_t0B668D8A7F13C953354F444E4F518D8AB736F28D*)IsInstClass((RuntimeObject*)L_0, LevelBase_t0B668D8A7F13C953354F444E4F518D8AB736F28D_il2cpp_TypeInfo_var)))
 		{
@@ -24881,13 +24884,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_setupEnvironments_mDE86FEEE90B
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:258>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:259>
 		return;
 	}
 
 IL_001b:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:261>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:262>
 		LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC0C7BB9* L_2 = ___0_data;
 		NullCheck(L_2);
 		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_3 = L_2->___environmentIds;
@@ -24911,20 +24914,20 @@ IL_001b:
 
 IL_0030:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:263>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:264>
 		return;
 	}
 
 IL_0031:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:266>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:267>
 		V_0 = 0;
 		goto IL_0076;
 	}
 
 IL_0035:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:268>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:269>
 		LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC0C7BB9* L_7 = ___0_data;
 		NullCheck(L_7);
 		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_8 = L_7->___environmentIds;
@@ -24933,7 +24936,7 @@ IL_0035:
 		String_t* L_10;
 		L_10 = List_1_get_Item_m21AEC50E791371101DC22ABCF96A2E46800811F8(L_8, L_9, List_1_get_Item_m21AEC50E791371101DC22ABCF96A2E46800811F8_RuntimeMethod_var);
 		V_1 = L_10;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:269>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:270>
 		String_t* L_11 = V_1;
 		bool L_12;
 		L_12 = String_IsNullOrWhiteSpace_m42E1F3B2C358068D645E46F01CF1834DC77A5A10(L_11, NULL);
@@ -24943,7 +24946,7 @@ IL_0035:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:274>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:275>
 		String_t* L_13 = V_1;
 		MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* L_14 = __this->___scene;
 		NullCheck(L_14);
@@ -24958,11 +24961,11 @@ IL_0035:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:279>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:280>
 		EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D* L_17 = V_2;
 		NullCheck(L_17);
 		VirtualActionInvoker0::Invoke(8, L_17);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:280>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:281>
 		List_1_tA7856D1541AA7A065687B80A1430DD261F05590A* L_18 = __this->___environments;
 		EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D* L_19 = V_2;
 		NullCheck(L_18);
@@ -24971,14 +24974,14 @@ IL_0035:
 
 IL_0072:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:266>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:267>
 		int32_t L_20 = V_0;
 		V_0 = ((int32_t)il2cpp_codegen_add(L_20, 1));
 	}
 
 IL_0076:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:266>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:267>
 		int32_t L_21 = V_0;
 		LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC0C7BB9* L_22 = ___0_data;
 		NullCheck(L_22);
@@ -24992,11 +24995,11 @@ IL_0076:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:282>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:283>
 		return;
 	}
 }
-// Method Definition Index: 76743
+// Method Definition Index: 76821
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_clear_mDD926DB82FE3D61521B0382406BD4C5E0EB15F8B (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25026,12 +25029,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_clear_mDD926DB82FE3D61521B0382
 	Countdown_t40405C8F34C2C3A726795D2CFA302C74459BE09C* G_B15_0 = NULL;
 	Countdown_t40405C8F34C2C3A726795D2CFA302C74459BE09C* G_B14_0 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:286>
-		PlayState_clearEnvironments_m4FDF9C0DA96ADE2178A6612D5209D51EABCD53F7(__this, NULL);
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:287>
+		PlayState_clearEnvironments_m4FDF9C0DA96ADE2178A6612D5209D51EABCD53F7(__this, NULL);
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:288>
 		__this->___eventPlayer = (EventManager_t2009A11C245ABAD415F57DA0C6979CB2FE9151B7*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___eventPlayer), (void*)(EventManager_t2009A11C245ABAD415F57DA0C6979CB2FE9151B7*)NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:289>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:290>
 		MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* L_0 = __this->___scene;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -25042,21 +25045,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_clear_mDD926DB82FE3D61521B0382
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:291>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:292>
 		MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* L_2 = __this->___scene;
 		NullCheck(L_2);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3;
 		L_3 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_2, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_3, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:292>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:293>
 		__this->___scene = (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___scene), (void*)(MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71*)NULL);
 	}
 
 IL_0032:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:295>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:296>
 		List_1_t06870C3374FE29764510AC48BC626054BF316CA7* L_4 = __this->___musicList;
 		NullCheck(L_4);
 		Enumerator_t0963C09BA748CBFE41C54587152C1A898884D00A L_5;
@@ -25081,10 +25084,10 @@ FINALLY_006a:
 
 IL_0040_1:
 			{
-				//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:295>
+				//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:296>
 				PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* L_6;
 				L_6 = Enumerator_get_Current_m0766D79FB7AFD0CD043B3C77BF04E0F0473CD01E_inline((&V_0), Enumerator_get_Current_m0766D79FB7AFD0CD043B3C77BF04E0F0473CD01E_RuntimeMethod_var);
-				//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:297>
+				//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:298>
 				PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* L_7 = L_6;
 				PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* L_8 = L_7;
 				if (L_8)
@@ -25110,7 +25113,7 @@ IL_004e_1:
 
 IL_0054_1:
 			{
-				//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:298>
+				//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:299>
 				PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* L_9 = G_B7_0;
 				if (L_9)
 				{
@@ -25131,7 +25134,7 @@ IL_005a_1:
 
 IL_005f_1:
 			{
-				//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:295>
+				//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:296>
 				bool L_10;
 				L_10 = Enumerator_MoveNext_mBFAABC00A16DA4C3E449C6D3E754210607C68FA4((&V_0), Enumerator_MoveNext_mBFAABC00A16DA4C3E449C6D3E754210607C68FA4_RuntimeMethod_var);
 				if (L_10)
@@ -25151,19 +25154,19 @@ IL_005f_1:
 
 IL_0078:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:301>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:302>
 		List_1_t06870C3374FE29764510AC48BC626054BF316CA7* L_11 = __this->___musicList;
 		NullCheck(L_11);
 		List_1_Clear_m330C1C99E46F1B4F8F0AD3DD283AA19419B684F4_inline(L_11, List_1_Clear_m330C1C99E46F1B4F8F0AD3DD283AA19419B684F4_RuntimeMethod_var);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:302>
-		__this->___musicStarted = (bool)0;
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:303>
-		__this->___shouldPlay = (bool)0;
+		__this->___musicStarted = (bool)0;
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:304>
-		PlayState_set_LoadedPhilia_mB24C95333E3B4AEB2740F5D9B218E26D3E6029A4_inline(__this, (bool)0, NULL);
+		__this->___shouldPlay = (bool)0;
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:305>
+		PlayState_set_LoadedPhilia_mB24C95333E3B4AEB2740F5D9B218E26D3E6029A4_inline(__this, (bool)0, NULL);
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:306>
 		PlayState_set_ContentId_mA9F4954EF2375DA556C8960C2469121242ACED2D_inline(__this, (String_t*)NULL, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:307>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:308>
 		Countdown_t40405C8F34C2C3A726795D2CFA302C74459BE09C* L_12;
 		L_12 = Countdown_get_Instance_mCF647D0AFA072AAB156F616FD467439502420764(NULL);
 		Countdown_t40405C8F34C2C3A726795D2CFA302C74459BE09C* L_13 = L_12;
@@ -25186,7 +25189,7 @@ IL_00aa:
 
 IL_00af:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:309>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:310>
 		Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* L_14;
 		L_14 = Conductor_get_Instance_m2251A476243B176D795D4B116919CDFB515A65BD_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -25198,38 +25201,38 @@ IL_00af:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:311>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:312>
 		return;
 	}
 
 IL_00bd:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:314>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:315>
 		Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* L_16;
 		L_16 = Conductor_get_Instance_m2251A476243B176D795D4B116919CDFB515A65BD_inline(NULL);
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_17 = (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)il2cpp_codegen_object_new(Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var);
 		Action__ctor_mBDC7B0B4A3F583B64C2896F01BDED360772F67DC(L_17, __this, (intptr_t)((void*)PlayState_onBeat_m2419EE9F7540CBA0460C6741FEC6A58C8933A853_RuntimeMethod_var), NULL);
 		NullCheck(L_16);
 		Conductor_remove_OnBeatHit_mDB801874FBA31EBE7DFE2D68C01DA80890415840(L_16, L_17, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:315>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:316>
 		Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* L_18;
 		L_18 = Conductor_get_Instance_m2251A476243B176D795D4B116919CDFB515A65BD_inline(NULL);
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_19 = (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)il2cpp_codegen_object_new(Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var);
 		Action__ctor_mBDC7B0B4A3F583B64C2896F01BDED360772F67DC(L_19, __this, (intptr_t)((void*)PlayState_onStep_m59F9A06588ADF6177AA6F6D83C801BF0178DFE0F_RuntimeMethod_var), NULL);
 		NullCheck(L_18);
 		Conductor_remove_OnStepHit_m106D8839C806251EA7C57D3215CF7852BA1EB0DD(L_18, L_19, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:316>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:317>
 		Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* L_20;
 		L_20 = Conductor_get_Instance_m2251A476243B176D795D4B116919CDFB515A65BD_inline(NULL);
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_21 = (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)il2cpp_codegen_object_new(Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var);
 		Action__ctor_mBDC7B0B4A3F583B64C2896F01BDED360772F67DC(L_21, __this, (intptr_t)((void*)PlayState_onMeasure_mD324CAA164403F0F3CFC16BEC4D9D90C985994D7_RuntimeMethod_var), NULL);
 		NullCheck(L_20);
 		Conductor_remove_OnMeasureHit_mFBF69BEE9E06EE4F1F21C24378BD13AC333085CB(L_20, L_21, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:317>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:318>
 		return;
 	}
 }
-// Method Definition Index: 76744
+// Method Definition Index: 76822
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_setupEvents_m91EB5CB980A7E7CA702909FF35540B1BDC4F32D1 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25241,7 +25244,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_setupEvents_m91EB5CB980A7E7CA7
 	}
 	RuntimeObject* V_0 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:321>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:322>
 		MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* L_0 = __this->___scene;
 		V_0 = ((RuntimeObject*)IsInst((RuntimeObject*)L_0, EventTarget_t24F76918C15F48A386D5B2F0CF067F6D9DCCC9D0_il2cpp_TypeInfo_var));
 		RuntimeObject* L_1 = V_0;
@@ -25251,16 +25254,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_setupEvents_m91EB5CB980A7E7CA7
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:323>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:324>
 		__this->___eventPlayer = (EventManager_t2009A11C245ABAD415F57DA0C6979CB2FE9151B7*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___eventPlayer), (void*)(EventManager_t2009A11C245ABAD415F57DA0C6979CB2FE9151B7*)NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:324>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:325>
 		return;
 	}
 
 IL_0017:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:327>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:328>
 		String_t* L_2;
 		L_2 = PlayState_get_ContentId_m219D8D5FE3C7761E08D3238F46B3D67B1942E2A2_inline(__this, NULL);
 		bool L_3;
@@ -25270,11 +25273,11 @@ IL_0017:
 		EventManager__ctor_mD9A6E1D4CC2E8DBD9895926B5BD055FD889C3E7A(L_5, L_2, L_3, L_4, NULL);
 		__this->___eventPlayer = L_5;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___eventPlayer), (void*)L_5);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:328>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:329>
 		return;
 	}
 }
-// Method Definition Index: 76745
+// Method Definition Index: 76823
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_clearEnvironments_m4FDF9C0DA96ADE2178A6612D5209D51EABCD53F7 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25289,14 +25292,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_clearEnvironments_m4FDF9C0DA96
 	EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D* G_B3_0 = NULL;
 	EnvironmentBase_tF507F0742B72D0C5D9A7B3B53F6AF850B32F4A0D* G_B2_0 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:332>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:333>
 		V_0 = 0;
 		goto IL_001f;
 	}
 
 IL_0004:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:334>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:335>
 		List_1_tA7856D1541AA7A065687B80A1430DD261F05590A* L_0 = __this->___environments;
 		int32_t L_1 = V_0;
 		NullCheck(L_0);
@@ -25322,14 +25325,14 @@ IL_0016:
 
 IL_001b:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:332>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:333>
 		int32_t L_4 = V_0;
 		V_0 = ((int32_t)il2cpp_codegen_add(L_4, 1));
 	}
 
 IL_001f:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:332>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:333>
 		int32_t L_5 = V_0;
 		List_1_tA7856D1541AA7A065687B80A1430DD261F05590A* L_6 = __this->___environments;
 		NullCheck(L_6);
@@ -25341,15 +25344,15 @@ IL_001f:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:337>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:338>
 		List_1_tA7856D1541AA7A065687B80A1430DD261F05590A* L_8 = __this->___environments;
 		NullCheck(L_8);
 		List_1_Clear_mB6F16F90AC7C7FC278B98DA76AC7C2224EDBBAC8_inline(L_8, List_1_Clear_mB6F16F90AC7C7FC278B98DA76AC7C2224EDBBAC8_RuntimeMethod_var);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:338>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:339>
 		return;
 	}
 }
-// Method Definition Index: 76746
+// Method Definition Index: 76824
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_startMusic_m11D151FA1451A21268CAD6F243D8E42EEE5BE74C (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC0C7BB9* ___0_data, float ___1_volume, bool ___2_autoPlay, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25378,16 +25381,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_startMusic_m11D151FA1451A21268
 	String_t* V_3 = NULL;
 	PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* V_4 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:342>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:343>
 		PlayState_ensureConductor_mB7BDB199F8800CABBEE83C2C6B4830C5E4FA8041(__this, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:344>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:345>
 		V_0 = 0;
 		goto IL_00b0;
 	}
 
 IL_000d:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:346>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:347>
 		int32_t L_0 = V_0;
 		if ((((int32_t)L_0) <= ((int32_t)0)))
 		{
@@ -25405,7 +25408,7 @@ IL_000d:
 
 IL_001c:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:351>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:352>
 		LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC0C7BB9* L_2 = ___0_data;
 		NullCheck(L_2);
 		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_3 = L_2->___songIds;
@@ -25414,12 +25417,11 @@ IL_001c:
 		String_t* L_5;
 		L_5 = List_1_get_Item_m21AEC50E791371101DC22ABCF96A2E46800811F8(L_3, L_4, List_1_get_Item_m21AEC50E791371101DC22ABCF96A2E46800811F8_RuntimeMethod_var);
 		V_1 = L_5;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:352>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:353>
 		String_t* L_6 = V_1;
 		String_t* L_7;
 		L_7 = PlayState_pickSong_m5B1C41F07EF5FD45C3ED9F61704212861B0476BE(__this, L_6, (&V_3), NULL);
 		V_2 = L_7;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:354>
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:355>
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:356>
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:357>
@@ -25428,6 +25430,7 @@ IL_001c:
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:360>
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:361>
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:362>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:363>
 		String_t* L_8 = V_2;
 		SoundConfig_t0132B4BC542CBBC88B2C8FC02B79EE7BF5C966E0* L_9 = (SoundConfig_t0132B4BC542CBBC88B2C8FC02B79EE7BF5C966E0*)il2cpp_codegen_object_new(SoundConfig_t0132B4BC542CBBC88B2C8FC02B79EE7BF5C966E0_il2cpp_TypeInfo_var);
 		SoundConfig__ctor_mF34A4D5D778F0182E3AE09393912CBB860B53D7D(L_9, NULL);
@@ -25461,7 +25464,7 @@ IL_001c:
 		PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* L_20;
 		L_20 = PhobiaSound_Load_m78AA04B28D73F2ECE0814A532EE249ED69614CCB(L_8, L_17, NULL);
 		V_4 = L_20;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:364>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:365>
 		PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* L_21 = V_4;
 		if (L_21)
 		{
@@ -25469,24 +25472,24 @@ IL_001c:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:366>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:367>
 		String_t* L_22 = V_2;
 		String_t* L_23;
 		L_23 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteral9E0662D6721547CFF907C20058488E54B80CC53D, L_22, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(L_23, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:368>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:369>
 		goto IL_00ac;
 	}
 
 IL_008f:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:371>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:372>
 		List_1_t06870C3374FE29764510AC48BC626054BF316CA7* L_24 = __this->___musicList;
 		PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* L_25 = V_4;
 		NullCheck(L_24);
 		List_1_Add_m5A3C20A335FACF541F8877E745DC687A6C8AB9A7_inline(L_24, L_25, List_1_Add_m5A3C20A335FACF541F8877E745DC687A6C8AB9A7_RuntimeMethod_var);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:373>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:374>
 		bool L_26 = ___2_autoPlay;
 		if (!L_26)
 		{
@@ -25494,7 +25497,7 @@ IL_008f:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:375>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:376>
 		PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* L_27 = V_4;
 		NullCheck(L_27);
 		PhobiaSound_Play_m246E19DFBF354D3F797F308179C7B7F67B5134F3(L_27, (bool)0, (0.0f), NULL);
@@ -25502,14 +25505,14 @@ IL_008f:
 
 IL_00ac:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:344>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:345>
 		int32_t L_28 = V_0;
 		V_0 = ((int32_t)il2cpp_codegen_add(L_28, 1));
 	}
 
 IL_00b0:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:344>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:345>
 		int32_t L_29 = V_0;
 		LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC0C7BB9* L_30 = ___0_data;
 		NullCheck(L_30);
@@ -25525,7 +25528,7 @@ IL_00b0:
 
 IL_00c1:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:379>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:380>
 		List_1_t06870C3374FE29764510AC48BC626054BF316CA7* L_33 = __this->___musicList;
 		NullCheck(L_33);
 		int32_t L_34;
@@ -25549,17 +25552,17 @@ IL_00c1:
 
 IL_00db:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:381>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:382>
 		return;
 	}
 
 IL_00dc:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:384>
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:385>
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:386>
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:387>
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:388>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:389>
 		Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* L_37;
 		L_37 = Conductor_get_Instance_m2251A476243B176D795D4B116919CDFB515A65BD_inline(NULL);
 		List_1_t06870C3374FE29764510AC48BC626054BF316CA7* L_38 = __this->___musicList;
@@ -25574,7 +25577,7 @@ IL_00dc:
 		List_1_t0A33AF9FB12D3DE8B36A66E8414FACEED94B05A8* L_43 = L_42->___timeChanges;
 		NullCheck(L_37);
 		Conductor_MapSong_mA252CED6DE8983CCFE97B396D01B8CDD1D453C1E(L_37, L_39, L_41, L_43, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:390>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:391>
 		Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* L_44;
 		L_44 = Conductor_get_Instance_m2251A476243B176D795D4B116919CDFB515A65BD_inline(NULL);
 		NullCheck(L_44);
@@ -25585,7 +25588,7 @@ IL_00dc:
 		int32_t L_47 = L_46->___songSigNum;
 		NullCheck(L_45);
 		L_45->___timeSignatureNumerator = L_47;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:391>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:392>
 		Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* L_48;
 		L_48 = Conductor_get_Instance_m2251A476243B176D795D4B116919CDFB515A65BD_inline(NULL);
 		NullCheck(L_48);
@@ -25596,7 +25599,7 @@ IL_00dc:
 		int32_t L_51 = L_50->___songSigDenum;
 		NullCheck(L_49);
 		L_49->___timeSignatureDenominator = L_51;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:392>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:393>
 		Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* L_52;
 		L_52 = Conductor_get_Instance_m2251A476243B176D795D4B116919CDFB515A65BD_inline(NULL);
 		NullCheck(L_52);
@@ -25606,37 +25609,37 @@ IL_00dc:
 		L_54 = Preferences_get_InputOffset_m3ABD826629F0B0D5B4FD19848E60254B1DD8497E(NULL);
 		NullCheck(L_53);
 		L_53->___inputOffset = L_54;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:393>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:394>
 		Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* L_55;
 		L_55 = Conductor_get_Instance_m2251A476243B176D795D4B116919CDFB515A65BD_inline(NULL);
 		NullCheck(L_55);
 		Conductor_RecalculateTimings_mAE97717DBB88480B542BD6CAC018A1B3A1BCAC73(L_55, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:395>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:396>
 		Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* L_56;
 		L_56 = Conductor_get_Instance_m2251A476243B176D795D4B116919CDFB515A65BD_inline(NULL);
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_57 = (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)il2cpp_codegen_object_new(Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var);
 		Action__ctor_mBDC7B0B4A3F583B64C2896F01BDED360772F67DC(L_57, __this, (intptr_t)((void*)PlayState_onBeat_m2419EE9F7540CBA0460C6741FEC6A58C8933A853_RuntimeMethod_var), NULL);
 		NullCheck(L_56);
 		Conductor_add_OnBeatHit_m4DAEA6713FCF7E9C828FF1A3B09F65F1971A1C92(L_56, L_57, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:396>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:397>
 		Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* L_58;
 		L_58 = Conductor_get_Instance_m2251A476243B176D795D4B116919CDFB515A65BD_inline(NULL);
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_59 = (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)il2cpp_codegen_object_new(Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var);
 		Action__ctor_mBDC7B0B4A3F583B64C2896F01BDED360772F67DC(L_59, __this, (intptr_t)((void*)PlayState_onStep_m59F9A06588ADF6177AA6F6D83C801BF0178DFE0F_RuntimeMethod_var), NULL);
 		NullCheck(L_58);
 		Conductor_add_OnStepHit_mBB9951E56BE970FDD92A713BCCC86CFD86572FA7(L_58, L_59, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:397>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:398>
 		Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* L_60;
 		L_60 = Conductor_get_Instance_m2251A476243B176D795D4B116919CDFB515A65BD_inline(NULL);
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_61 = (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)il2cpp_codegen_object_new(Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var);
 		Action__ctor_mBDC7B0B4A3F583B64C2896F01BDED360772F67DC(L_61, __this, (intptr_t)((void*)PlayState_onMeasure_mD324CAA164403F0F3CFC16BEC4D9D90C985994D7_RuntimeMethod_var), NULL);
 		NullCheck(L_60);
 		Conductor_add_OnMeasureHit_m6BDF6A67771F02637E97841763A363BA13988D45(L_60, L_61, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:398>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:399>
 		return;
 	}
 }
-// Method Definition Index: 76747
+// Method Definition Index: 76825
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_ensureConductor_mB7BDB199F8800CABBEE83C2C6B4830C5E4FA8041 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25649,7 +25652,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_ensureConductor_mB7BDB199F8800
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:402>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:403>
 		Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* L_0;
 		L_0 = Conductor_get_Instance_m2251A476243B176D795D4B116919CDFB515A65BD_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -25661,28 +25664,28 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_ensureConductor_mB7BDB199F8800
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:404>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:405>
 		return;
 	}
 
 IL_000e:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:407>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:408>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
 		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_2, _stringLiteral803058DA73163D20A129B06D96A7A89E2B56AB05, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:408>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:409>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = L_2;
 		NullCheck(L_3);
 		Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* L_4;
 		L_4 = GameObject_AddComponent_TisConductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70_mFC44C16EA46C4B61D7956DA209DFFBC948195448(L_3, GameObject_AddComponent_TisConductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70_mFC44C16EA46C4B61D7956DA209DFFBC948195448_RuntimeMethod_var);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:409>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:410>
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_DontDestroyOnLoad_m4B70C3AEF886C176543D1295507B6455C9DCAEA7(L_3, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:410>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:411>
 		return;
 	}
 }
-// Method Definition Index: 76748
+// Method Definition Index: 76826
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_onBeat_m2419EE9F7540CBA0460C6741FEC6A58C8933A853 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25692,7 +25695,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_onBeat_m2419EE9F7540CBA0460C67
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:414>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:415>
 		PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* L_0;
 		L_0 = PlayState_get_Cam_m78A817C7D8E6F7BED60F59385FAB5EFB76283CE4_inline(__this, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -25715,7 +25718,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_onBeat_m2419EE9F7540CBA0460C67
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:416>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:417>
 		PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* L_4;
 		L_4 = PlayState_get_Cam_m78A817C7D8E6F7BED60F59385FAB5EFB76283CE4_inline(__this, NULL);
 		NullCheck(L_4);
@@ -25724,17 +25727,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_onBeat_m2419EE9F7540CBA0460C67
 
 IL_0026:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:418>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:419>
 		return;
 	}
 }
-// Method Definition Index: 76749
+// Method Definition Index: 76827
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_onStep_m59F9A06588ADF6177AA6F6D83C801BF0178DFE0F (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	EventManager_t2009A11C245ABAD415F57DA0C6979CB2FE9151B7* G_B2_0 = NULL;
 	EventManager_t2009A11C245ABAD415F57DA0C6979CB2FE9151B7* G_B1_0 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:422>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:423>
 		EventManager_t2009A11C245ABAD415F57DA0C6979CB2FE9151B7* L_0 = __this->___eventPlayer;
 		EventManager_t2009A11C245ABAD415F57DA0C6979CB2FE9151B7* L_1 = L_0;
 		if (L_1)
@@ -25752,19 +25755,19 @@ IL_000b:
 	{
 		NullCheck(G_B2_0);
 		EventManager_Sync_m526B35DB09B70A0093002EFAFC58F3DBDE8B1E0D(G_B2_0, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:423>
-		return;
-	}
-}
-// Method Definition Index: 76750
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_onMeasure_mD324CAA164403F0F3CFC16BEC4D9D90C985994D7 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
-{
-	{
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:424>
 		return;
 	}
 }
-// Method Definition Index: 76751
+// Method Definition Index: 76828
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_onMeasure_mD324CAA164403F0F3CFC16BEC4D9D90C985994D7 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
+{
+	{
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:425>
+		return;
+	}
+}
+// Method Definition Index: 76829
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_onCountdownComplete_mDD0B32FBE84B580E6F6B2452CFA7680836E25D84 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25781,7 +25784,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_onCountdownComplete_mDD0B32FBE
 	PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* G_B4_0 = NULL;
 	PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* G_B3_0 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:428>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:429>
 		List_1_t06870C3374FE29764510AC48BC626054BF316CA7* L_0 = __this->___musicList;
 		NullCheck(L_0);
 		Enumerator_t0963C09BA748CBFE41C54587152C1A898884D00A L_1;
@@ -25806,10 +25809,10 @@ FINALLY_0031:
 
 IL_000e_1:
 			{
-				//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:428>
+				//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:429>
 				PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* L_2;
 				L_2 = Enumerator_get_Current_m0766D79FB7AFD0CD043B3C77BF04E0F0473CD01E_inline((&V_0), Enumerator_get_Current_m0766D79FB7AFD0CD043B3C77BF04E0F0473CD01E_RuntimeMethod_var);
-				//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:430>
+				//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:431>
 				PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* L_3 = L_2;
 				if (L_3)
 				{
@@ -25830,7 +25833,7 @@ IL_001b_1:
 
 IL_0026_1:
 			{
-				//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:428>
+				//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:429>
 				bool L_4;
 				L_4 = Enumerator_MoveNext_mBFAABC00A16DA4C3E449C6D3E754210607C68FA4((&V_0), Enumerator_MoveNext_mBFAABC00A16DA4C3E449C6D3E754210607C68FA4_RuntimeMethod_var);
 				if (L_4)
@@ -25850,13 +25853,13 @@ IL_0026_1:
 
 IL_003f:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:433>
-		PlayState_SyncExtraTracksToConductor_m45C2418267C02B064DE473EF96F69B9075E6027C(__this, NULL);
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:434>
+		PlayState_SyncExtraTracksToConductor_m45C2418267C02B064DE473EF96F69B9075E6027C(__this, NULL);
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:435>
 		return;
 	}
 }
-// Method Definition Index: 76752
+// Method Definition Index: 76830
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_SyncExtraTracksToConductor_m45C2418267C02B064DE473EF96F69B9075E6027C (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -25878,7 +25881,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_SyncExtraTracksToConductor_m45
 	float V_8 = 0.0f;
 	float V_9 = 0.0f;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:438>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:439>
 		List_1_t06870C3374FE29764510AC48BC626054BF316CA7* L_0 = __this->___musicList;
 		NullCheck(L_0);
 		int32_t L_1;
@@ -25889,13 +25892,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_SyncExtraTracksToConductor_m45
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:440>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:441>
 		return;
 	}
 
 IL_000f:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:443>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:444>
 		Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* L_2;
 		L_2 = Conductor_get_Instance_m2251A476243B176D795D4B116919CDFB515A65BD_inline(NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
@@ -25907,19 +25910,19 @@ IL_000f:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:445>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:446>
 		return;
 	}
 
 IL_001d:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:448>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:449>
 		Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* L_4;
 		L_4 = Conductor_get_Instance_m2251A476243B176D795D4B116919CDFB515A65BD_inline(NULL);
 		NullCheck(L_4);
 		PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* L_5 = L_4->___activeSong;
 		V_0 = L_5;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:449>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:450>
 		PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* L_6 = V_0;
 		if (!L_6)
 		{
@@ -25939,13 +25942,13 @@ IL_001d:
 
 IL_0033:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:451>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:452>
 		return;
 	}
 
 IL_0034:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:454>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:455>
 		PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* L_9 = V_0;
 		NullCheck(L_9);
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_10;
@@ -25959,13 +25962,13 @@ IL_0034:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:456>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:457>
 		return;
 	}
 
 IL_0043:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:459>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:460>
 		PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* L_12 = V_0;
 		NullCheck(L_12);
 		float L_13;
@@ -25973,21 +25976,21 @@ IL_0043:
 		float L_14;
 		L_14 = Mathf_Max_mF5379E63D2BBAC76D090748695D833934F8AD051_inline((0.0f), L_13, NULL);
 		V_1 = L_14;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:461>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:462>
 		V_2 = 1;
 		goto IL_0127;
 	}
 
 IL_005b:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:463>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:464>
 		List_1_t06870C3374FE29764510AC48BC626054BF316CA7* L_15 = __this->___musicList;
 		int32_t L_16 = V_2;
 		NullCheck(L_15);
 		PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* L_17;
 		L_17 = List_1_get_Item_m6861272CC30CB5C4F13E7D2F762A311B4421922D(L_15, L_16, List_1_get_Item_m6861272CC30CB5C4F13E7D2F762A311B4421922D_RuntimeMethod_var);
 		V_3 = L_17;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:464>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:465>
 		PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* L_18 = V_3;
 		if (!L_18)
 		{
@@ -26005,19 +26008,19 @@ IL_005b:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:469>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:470>
 		PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* L_21 = V_3;
 		NullCheck(L_21);
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_22;
 		L_22 = PhobiaSound_get_AudioSource_m7F67DA382E2875FCB2E38F81711D7640FD10B3A3_inline(L_21, NULL);
 		V_4 = L_22;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:470>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:471>
 		PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* L_23 = V_3;
 		NullCheck(L_23);
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_24;
 		L_24 = PhobiaSound_get_AudioClip_m8502A9A17B00B758C16994B2B3725BDC5CFB8680_inline(L_23, NULL);
 		V_5 = L_24;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:471>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:472>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_25 = V_4;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_26;
@@ -26038,7 +26041,7 @@ IL_005b:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:476>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:477>
 		float L_29 = V_1;
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_30 = V_5;
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_31 = V_4;
@@ -26048,22 +26051,22 @@ IL_005b:
 		float L_33;
 		L_33 = PlayState_GetSafeTrackSyncTimeSeconds_m040011F3723B8B1FF2EF1A3932B4FBAE6715E67C(L_29, L_30, L_32, NULL);
 		V_6 = L_33;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:477>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:478>
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_34 = V_5;
 		NullCheck(L_34);
 		float L_35;
 		L_35 = AudioClip_get_length_m6102CB29AF65988797452E4D6E43D4788303873D(L_34, NULL);
 		V_7 = ((float)il2cpp_codegen_multiply(L_35, (1000.0f)));
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:478>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:479>
 		float L_36 = V_6;
 		V_8 = ((float)il2cpp_codegen_multiply(L_36, (1000.0f)));
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:479>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:480>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_37 = V_4;
 		NullCheck(L_37);
 		float L_38;
 		L_38 = AudioSource_get_time_m130D08644F36736115FE082DAA2ED5E2C9D97A93(L_37, NULL);
 		V_9 = ((float)il2cpp_codegen_multiply(L_38, (1000.0f)));
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:481>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:482>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_39 = V_4;
 		NullCheck(L_39);
 		bool L_40;
@@ -26074,18 +26077,18 @@ IL_005b:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:483>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:484>
 		PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* L_41 = V_3;
 		float L_42 = V_6;
 		NullCheck(L_41);
 		PhobiaSound_Play_m246E19DFBF354D3F797F308179C7B7F67B5134F3(L_41, (bool)1, L_42, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:484>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:485>
 		goto IL_0123;
 	}
 
 IL_00f0:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:487>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:488>
 		float L_43 = V_9;
 		float L_44 = V_8;
 		float L_45 = V_7;
@@ -26101,7 +26104,7 @@ IL_00f0:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:489>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:490>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_49 = V_4;
 		float L_50 = V_6;
 		NullCheck(L_49);
@@ -26110,7 +26113,7 @@ IL_00f0:
 
 IL_0112:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:492>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:493>
 		PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* L_51 = V_3;
 		NullCheck(L_51);
 		bool L_52;
@@ -26121,7 +26124,7 @@ IL_0112:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:494>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:495>
 		PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* L_53 = V_3;
 		float L_54 = V_6;
 		NullCheck(L_53);
@@ -26130,14 +26133,14 @@ IL_0112:
 
 IL_0123:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:461>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:462>
 		int32_t L_55 = V_2;
 		V_2 = ((int32_t)il2cpp_codegen_add(L_55, 1));
 	}
 
 IL_0127:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:461>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:462>
 		int32_t L_56 = V_2;
 		List_1_t06870C3374FE29764510AC48BC626054BF316CA7* L_57 = __this->___musicList;
 		NullCheck(L_57);
@@ -26149,11 +26152,11 @@ IL_0127:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:497>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:498>
 		return;
 	}
 }
-// Method Definition Index: 76753
+// Method Definition Index: 76831
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PlayState_ShouldLoadSupplementalMusicTracks_mAE5FED98342BD373266F71CA4C12D1A81AB1F8FB (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26163,7 +26166,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PlayState_ShouldLoadSupplementalMusicTra
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:501>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:502>
 		bool L_0;
 		L_0 = PlayState_get_LoadedPhilia_mEDC68CD9A6334817544F7E085B52CC8F93BCE223_inline(__this, NULL);
 		if (!L_0)
@@ -26181,7 +26184,7 @@ IL_001a:
 		return (bool)1;
 	}
 }
-// Method Definition Index: 76754
+// Method Definition Index: 76832
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PlayState_GetSafeTrackSyncTimeSeconds_m040011F3723B8B1FF2EF1A3932B4FBAE6715E67C (float ___0_targetSeconds, AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___1_clip, bool ___2_loop, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26194,7 +26197,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PlayState_GetSafeTrackSyncTimeSeconds_m
 	float V_1 = 0.0f;
 	float V_2 = 0.0f;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:506>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:507>
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_0 = ___1_clip;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -26205,13 +26208,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PlayState_GetSafeTrackSyncTimeSeconds_m
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:508>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:509>
 		return (0.0f);
 	}
 
 IL_000f:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:511>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:512>
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_2 = ___1_clip;
 		NullCheck(L_2);
 		float L_3;
@@ -26219,7 +26222,7 @@ IL_000f:
 		float L_4;
 		L_4 = Mathf_Max_mF5379E63D2BBAC76D090748695D833934F8AD051_inline((0.0f), L_3, NULL);
 		V_0 = L_4;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:512>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:513>
 		float L_5 = V_0;
 		if ((!(((float)L_5) <= ((float)(0.0f)))))
 		{
@@ -26227,18 +26230,18 @@ IL_000f:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:514>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:515>
 		return (0.0f);
 	}
 
 IL_002e:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:517>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:518>
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_6 = ___1_clip;
 		float L_7;
 		L_7 = PlayState_GetMaxSeekTimeSeconds_m87DBDD4A255CEB11A04910F25F118E91A1050B49(L_6, NULL);
 		V_1 = L_7;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:518>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:519>
 		float L_8 = V_1;
 		if ((!(((float)L_8) <= ((float)(0.0f)))))
 		{
@@ -26246,18 +26249,18 @@ IL_002e:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:520>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:521>
 		return (0.0f);
 	}
 
 IL_0043:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:523>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:524>
 		float L_9 = ___0_targetSeconds;
 		float L_10;
 		L_10 = Mathf_Max_mF5379E63D2BBAC76D090748695D833934F8AD051_inline((0.0f), L_9, NULL);
 		V_2 = L_10;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:524>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:525>
 		bool L_11 = ___2_loop;
 		if (!L_11)
 		{
@@ -26265,7 +26268,7 @@ IL_0043:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:526>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:527>
 		float L_12 = V_2;
 		float L_13 = V_0;
 		float L_14;
@@ -26275,7 +26278,7 @@ IL_0043:
 
 IL_005a:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:529>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:530>
 		float L_15 = V_2;
 		float L_16 = V_1;
 		float L_17;
@@ -26283,18 +26286,18 @@ IL_005a:
 		return L_17;
 	}
 }
-// Method Definition Index: 76755
+// Method Definition Index: 76833
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PlayState_GetTrackDriftMs_m1DD1B395EA1DD5722BF134169675AF3A3B596E75 (float ___0_currentMs, float ___1_targetMs, float ___2_clipLengthMs, bool ___3_loop, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:534>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:535>
 		float L_0 = ___0_currentMs;
 		float L_1 = ___1_targetMs;
 		float L_2;
 		L_2 = fabsf(((float)il2cpp_codegen_subtract(L_0, L_1)));
 		V_0 = L_2;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:535>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:536>
 		bool L_3 = ___3_loop;
 		if (!L_3)
 		{
@@ -26311,14 +26314,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PlayState_GetTrackDriftMs_m1DD1B395EA1D
 
 IL_0014:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:537>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:538>
 		float L_5 = V_0;
 		return L_5;
 	}
 
 IL_0016:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:540>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:541>
 		float L_6 = V_0;
 		float L_7 = ___2_clipLengthMs;
 		float L_8 = V_0;
@@ -26329,7 +26332,7 @@ IL_0016:
 		return L_10;
 	}
 }
-// Method Definition Index: 76756
+// Method Definition Index: 76834
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PlayState_GetMaxSeekTimeSeconds_m87DBDD4A255CEB11A04910F25F118E91A1050B49 (AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* ___0_clip, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26339,7 +26342,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PlayState_GetMaxSeekTimeSeconds_m87DBDD
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:545>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:546>
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_0 = ___0_clip;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -26350,13 +26353,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PlayState_GetMaxSeekTimeSeconds_m87DBDD
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:547>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:548>
 		return (0.0f);
 	}
 
 IL_000f:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:550>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:551>
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_2 = ___0_clip;
 		NullCheck(L_2);
 		int32_t L_3;
@@ -26377,7 +26380,7 @@ IL_000f:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:552>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:553>
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_6 = ___0_clip;
 		NullCheck(L_6);
 		int32_t L_7;
@@ -26393,7 +26396,7 @@ IL_000f:
 
 IL_0041:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:555>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:556>
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_11 = ___0_clip;
 		NullCheck(L_11);
 		float L_12;
@@ -26403,7 +26406,7 @@ IL_0041:
 		return L_13;
 	}
 }
-// Method Definition Index: 76757
+// Method Definition Index: 76835
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_initializeScore_m578436C1257583D2C59B5BFA29F5D37B32D75ED2 (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26418,12 +26421,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_initializeScore_m578436C125758
 	}
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_0 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:560>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:561>
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* L_0;
 		L_0 = Object_FindFirstObjectByType_TisScore_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829_m95057EA35996F1F941ACAAEE3727DCEC6AE7FB6A(Object_FindFirstObjectByType_TisScore_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829_m95057EA35996F1F941ACAAEE3727DCEC6AE7FB6A_RuntimeMethod_var);
 		PlayState_set_ScoreSystem_mBA356F612417302034FF4F1E4732507F052CCC9B_inline(__this, L_0, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:562>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:563>
 		Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* L_1;
 		L_1 = PlayState_get_ScoreSystem_mA3B6AD26B31C0B18D68B5242F472040C554DF842_inline(__this, NULL);
 		bool L_2;
@@ -26434,17 +26437,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_initializeScore_m578436C125758
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:564>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:565>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
 		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_3, _stringLiteral0BEED905342F10DD8F323F954A773854C240598B, NULL);
 		V_0 = L_3;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:565>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:566>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4 = V_0;
 		NullCheck(L_4);
 		Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* L_5;
 		L_5 = GameObject_AddComponent_TisScore_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829_m9D094FA9E37FDF4CACCFB8F896D0C2CF420C5A24(L_4, GameObject_AddComponent_TisScore_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829_m9D094FA9E37FDF4CACCFB8F896D0C2CF420C5A24_RuntimeMethod_var);
 		PlayState_set_ScoreSystem_mBA356F612417302034FF4F1E4732507F052CCC9B_inline(__this, L_5, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:566>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:567>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_DontDestroyOnLoad_m4B70C3AEF886C176543D1295507B6455C9DCAEA7(L_6, NULL);
@@ -26452,16 +26455,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState_initializeScore_m578436C125758
 
 IL_0036:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:569>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:570>
 		Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* L_7;
 		L_7 = PlayState_get_ScoreSystem_mA3B6AD26B31C0B18D68B5242F472040C554DF842_inline(__this, NULL);
 		NullCheck(L_7);
 		Score_Init_mC4BA297F4E0D25EDB302EB386802482DC029CB63(L_7, NULL);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:570>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:571>
 		return;
 	}
 }
-// Method Definition Index: 76758
+// Method Definition Index: 76836
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* PlayState_pickSong_m5B1C41F07EF5FD45C3ED9F61704212861B0476BE (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, String_t* ___0_songId, String_t** ___1_songName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26477,7 +26480,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* PlayState_pickSong_m5B1C41F07EF5FD4
 	String_t* V_1 = NULL;
 	String_t* G_B3_0 = NULL;
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:574>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:575>
 		String_t* L_0;
 		L_0 = PlayState_get_ContentId_m219D8D5FE3C7761E08D3238F46B3D67B1942E2A2_inline(__this, NULL);
 		bool L_1;
@@ -26504,7 +26507,7 @@ IL_0015:
 IL_001b:
 	{
 		V_0 = G_B3_0;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:576>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:577>
 		bool L_4;
 		L_4 = PlayState_get_LoadedPhilia_mEDC68CD9A6334817544F7E085B52CC8F93BCE223_inline(__this, NULL);
 		if (!L_4)
@@ -26513,21 +26516,21 @@ IL_001b:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:578>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:579>
 		String_t** L_5 = ___1_songName;
 		String_t* L_6 = ___0_songId;
 		String_t* L_7;
 		L_7 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_6, _stringLiteral3792A8116F40886DD1293A2DF770B3609255C8B7, NULL);
 		*((RuntimeObject**)L_5) = (RuntimeObject*)L_7;
 		Il2CppCodeGenWriteBarrier((void**)(RuntimeObject**)L_5, (void*)(RuntimeObject*)L_7);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:579>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:580>
 		String_t* L_8 = V_0;
 		String_t** L_9 = ___1_songName;
 		String_t* L_10 = *((String_t**)L_9);
 		String_t* L_11;
 		L_11 = Paths_levelMusic_m90E53665A28997BCF2AFF24BE5231B9741D18A32(L_8, L_10, NULL);
 		V_1 = L_11;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:580>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:581>
 		String_t* L_12 = V_1;
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_13;
 		L_13 = Resources_Load_TisAudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20_m8D55846FD24C1D133D4EA744BE1E73E054B93A78(L_12, Resources_Load_TisAudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20_m8D55846FD24C1D133D4EA744BE1E73E054B93A78_RuntimeMethod_var);
@@ -26540,28 +26543,28 @@ IL_001b:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:582>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:583>
 		String_t* L_15 = V_1;
 		return L_15;
 	}
 
 IL_004a:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:585>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:586>
 		String_t** L_16 = ___1_songName;
 		String_t* L_17 = ___0_songId;
 		String_t* L_18;
 		L_18 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_17, _stringLiteral66A4EC8814C2B12B3636156BAD41933C83C0CD16, NULL);
 		*((RuntimeObject**)L_16) = (RuntimeObject*)L_18;
 		Il2CppCodeGenWriteBarrier((void**)(RuntimeObject**)L_16, (void*)(RuntimeObject*)L_18);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:586>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:587>
 		String_t* L_19 = V_0;
 		String_t** L_20 = ___1_songName;
 		String_t* L_21 = *((String_t**)L_20);
 		String_t* L_22;
 		L_22 = Paths_levelMusic_m90E53665A28997BCF2AFF24BE5231B9741D18A32(L_19, L_21, NULL);
 		V_1 = L_22;
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:587>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:588>
 		String_t* L_23 = V_1;
 		AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* L_24;
 		L_24 = Resources_Load_TisAudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20_m8D55846FD24C1D133D4EA744BE1E73E054B93A78(L_23, Resources_Load_TisAudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20_m8D55846FD24C1D133D4EA744BE1E73E054B93A78_RuntimeMethod_var);
@@ -26574,19 +26577,19 @@ IL_004a:
 		}
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:589>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:590>
 		String_t* L_26 = V_1;
 		return L_26;
 	}
 
 IL_0070:
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:593>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:594>
 		String_t** L_27 = ___1_songName;
 		String_t* L_28 = ___0_songId;
 		*((RuntimeObject**)L_27) = (RuntimeObject*)L_28;
 		Il2CppCodeGenWriteBarrier((void**)(RuntimeObject**)L_27, (void*)(RuntimeObject*)L_28);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:594>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:595>
 		String_t* L_29 = V_0;
 		String_t** L_30 = ___1_songName;
 		String_t* L_31 = *((String_t**)L_30);
@@ -26595,7 +26598,7 @@ IL_0070:
 		return L_32;
 	}
 }
-// Method Definition Index: 76759
+// Method Definition Index: 76837
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC0C7BB9* PlayState_fallbackData_m20E7EC7F9A97C50430AC614B219E0077C011F06F (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26614,7 +26617,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC
 	TimeChange_tF92F2FE765EDF53FD54B139E7F4BC5803D080C38 V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:599>
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:600>
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:601>
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:602>
@@ -26633,6 +26635,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:615>
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:616>
 		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:617>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:618>
 		LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC0C7BB9* L_0 = (LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC0C7BB9*)il2cpp_codegen_object_new(LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC0C7BB9_il2cpp_TypeInfo_var);
 		LevelData__ctor_mAD73A21BB0E9D94FFDE4CC326445BDB77961F778(L_0, NULL);
 		LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC0C7BB9* L_1 = L_0;
@@ -26680,7 +26683,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC
 		return L_10;
 	}
 }
-// Method Definition Index: 76760
+// Method Definition Index: 76838
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState__ctor_mF00D79939144FEB88314316AA7EE3328A6357FFB (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26693,14 +26696,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState__ctor_mF00D79939144FEB88314316
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:33>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:34>
 		__this->___camZoom = (1.04999995f);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:49>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:50>
 		List_1_t06870C3374FE29764510AC48BC626054BF316CA7* L_0 = (List_1_t06870C3374FE29764510AC48BC626054BF316CA7*)il2cpp_codegen_object_new(List_1_t06870C3374FE29764510AC48BC626054BF316CA7_il2cpp_TypeInfo_var);
 		List_1__ctor_m62A06C7FF3553753F23EDA3C357AA4BA76454CFC(L_0, List_1__ctor_m62A06C7FF3553753F23EDA3C357AA4BA76454CFC_RuntimeMethod_var);
 		__this->___musicList = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___musicList), (void*)L_0);
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:50>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:51>
 		List_1_tA7856D1541AA7A065687B80A1430DD261F05590A* L_1 = (List_1_tA7856D1541AA7A065687B80A1430DD261F05590A*)il2cpp_codegen_object_new(List_1_tA7856D1541AA7A065687B80A1430DD261F05590A_il2cpp_TypeInfo_var);
 		List_1__ctor_m00DF2FA86AAC288257189DB35D4FCECDCF28915B(L_1, List_1__ctor_m00DF2FA86AAC288257189DB35D4FCECDCF28915B_RuntimeMethod_var);
 		__this->___environments = L_1;
@@ -26717,7 +26720,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayState__ctor_mF00D79939144FEB88314316
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76761
+// Method Definition Index: 76839
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HitWindow_t4302C779F6B4F52D8CA3384B972F45C327BE0586 HitWindow_Create_mB2FAB5DD408E15DE27B91D4340FAE6BF15525635 (float ___0_centerTime, float ___1_windowSize, const RuntimeMethod* method) 
 {
 	HitWindow_t4302C779F6B4F52D8CA3384B972F45C327BE0586 V_0;
@@ -26742,7 +26745,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HitWindow_t4302C779F6B4F52D8CA3384B972F45C327
 		return L_5;
 	}
 }
-// Method Definition Index: 76762
+// Method Definition Index: 76840
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HitWindow_Contains_mC68DF7992F875D88AAD5AF15BA3EFF0D3835743D (HitWindow_t4302C779F6B4F52D8CA3384B972F45C327BE0586* __this, float ___0_time, const RuntimeMethod* method) 
 {
 	{
@@ -26774,7 +26777,7 @@ IL2CPP_EXTERN_C  bool HitWindow_Contains_mC68DF7992F875D88AAD5AF15BA3EFF0D383574
 	_returnValue = HitWindow_Contains_mC68DF7992F875D88AAD5AF15BA3EFF0D3835743D(_thisAdjusted, ___0_time, method);
 	return _returnValue;
 }
-// Method Definition Index: 76763
+// Method Definition Index: 76841
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float HitWindow_GetAccuracy_m22C8B92B81859BCD4E87CD813C94D8583125B828 (HitWindow_t4302C779F6B4F52D8CA3384B972F45C327BE0586* __this, float ___0_hitTime, const RuntimeMethod* method) 
 {
 	{
@@ -26871,7 +26874,7 @@ IL2CPP_EXTERN_C void HitResult_t45B963202538274715AE72B6310600BD992DC73F_marshal
 	il2cpp_codegen_marshal_free_bstring(marshaled.___judgement);
 	marshaled.___judgement = NULL;
 }
-// Method Definition Index: 76764
+// Method Definition Index: 76842
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HitResult_t45B963202538274715AE72B6310600BD992DC73F HitResult_Miss_m88A8FF28AE7591A7CAFB2F4A1F8214F0D2C09840 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26892,7 +26895,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HitResult_t45B963202538274715AE72B6310600BD99
 		return L_0;
 	}
 }
-// Method Definition Index: 76765
+// Method Definition Index: 76843
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HitResult_t45B963202538274715AE72B6310600BD992DC73F HitResult_TooEarly_m01CFB0848DB6869CDC9DC93227A083620E704CA3 (const RuntimeMethod* method) 
 {
 	HitResult_t45B963202538274715AE72B6310600BD992DC73F V_0;
@@ -26905,7 +26908,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HitResult_t45B963202538274715AE72B6310600BD99
 		return L_0;
 	}
 }
-// Method Definition Index: 76766
+// Method Definition Index: 76844
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HitResult_t45B963202538274715AE72B6310600BD992DC73F HitResult_MayHit_mD16BF9257F33A0D6713B1E86F059010F188C28FC (const RuntimeMethod* method) 
 {
 	HitResult_t45B963202538274715AE72B6310600BD992DC73F V_0;
@@ -26926,7 +26929,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HitResult_t45B963202538274715AE72B6310600BD99
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76767
+// Method Definition Index: 76845
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HitResult_t45B963202538274715AE72B6310600BD992DC73F RhythmUtil_ProcessHit_m64360E84D42247A23A7123A939C483A2F3532316 (HittableObject_t9B96912B67275856D791397593D66030528BED55* ___0_hittable, bool ___1_isControlled, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27062,7 +27065,7 @@ IL_0093:
 		return L_25;
 	}
 }
-// Method Definition Index: 76768
+// Method Definition Index: 76846
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ValueTuple_2_t02A51A164967CA72FEFDABC18E56A3EDA4325BFF RhythmUtil_JudgeHit_m34163E114814768368EE7EE46510037DB3A60391 (float ___0_accuracy, HitJudgementRanges_t4A06592680B87A41F3FC935DEA7F7B3632A3C3FC ___1_ranges, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27160,7 +27163,7 @@ IL_005e:
 		return L_16;
 	}
 }
-// Method Definition Index: 76769
+// Method Definition Index: 76847
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float RhythmUtil_GetHitWindowSize_m72B65464DADD28C98DE9EEEC977B01B56A2450A4 (String_t* ___0_windowType, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27251,7 +27254,7 @@ IL_0047:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76770
+// Method Definition Index: 76848
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HitJudgementRanges_t4A06592680B87A41F3FC935DEA7F7B3632A3C3FC HitJudgementRanges_get_Default_mC660EE8713D4421197A1B39476C0C922834BFF86 (const RuntimeMethod* method) 
 {
 	HitJudgementRanges_t4A06592680B87A41F3FC935DEA7F7B3632A3C3FC V_0;
@@ -27281,7 +27284,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HitJudgementRanges_t4A06592680B87A41F3FC935DE
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76781
+// Method Definition Index: 76859
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float HittableObject_get_hitWindowSize_m3D82730C185AE8A2D81E0D3D16F3C10053A87362 (HittableObject_t9B96912B67275856D791397593D66030528BED55* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27290,7 +27293,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float HittableObject_get_hitWindowSize_m3D827
 		return L_0;
 	}
 }
-// Method Definition Index: 76782
+// Method Definition Index: 76860
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HittableObject_set_hitWindowSize_m07EF99D8148FE1AC08EE715B6CF8D00C1F3C1711 (HittableObject_t9B96912B67275856D791397593D66030528BED55* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -27300,7 +27303,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HittableObject_set_hitWindowSize_m07EF99
 		return;
 	}
 }
-// Method Definition Index: 76783
+// Method Definition Index: 76861
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HittableObject_get_hasBeenHit_m9CF85EBDE0163B089B5E90795301F3F6E0A330DE (HittableObject_t9B96912B67275856D791397593D66030528BED55* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27309,7 +27312,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HittableObject_get_hasBeenHit_m9CF85EBDE
 		return L_0;
 	}
 }
-// Method Definition Index: 76784
+// Method Definition Index: 76862
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HittableObject_set_hasBeenHit_m7B3B2AAA658FE9C96C5B55A358BC5058784F1EB5 (HittableObject_t9B96912B67275856D791397593D66030528BED55* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -27319,7 +27322,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HittableObject_set_hasBeenHit_m7B3B2AAA6
 		return;
 	}
 }
-// Method Definition Index: 76785
+// Method Definition Index: 76863
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HittableObject_get_hasMissed_m7BE6794C43DCF06AB0AFD8FC4B1BF99945840084 (HittableObject_t9B96912B67275856D791397593D66030528BED55* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27328,7 +27331,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HittableObject_get_hasMissed_m7BE6794C43
 		return L_0;
 	}
 }
-// Method Definition Index: 76786
+// Method Definition Index: 76864
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HittableObject_set_hasMissed_mD6D96CC64361B319EAA47BA38B365A76B0453134 (HittableObject_t9B96912B67275856D791397593D66030528BED55* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -27338,7 +27341,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HittableObject_set_hasMissed_mD6D96CC643
 		return;
 	}
 }
-// Method Definition Index: 76789
+// Method Definition Index: 76867
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HittableObject__ctor_mDB80332B66FF3304C3F030E87399D395F1793C42 (HittableObject_t9B96912B67275856D791397593D66030528BED55* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27356,7 +27359,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HittableObject__ctor_mDB80332B66FF3304C3
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76790
+// Method Definition Index: 76868
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Countdown_t40405C8F34C2C3A726795D2CFA302C74459BE09C* Countdown_get_Instance_mCF647D0AFA072AAB156F616FD467439502420764 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27403,7 +27406,7 @@ IL_0027:
 		return L_5;
 	}
 }
-// Method Definition Index: 76791
+// Method Definition Index: 76869
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Countdown_Awake_mA3D16D580E05D3CCF3B0A69A015C0C3004063FFB (Countdown_t40405C8F34C2C3A726795D2CFA302C74459BE09C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27460,7 +27463,7 @@ IL_0026:
 		return;
 	}
 }
-// Method Definition Index: 76792
+// Method Definition Index: 76870
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Countdown_SetCountdownSound_m68E01B96980BF23EC3AFD80F2BFDBA470A9EB7A5 (Countdown_t40405C8F34C2C3A726795D2CFA302C74459BE09C* __this, String_t* ___0_soundPath, const RuntimeMethod* method) 
 {
 	{
@@ -27489,7 +27492,7 @@ IL_001b:
 		return;
 	}
 }
-// Method Definition Index: 76793
+// Method Definition Index: 76871
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Countdown_PreloadCountdownSound_m3E6E57C5FCFC67C6F731ADD7983B79707D19897B (Countdown_t40405C8F34C2C3A726795D2CFA302C74459BE09C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27550,7 +27553,7 @@ IL_004b:
 		return;
 	}
 }
-// Method Definition Index: 76794
+// Method Definition Index: 76872
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Countdown_GetCountdownSoundPath_m9BB713A2DACCC95C0D3A30B2A1B0AEE8E327376A (Countdown_t40405C8F34C2C3A726795D2CFA302C74459BE09C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27559,7 +27562,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* Countdown_GetCountdownSoundPath_m9B
 		return L_0;
 	}
 }
-// Method Definition Index: 76795
+// Method Definition Index: 76873
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Countdown_StartCountdown_mAD1F436DD5AFF029CE408C22AD0084780561498E (Countdown_t40405C8F34C2C3A726795D2CFA302C74459BE09C* __this, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_onComplete, const RuntimeMethod* method) 
 {
 	{
@@ -27577,7 +27580,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Countdown_StartCountdown_mAD1F436DD5AFF0
 		return;
 	}
 }
-// Method Definition Index: 76796
+// Method Definition Index: 76874
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Countdown_StartCountdownWithSound_m45FE74794407F3EF3D1F259033B99A20129133EB (Countdown_t40405C8F34C2C3A726795D2CFA302C74459BE09C* __this, String_t* ___0_customSoundPath, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___1_onComplete, const RuntimeMethod* method) 
 {
 	{
@@ -27591,7 +27594,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Countdown_StartCountdownWithSound_m45FE7
 		return;
 	}
 }
-// Method Definition Index: 76797
+// Method Definition Index: 76875
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Countdown_StopCountdown_mB10B911F8E44ED421A774250B5323BCE25357EB7 (Countdown_t40405C8F34C2C3A726795D2CFA302C74459BE09C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27703,7 +27706,7 @@ IL_005a:
 		return;
 	}
 }
-// Method Definition Index: 76798
+// Method Definition Index: 76876
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Countdown_CountdownRoutine_mE6E6393995011C355AAE60CE521DBA313E47AABA (Countdown_t40405C8F34C2C3A726795D2CFA302C74459BE09C* __this, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_onComplete, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27727,7 +27730,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Countdown_CountdownRoutine_mE6
 		return L_2;
 	}
 }
-// Method Definition Index: 76799
+// Method Definition Index: 76877
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Countdown_IsSoundLoaded_m69D76724BFF74CF451F8F034D26BA3DF71716196 (Countdown_t40405C8F34C2C3A726795D2CFA302C74459BE09C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27745,7 +27748,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Countdown_IsSoundLoaded_m69D76724BFF74CF
 		return L_1;
 	}
 }
-// Method Definition Index: 76800
+// Method Definition Index: 76878
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Countdown_ReloadSound_mA1B78E8578A623BBF0DAC88BD5DD01F74A11B536 (Countdown_t40405C8F34C2C3A726795D2CFA302C74459BE09C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27755,7 +27758,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Countdown_ReloadSound_mA1B78E8578A623BBF
 		return;
 	}
 }
-// Method Definition Index: 76801
+// Method Definition Index: 76879
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Countdown_OnDestroy_m49A60C952F53585CEF4A454B96C4D1B46C925DEA (Countdown_t40405C8F34C2C3A726795D2CFA302C74459BE09C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27765,7 +27768,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Countdown_OnDestroy_m49A60C952F53585CEF4
 		return;
 	}
 }
-// Method Definition Index: 76802
+// Method Definition Index: 76880
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Countdown__ctor_m4B20FF19BD8AAE23E7AC652F106A2F209652525F (Countdown_t40405C8F34C2C3A726795D2CFA302C74459BE09C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27797,7 +27800,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Countdown__ctor_m4B20FF19BD8AAE23E7AC652
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76803
+// Method Definition Index: 76881
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__cctor_m3C188D26567901EE5F10911D6F2B7352838185B4 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27814,7 +27817,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__cctor_m3C188D26567901EE5F10911D
 		return;
 	}
 }
-// Method Definition Index: 76804
+// Method Definition Index: 76882
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_m1F68AD0B1D04872B612517B97F5FEF7DE2E858D8 (U3CU3Ec_t791AF82132DEBF4127DB238F8278B66AF279E20F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27822,7 +27825,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_m1F68AD0B1D04872B612517B97
 		return;
 	}
 }
-// Method Definition Index: 76805
+// Method Definition Index: 76883
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CCountdownRoutineU3Eb__14_0_m81A7641878898D2F8F208E947F108E5F57D4F62D (U3CU3Ec_t791AF82132DEBF4127DB238F8278B66AF279E20F* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -27849,7 +27852,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CCountdownRoutineU3Eb__14_0_m8
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76806
+// Method Definition Index: 76884
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CCountdownRoutineU3Ed__14__ctor_m25EE8888FE1E69950F600A848035AA880676047C (U3CCountdownRoutineU3Ed__14_tF6EF6D55F51FA2E2B269552BD91917DC5D7E222B* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -27859,14 +27862,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CCountdownRoutineU3Ed__14__ctor_m25EE8
 		return;
 	}
 }
-// Method Definition Index: 76807
+// Method Definition Index: 76885
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CCountdownRoutineU3Ed__14_System_IDisposable_Dispose_m487A23638E73F34B8EDD921E4C60934DFB738CC7 (U3CCountdownRoutineU3Ed__14_tF6EF6D55F51FA2E2B269552BD91917DC5D7E222B* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 76808
+// Method Definition Index: 76886
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CCountdownRoutineU3Ed__14_MoveNext_m9FD95BFAA365F8082794632CC7BB3EFBCA3483E1 (U3CCountdownRoutineU3Ed__14_tF6EF6D55F51FA2E2B269552BD91917DC5D7E222B* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28159,7 +28162,7 @@ IL_0193:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 76809
+// Method Definition Index: 76887
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CCountdownRoutineU3Ed__14_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mE22123C235D3AFCF2E4B58918EB4C5CCFF1D1C7F (U3CCountdownRoutineU3Ed__14_tF6EF6D55F51FA2E2B269552BD91917DC5D7E222B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -28167,7 +28170,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CCountdownRoutineU3Ed__14_Sy
 		return L_0;
 	}
 }
-// Method Definition Index: 76810
+// Method Definition Index: 76888
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CCountdownRoutineU3Ed__14_System_Collections_IEnumerator_Reset_m60EF76B855AC6CEA2C8DBA0494EBA6C15C6CD97B (U3CCountdownRoutineU3Ed__14_tF6EF6D55F51FA2E2B269552BD91917DC5D7E222B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -28176,7 +28179,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CCountdownRoutineU3Ed__14_System_Colle
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CCountdownRoutineU3Ed__14_System_Collections_IEnumerator_Reset_m60EF76B855AC6CEA2C8DBA0494EBA6C15C6CD97B_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 76811
+// Method Definition Index: 76889
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CCountdownRoutineU3Ed__14_System_Collections_IEnumerator_get_Current_m12383C441C04ECA73FEA2AEF37F1933014345756 (U3CCountdownRoutineU3Ed__14_tF6EF6D55F51FA2E2B269552BD91917DC5D7E222B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -28192,7 +28195,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CCountdownRoutineU3Ed__14_Sy
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76812
+// Method Definition Index: 76890
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* Conductor_get_Instance_m2251A476243B176D795D4B116919CDFB515A65BD (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28207,7 +28210,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Conductor_t4845C275639051A9C22F1E7E56C85C2B30
 		return L_0;
 	}
 }
-// Method Definition Index: 76813
+// Method Definition Index: 76891
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_set_Instance_m9A9BCABD48093747EA153E705BA91745E2637F6E (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28224,7 +28227,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_set_Instance_m9A9BCABD48093747
 		return;
 	}
 }
-// Method Definition Index: 76814
+// Method Definition Index: 76892
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_add_OnMeasureHit_m6BDF6A67771F02637E97841763A363BA13988D45 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28267,7 +28270,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 76815
+// Method Definition Index: 76893
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_remove_OnMeasureHit_mFBF69BEE9E06EE4F1F21C24378BD13AC333085CB (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28310,7 +28313,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 76816
+// Method Definition Index: 76894
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_add_OnBeatHit_m4DAEA6713FCF7E9C828FF1A3B09F65F1971A1C92 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28353,7 +28356,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 76817
+// Method Definition Index: 76895
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_remove_OnBeatHit_mDB801874FBA31EBE7DFE2D68C01DA80890415840 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28396,7 +28399,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 76818
+// Method Definition Index: 76896
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_add_OnStepHit_mBB9951E56BE970FDD92A713BCCC86CFD86572FA7 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28439,7 +28442,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 76819
+// Method Definition Index: 76897
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_remove_OnStepHit_m106D8839C806251EA7C57D3215CF7852BA1EB0DD (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28482,7 +28485,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 76820
+// Method Definition Index: 76898
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_add_OnBpmChanged_m87582010E5A92739A15378B1D52268E7B67E8465 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28525,7 +28528,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 76821
+// Method Definition Index: 76899
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_remove_OnBpmChanged_m4DCBBFA45B684A352CC793188B516D10F55F79E7 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28568,7 +28571,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 76822
+// Method Definition Index: 76900
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ConductorConfig_tA24553E52E10EEBB0706588AC4A9969E50C51212* Conductor_get_Config_m1D436E90B94E99BD28ADC29713B5AFAA642C9EA6 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	ConductorConfig_tA24553E52E10EEBB0706588AC4A9969E50C51212* V_0 = NULL;
@@ -28601,7 +28604,7 @@ IL_0018:
 		return G_B2_0;
 	}
 }
-// Method Definition Index: 76823
+// Method Definition Index: 76901
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_set_Config_mFF2615755D6B3FE95C73808622E7926F9A912E09 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, ConductorConfig_tA24553E52E10EEBB0706588AC4A9969E50C51212* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -28612,7 +28615,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_set_Config_mFF2615755D6B3FE95C
 		return;
 	}
 }
-// Method Definition Index: 76824
+// Method Definition Index: 76902
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Conductor_get_timeSignatureNumerator_mEE6C9CD7B19DFB7010B573B9DCE12DA950287DE3 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	{
@@ -28624,7 +28627,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Conductor_get_timeSignatureNumerator_
 		return L_1;
 	}
 }
-// Method Definition Index: 76825
+// Method Definition Index: 76903
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Conductor_get_timeSignatureDenominator_m9CDAAB5E40473D22E68B1CBBCB61A6667A3557B1 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	{
@@ -28636,7 +28639,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Conductor_get_timeSignatureDenominato
 		return L_1;
 	}
 }
-// Method Definition Index: 76826
+// Method Definition Index: 76904
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Conductor_get_currentMeasure_mDD3D19D9149F2419C56DFCB320F6F9568A4B4E5A (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	{
@@ -28645,7 +28648,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Conductor_get_currentMeasure_mDD3D19D
 		return L_0;
 	}
 }
-// Method Definition Index: 76827
+// Method Definition Index: 76905
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_set_currentMeasure_m52C9424190F3BECDBFA8AA2A6BB5F3C7C18C527F (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -28655,7 +28658,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_set_currentMeasure_m52C9424190
 		return;
 	}
 }
-// Method Definition Index: 76828
+// Method Definition Index: 76906
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Conductor_get_currentBeat_m08E3CFC10BBE254A36CBC3952E4A3BC2E6A682A5 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	{
@@ -28664,7 +28667,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Conductor_get_currentBeat_m08E3CFC10B
 		return L_0;
 	}
 }
-// Method Definition Index: 76829
+// Method Definition Index: 76907
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_set_currentBeat_m65ED66ADFFC734566FE7B3B9661A3C30B5E10FA1 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -28674,7 +28677,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_set_currentBeat_m65ED66ADFFC73
 		return;
 	}
 }
-// Method Definition Index: 76830
+// Method Definition Index: 76908
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Conductor_get_currentStep_m5797E4651F1136867446E5D42E7904CB56F62066 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	{
@@ -28683,7 +28686,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Conductor_get_currentStep_m5797E4651F
 		return L_0;
 	}
 }
-// Method Definition Index: 76831
+// Method Definition Index: 76909
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_set_currentStep_m5E4BCE606AC86E40A0ED0FD62E1E98F8286090FD (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -28693,7 +28696,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_set_currentStep_m5E4BCE606AC86
 		return;
 	}
 }
-// Method Definition Index: 76832
+// Method Definition Index: 76910
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Conductor_get_instrumentalOffset_m2BE7AB46CD5B7364B5ABD857F9B967EDF02590DC (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	{
@@ -28705,7 +28708,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Conductor_get_instrumentalOffset_m2BE7A
 		return L_1;
 	}
 }
-// Method Definition Index: 76833
+// Method Definition Index: 76911
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Conductor_get_formatOffset_m5A0D41864D6A6B15530B834E71DE437AF75DB286 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	{
@@ -28717,7 +28720,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Conductor_get_formatOffset_m5A0D41864D6
 		return L_1;
 	}
 }
-// Method Definition Index: 76834
+// Method Definition Index: 76912
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Conductor_get_inputOffset_mAE28148A1BA8CA470DB858784978BCE0B1D0A6D0 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	{
@@ -28729,7 +28732,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Conductor_get_inputOffset_mAE28148A1BA8
 		return L_1;
 	}
 }
-// Method Definition Index: 76835
+// Method Definition Index: 76913
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Conductor_get_audioVisualOffset_mF3FB72CC3D6C666D2D60490613FCD4143C2305D7 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	{
@@ -28741,7 +28744,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Conductor_get_audioVisualOffset_mF3FB72
 		return L_1;
 	}
 }
-// Method Definition Index: 76836
+// Method Definition Index: 76914
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Conductor_get_combinedOffset_m411AE6D70A61957B447844B2D78DACBAC599212C (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	{
@@ -28755,7 +28758,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Conductor_get_combinedOffset_m411AE6D70
 		return ((float)il2cpp_codegen_add(((float)il2cpp_codegen_add(L_0, L_1)), L_2));
 	}
 }
-// Method Definition Index: 76837
+// Method Definition Index: 76915
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TimeChange_tF92F2FE765EDF53FD54B139E7F4BC5803D080C38 Conductor_get_currentTimeChange_mF437D3BF596A6D16FAB93B3D2397E8D544CF243C (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	{
@@ -28764,7 +28767,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TimeChange_tF92F2FE765EDF53FD54B139E7F4BC5803
 		return L_0;
 	}
 }
-// Method Definition Index: 76838
+// Method Definition Index: 76916
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_set_currentTimeChange_mAA0FB8CFE0D3C50F1D508E39CE272B8C451CB289 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, TimeChange_tF92F2FE765EDF53FD54B139E7F4BC5803D080C38 ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -28774,7 +28777,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_set_currentTimeChange_mAA0FB8C
 		return;
 	}
 }
-// Method Definition Index: 76839
+// Method Definition Index: 76917
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_Awake_mA32B4BEF8B07FE95FB0AD45602B5BC74815765CD (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28819,7 +28822,7 @@ IL_0025:
 		return;
 	}
 }
-// Method Definition Index: 76840
+// Method Definition Index: 76918
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_InitializeDefaultTimeChange_m9C1356822330304333953D1988BCB347915D0F45 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	TimeChange_tF92F2FE765EDF53FD54B139E7F4BC5803D080C38 V_0;
@@ -28850,7 +28853,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_InitializeDefaultTimeChange_m9
 		return;
 	}
 }
-// Method Definition Index: 76841
+// Method Definition Index: 76919
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_MapSong_mA252CED6DE8983CCFE97B396D01B8CDD1D453C1E (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* ___0_sound, float ___1_initialBpm, List_1_t0A33AF9FB12D3DE8B36A66E8414FACEED94B05A8* ___2_changes, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -28981,7 +28984,7 @@ IL_008f:
 		return;
 	}
 }
-// Method Definition Index: 76842
+// Method Definition Index: 76920
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_MapSong_mA4FF10A3A6923D5650A024616A16F34F19F27D33 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* ___0_sound, float ___1_initialBpm, ConductorConfig_tA24553E52E10EEBB0706588AC4A9969E50C51212* ___2_config, List_1_t0A33AF9FB12D3DE8B36A66E8414FACEED94B05A8* ___3_changes, const RuntimeMethod* method) 
 {
 	{
@@ -28997,7 +29000,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_MapSong_mA4FF10A3A6923D5650A02
 		return;
 	}
 }
-// Method Definition Index: 76843
+// Method Definition Index: 76921
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_UpdateConfig_mCFA44B807328C3C5B27D1A83909B31F802AFEDF5 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, ConductorConfig_tA24553E52E10EEBB0706588AC4A9969E50C51212* ___0_newConfig, const RuntimeMethod* method) 
 {
 	{
@@ -29010,7 +29013,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_UpdateConfig_mCFA44B807328C3C5
 		return;
 	}
 }
-// Method Definition Index: 76844
+// Method Definition Index: 76922
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_AddTimeChange_mC49FDA939A42AC4AB6C1FF8C4B8C908B32D1AB27 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, float ___0_timeMs, float ___1_newBpm, int32_t ___2_numerator, int32_t ___3_denominator, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29079,7 +29082,7 @@ IL_003c:
 		return;
 	}
 }
-// Method Definition Index: 76845
+// Method Definition Index: 76923
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_MapTimeChanges_m96368480B0C86EC5BAC94388214BFECE4204DF58 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29234,7 +29237,7 @@ IL_00c5:
 		return;
 	}
 }
-// Method Definition Index: 76846
+// Method Definition Index: 76924
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_Update_m37DA4C49F15A66D0D50747BCAA6FC71B63CE1438 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	{
@@ -29276,7 +29279,7 @@ IL_0016:
 		return;
 	}
 }
-// Method Definition Index: 76847
+// Method Definition Index: 76925
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_resetSong_m1074BBF628A8A189E9117B33AFE574B17651C98D (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	{
@@ -29304,7 +29307,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_resetSong_m1074BBF628A8A189E91
 		return;
 	}
 }
-// Method Definition Index: 76848
+// Method Definition Index: 76926
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_UpdateSongPosition_m4C8AC81DA4F89E85C0DD4BECCCEA73AC21DE0F09 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
@@ -29356,7 +29359,7 @@ IL_0050:
 		return;
 	}
 }
-// Method Definition Index: 76849
+// Method Definition Index: 76927
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Conductor_GetTimeWithDelta_m124640BB90376D5B91F98BB2393662EBA476953E (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	{
@@ -29366,7 +29369,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Conductor_GetTimeWithDelta_m124640BB903
 		return ((float)il2cpp_codegen_add(L_0, L_1));
 	}
 }
-// Method Definition Index: 76850
+// Method Definition Index: 76928
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_UpdateTimeChange_mBCEDC8DAC172F6E0D223898EC12789F2AB8F6A2A (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29454,7 +29457,7 @@ IL_0061:
 		return;
 	}
 }
-// Method Definition Index: 76851
+// Method Definition Index: 76929
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_UpdateMusicalPosition_m27C4DA915151DFF0A236F8C103320827D2379ACF (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
@@ -29638,7 +29641,7 @@ IL_00f4:
 		return;
 	}
 }
-// Method Definition Index: 76852
+// Method Definition Index: 76930
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_RecalculateTimings_mAE97717DBB88480B542BD6CAC018A1B3A1BCAC73 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	{
@@ -29657,7 +29660,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor_RecalculateTimings_mAE97717DBB
 		return;
 	}
 }
-// Method Definition Index: 76853
+// Method Definition Index: 76931
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Conductor_GetStep_m33931BC7B18941E28571AF3136822C324040814E (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, float ___0_timeMs, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29764,7 +29767,7 @@ IL_005a:
 		return ((float)il2cpp_codegen_add(((float)il2cpp_codegen_multiply(L_24, (4.0f))), ((float)(L_25/L_26))));
 	}
 }
-// Method Definition Index: 76854
+// Method Definition Index: 76932
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Conductor_GetStepTimeInMs_mEC76090FF75F36636F48CED1D7A397F5DC72CE0D (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, float ___0_step, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29875,7 +29878,7 @@ IL_0064:
 		return ((float)il2cpp_codegen_add(L_25, ((float)il2cpp_codegen_multiply(L_26, L_27))));
 	}
 }
-// Method Definition Index: 76855
+// Method Definition Index: 76933
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Conductor_BeatToSeconds_mC36036D9D0C4BBDB525D7D72E9510B712E097502 (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, float ___0_beat, const RuntimeMethod* method) 
 {
 	{
@@ -29886,7 +29889,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Conductor_BeatToSeconds_mC36036D9D0C4BB
 		return ((float)(L_1/(1000.0f)));
 	}
 }
-// Method Definition Index: 76856
+// Method Definition Index: 76934
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor__ctor_mA02A7C27FCBD90EB692924D76D492F7E71BA337B (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29922,7 +29925,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Conductor__ctor_mA02A7C27FCBD90EB692924D
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76857
+// Method Definition Index: 76935
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ConductorConfig_tA24553E52E10EEBB0706588AC4A9969E50C51212* ConductorConfig_CreateDefault_m08B523761632DC4594882B30EE2F912AC81498B1 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -29938,7 +29941,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ConductorConfig_tA24553E52E10EEBB0706588AC4A9
 		return L_0;
 	}
 }
-// Method Definition Index: 76858
+// Method Definition Index: 76936
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConductorConfig__ctor_m9ABB3942E6A17583D9D8FA868792513BB2D404F9 (ConductorConfig_tA24553E52E10EEBB0706588AC4A9969E50C51212* __this, const RuntimeMethod* method) 
 {
 	{
@@ -29964,7 +29967,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConductorConfig__ctor_m9ABB3942E6A17583D
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76859
+// Method Definition Index: 76937
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TimeChange_tF92F2FE765EDF53FD54B139E7F4BC5803D080C38 TimeChange_Create_m5D041F44B619F6CC5C1481F4594FDA280264F847 (float ___0_timeMs, float ___1_bpm, int32_t ___2_numerator, int32_t ___3_denominator, const RuntimeMethod* method) 
 {
 	TimeChange_tF92F2FE765EDF53FD54B139E7F4BC5803D080C38 V_0;
@@ -30000,7 +30003,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR TimeChange_tF92F2FE765EDF53FD54B139E7F4BC5803
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76860
+// Method Definition Index: 76938
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__cctor_m5AFD6AC224224B55C079E8F60A7795988D291D48 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30017,7 +30020,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__cctor_m5AFD6AC224224B55C079E8F6
 		return;
 	}
 }
-// Method Definition Index: 76861
+// Method Definition Index: 76939
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_m5F6E52FA0ED456E3D02C4484D4D567C948893C20 (U3CU3Ec_t8B6DFFE74FFF1C7CF586103953988A3F0D08D16A* __this, const RuntimeMethod* method) 
 {
 	{
@@ -30025,7 +30028,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_m5F6E52FA0ED456E3D02C4484D
 		return;
 	}
 }
-// Method Definition Index: 76862
+// Method Definition Index: 76940
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t U3CU3Ec_U3CAddTimeChangeU3Eb__68_0_m3C221561EE60CA3DAC030946254EDE39D4E01E31 (U3CU3Ec_t8B6DFFE74FFF1C7CF586103953988A3F0D08D16A* __this, TimeChange_tF92F2FE765EDF53FD54B139E7F4BC5803D080C38 ___0_a, TimeChange_tF92F2FE765EDF53FD54B139E7F4BC5803D080C38 ___1_b, const RuntimeMethod* method) 
 {
 	{
@@ -30038,7 +30041,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t U3CU3Ec_U3CAddTimeChangeU3Eb__68_0_m3
 		return L_3;
 	}
 }
-// Method Definition Index: 76863
+// Method Definition Index: 76941
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t U3CU3Ec_U3CMapTimeChangesU3Eb__69_0_m02BBACBFB103E20F622D2DF8429E136E277EB0B1 (U3CU3Ec_t8B6DFFE74FFF1C7CF586103953988A3F0D08D16A* __this, TimeChange_tF92F2FE765EDF53FD54B139E7F4BC5803D080C38 ___0_a, TimeChange_tF92F2FE765EDF53FD54B139E7F4BC5803D080C38 ___1_b, const RuntimeMethod* method) 
 {
 	{
@@ -30059,7 +30062,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t U3CU3Ec_U3CMapTimeChangesU3Eb__69_0_m
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76864
+// Method Definition Index: 76942
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC0C7BB9* LevelData_LoadLevelMetadata_m5DF123A848DFB762C72E2A7CD5CD8468C027D404 (String_t* ___0_worldId, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30247,7 +30250,7 @@ IL_0094:
 		return L_28;
 	}
 }
-// Method Definition Index: 76865
+// Method Definition Index: 76943
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LevelData_GetCandidateIds_mF8B959F895D55562415DFC033A9E0392CD004D2F (String_t* ___0_worldId, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30267,7 +30270,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LevelData_GetCandidateIds_mF8B
 		return L_1;
 	}
 }
-// Method Definition Index: 76866
+// Method Definition Index: 76944
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelData__ctor_mAD73A21BB0E9D94FFDE4CC326445BDB77961F778 (LevelData_tEDBEDB208518E08B83D01ECFAA047AC0AC0C7BB9* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30315,7 +30318,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelData__ctor_mAD73A21BB0E9D94FFDE4CC3
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76867
+// Method Definition Index: 76945
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CGetCandidateIdsU3Ed__14__ctor_mFFB898C66056E06CCCB3796058AE3B386867C687 (U3CGetCandidateIdsU3Ed__14_t3A86F7B340FE65BE426C2B1327F73724B88D340C* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -30328,14 +30331,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CGetCandidateIdsU3Ed__14__ctor_mFFB898
 		return;
 	}
 }
-// Method Definition Index: 76868
+// Method Definition Index: 76946
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CGetCandidateIdsU3Ed__14_System_IDisposable_Dispose_m4C69793F6F6EC793CB803F73AFD9EE81E1D1615E (U3CGetCandidateIdsU3Ed__14_t3A86F7B340FE65BE426C2B1327F73724B88D340C* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 76869
+// Method Definition Index: 76947
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CGetCandidateIdsU3Ed__14_MoveNext_mBA9C0FAF6A7B67364A808F216E9F604A1F130EE5 (U3CGetCandidateIdsU3Ed__14_t3A86F7B340FE65BE426C2B1327F73724B88D340C* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -30444,7 +30447,7 @@ IL_009e:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 76870
+// Method Definition Index: 76948
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* U3CGetCandidateIdsU3Ed__14_System_Collections_Generic_IEnumeratorU3CSystem_StringU3E_get_Current_m170EDDF9608F6B986613A02C7E74D19643219298 (U3CGetCandidateIdsU3Ed__14_t3A86F7B340FE65BE426C2B1327F73724B88D340C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -30452,7 +30455,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* U3CGetCandidateIdsU3Ed__14_System_C
 		return L_0;
 	}
 }
-// Method Definition Index: 76871
+// Method Definition Index: 76949
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CGetCandidateIdsU3Ed__14_System_Collections_IEnumerator_Reset_mA915A3D17908BCFB7D48F38962D286D6DA79F2C7 (U3CGetCandidateIdsU3Ed__14_t3A86F7B340FE65BE426C2B1327F73724B88D340C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -30461,7 +30464,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CGetCandidateIdsU3Ed__14_System_Collec
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CGetCandidateIdsU3Ed__14_System_Collections_IEnumerator_Reset_mA915A3D17908BCFB7D48F38962D286D6DA79F2C7_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 76872
+// Method Definition Index: 76950
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CGetCandidateIdsU3Ed__14_System_Collections_IEnumerator_get_Current_m5B28F49CA291E56AAB2103B0557B73158F5B2BE5 (U3CGetCandidateIdsU3Ed__14_t3A86F7B340FE65BE426C2B1327F73724B88D340C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -30469,7 +30472,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CGetCandidateIdsU3Ed__14_Sys
 		return L_0;
 	}
 }
-// Method Definition Index: 76873
+// Method Definition Index: 76951
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CGetCandidateIdsU3Ed__14_System_Collections_Generic_IEnumerableU3CSystem_StringU3E_GetEnumerator_mE179B6ABB19AD0B319EB1921670B37E7EFCA8B99 (U3CGetCandidateIdsU3Ed__14_t3A86F7B340FE65BE426C2B1327F73724B88D340C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30519,7 +30522,7 @@ IL_0029:
 		return L_6;
 	}
 }
-// Method Definition Index: 76874
+// Method Definition Index: 76952
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CGetCandidateIdsU3Ed__14_System_Collections_IEnumerable_GetEnumerator_m47264D4E0BE4675D9A7524606C879A72A6489E47 (U3CGetCandidateIdsU3Ed__14_t3A86F7B340FE65BE426C2B1327F73724B88D340C* __this, const RuntimeMethod* method) 
 {
 	{
@@ -30536,7 +30539,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CGetCandidateIdsU3Ed__14_Sys
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 76875
+// Method Definition Index: 76953
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PropConfig_t75CB306C52CF5B51E626737413A907AC7DAAAB89* LevelProp_get_Config_m1464052E1FFB0510772CBE513B720151069B1A78 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, const RuntimeMethod* method) 
 {
 	PropConfig_t75CB306C52CF5B51E626737413A907AC7DAAAB89* V_0 = NULL;
@@ -30569,7 +30572,7 @@ IL_0018:
 		return G_B2_0;
 	}
 }
-// Method Definition Index: 76876
+// Method Definition Index: 76954
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_set_Config_mAC7F7495CD4234C5ABE5E98BD2FD8635B4C384D2 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, PropConfig_t75CB306C52CF5B51E626737413A907AC7DAAAB89* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -30580,7 +30583,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_set_Config_mAC7F7495CD4234C5AB
 		return;
 	}
 }
-// Method Definition Index: 76877
+// Method Definition Index: 76955
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* LevelProp_get_sprite_m1DB20E4D15FF08996CFB9F25F41A09F1C104E98E (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, const RuntimeMethod* method) 
 {
 	{
@@ -30589,7 +30592,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39
 		return L_0;
 	}
 }
-// Method Definition Index: 76878
+// Method Definition Index: 76956
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_set_sprite_m41D87D2E01C367E17DCCA3C9E1B2E29180CC94E4 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -30600,7 +30603,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_set_sprite_m41D87D2E01C367E17D
 		return;
 	}
 }
-// Method Definition Index: 76879
+// Method Definition Index: 76957
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* LevelProp_get_propName_m29AC2584811FC876CBC85354E817B11DD16B4907 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, const RuntimeMethod* method) 
 {
 	{
@@ -30612,7 +30615,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* LevelProp_get_propName_m29AC2584811
 		return L_1;
 	}
 }
-// Method Definition Index: 76880
+// Method Definition Index: 76958
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_set_propName_mA9D430158565306DB3D6BDF02D19526A3CD4E6B2 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -30626,7 +30629,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_set_propName_mA9D430158565306D
 		return;
 	}
 }
-// Method Definition Index: 76881
+// Method Definition Index: 76959
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool LevelProp_get_IsVisible_m6EDB079027A49D211EC5040892C6696EC079DDAA (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30661,7 +30664,7 @@ IL_0021:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 76882
+// Method Definition Index: 76960
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool LevelProp_get_IsAnimating_m8D3E34EBD74C134E8B4DE86EB79794A7E4ABFF6E (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30696,7 +30699,7 @@ IL_001a:
 		return (bool)0;
 	}
 }
-// Method Definition Index: 76883
+// Method Definition Index: 76961
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* LevelProp_get_CurrentAnimation_mD7C79E13AF07443FA470FFD824BDDF320FDF3FA1 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30754,7 +30757,7 @@ IL_001b:
 		return G_B5_0;
 	}
 }
-// Method Definition Index: 76884
+// Method Definition Index: 76962
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_add_OnPropReady_mDA98816E2FFCDFDD7F0827CD9141DFD1CF29E270 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, Action_1_t9D652DCCB263034EA4317D52848B1FE3AFAC0DE2* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30797,7 +30800,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 76885
+// Method Definition Index: 76963
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_remove_OnPropReady_mFBF2D6E24B58E7769B47A6CD12B3B10EE83AA724 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, Action_1_t9D652DCCB263034EA4317D52848B1FE3AFAC0DE2* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30840,7 +30843,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 76886
+// Method Definition Index: 76964
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_add_OnPropDestroyed_mD1E312FBF8A4EDBBF412895F98C1C9F405BCCB7C (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, Action_1_t9D652DCCB263034EA4317D52848B1FE3AFAC0DE2* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30883,7 +30886,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 76887
+// Method Definition Index: 76965
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_remove_OnPropDestroyed_m5625C45CC1F66CDC75141901A03A01949EBFBCC7 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, Action_1_t9D652DCCB263034EA4317D52848B1FE3AFAC0DE2* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30926,7 +30929,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 76888
+// Method Definition Index: 76966
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_add_OnPropInteracted_mA2981A6174B44D68CFFEBF20F667F0746A67B88B (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, Action_1_t9D652DCCB263034EA4317D52848B1FE3AFAC0DE2* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -30969,7 +30972,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 76889
+// Method Definition Index: 76967
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_remove_OnPropInteracted_m9AE576330DD713C89080A00917DBBB0B1FD57B67 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, Action_1_t9D652DCCB263034EA4317D52848B1FE3AFAC0DE2* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31012,7 +31015,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 76890
+// Method Definition Index: 76968
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_add_OnAnimationComplete_m9D928915DC92696D8EFB7CE88A618BC426406D2A (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, Action_2_tC10AB29FF2C4DE28B2134CB8E6F2C3562CA4116E* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31055,7 +31058,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 76891
+// Method Definition Index: 76969
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_remove_OnAnimationComplete_m1347F4C861AA117BD9E583F0DDF61B0B65906C4B (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, Action_2_tC10AB29FF2C4DE28B2134CB8E6F2C3562CA4116E* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31098,7 +31101,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 76892
+// Method Definition Index: 76970
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_Awake_m013E88528FF456DBE18BC944317D7E92C7D29564 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, const RuntimeMethod* method) 
 {
 	{
@@ -31108,7 +31111,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_Awake_m013E88528FF456DBE18BC94
 		return;
 	}
 }
-// Method Definition Index: 76893
+// Method Definition Index: 76971
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_Start_mAAFFAE7F2A6ACB37D4D0F18A5D1D1D0B07DA4433 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, const RuntimeMethod* method) 
 {
 	{
@@ -31133,7 +31136,7 @@ IL_0013:
 		return;
 	}
 }
-// Method Definition Index: 76894
+// Method Definition Index: 76972
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_Update_mB58000C761E9BB95DAD22CBD9FCD6498255A6F92 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, const RuntimeMethod* method) 
 {
 	{
@@ -31141,7 +31144,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_Update_mB58000C761E9BB95DAD22C
 		return;
 	}
 }
-// Method Definition Index: 76895
+// Method Definition Index: 76973
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_OnEnable_m5F109C3644BBE97E5DAE2F1BEE6D11C01CEA9F64 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, const RuntimeMethod* method) 
 {
 	{
@@ -31173,7 +31176,7 @@ IL_001b:
 		return;
 	}
 }
-// Method Definition Index: 76896
+// Method Definition Index: 76974
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_InitializeSprite_m7D063BCDCC7AA991C24128DCBBEFD0089B2D9842 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31292,7 +31295,7 @@ IL_00ae:
 		return;
 	}
 }
-// Method Definition Index: 76897
+// Method Definition Index: 76975
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SpriteConfig_t39278F87572A1E44C9BF8002E1A2EB5113E687EE* LevelProp_MapToSpriteConfig_m1721C99B94CFD71181D867C6EB8B1D9DCCC97B8B (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, PropConfig_t75CB306C52CF5B51E626737413A907AC7DAAAB89* ___0_cfg, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31371,7 +31374,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SpriteConfig_t39278F87572A1E44C9BF8002E1A2EB5
 		return L_23;
 	}
 }
-// Method Definition Index: 76898
+// Method Definition Index: 76976
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_ApplyConfiguration_m7E6690F7ECD5FECED7FAF49B8903241A896DB27D (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31427,7 +31430,7 @@ IL_0042:
 		return;
 	}
 }
-// Method Definition Index: 76899
+// Method Definition Index: 76977
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_LoadTexture_mBF7F278979EC18010ECC0C5114B748CE41333EDD (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, String_t* ___0_texturePath, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31500,7 +31503,7 @@ IL_0036:
 		return;
 	}
 }
-// Method Definition Index: 76900
+// Method Definition Index: 76978
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_LoadSparrowAtlas_mF7AA6E66818C75F438128B44B0558DB994B1580E (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, String_t* ___0_texturePath, String_t* ___1_xmlPath, bool ___2_animated, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31545,7 +31548,7 @@ IL_0019:
 		return;
 	}
 }
-// Method Definition Index: 76901
+// Method Definition Index: 76979
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_MakeSolidColor_mCC4BD6BEA3BCF3BFE415B30C9861E12EC0FA10F9 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_size, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___1_color, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31592,7 +31595,7 @@ IL_0019:
 		return;
 	}
 }
-// Method Definition Index: 76902
+// Method Definition Index: 76980
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_PlayAnimation_mF1C27AD27C362D3D173329123067A9984C18BA80 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, String_t* ___0_animName, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___1_onComplete, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31743,7 +31746,7 @@ IL_0086:
 		return;
 	}
 }
-// Method Definition Index: 76903
+// Method Definition Index: 76981
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_AddAnimationByPrefix_m5DBC85503EC13D18E33C712B7AB40E61955DEDE7 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, String_t* ___0_name, String_t* ___1_prefix, float ___2_frameRate, bool ___3_looped, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31789,7 +31792,7 @@ IL_0019:
 		return;
 	}
 }
-// Method Definition Index: 76904
+// Method Definition Index: 76982
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LevelProp_TrackAnimationCompletion_mAC3DDC4611BE8BCFC6DD46117247A0123374F7F7 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, String_t* ___0_animName, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___1_onComplete, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31818,7 +31821,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LevelProp_TrackAnimationComple
 		return L_4;
 	}
 }
-// Method Definition Index: 76905
+// Method Definition Index: 76983
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_SetColor_mE318073BB150295CBBE48505824E0B0067EDE14F (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_color, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31854,7 +31857,7 @@ IL_001a:
 		return;
 	}
 }
-// Method Definition Index: 76906
+// Method Definition Index: 76984
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_FadeOut_m6C981755108DD5ED0A3F3BDF7A066068953D39F5 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, float ___0_duration, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___1_onComplete, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31925,7 +31928,7 @@ IL_003d:
 		return;
 	}
 }
-// Method Definition Index: 76907
+// Method Definition Index: 76985
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_FadeIn_m0CD30DC3AA1955949FFBEC8A4E33FDBDE74BCD00 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, float ___0_duration, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___1_onComplete, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -31996,7 +31999,7 @@ IL_003d:
 		return;
 	}
 }
-// Method Definition Index: 76908
+// Method Definition Index: 76986
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_SetAlpha_m8F04137F66AE7B704DF1E351D7B9CF35C4C8FA05 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, float ___0_alpha, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32032,7 +32035,7 @@ IL_001a:
 		return;
 	}
 }
-// Method Definition Index: 76909
+// Method Definition Index: 76987
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LevelProp_FadeRoutine_m5D2357707A1806D079A8E5B008598D9F64BFB15A (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, float ___0_startAlpha, float ___1_endAlpha, float ___2_duration, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___3_onComplete, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32068,7 +32071,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LevelProp_FadeRoutine_m5D23577
 		return L_8;
 	}
 }
-// Method Definition Index: 76910
+// Method Definition Index: 76988
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_OnDestroy_mE73E464F2D5062019B2F3CCA6E57EF64374D8897 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, const RuntimeMethod* method) 
 {
 	PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* G_B2_0 = NULL;
@@ -32097,7 +32100,7 @@ IL_000b:
 		return;
 	}
 }
-// Method Definition Index: 76911
+// Method Definition Index: 76989
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 LevelProp_get_Position_m7C54ACBEF35FF98B5D2A3BC3591D2CC0DDDCD2E4 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, const RuntimeMethod* method) 
 {
 	{
@@ -32112,7 +32115,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D
 		return L_2;
 	}
 }
-// Method Definition Index: 76912
+// Method Definition Index: 76990
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_set_Position_mFE12C1DA2BBEB260E9C6AE32566E211D33A7A780 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -32137,7 +32140,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_set_Position_mFE12C1DA2BBEB260
 		return;
 	}
 }
-// Method Definition Index: 76913
+// Method Definition Index: 76991
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 LevelProp_get_Scale_mF1BF8E65D72A5AEE0AE3CED612E8902FFDFA4619 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, const RuntimeMethod* method) 
 {
 	{
@@ -32152,7 +32155,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D
 		return L_2;
 	}
 }
-// Method Definition Index: 76914
+// Method Definition Index: 76992
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_set_Scale_m1C29347C25183A58268C24712F20A3617CB142D4 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -32171,7 +32174,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_set_Scale_m1C29347C25183A58268
 		return;
 	}
 }
-// Method Definition Index: 76915
+// Method Definition Index: 76993
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float LevelProp_get_Rotation_m7A50042575BB420FE16E0E357117012A79EEA051 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, const RuntimeMethod* method) 
 {
 	{
@@ -32185,7 +32188,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float LevelProp_get_Rotation_m7A50042575BB420
 		return L_2;
 	}
 }
-// Method Definition Index: 76916
+// Method Definition Index: 76994
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_set_Rotation_mA3E006089FC66C75827D68D5127424383B72DE1D (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -32200,7 +32203,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_set_Rotation_mA3E006089FC66C75
 		return;
 	}
 }
-// Method Definition Index: 76917
+// Method Definition Index: 76995
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_SetScreenPosition_m90489F937FC556AA61C8DCD90CE21CEAAA34E402 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, float ___0_screenX, float ___1_screenY, PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* ___2_phobiaCamera, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32283,7 +32286,7 @@ IL_0054:
 		return;
 	}
 }
-// Method Definition Index: 76918
+// Method Definition Index: 76996
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 LevelProp_GetScreenPosition_mD04BCD746E15A36415549F1EFB360EF40ABC6561 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* ___0_phobiaCamera, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32357,7 +32360,7 @@ IL_003d:
 		return L_14;
 	}
 }
-// Method Definition Index: 76919
+// Method Definition Index: 76997
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_CenterOnScreen_mECDE2CB7383639387C97738CE24E82988AB999D0 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* ___0_phobiaCamera, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32422,7 +32425,7 @@ IL_004b:
 		return;
 	}
 }
-// Method Definition Index: 76920
+// Method Definition Index: 76998
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_TweenColor_m514F0553A1A45E79EDD5A710F92FC5E9970898EE (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_targetColor, float ___1_duration, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___2_onComplete, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32514,7 +32517,7 @@ IL_004f:
 		return;
 	}
 }
-// Method Definition Index: 76921
+// Method Definition Index: 76999
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_Flash_m432FE31649406386A53D82B58C478B2C3B91D380 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_flashColor, float ___1_duration, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___2_onComplete, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32624,7 +32627,7 @@ IL_0077:
 		return;
 	}
 }
-// Method Definition Index: 76922
+// Method Definition Index: 77000
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_Revive_mCA79FE5B7D8FFCFD3DA6582E755A04BD07C5278A (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32692,7 +32695,7 @@ IL_0049:
 		return;
 	}
 }
-// Method Definition Index: 76923
+// Method Definition Index: 77001
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_Kill_mD32001FD9772F7C60170C607FDEFDC824FF11CD3 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32760,7 +32763,7 @@ IL_003a:
 		return;
 	}
 }
-// Method Definition Index: 76924
+// Method Definition Index: 77002
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_Interact_m105DC684C2170C1C0A7550EE6BB8E27A22C9928A (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, const RuntimeMethod* method) 
 {
 	Action_1_t9D652DCCB263034EA4317D52848B1FE3AFAC0DE2* G_B5_0 = NULL;
@@ -32814,7 +32817,7 @@ IL_0021:
 		return;
 	}
 }
-// Method Definition Index: 76925
+// Method Definition Index: 77003
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* LevelProp_Create_m0EC99A4DA1BC40C43297A152E153D11C0986B2BA (String_t* ___0_name, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_position, PropConfig_t75CB306C52CF5B51E626737413A907AC7DAAAB89* ___2_config, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -32867,7 +32870,7 @@ IL_0016:
 		return L_10;
 	}
 }
-// Method Definition Index: 76926
+// Method Definition Index: 77004
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* LevelProp_CreateInteractive_m799D252714A6F4F495579CF98B3152311C3FADC7 (String_t* ___0_name, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_position, const RuntimeMethod* method) 
 {
 	PropConfig_t75CB306C52CF5B51E626737413A907AC7DAAAB89* V_0 = NULL;
@@ -32885,7 +32888,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LevelProp_tB45A6725D1F0FB890232913FCD09548BBB
 		return L_4;
 	}
 }
-// Method Definition Index: 76927
+// Method Definition Index: 77005
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* LevelProp_CreateBackground_mDF4602B3E94857B665A118F9B07D6E0D97B01B55 (String_t* ___0_name, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_position, const RuntimeMethod* method) 
 {
 	PropConfig_t75CB306C52CF5B51E626737413A907AC7DAAAB89* V_0 = NULL;
@@ -32903,7 +32906,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LevelProp_tB45A6725D1F0FB890232913FCD09548BBB
 		return L_4;
 	}
 }
-// Method Definition Index: 76928
+// Method Definition Index: 77006
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* LevelProp_CreateWithTexture_m2476B1390AC55EA3B178C88B03742CAFE02F3A22 (String_t* ___0_name, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_position, String_t* ___2_texturePath, PropConfig_t75CB306C52CF5B51E626737413A907AC7DAAAB89* ___3_config, const RuntimeMethod* method) 
 {
 	{
@@ -32922,7 +32925,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LevelProp_tB45A6725D1F0FB890232913FCD09548BBB
 		return L_4;
 	}
 }
-// Method Definition Index: 76929
+// Method Definition Index: 77007
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* LevelProp_CreateSolidColor_m3C46BC6757578A700F626DB4179653FFE0DE044E (String_t* ___0_name, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_position, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___2_size, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___3_color, PropConfig_t75CB306C52CF5B51E626737413A907AC7DAAAB89* ___4_config, const RuntimeMethod* method) 
 {
 	{
@@ -32942,7 +32945,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LevelProp_tB45A6725D1F0FB890232913FCD09548BBB
 		return L_4;
 	}
 }
-// Method Definition Index: 76930
+// Method Definition Index: 77008
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* LevelProp_CreateAnimated_m6F6FF0933020D682707BFD510DBAF85587B3E325 (String_t* ___0_name, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_position, String_t* ___2_texturePath, const RuntimeMethod* method) 
 {
 	PropConfig_t75CB306C52CF5B51E626737413A907AC7DAAAB89* V_0 = NULL;
@@ -32962,7 +32965,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LevelProp_tB45A6725D1F0FB890232913FCD09548BBB
 		return L_5;
 	}
 }
-// Method Definition Index: 76931
+// Method Definition Index: 77009
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* LevelProp_CreateWithEffects_mD0104575B73D90ECE2180CC67C3574138179CD9B (String_t* ___0_name, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_position, String_t* ___2_texturePath, const RuntimeMethod* method) 
 {
 	PropConfig_t75CB306C52CF5B51E626737413A907AC7DAAAB89* V_0 = NULL;
@@ -32982,7 +32985,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LevelProp_tB45A6725D1F0FB890232913FCD09548BBB
 		return L_5;
 	}
 }
-// Method Definition Index: 76932
+// Method Definition Index: 77010
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_UpdateConfig_m54555FCC4934B00C8B53AC80247CE0C154FE3946 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, PropConfig_t75CB306C52CF5B51E626737413A907AC7DAAAB89* ___0_newConfig, const RuntimeMethod* method) 
 {
 	{
@@ -32995,7 +32998,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp_UpdateConfig_m54555FCC4934B00C
 		return;
 	}
 }
-// Method Definition Index: 76933
+// Method Definition Index: 77011
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LevelProp_ColorTweenRoutine_m8FA92F9C149F1BE0E4A68F32394E7C5A76BEC043 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_startColor, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___1_endColor, float ___2_duration, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___3_onComplete, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33031,7 +33034,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LevelProp_ColorTweenRoutine_m8
 		return L_8;
 	}
 }
-// Method Definition Index: 76934
+// Method Definition Index: 77012
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* LevelProp_Clone_m2AD80B33A19763B1CFB0F09D8837F1815841A568 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33068,7 +33071,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR LevelProp_tB45A6725D1F0FB890232913FCD09548BBB
 		return L_7;
 	}
 }
-// Method Definition Index: 76935
+// Method Definition Index: 77013
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp__ctor_mA0BB99856F6EF8D7B472B20E8597DC6F49BEE767 (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33081,7 +33084,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LevelProp__ctor_mA0BB99856F6EF8D7B472B20
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-// Method Definition Index: 76364
+// Method Definition Index: 76442
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Animation_tCF831A0952F4E5559E7A143FE7D65A33E945A321* AnimationController_get_curAnim_m9182026C6EA106E70434A055AC8495A8511CDFE3_inline (AnimationController_t9752FE05C3ED1CFF723C7C9CB4CCE01AC1A7F23D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33090,7 +33093,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Animation_tCF831A0952F4E5559E7A14
 		return L_0;
 	}
 }
-// Method Definition Index: 45573
+// Method Definition Index: 45622
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Mathf_Max_mF5379E63D2BBAC76D090748695D833934F8AD051_inline (float ___0_a, float ___1_b, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
@@ -33127,7 +33130,7 @@ IL_000c:
 		return L_4;
 	}
 }
-// Method Definition Index: 76365
+// Method Definition Index: 76443
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AnimationController_set_curAnim_m9EFAF0E3629CBB904C47DEE281CE4261C6B94519_inline (AnimationController_t9752FE05C3ED1CFF723C7C9CB4CCE01AC1A7F23D* __this, Animation_tCF831A0952F4E5559E7A143FE7D65A33E945A321* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -33138,7 +33141,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AnimationController_set_curA
 		return;
 	}
 }
-// Method Definition Index: 76367
+// Method Definition Index: 76445
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AnimationController_set_finished_m313E187929F42A07473E25379D05E4AF135A8B64_inline (AnimationController_t9752FE05C3ED1CFF723C7C9CB4CCE01AC1A7F23D* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -33148,7 +33151,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void AnimationController_set_fini
 		return;
 	}
 }
-// Method Definition Index: 76366
+// Method Definition Index: 76444
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool AnimationController_get_finished_mDB3522A0F820A09F1C9BF6318B95680F3430EE55_inline (AnimationController_t9752FE05C3ED1CFF723C7C9CB4CCE01AC1A7F23D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33157,13 +33160,13 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool AnimationController_get_fini
 		return L_0;
 	}
 }
-// Method Definition Index: 913
+// Method Definition Index: 944
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_Invoke_m7126A54DACA72B845424072887B5F3A51FC3808E_inline (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* __this, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 43840
+// Method Definition Index: 43889
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Bounds_Encapsulate_m7C70C382B9380A8C962074C78E189B53CE8F7A22_inline (Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3* __this, Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3 ___0_bounds, const RuntimeMethod* method) 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
@@ -33182,7 +33185,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Bounds_Encapsulate_m7C70C382
 		return;
 	}
 }
-// Method Definition Index: 76391
+// Method Definition Index: 76469
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void PhobiaModel_set_CurrentAnimation_m510C62C33A2993913CDC20DE689E4D8B81FAA6FB_inline (PhobiaModel_tE361EF58D0319D657FB1B5BD6B4BB9918A1E8AA7* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -33193,7 +33196,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void PhobiaModel_set_CurrentAnima
 		return;
 	}
 }
-// Method Definition Index: 45535
+// Method Definition Index: 45584
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 Quaternion_Euler_m5BCCC19216CFAD2426F15BC51A30421880D27B73_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_euler, const RuntimeMethod* method) 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
@@ -33208,7 +33211,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E
 		return L_2;
 	}
 }
-// Method Definition Index: 45486
+// Method Definition Index: 45535
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_get_one_mC9B289F1E15C42C597180C9FE6FB492495B51D02_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33222,7 +33225,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D
 		return L_0;
 	}
 }
-// Method Definition Index: 45496
+// Method Definition Index: 45545
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_a, float ___1_d, const RuntimeMethod* method) 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
@@ -33245,7 +33248,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D
 		return L_9;
 	}
 }
-// Method Definition Index: 45485
+// Method Definition Index: 45534
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33259,7 +33262,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D
 		return L_0;
 	}
 }
-// Method Definition Index: 45523
+// Method Definition Index: 45572
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 Quaternion_get_identity_m7E701AE095ED10FD5EA0B50ABCFDE2EEFF2173A5_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33273,7 +33276,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E
 		return L_0;
 	}
 }
-// Method Definition Index: 751
+// Method Definition Index: 782
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline (String_t* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33281,7 +33284,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t String_get_Length_m42625D
 		return L_0;
 	}
 }
-// Method Definition Index: 45575
+// Method Definition Index: 45624
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Mathf_Max_m7FA442918DE37E3A00106D1F2E789D65829792B8_inline (int32_t ___0_a, int32_t ___1_b, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -33318,7 +33321,7 @@ IL_000c:
 		return L_4;
 	}
 }
-// Method Definition Index: 45337
+// Method Definition Index: 45386
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline (const RuntimeMethod* method) 
 {
 	{
@@ -33328,7 +33331,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED02
 		return L_0;
 	}
 }
-// Method Definition Index: 45591
+// Method Definition Index: 45640
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline (float ___0_a, float ___1_b, float ___2_t, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
@@ -33349,7 +33352,7 @@ IL_0010:
 		return L_5;
 	}
 }
-// Method Definition Index: 45456
+// Method Definition Index: 45505
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* __this, float ___0_x, float ___1_y, float ___2_z, const RuntimeMethod* method) 
 {
 	{
@@ -33362,7 +33365,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Vector3__ctor_m376936E6B999E
 		return;
 	}
 }
-// Method Definition Index: 45648
+// Method Definition Index: 45697
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 Vector2_op_Implicit_mE8EBEE9291F11BB02F062D6E000F4798968CBD96_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_v, const RuntimeMethod* method) 
 {
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 V_0;
@@ -33379,7 +33382,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2D
 		return L_4;
 	}
 }
-// Method Definition Index: 43886
+// Method Definition Index: 43935
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Rect__ctor_m18C3033D135097BEE424AAA68D91C706D2647F23_inline (Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D* __this, float ___0_x, float ___1_y, float ___2_width, float ___3_height, const RuntimeMethod* method) 
 {
 	{
@@ -33394,7 +33397,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Rect__ctor_m18C3033D135097BE
 		return;
 	}
 }
-// Method Definition Index: 45614
+// Method Definition Index: 45663
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* __this, float ___0_x, float ___1_y, const RuntimeMethod* method) 
 {
 	{
@@ -33405,7 +33408,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Vector2__ctor_m9525B79969AFF
 		return;
 	}
 }
-// Method Definition Index: 45314
+// Method Definition Index: 45363
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Color_op_Equality_mB2BDC39B0B367BA15AA8DF22F8CB0D02D20BDC71_inline (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_lhs, Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___1_rhs, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
@@ -33455,7 +33458,7 @@ IL_0057:
 		return L_25;
 	}
 }
-// Method Definition Index: 45586
+// Method Definition Index: 45635
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Mathf_RoundToInt_m60F8B66CF27F1FA75AA219342BD184B75771EB4B_inline (float ___0_f, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33480,7 +33483,7 @@ IL_000c:
 		return L_2;
 	}
 }
-// Method Definition Index: 45303
+// Method Definition Index: 45352
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* __this, float ___0_r, float ___1_g, float ___2_b, float ___3_a, const RuntimeMethod* method) 
 {
 	{
@@ -33495,7 +33498,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Color__ctor_m3786F0D6E510D9C
 		return;
 	}
 }
-// Method Definition Index: 45590
+// Method Definition Index: 45639
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Mathf_Clamp01_mA7E048DBDA832D399A581BE4D6DED9FA44CE0F14_inline (float ___0_value, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -33543,7 +33546,7 @@ IL_002d:
 		return L_5;
 	}
 }
-// Method Definition Index: 43902
+// Method Definition Index: 43951
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Rect_get_width_m620D67551372073C9C32C4C4624C2A5713F7F9A9_inline (Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33551,7 +33554,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Rect_get_width_m620D6755137
 		return L_0;
 	}
 }
-// Method Definition Index: 43903
+// Method Definition Index: 43952
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Rect_set_width_m93B6217CF3EFF89F9B0C81F34D7345DE90B93E5A_inline (Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -33560,7 +33563,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Rect_set_width_m93B6217CF3EF
 		return;
 	}
 }
-// Method Definition Index: 43904
+// Method Definition Index: 43953
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Rect_get_height_mE1AA6C6C725CCD2D317BD2157396D3CF7D47C9D8_inline (Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33568,7 +33571,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Rect_get_height_mE1AA6C6C72
 		return L_0;
 	}
 }
-// Method Definition Index: 76557
+// Method Definition Index: 76635
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void PhobiaTween_set_GlobalManager_m68628E0BCBE77BFEFBCF302B31788D5620DDFA2D_inline (PhobiaTweenManager_tDEB63512F7E5EE0D63ADB5630F3B174BE573C239* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33586,7 +33589,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void PhobiaTween_set_GlobalManage
 		return;
 	}
 }
-// Method Definition Index: 45451
+// Method Definition Index: 45500
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_Lerp_m3A906D0530A94FAABB94F0F905E84D99BE85C3F8_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_a, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_b, float ___2_t, const RuntimeMethod* method) 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
@@ -33633,7 +33636,7 @@ IL_0064:
 		return L_24;
 	}
 }
-// Method Definition Index: 45649
+// Method Definition Index: 45698
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector2_op_Implicit_m6D9CABB2C791A192867D7A4559D132BE86DD3EB7_inline (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_v, const RuntimeMethod* method) 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
@@ -33651,7 +33654,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D
 		return L_4;
 	}
 }
-// Method Definition Index: 45493
+// Method Definition Index: 45542
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_op_Addition_m78C0EC70CB66E8DCAC225743D82B268DAEE92067_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_a, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_b, const RuntimeMethod* method) 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
@@ -33677,7 +33680,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D
 		return L_12;
 	}
 }
-// Method Definition Index: 76678
+// Method Definition Index: 76756
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* Score_get_Instance_m3EDC9C3B9B5823E0D0F45C3CCA2EB22F33C8367B_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33692,7 +33695,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Score_t73CD091A03C046CA4B1F431C0B
 		return L_0;
 	}
 }
-// Method Definition Index: 76679
+// Method Definition Index: 76757
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Score_set_Instance_m0EF7A5866C2E81B8BA3A4682CE0FA937682F443A_inline (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33709,7 +33712,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Score_set_Instance_m0EF7A586
 		return;
 	}
 }
-// Method Definition Index: 76681
+// Method Definition Index: 76759
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Score_set_songScore_mD31FE70B7AE5C26D2D1BC73F32F556FC6BA90FF7_inline (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -33719,7 +33722,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Score_set_songScore_mD31FE70
 		return;
 	}
 }
-// Method Definition Index: 76683
+// Method Definition Index: 76761
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Score_set_combo_mFE4195F9D184B2DA01111A8CBD2A4C3909FD4B0B_inline (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -33729,7 +33732,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Score_set_combo_mFE4195F9D18
 		return;
 	}
 }
-// Method Definition Index: 76685
+// Method Definition Index: 76763
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Score_set_maxCombo_mBE95EC69EF4DC3FDC1602FD9038B131066E27806_inline (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -33739,7 +33742,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Score_set_maxCombo_mBE95EC69
 		return;
 	}
 }
-// Method Definition Index: 76687
+// Method Definition Index: 76765
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Score_set_totalNotes_m258BDFC71DD7010A3BA89C9BF29C2B1D1442FF9D_inline (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -33749,7 +33752,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Score_set_totalNotes_m258BDF
 		return;
 	}
 }
-// Method Definition Index: 76689
+// Method Definition Index: 76767
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Score_set_perfectHits_m7135F111745AA45906F74AEA672EA31DE0E328D6_inline (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -33759,7 +33762,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Score_set_perfectHits_m7135F
 		return;
 	}
 }
-// Method Definition Index: 76691
+// Method Definition Index: 76769
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Score_set_earlyHits_m48A068688A41CCB688E2517F061838666A63588E_inline (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -33769,7 +33772,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Score_set_earlyHits_m48A0686
 		return;
 	}
 }
-// Method Definition Index: 76693
+// Method Definition Index: 76771
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Score_set_lateHits_m085EB95D6BF5CDDF22E91593AF9C321B4C31F738_inline (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -33779,7 +33782,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Score_set_lateHits_m085EB95D
 		return;
 	}
 }
-// Method Definition Index: 76695
+// Method Definition Index: 76773
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Score_set_misses_m47489E27E3A59AB3377F7805A16C3B26AC6D1974_inline (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -33789,7 +33792,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Score_set_misses_m47489E27E3
 		return;
 	}
 }
-// Method Definition Index: 76697
+// Method Definition Index: 76775
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Score_set_accuracy_mA2FAAE948E62B15518091987FAC36A9025FF5E47_inline (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, float ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -33799,7 +33802,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Score_set_accuracy_mA2FAAE94
 		return;
 	}
 }
-// Method Definition Index: 76812
+// Method Definition Index: 76890
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* Conductor_get_Instance_m2251A476243B176D795D4B116919CDFB515A65BD_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33814,7 +33817,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Conductor_t4845C275639051A9C22F1E
 		return L_0;
 	}
 }
-// Method Definition Index: 76688
+// Method Definition Index: 76766
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Score_get_perfectHits_m756D56ECE34CFBA8026558ADF6ADC918F5B81046_inline (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33823,7 +33826,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Score_get_perfectHits_m75
 		return L_0;
 	}
 }
-// Method Definition Index: 76690
+// Method Definition Index: 76768
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Score_get_earlyHits_mAE5693DB1439057EB551E4B8C2C1BC9600E933D9_inline (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33832,7 +33835,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Score_get_earlyHits_mAE56
 		return L_0;
 	}
 }
-// Method Definition Index: 76692
+// Method Definition Index: 76770
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Score_get_lateHits_m86FC5D568332B5CDF54B0793AEE43F2557D545CB_inline (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33841,7 +33844,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Score_get_lateHits_m86FC5
 		return L_0;
 	}
 }
-// Method Definition Index: 76694
+// Method Definition Index: 76772
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Score_get_misses_mEA2DDE73BD6110C14C33033DBD4F2A87F2BF9C9C_inline (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33850,7 +33853,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Score_get_misses_mEA2DDE7
 		return L_0;
 	}
 }
-// Method Definition Index: 76680
+// Method Definition Index: 76758
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Score_get_songScore_m708EC4BF18D1DA7679D089A3673740997263D0B9_inline (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33859,7 +33862,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Score_get_songScore_m708E
 		return L_0;
 	}
 }
-// Method Definition Index: 76682
+// Method Definition Index: 76760
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Score_get_combo_m6976505710C8266F704543042D0E2D2719249D94_inline (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33868,7 +33871,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Score_get_combo_m69765057
 		return L_0;
 	}
 }
-// Method Definition Index: 76684
+// Method Definition Index: 76762
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Score_get_maxCombo_m852320051312973E57DC6A45D9740B1EE3372042_inline (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33877,7 +33880,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Score_get_maxCombo_m85232
 		return L_0;
 	}
 }
-// Method Definition Index: 76686
+// Method Definition Index: 76764
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Score_get_totalNotes_mED19ACDA1FD32F76B40D6260BF40C3BF57F5D9B2_inline (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33886,7 +33889,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Score_get_totalNotes_mED1
 		return L_0;
 	}
 }
-// Method Definition Index: 76696
+// Method Definition Index: 76774
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Score_get_accuracy_m5DB9D68FB3477F9929FBCDF4BCDA077B3B25E106_inline (Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33895,16 +33898,16 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Score_get_accuracy_m5DB9D68
 		return L_0;
 	}
 }
-// Method Definition Index: 76721
+// Method Definition Index: 76799
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* PlayState_get_Cam_m78A817C7D8E6F7BED60F59385FAB5EFB76283CE4_inline (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:39>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:40>
 		PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* L_0 = __this->___U3CCamU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 76714
+// Method Definition Index: 76792
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* PlayState_get_Instance_m1BA06C5C6CEA764092973B6A469F590F1766DD7E_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33914,12 +33917,12 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR PlayState_t6FBD66B9C180A8584B05D8
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:30>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:31>
 		PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* L_0 = ((PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568_StaticFields*)il2cpp_codegen_static_fields_for(PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568_il2cpp_TypeInfo_var))->___U3CInstanceU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 76715
+// Method Definition Index: 76793
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void PlayState_set_Instance_m2E8E92B6745F31DC9A0C93824FDB2A89C1856421_inline (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33929,25 +33932,25 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void PlayState_set_Instance_m2E8E
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:30>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:31>
 		PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* L_0 = ___0_value;
 		((PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568_StaticFields*)il2cpp_codegen_static_fields_for(PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568_il2cpp_TypeInfo_var))->___U3CInstanceU3Ek__BackingField = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&((PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568_StaticFields*)il2cpp_codegen_static_fields_for(PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568_il2cpp_TypeInfo_var))->___U3CInstanceU3Ek__BackingField), (void*)L_0);
 		return;
 	}
 }
-// Method Definition Index: 76722
+// Method Definition Index: 76800
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void PlayState_set_Cam_mDFFA7E5E53E42C59C0A8F082C43E63644616A613_inline (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* ___0_value, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:39>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:40>
 		PhobiaCamera_t7DE91F9B1AD7B7B9CB7892E40A0B22F75ED42244* L_0 = ___0_value;
 		__this->___U3CCamU3Ek__BackingField = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CCamU3Ek__BackingField), (void*)L_0);
 		return;
 	}
 }
-// Method Definition Index: 77141
+// Method Definition Index: 77234
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* CanvasManager_get_GameContainer_m072F65A2AEDC26A43AF3B2A0A622AE11777C67ED_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -33962,75 +33965,75 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9
 		return L_0;
 	}
 }
-// Method Definition Index: 76717
+// Method Definition Index: 76795
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void PlayState_set_SceneId_mEB98B964F0B9BE8F2801CB609798005D896E4A69_inline (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:36>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:37>
 		String_t* L_0 = ___0_value;
 		__this->___U3CSceneIdU3Ek__BackingField = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CSceneIdU3Ek__BackingField), (void*)L_0);
 		return;
 	}
 }
-// Method Definition Index: 76719
+// Method Definition Index: 76797
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void PlayState_set_ContentId_mA9F4954EF2375DA556C8960C2469121242ACED2D_inline (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, String_t* ___0_value, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:37>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:38>
 		String_t* L_0 = ___0_value;
 		__this->___U3CContentIdU3Ek__BackingField = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CContentIdU3Ek__BackingField), (void*)L_0);
 		return;
 	}
 }
-// Method Definition Index: 76716
+// Method Definition Index: 76794
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* PlayState_get_SceneId_m682C42F557B92646770F145D26F0388FCF731396_inline (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:36>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:37>
 		String_t* L_0 = __this->___U3CSceneIdU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 76723
+// Method Definition Index: 76801
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* PlayState_get_ScoreSystem_mA3B6AD26B31C0B18D68B5242F472040C554DF842_inline (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:40>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:41>
 		Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* L_0 = __this->___U3CScoreSystemU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 76728
+// Method Definition Index: 76806
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void PlayState_set_LoadedPhilia_mB24C95333E3B4AEB2740F5D9B218E26D3E6029A4_inline (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, bool ___0_value, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:46>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:47>
 		bool L_0 = ___0_value;
 		__this->___U3CLoadedPhiliaU3Ek__BackingField = L_0;
 		return;
 	}
 }
-// Method Definition Index: 76718
+// Method Definition Index: 76796
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* PlayState_get_ContentId_m219D8D5FE3C7761E08D3238F46B3D67B1942E2A2_inline (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:37>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:38>
 		String_t* L_0 = __this->___U3CContentIdU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 76727
+// Method Definition Index: 76805
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool PlayState_get_LoadedPhilia_mEDC68CD9A6334817544F7E085B52CC8F93BCE223_inline (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:46>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:47>
 		bool L_0 = __this->___U3CLoadedPhiliaU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 77344
+// Method Definition Index: 77445
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool PhobiaSound_get_IsPlaying_m1805AC53F30C1B542EFE0AB9383EAE2DDA279DFF_inline (PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34039,7 +34042,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool PhobiaSound_get_IsPlaying_m1
 		return L_0;
 	}
 }
-// Method Definition Index: 77350
+// Method Definition Index: 77451
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20* PhobiaSound_get_AudioClip_m8502A9A17B00B758C16994B2B3725BDC5CFB8680_inline (PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34048,7 +34051,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR AudioClip_t5D272C4EB4F2D3ED49F1C3
 		return L_0;
 	}
 }
-// Method Definition Index: 77346
+// Method Definition Index: 77447
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool PhobiaSound_get_IsDestroyed_m2F79A749BB1F38981BC6F990E91B1ECB6195271F_inline (PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34057,7 +34060,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool PhobiaSound_get_IsDestroyed_
 		return L_0;
 	}
 }
-// Method Definition Index: 77352
+// Method Definition Index: 77453
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* PhobiaSound_get_AudioSource_m7F67DA382E2875FCB2E38F81711D7640FD10B3A3_inline (PhobiaSound_t0B0DC2DEAE0BFBF61A2A2889987C7BA60D7A07B7* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34066,7 +34069,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR AudioSource_t871AC2272F896738252F
 		return L_0;
 	}
 }
-// Method Definition Index: 45598
+// Method Definition Index: 45647
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Mathf_Repeat_m6F1560A163481BB311D685294E1B463C3E4EB3BA_inline (float ___0_t, float ___1_length, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
@@ -34090,7 +34093,7 @@ IL_001b:
 		return L_7;
 	}
 }
-// Method Definition Index: 45588
+// Method Definition Index: 45637
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Mathf_Clamp_mEB9AEA827D27D20FCC787F7375156AF46BB12BBF_inline (float ___0_value, float ___1_min, float ___2_max, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -34141,7 +34144,7 @@ IL_001d:
 		return L_9;
 	}
 }
-// Method Definition Index: 45571
+// Method Definition Index: 45620
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Mathf_Min_m747CA71A9483CDB394B13BD0AD048EE17E48FFE4_inline (float ___0_a, float ___1_b, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
@@ -34178,18 +34181,18 @@ IL_000c:
 		return L_4;
 	}
 }
-// Method Definition Index: 76724
+// Method Definition Index: 76802
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void PlayState_set_ScoreSystem_mBA356F612417302034FF4F1E4732507F052CCC9B_inline (PlayState_t6FBD66B9C180A8584B05D8C92FA4BD7ED2CE5568* __this, Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* ___0_value, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:40>
+		//<source_info:C:/Users/Sean/Pantophobia/Assets/Scripts/Phobia/Gameplay/PlayState.cs:41>
 		Score_t73CD091A03C046CA4B1F431C0BEBB41FB34FC829* L_0 = ___0_value;
 		__this->___U3CScoreSystemU3Ek__BackingField = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CScoreSystemU3Ek__BackingField), (void*)L_0);
 		return;
 	}
 }
-// Method Definition Index: 76783
+// Method Definition Index: 76861
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool HittableObject_get_hasBeenHit_m9CF85EBDE0163B089B5E90795301F3F6E0A330DE_inline (HittableObject_t9B96912B67275856D791397593D66030528BED55* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34198,7 +34201,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool HittableObject_get_hasBeenHi
 		return L_0;
 	}
 }
-// Method Definition Index: 76785
+// Method Definition Index: 76863
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool HittableObject_get_hasMissed_m7BE6794C43DCF06AB0AFD8FC4B1BF99945840084_inline (HittableObject_t9B96912B67275856D791397593D66030528BED55* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34207,7 +34210,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool HittableObject_get_hasMissed
 		return L_0;
 	}
 }
-// Method Definition Index: 76781
+// Method Definition Index: 76859
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float HittableObject_get_hitWindowSize_m3D82730C185AE8A2D81E0D3D16F3C10053A87362_inline (HittableObject_t9B96912B67275856D791397593D66030528BED55* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34216,7 +34219,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float HittableObject_get_hitWindo
 		return L_0;
 	}
 }
-// Method Definition Index: 76813
+// Method Definition Index: 76891
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Conductor_set_Instance_m9A9BCABD48093747EA153E705BA91745E2637F6E_inline (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -34233,7 +34236,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Conductor_set_Instance_m9A9B
 		return;
 	}
 }
-// Method Definition Index: 76838
+// Method Definition Index: 76916
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Conductor_set_currentTimeChange_mAA0FB8CFE0D3C50F1D508E39CE272B8C451CB289_inline (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, TimeChange_tF92F2FE765EDF53FD54B139E7F4BC5803D080C38 ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -34243,7 +34246,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Conductor_set_currentTimeCha
 		return;
 	}
 }
-// Method Definition Index: 76823
+// Method Definition Index: 76901
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Conductor_set_Config_mFF2615755D6B3FE95C73808622E7926F9A912E09_inline (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, ConductorConfig_tA24553E52E10EEBB0706588AC4A9969E50C51212* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -34254,7 +34257,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Conductor_set_Config_mFF2615
 		return;
 	}
 }
-// Method Definition Index: 76827
+// Method Definition Index: 76905
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Conductor_set_currentMeasure_m52C9424190F3BECDBFA8AA2A6BB5F3C7C18C527F_inline (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -34264,7 +34267,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Conductor_set_currentMeasure
 		return;
 	}
 }
-// Method Definition Index: 76829
+// Method Definition Index: 76907
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Conductor_set_currentBeat_m65ED66ADFFC734566FE7B3B9661A3C30B5E10FA1_inline (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -34274,7 +34277,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Conductor_set_currentBeat_m6
 		return;
 	}
 }
-// Method Definition Index: 76831
+// Method Definition Index: 76909
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Conductor_set_currentStep_m5E4BCE606AC86E40A0ED0FD62E1E98F8286090FD_inline (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -34284,7 +34287,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Conductor_set_currentStep_m5
 		return;
 	}
 }
-// Method Definition Index: 76837
+// Method Definition Index: 76915
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TimeChange_tF92F2FE765EDF53FD54B139E7F4BC5803D080C38 Conductor_get_currentTimeChange_mF437D3BF596A6D16FAB93B3D2397E8D544CF243C_inline (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34293,7 +34296,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TimeChange_tF92F2FE765EDF53FD54B1
 		return L_0;
 	}
 }
-// Method Definition Index: 45585
+// Method Definition Index: 45634
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Mathf_FloorToInt_m2A39AE881CAEE6B6A4B3BFEF9CA1ED40625F5AB7_inline (float ___0_f, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -34318,7 +34321,7 @@ IL_000c:
 		return L_2;
 	}
 }
-// Method Definition Index: 76830
+// Method Definition Index: 76908
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Conductor_get_currentStep_m5797E4651F1136867446E5D42E7904CB56F62066_inline (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34327,7 +34330,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Conductor_get_currentStep
 		return L_0;
 	}
 }
-// Method Definition Index: 76828
+// Method Definition Index: 76906
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Conductor_get_currentBeat_m08E3CFC10BBE254A36CBC3952E4A3BC2E6A682A5_inline (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34336,7 +34339,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Conductor_get_currentBeat
 		return L_0;
 	}
 }
-// Method Definition Index: 76826
+// Method Definition Index: 76904
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Conductor_get_currentMeasure_mDD3D19D9149F2419C56DFCB320F6F9568A4B4E5A_inline (Conductor_t4845C275639051A9C22F1E7E56C85C2B30DB1F70* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34345,7 +34348,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Conductor_get_currentMeas
 		return L_0;
 	}
 }
-// Method Definition Index: 76877
+// Method Definition Index: 76955
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* LevelProp_get_sprite_m1DB20E4D15FF08996CFB9F25F41A09F1C104E98E_inline (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34354,7 +34357,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR PhobiaSprite_t38068B0C7B4A748AB46
 		return L_0;
 	}
 }
-// Method Definition Index: 76488
+// Method Definition Index: 76566
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool PhobiaSprite_get_isPlaying_m7BC83DC5996B18D4A085647DD3CA146CD2480C70_inline (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34363,7 +34366,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool PhobiaSprite_get_isPlaying_m
 		return L_0;
 	}
 }
-// Method Definition Index: 76487
+// Method Definition Index: 76565
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* PhobiaSprite_get_currentAnimation_mDD5C13C6C1FE4F11BD40F18A2C3FD737F9A5C24B_inline (PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34372,7 +34375,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* PhobiaSprite_get_curren
 		return L_0;
 	}
 }
-// Method Definition Index: 76878
+// Method Definition Index: 76956
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void LevelProp_set_sprite_m41D87D2E01C367E17DCCA3C9E1B2E29180CC94E4_inline (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, PhobiaSprite_t38068B0C7B4A748AB46CA2C6DD4FF39F0F7895FB* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -34383,7 +34386,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void LevelProp_set_sprite_m41D87D
 		return;
 	}
 }
-// Method Definition Index: 45534
+// Method Definition Index: 45583
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 Quaternion_Euler_m9262AB29E3E9CE94EF71051F38A28E82AEC73F90_inline (float ___0_x, float ___1_y, float ___2_z, const RuntimeMethod* method) 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
@@ -34401,7 +34404,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Quaternion_tDA59F214EF07D7700B26E
 		return L_3;
 	}
 }
-// Method Definition Index: 45650
+// Method Definition Index: 45699
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 Vector2_get_zero_m32506C40EC2EE7D5D4410BF40D3EE683A3D5F32C_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -34415,7 +34418,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2D
 		return L_0;
 	}
 }
-// Method Definition Index: 76876
+// Method Definition Index: 76954
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void LevelProp_set_Config_mAC7F7495CD4234C5ABE5E98BD2FD8635B4C384D2_inline (LevelProp_tB45A6725D1F0FB890232913FCD09548BBBC98643* __this, PropConfig_t75CB306C52CF5B51E626737413A907AC7DAAAB89* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -34426,13 +34429,13 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void LevelProp_set_Config_mAC7F74
 		return;
 	}
 }
-// Method Definition Index: 931
+// Method Definition Index: 962
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Func_1_Invoke_m6EC66204056853EDE42F634FECB2D7D4685B54B0_gshared_inline (Func_1_t11C3830580201E0A3A3A2C76523B7905EF40BCF7* __this, const RuntimeMethod* method) 
 {
 	typedef float (*FunctionPointerType) (RuntimeObject*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 11272
+// Method Definition Index: 11319
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t List_1_get_Count_m4407E4C389F22B8CEC282C15D56516658746C383_gshared_inline (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34440,13 +34443,13 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t List_1_get_Count_m4407E4C
 		return L_0;
 	}
 }
-// Method Definition Index: 915
+// Method Definition Index: 946
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_mF2422B2DD29F74CE66F791C3F68E288EC7C3DB9E_gshared_inline (Action_1_t6F9EB113EB3F16226AEF811A2744F4111C116C87* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, RuntimeObject*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_obj, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 11334
+// Method Definition Index: 11381
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Enumerator_get_Current_m6330F15D18EE4F547C05DF9BF83C5EB710376027_gshared_inline (Enumerator_t9473BAB568A27E2339D48C1F91319E0F6D244D7A* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34454,7 +34457,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Enumerator_get_Cur
 		return L_0;
 	}
 }
-// Method Definition Index: 2221
+// Method Definition Index: 2253
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Nullable_1_get_HasValue_m6B76D139692C43B2AF7C695FAB044B16ACFAF355_gshared_inline (Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34462,7 +34465,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Nullable_1_get_HasValue_m6B7
 		return L_0;
 	}
 }
-// Method Definition Index: 2223
+// Method Definition Index: 2255
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Nullable_1_GetValueOrDefault_m86E1210429A6EA0082CC7806DD638E8B4555F148_gshared_inline (Nullable_1_t78F453FADB4A9F50F267A4E349019C34410D1A01* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34470,7 +34473,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Nullable_1_GetValueOrDefault
 		return L_0;
 	}
 }
-// Method Definition Index: 11283
+// Method Definition Index: 11330
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mEBCF994CC3814631017F46A387B1A192ED6C85C7_gshared_inline (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___0_item, const RuntimeMethod* method) 
 {
 	ObjectU5BU5D_t8061030B0A12A55D5AD8652A20C922FE99450918* V_0 = NULL;
@@ -34508,7 +34511,7 @@ IL_0034:
 		return;
 	}
 }
-// Method Definition Index: 2223
+// Method Definition Index: 2255
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TweenOptions_t3B4ED1F7531F7F4F5C6E8F7FF9C62887448D6398 Nullable_1_GetValueOrDefault_m6C9C6307EAD5E3B9835CD2822918F216FE174E73_gshared_inline (Nullable_1_tEE22172451EA9E302FEEB1A786F67B4792BD641B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34516,7 +34519,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR TweenOptions_t3B4ED1F7531F7F4F5C6
 		return L_0;
 	}
 }
-// Method Definition Index: 2223
+// Method Definition Index: 2255
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR FlickerTweenOptions_tB1636207F90F6C8C4968E82C7E19C0CF871FFD3F Nullable_1_GetValueOrDefault_m89915CB4FFA38C77F1054D960D1AF62F69CB0CCA_gshared_inline (Nullable_1_tE161E8B4E55CCC399182BD8B09368B6DFB475152* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34524,7 +34527,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR FlickerTweenOptions_tB1636207F90F
 		return L_0;
 	}
 }
-// Method Definition Index: 11272
+// Method Definition Index: 11319
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t List_1_get_Count_mF590592E32D421DE2C6E2F0D5C2F62FB14CCEFDF_gshared_inline (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34532,13 +34535,13 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t List_1_get_Count_mF590592
 		return L_0;
 	}
 }
-// Method Definition Index: 931
+// Method Definition Index: 962
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Func_1_Invoke_m1412272198DFA4066C83206E5B43353AF10A2EEE_gshared_inline (Func_1_tD5C081AE11746B200C711DD48DBEB00E3A9276D4* __this, const RuntimeMethod* method) 
 {
 	typedef RuntimeObject* (*FunctionPointerType) (RuntimeObject*, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 11283
+// Method Definition Index: 11330
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_gshared_inline (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* __this, int32_t ___0_item, const RuntimeMethod* method) 
 {
 	Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* V_0 = NULL;
@@ -34576,7 +34579,7 @@ IL_0034:
 		return;
 	}
 }
-// Method Definition Index: 11179
+// Method Definition Index: 11226
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR KeyValuePair_2_tA76653DFC8A4C9B07EC11B4FF878E42681D3EACE Enumerator_get_Current_m4BB037FEFB35F886088FC522D0C6932B05735A3D_gshared_inline (Enumerator_tFBEC3A5A35B9411AFAAD1638F1411BD5CCB36BF2* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34584,7 +34587,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR KeyValuePair_2_tA76653DFC8A4C9B07
 		return L_0;
 	}
 }
-// Method Definition Index: 11264
+// Method Definition Index: 11311
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float KeyValuePair_2_get_Value_mA5BE7C11B215197C303FBF99576CBDE919413929_gshared_inline (KeyValuePair_2_tA76653DFC8A4C9B07EC11B4FF878E42681D3EACE* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34592,7 +34595,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float KeyValuePair_2_get_Value_mA
 		return L_0;
 	}
 }
-// Method Definition Index: 11263
+// Method Definition Index: 11310
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* KeyValuePair_2_get_Key_m0B6F02450AE5541F7814A6C8C48B92F6D992762E_gshared_inline (KeyValuePair_2_tA76653DFC8A4C9B07EC11B4FF878E42681D3EACE* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34600,13 +34603,13 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* KeyValuePair_2_get
 		return L_0;
 	}
 }
-// Method Definition Index: 915
+// Method Definition Index: 946
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_1_Invoke_mA8F89FB04FEA0F48A4F22EC84B5F9ADB2914341F_gshared_inline (Action_1_t310F18CB4338A2740CA701F160C62E2C3198E66A* __this, float ___0_obj, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, float, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_obj, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 11378
+// Method Definition Index: 11425
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Queue_1_get_Count_mB0499CE8C01D7E0D2B990EC2B9B10AB8514AAFC0_gshared_inline (Queue_1_t512A1FDA831343736F18945024A6D48A27F7FD68* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34614,7 +34617,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Queue_1_get_Count_mB0499C
 		return L_0;
 	}
 }
-// Method Definition Index: 11291
+// Method Definition Index: 11338
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Clear_m16C1F2C61FED5955F10EB36BC1CB2DF34B128994_gshared_inline (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -34644,7 +34647,7 @@ IL_003c:
 		return;
 	}
 }
-// Method Definition Index: 11283
+// Method Definition Index: 11330
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_m51B1E9878EB8CE7B77727E0EAAD2BA7CC31ACE76_gshared_inline (List_1_t0A33AF9FB12D3DE8B36A66E8414FACEED94B05A8* __this, TimeChange_tF92F2FE765EDF53FD54B139E7F4BC5803D080C38 ___0_item, const RuntimeMethod* method) 
 {
 	TimeChangeU5BU5D_t6147F6480C0A3F2EA57AAB2D0DD2DA45792700A8* V_0 = NULL;
@@ -34682,7 +34685,7 @@ IL_0034:
 		return;
 	}
 }
-// Method Definition Index: 11272
+// Method Definition Index: 11319
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t List_1_get_Count_m119850699AF173CEDD3EAB13E57533CAB9920E06_gshared_inline (List_1_t0A33AF9FB12D3DE8B36A66E8414FACEED94B05A8* __this, const RuntimeMethod* method) 
 {
 	{
@@ -34690,7 +34693,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t List_1_get_Count_m1198506
 		return L_0;
 	}
 }
-// Method Definition Index: 43830
+// Method Definition Index: 43879
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Bounds_get_min_m465AC9BBE1DE5D8E8AD95AC19B9899068FEEBB13_inline (Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3* __this, const RuntimeMethod* method) 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
@@ -34716,7 +34719,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D
 		return L_12;
 	}
 }
-// Method Definition Index: 43832
+// Method Definition Index: 43881
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Bounds_get_max_m6446F2AB97C1E57CA89467B9DE52D4EB61F1CB09_inline (Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3* __this, const RuntimeMethod* method) 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
@@ -34742,7 +34745,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D
 		return L_12;
 	}
 }
-// Method Definition Index: 43839
+// Method Definition Index: 43888
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Bounds_Encapsulate_m96221CB8E1B1226A2D066DF6F7F7B84CB5B9BF70_inline (Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___0_point, const RuntimeMethod* method) 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
@@ -34770,7 +34773,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Bounds_Encapsulate_m96221CB8
 		return;
 	}
 }
-// Method Definition Index: 45482
+// Method Definition Index: 45531
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_Min_m8E66B8A553166603505B72F5011ED9E0A2CB1413_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___0_lhs, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_rhs, const RuntimeMethod* method) 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
@@ -34802,7 +34805,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D
 		return L_15;
 	}
 }
-// Method Definition Index: 45484
+// Method Definition Index: 45533
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_Max_m60E53C4131016B84E7E592A8D950DADA96F526EC_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___0_lhs, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_rhs, const RuntimeMethod* method) 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
@@ -34834,7 +34837,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D
 		return L_15;
 	}
 }
-// Method Definition Index: 43837
+// Method Definition Index: 43886
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Bounds_SetMinMax_m42AF5C7723187A09BACEB4AF46292F8BDEFFDE56_inline (Bounds_t367E830C64BBF235ED8C3B2F8CF6254FDCAD39C3* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___0_min, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___1_max, const RuntimeMethod* method) 
 {
 	{
