@@ -840,7 +840,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_OnStatusChanged_t1884B410F62D021BC2
 	il2cppPInvokeFunc(___0_status, ___1_error, ___2_errorDetail);
 
 }
-// Method Definition Index: 98683
+// Method Definition Index: 98759
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OnStatusChanged__ctor_mC5C070677ABC0BFE37289DD1C0B966BD1BBC9B34 (OnStatusChanged_t1884B410F62D021BC27D7948CB5B5712F6FD3DD9* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -869,13 +869,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OnStatusChanged__ctor_mC5C070677ABC0BFE3
 	}
 	__this->___extra_arg = (intptr_t)&OnStatusChanged_Invoke_mDE58E32C9686A8858429547A754D8AB5D11F597C_Multicast;
 }
-// Method Definition Index: 98684
+// Method Definition Index: 98760
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OnStatusChanged_Invoke_mDE58E32C9686A8858429547A754D8AB5D11F597C (OnStatusChanged_t1884B410F62D021BC27D7948CB5B5712F6FD3DD9* __this, int32_t ___0_status, int32_t ___1_error, int32_t ___2_errorDetail, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, int32_t, int32_t, int32_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_status, ___1_error, ___2_errorDetail, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98685
+// Method Definition Index: 98761
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* OnStatusChanged_BeginInvoke_m9FABE573935F6B81602FFF2624958743ABB89568 (OnStatusChanged_t1884B410F62D021BC27D7948CB5B5712F6FD3DD9* __this, int32_t ___0_status, int32_t ___1_error, int32_t ___2_errorDetail, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___3_callback, RuntimeObject* ___4_object, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -891,7 +891,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* OnStatusChanged_BeginInvoke_m9
 	__d_args[2] = Box(il2cpp_defaults.int32_class, &___2_errorDetail);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___3_callback, (RuntimeObject*)___4_object);
 }
-// Method Definition Index: 98686
+// Method Definition Index: 98762
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void OnStatusChanged_EndInvoke_m64C200E319EAEE21B1EDB2C34B20786B4FA33B32 (OnStatusChanged_t1884B410F62D021BC27D7948CB5B5712F6FD3DD9* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -946,7 +946,7 @@ void CreateOrJoinLobbyCallback_Invoke_m78EF6E1852F8AABBA2F6FB749578C2F0CF88200D_
 	NullCheck(___0_result);
 	GenericInterfaceActionInvoker1< uint64_t >::Invoke(method, ___0_result, ___1_lobbyId);
 }
-// Method Definition Index: 98687
+// Method Definition Index: 98763
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CreateOrJoinLobbyCallback__ctor_m2491E676EC21D3C002C6F88BEA32B8BA4319D004 (CreateOrJoinLobbyCallback_tC046BCDB342037C8E25A87B33BB2BA4B63611361* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -999,13 +999,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CreateOrJoinLobbyCallback__ctor_m2491E67
 	}
 	__this->___extra_arg = (intptr_t)&CreateOrJoinLobbyCallback_Invoke_m78EF6E1852F8AABBA2F6FB749578C2F0CF88200D_Multicast;
 }
-// Method Definition Index: 98688
+// Method Definition Index: 98764
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CreateOrJoinLobbyCallback_Invoke_m78EF6E1852F8AABBA2F6FB749578C2F0CF88200D (CreateOrJoinLobbyCallback_tC046BCDB342037C8E25A87B33BB2BA4B63611361* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, uint64_t ___1_lobbyId, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC*, uint64_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_result, ___1_lobbyId, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98689
+// Method Definition Index: 98765
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* CreateOrJoinLobbyCallback_BeginInvoke_m3CEF786DE94FEAB1FF45ECA990996100DE9ACE4C (CreateOrJoinLobbyCallback_tC046BCDB342037C8E25A87B33BB2BA4B63611361* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, uint64_t ___1_lobbyId, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___2_callback, RuntimeObject* ___3_object, const RuntimeMethod* method) 
 {
 	void *__d_args[3] = {0};
@@ -1013,7 +1013,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* CreateOrJoinLobbyCallback_Begi
 	__d_args[1] = Box(il2cpp_defaults.uint64_class, &___1_lobbyId);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___2_callback, (RuntimeObject*)___3_object);
 }
-// Method Definition Index: 98690
+// Method Definition Index: 98766
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CreateOrJoinLobbyCallback_EndInvoke_mACC0547D93DD84EC5D10016A934F807CF9B61B97 (CreateOrJoinLobbyCallback_tC046BCDB342037C8E25A87B33BB2BA4B63611361* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -1068,7 +1068,7 @@ void GetGuildChannelsCallback_Invoke_m1D9FD61A29A0CE888BB7F1314C1BF74A91575419_O
 	NullCheck(___0_result);
 	GenericInterfaceActionInvoker1< GuildChannelU5BU5D_tE69A40E6F5C42BCC26372F1F1D5932BBA187CB79* >::Invoke(method, ___0_result, ___1_guildChannels);
 }
-// Method Definition Index: 98691
+// Method Definition Index: 98767
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GetGuildChannelsCallback__ctor_mD116C6C85B293CEA901F25BBD22A8BF3F4195816 (GetGuildChannelsCallback_t6D784FD40702DAB2ACD38CF71471F6E3BD98695D* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -1121,13 +1121,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GetGuildChannelsCallback__ctor_mD116C6C8
 	}
 	__this->___extra_arg = (intptr_t)&GetGuildChannelsCallback_Invoke_m1D9FD61A29A0CE888BB7F1314C1BF74A91575419_Multicast;
 }
-// Method Definition Index: 98692
+// Method Definition Index: 98768
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GetGuildChannelsCallback_Invoke_m1D9FD61A29A0CE888BB7F1314C1BF74A91575419 (GetGuildChannelsCallback_t6D784FD40702DAB2ACD38CF71471F6E3BD98695D* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, GuildChannelU5BU5D_tE69A40E6F5C42BCC26372F1F1D5932BBA187CB79* ___1_guildChannels, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC*, GuildChannelU5BU5D_tE69A40E6F5C42BCC26372F1F1D5932BBA187CB79*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_result, ___1_guildChannels, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98693
+// Method Definition Index: 98769
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GetGuildChannelsCallback_BeginInvoke_m75286463F5A3A453C59034F1FAF421BB4570EFEB (GetGuildChannelsCallback_t6D784FD40702DAB2ACD38CF71471F6E3BD98695D* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, GuildChannelU5BU5D_tE69A40E6F5C42BCC26372F1F1D5932BBA187CB79* ___1_guildChannels, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___2_callback, RuntimeObject* ___3_object, const RuntimeMethod* method) 
 {
 	void *__d_args[3] = {0};
@@ -1135,7 +1135,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GetGuildChannelsCallback_Begin
 	__d_args[1] = ___1_guildChannels;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___2_callback, (RuntimeObject*)___3_object);
 }
-// Method Definition Index: 98694
+// Method Definition Index: 98770
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GetGuildChannelsCallback_EndInvoke_mA456E932DC7A267DC3DC3ADEB9F8080AE153A4E7 (GetGuildChannelsCallback_t6D784FD40702DAB2ACD38CF71471F6E3BD98695D* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -1190,7 +1190,7 @@ void GetUserGuildsCallback_Invoke_m4B5A15669AC9BD8E64F81188F7973F0450D9CFC7_Open
 	NullCheck(___0_result);
 	GenericInterfaceActionInvoker1< GuildMinimalU5BU5D_t6ADD7871E2B83A0B48D154CBA35208FD6D809722* >::Invoke(method, ___0_result, ___1_guilds);
 }
-// Method Definition Index: 98695
+// Method Definition Index: 98771
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GetUserGuildsCallback__ctor_mA1AE95682F4245D72418A9C828448BB909CCF1EF (GetUserGuildsCallback_t10582264BA1F47326C4BCC89C8AEDC9C7F3E337D* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -1243,13 +1243,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GetUserGuildsCallback__ctor_mA1AE95682F4
 	}
 	__this->___extra_arg = (intptr_t)&GetUserGuildsCallback_Invoke_m4B5A15669AC9BD8E64F81188F7973F0450D9CFC7_Multicast;
 }
-// Method Definition Index: 98696
+// Method Definition Index: 98772
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GetUserGuildsCallback_Invoke_m4B5A15669AC9BD8E64F81188F7973F0450D9CFC7 (GetUserGuildsCallback_t10582264BA1F47326C4BCC89C8AEDC9C7F3E337D* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, GuildMinimalU5BU5D_t6ADD7871E2B83A0B48D154CBA35208FD6D809722* ___1_guilds, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC*, GuildMinimalU5BU5D_t6ADD7871E2B83A0B48D154CBA35208FD6D809722*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_result, ___1_guilds, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98697
+// Method Definition Index: 98773
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GetUserGuildsCallback_BeginInvoke_m615D38DECC46DC8E965BD162384246AF56A58E64 (GetUserGuildsCallback_t10582264BA1F47326C4BCC89C8AEDC9C7F3E337D* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, GuildMinimalU5BU5D_t6ADD7871E2B83A0B48D154CBA35208FD6D809722* ___1_guilds, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___2_callback, RuntimeObject* ___3_object, const RuntimeMethod* method) 
 {
 	void *__d_args[3] = {0};
@@ -1257,7 +1257,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GetUserGuildsCallback_BeginInv
 	__d_args[1] = ___1_guilds;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___2_callback, (RuntimeObject*)___3_object);
 }
-// Method Definition Index: 98698
+// Method Definition Index: 98774
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GetUserGuildsCallback_EndInvoke_m6622EBCEFB36DD80D511077959183C2D25020476 (GetUserGuildsCallback_t10582264BA1F47326C4BCC89C8AEDC9C7F3E337D* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -1312,7 +1312,7 @@ void JoinLinkedLobbyGuildCallback_Invoke_mECD937D018913EC435A8956089E5170BA70697
 	NullCheck(___0_result);
 	GenericInterfaceActionInvoker1< String_t* >::Invoke(method, ___0_result, ___1_inviteUrl);
 }
-// Method Definition Index: 98699
+// Method Definition Index: 98775
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JoinLinkedLobbyGuildCallback__ctor_mA7BD0B394205A4F978754EBAC368DBA98B7C435E (JoinLinkedLobbyGuildCallback_tB263477A6DCBD9D134E01A23EF13AAF55FB3CF50* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -1365,13 +1365,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JoinLinkedLobbyGuildCallback__ctor_mA7BD
 	}
 	__this->___extra_arg = (intptr_t)&JoinLinkedLobbyGuildCallback_Invoke_mECD937D018913EC435A8956089E5170BA70697A1_Multicast;
 }
-// Method Definition Index: 98700
+// Method Definition Index: 98776
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JoinLinkedLobbyGuildCallback_Invoke_mECD937D018913EC435A8956089E5170BA70697A1 (JoinLinkedLobbyGuildCallback_tB263477A6DCBD9D134E01A23EF13AAF55FB3CF50* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, String_t* ___1_inviteUrl, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC*, String_t*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_result, ___1_inviteUrl, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98701
+// Method Definition Index: 98777
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* JoinLinkedLobbyGuildCallback_BeginInvoke_m28FCE3E7CB427ED0D8C36E6728BBEBF5464E4734 (JoinLinkedLobbyGuildCallback_tB263477A6DCBD9D134E01A23EF13AAF55FB3CF50* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, String_t* ___1_inviteUrl, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___2_callback, RuntimeObject* ___3_object, const RuntimeMethod* method) 
 {
 	void *__d_args[3] = {0};
@@ -1379,7 +1379,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* JoinLinkedLobbyGuildCallback_B
 	__d_args[1] = ___1_inviteUrl;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___2_callback, (RuntimeObject*)___3_object);
 }
-// Method Definition Index: 98702
+// Method Definition Index: 98778
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void JoinLinkedLobbyGuildCallback_EndInvoke_m8A2FC190C8AA7ACF05593FC3031AA8D2B30990D5 (JoinLinkedLobbyGuildCallback_tB263477A6DCBD9D134E01A23EF13AAF55FB3CF50* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -1434,7 +1434,7 @@ void LeaveLobbyCallback_Invoke_mE0BC0FE78F05C0A1F34DD60FA991636E077072C8_OpenGen
 	NullCheck(___0_result);
 	GenericInterfaceActionInvoker0::Invoke(method, ___0_result);
 }
-// Method Definition Index: 98703
+// Method Definition Index: 98779
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LeaveLobbyCallback__ctor_mC76CFCE13552C82B070C310CFA43352BAB7A4CBA (LeaveLobbyCallback_t429671D04F1A4E8DD689D38D7117A2E86D4776B6* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -1487,20 +1487,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LeaveLobbyCallback__ctor_mC76CFCE13552C8
 	}
 	__this->___extra_arg = (intptr_t)&LeaveLobbyCallback_Invoke_mE0BC0FE78F05C0A1F34DD60FA991636E077072C8_Multicast;
 }
-// Method Definition Index: 98704
+// Method Definition Index: 98780
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LeaveLobbyCallback_Invoke_mE0BC0FE78F05C0A1F34DD60FA991636E077072C8 (LeaveLobbyCallback_t429671D04F1A4E8DD689D38D7117A2E86D4776B6* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_result, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98705
+// Method Definition Index: 98781
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LeaveLobbyCallback_BeginInvoke_m6A24400A73385FE6E70163D254B73C7909E685C9 (LeaveLobbyCallback_t429671D04F1A4E8DD689D38D7117A2E86D4776B6* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = ___0_result;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 98706
+// Method Definition Index: 98782
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LeaveLobbyCallback_EndInvoke_m759C4D99D84E64D04DD59AE1A8BCDD8E0C3F6582 (LeaveLobbyCallback_t429671D04F1A4E8DD689D38D7117A2E86D4776B6* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -1555,7 +1555,7 @@ void LinkOrUnlinkChannelCallback_Invoke_m73F8C4BDCAE8C800B55B9A98F94FA8451227F40
 	NullCheck(___0_result);
 	GenericInterfaceActionInvoker0::Invoke(method, ___0_result);
 }
-// Method Definition Index: 98707
+// Method Definition Index: 98783
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LinkOrUnlinkChannelCallback__ctor_mC57BC1B33E8FEDD4CB32C37B9C04A4A7811E17EE (LinkOrUnlinkChannelCallback_tE2887447A585D032A00666D20B820E7F2A9745ED* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -1608,20 +1608,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LinkOrUnlinkChannelCallback__ctor_mC57BC
 	}
 	__this->___extra_arg = (intptr_t)&LinkOrUnlinkChannelCallback_Invoke_m73F8C4BDCAE8C800B55B9A98F94FA8451227F400_Multicast;
 }
-// Method Definition Index: 98708
+// Method Definition Index: 98784
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LinkOrUnlinkChannelCallback_Invoke_m73F8C4BDCAE8C800B55B9A98F94FA8451227F400 (LinkOrUnlinkChannelCallback_tE2887447A585D032A00666D20B820E7F2A9745ED* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_result, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98709
+// Method Definition Index: 98785
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LinkOrUnlinkChannelCallback_BeginInvoke_m058DD52AF75B79F3FD59C633A60A12D54B5097F8 (LinkOrUnlinkChannelCallback_tE2887447A585D032A00666D20B820E7F2A9745ED* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = ___0_result;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 98710
+// Method Definition Index: 98786
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LinkOrUnlinkChannelCallback_EndInvoke_mC0676D2C0C8FE03EFCDD8B70429D6D42E06AAD23 (LinkOrUnlinkChannelCallback_tE2887447A585D032A00666D20B820E7F2A9745ED* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -1662,7 +1662,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_LobbyCreatedCallback_tCFCD151C6EB12
 	il2cppPInvokeFunc(___0_lobbyId);
 
 }
-// Method Definition Index: 98711
+// Method Definition Index: 98787
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyCreatedCallback__ctor_m0954C6124648C72C46E0505BD916A0C18BF1C9CE (LobbyCreatedCallback_tCFCD151C6EB12D83DE4A6B0CDCBA0979376117D5* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -1691,20 +1691,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyCreatedCallback__ctor_m0954C6124648
 	}
 	__this->___extra_arg = (intptr_t)&LobbyCreatedCallback_Invoke_m8113EF7B271DBF97A2441A54EF94ACDE39E09ABE_Multicast;
 }
-// Method Definition Index: 98712
+// Method Definition Index: 98788
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyCreatedCallback_Invoke_m8113EF7B271DBF97A2441A54EF94ACDE39E09ABE (LobbyCreatedCallback_tCFCD151C6EB12D83DE4A6B0CDCBA0979376117D5* __this, uint64_t ___0_lobbyId, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, uint64_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_lobbyId, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98713
+// Method Definition Index: 98789
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LobbyCreatedCallback_BeginInvoke_mE2BC6169506A9D1CDD90193D3BE861D6F9896FC1 (LobbyCreatedCallback_tCFCD151C6EB12D83DE4A6B0CDCBA0979376117D5* __this, uint64_t ___0_lobbyId, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = Box(il2cpp_defaults.uint64_class, &___0_lobbyId);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 98714
+// Method Definition Index: 98790
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyCreatedCallback_EndInvoke_m5C787F14DDE1F48A51DEBEAB5B2637EF7ABDF16E (LobbyCreatedCallback_tCFCD151C6EB12D83DE4A6B0CDCBA0979376117D5* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -1745,7 +1745,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_LobbyDeletedCallback_t1A0DF41002296
 	il2cppPInvokeFunc(___0_lobbyId);
 
 }
-// Method Definition Index: 98715
+// Method Definition Index: 98791
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyDeletedCallback__ctor_m299B003BD2700095746122E309BDAF8ACD1973C1 (LobbyDeletedCallback_t1A0DF41002296E3F5D6DF309275B41EAA877BC87* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -1774,20 +1774,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyDeletedCallback__ctor_m299B003BD270
 	}
 	__this->___extra_arg = (intptr_t)&LobbyDeletedCallback_Invoke_mDEB81686056773A0DA49E14C3B67918B7B9C76FD_Multicast;
 }
-// Method Definition Index: 98716
+// Method Definition Index: 98792
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyDeletedCallback_Invoke_mDEB81686056773A0DA49E14C3B67918B7B9C76FD (LobbyDeletedCallback_t1A0DF41002296E3F5D6DF309275B41EAA877BC87* __this, uint64_t ___0_lobbyId, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, uint64_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_lobbyId, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98717
+// Method Definition Index: 98793
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LobbyDeletedCallback_BeginInvoke_m3E73CF72FE5890C3DE2DE89F37B6359BB55D6BB1 (LobbyDeletedCallback_t1A0DF41002296E3F5D6DF309275B41EAA877BC87* __this, uint64_t ___0_lobbyId, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = Box(il2cpp_defaults.uint64_class, &___0_lobbyId);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 98718
+// Method Definition Index: 98794
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyDeletedCallback_EndInvoke_m52FA7D1A0E456BBDFBCCA3F875014F3CFAA519BA (LobbyDeletedCallback_t1A0DF41002296E3F5D6DF309275B41EAA877BC87* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -1828,7 +1828,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_LobbyMemberAddedCallback_tC6D9027F3
 	il2cppPInvokeFunc(___0_lobbyId, ___1_memberId);
 
 }
-// Method Definition Index: 98719
+// Method Definition Index: 98795
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyMemberAddedCallback__ctor_m2C19274731C8D2E55FF3B05C20012E2B59A5F393 (LobbyMemberAddedCallback_tC6D9027F35D170C5E96CAB7A373A1E7DF11DB937* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -1857,13 +1857,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyMemberAddedCallback__ctor_m2C192747
 	}
 	__this->___extra_arg = (intptr_t)&LobbyMemberAddedCallback_Invoke_m5F7FB325017126E779A99C4968ED3253ADE78DFB_Multicast;
 }
-// Method Definition Index: 98720
+// Method Definition Index: 98796
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyMemberAddedCallback_Invoke_m5F7FB325017126E779A99C4968ED3253ADE78DFB (LobbyMemberAddedCallback_tC6D9027F35D170C5E96CAB7A373A1E7DF11DB937* __this, uint64_t ___0_lobbyId, uint64_t ___1_memberId, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, uint64_t, uint64_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_lobbyId, ___1_memberId, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98721
+// Method Definition Index: 98797
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LobbyMemberAddedCallback_BeginInvoke_m545EF975820EA1A69B0FA6628C0CD1BF4F8AC7E1 (LobbyMemberAddedCallback_tC6D9027F35D170C5E96CAB7A373A1E7DF11DB937* __this, uint64_t ___0_lobbyId, uint64_t ___1_memberId, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___2_callback, RuntimeObject* ___3_object, const RuntimeMethod* method) 
 {
 	void *__d_args[3] = {0};
@@ -1871,7 +1871,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LobbyMemberAddedCallback_Begin
 	__d_args[1] = Box(il2cpp_defaults.uint64_class, &___1_memberId);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___2_callback, (RuntimeObject*)___3_object);
 }
-// Method Definition Index: 98722
+// Method Definition Index: 98798
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyMemberAddedCallback_EndInvoke_m7AC8C7A6150594368A284F022D5CCC809207B711 (LobbyMemberAddedCallback_tC6D9027F35D170C5E96CAB7A373A1E7DF11DB937* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -1912,7 +1912,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_LobbyMemberRemovedCallback_t3614B31
 	il2cppPInvokeFunc(___0_lobbyId, ___1_memberId);
 
 }
-// Method Definition Index: 98723
+// Method Definition Index: 98799
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyMemberRemovedCallback__ctor_m5A7A51ADAAE5BAF36452C1ED4FE774EDEE986A76 (LobbyMemberRemovedCallback_t3614B3126BF9B19F3C0FF8ADDE6AB2C13C24A9CF* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -1941,13 +1941,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyMemberRemovedCallback__ctor_m5A7A51
 	}
 	__this->___extra_arg = (intptr_t)&LobbyMemberRemovedCallback_Invoke_m749BBF1B446564C8B39768B2E8C153958A624C44_Multicast;
 }
-// Method Definition Index: 98724
+// Method Definition Index: 98800
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyMemberRemovedCallback_Invoke_m749BBF1B446564C8B39768B2E8C153958A624C44 (LobbyMemberRemovedCallback_t3614B3126BF9B19F3C0FF8ADDE6AB2C13C24A9CF* __this, uint64_t ___0_lobbyId, uint64_t ___1_memberId, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, uint64_t, uint64_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_lobbyId, ___1_memberId, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98725
+// Method Definition Index: 98801
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LobbyMemberRemovedCallback_BeginInvoke_m847EEA419482B28E0AE84CB9AE6522044FA3E72E (LobbyMemberRemovedCallback_t3614B3126BF9B19F3C0FF8ADDE6AB2C13C24A9CF* __this, uint64_t ___0_lobbyId, uint64_t ___1_memberId, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___2_callback, RuntimeObject* ___3_object, const RuntimeMethod* method) 
 {
 	void *__d_args[3] = {0};
@@ -1955,7 +1955,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LobbyMemberRemovedCallback_Beg
 	__d_args[1] = Box(il2cpp_defaults.uint64_class, &___1_memberId);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___2_callback, (RuntimeObject*)___3_object);
 }
-// Method Definition Index: 98726
+// Method Definition Index: 98802
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyMemberRemovedCallback_EndInvoke_m190AAEBD032E1E9C8264654F82DD77167977C19D (LobbyMemberRemovedCallback_t3614B3126BF9B19F3C0FF8ADDE6AB2C13C24A9CF* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -1996,7 +1996,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_LobbyMemberUpdatedCallback_tFD0CF4D
 	il2cppPInvokeFunc(___0_lobbyId, ___1_memberId);
 
 }
-// Method Definition Index: 98727
+// Method Definition Index: 98803
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyMemberUpdatedCallback__ctor_mC9BECCBA9198585818136435569AEA548080C822 (LobbyMemberUpdatedCallback_tFD0CF4D7E936A907724C25F37CCD9258E2970FF1* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -2025,13 +2025,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyMemberUpdatedCallback__ctor_mC9BECC
 	}
 	__this->___extra_arg = (intptr_t)&LobbyMemberUpdatedCallback_Invoke_mCD2EC3D8DB7112C492C5473C6DF4DC06AD4EC61C_Multicast;
 }
-// Method Definition Index: 98728
+// Method Definition Index: 98804
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyMemberUpdatedCallback_Invoke_mCD2EC3D8DB7112C492C5473C6DF4DC06AD4EC61C (LobbyMemberUpdatedCallback_tFD0CF4D7E936A907724C25F37CCD9258E2970FF1* __this, uint64_t ___0_lobbyId, uint64_t ___1_memberId, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, uint64_t, uint64_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_lobbyId, ___1_memberId, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98729
+// Method Definition Index: 98805
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LobbyMemberUpdatedCallback_BeginInvoke_m237B2DBE22EB0B40369EC3BF25EADC692465849F (LobbyMemberUpdatedCallback_tFD0CF4D7E936A907724C25F37CCD9258E2970FF1* __this, uint64_t ___0_lobbyId, uint64_t ___1_memberId, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___2_callback, RuntimeObject* ___3_object, const RuntimeMethod* method) 
 {
 	void *__d_args[3] = {0};
@@ -2039,7 +2039,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LobbyMemberUpdatedCallback_Beg
 	__d_args[1] = Box(il2cpp_defaults.uint64_class, &___1_memberId);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___2_callback, (RuntimeObject*)___3_object);
 }
-// Method Definition Index: 98730
+// Method Definition Index: 98806
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyMemberUpdatedCallback_EndInvoke_m4A5C25BB9722DFBE08FE39139E1FA8AA55CD25E0 (LobbyMemberUpdatedCallback_tFD0CF4D7E936A907724C25F37CCD9258E2970FF1* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -2080,7 +2080,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_LobbyUpdatedCallback_t7682D7863E738
 	il2cppPInvokeFunc(___0_lobbyId);
 
 }
-// Method Definition Index: 98731
+// Method Definition Index: 98807
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyUpdatedCallback__ctor_m69765A0561CA2D29C79DF4692786105EA0B045B3 (LobbyUpdatedCallback_t7682D7863E738561F88B37F47C8245E033DF7D23* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -2109,20 +2109,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyUpdatedCallback__ctor_m69765A0561CA
 	}
 	__this->___extra_arg = (intptr_t)&LobbyUpdatedCallback_Invoke_m657D8F7B84AC7C1BDAF4F3D75015A870C12395D5_Multicast;
 }
-// Method Definition Index: 98732
+// Method Definition Index: 98808
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyUpdatedCallback_Invoke_m657D8F7B84AC7C1BDAF4F3D75015A870C12395D5 (LobbyUpdatedCallback_t7682D7863E738561F88B37F47C8245E033DF7D23* __this, uint64_t ___0_lobbyId, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, uint64_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_lobbyId, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98733
+// Method Definition Index: 98809
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LobbyUpdatedCallback_BeginInvoke_m35AE13F7E2B6065821CFC0A1DA92BDFC63DE4542 (LobbyUpdatedCallback_t7682D7863E738561F88B37F47C8245E033DF7D23* __this, uint64_t ___0_lobbyId, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = Box(il2cpp_defaults.uint64_class, &___0_lobbyId);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 98734
+// Method Definition Index: 98810
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LobbyUpdatedCallback_EndInvoke_m47EB8C7DB3032167E0A93B8756FA42E30942910B (LobbyUpdatedCallback_t7682D7863E738561F88B37F47C8245E033DF7D23* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -2163,7 +2163,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_IsDiscordAppInstalledCallback_t0219
 	il2cppPInvokeFunc(static_cast<int32_t>(___0_installed));
 
 }
-// Method Definition Index: 98735
+// Method Definition Index: 98811
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IsDiscordAppInstalledCallback__ctor_m49EAFED0D6F9B13603C0CD97391CC05A6B060E1F (IsDiscordAppInstalledCallback_t021968006E761B04FCF04420D49F6D5A6D99F925* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -2192,20 +2192,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IsDiscordAppInstalledCallback__ctor_m49E
 	}
 	__this->___extra_arg = (intptr_t)&IsDiscordAppInstalledCallback_Invoke_m69352155A3337A300AF46D6592E801E10A0FE11F_Multicast;
 }
-// Method Definition Index: 98736
+// Method Definition Index: 98812
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IsDiscordAppInstalledCallback_Invoke_m69352155A3337A300AF46D6592E801E10A0FE11F (IsDiscordAppInstalledCallback_t021968006E761B04FCF04420D49F6D5A6D99F925* __this, bool ___0_installed, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, bool, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_installed, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98737
+// Method Definition Index: 98813
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* IsDiscordAppInstalledCallback_BeginInvoke_m14EA0C757424D7B82629F4029BAA66D1A6F993F2 (IsDiscordAppInstalledCallback_t021968006E761B04FCF04420D49F6D5A6D99F925* __this, bool ___0_installed, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = Box(il2cpp_defaults.boolean_class, &___0_installed);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 98738
+// Method Definition Index: 98814
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IsDiscordAppInstalledCallback_EndInvoke_m695DAD75F3914CA3617DE79A3F1C4B207FD1EDE6 (IsDiscordAppInstalledCallback_t021968006E761B04FCF04420D49F6D5A6D99F925* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -2260,7 +2260,7 @@ void AcceptActivityInviteCallback_Invoke_m150DDEE1782E118AE7EEC14E77FB040984948E
 	NullCheck(___0_result);
 	GenericInterfaceActionInvoker1< String_t* >::Invoke(method, ___0_result, ___1_joinSecret);
 }
-// Method Definition Index: 98739
+// Method Definition Index: 98815
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AcceptActivityInviteCallback__ctor_mDBD25F41A63A5A813529E9B4424CD8FE9D95B2D7 (AcceptActivityInviteCallback_t9D4CBE37F96351B464203F90457D7ED2DFC8C8AC* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -2313,13 +2313,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AcceptActivityInviteCallback__ctor_mDBD2
 	}
 	__this->___extra_arg = (intptr_t)&AcceptActivityInviteCallback_Invoke_m150DDEE1782E118AE7EEC14E77FB040984948E57_Multicast;
 }
-// Method Definition Index: 98740
+// Method Definition Index: 98816
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AcceptActivityInviteCallback_Invoke_m150DDEE1782E118AE7EEC14E77FB040984948E57 (AcceptActivityInviteCallback_t9D4CBE37F96351B464203F90457D7ED2DFC8C8AC* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, String_t* ___1_joinSecret, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC*, String_t*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_result, ___1_joinSecret, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98741
+// Method Definition Index: 98817
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* AcceptActivityInviteCallback_BeginInvoke_m059B7488C1DC5E3FAC2FF022AC38C7A420D1C3C6 (AcceptActivityInviteCallback_t9D4CBE37F96351B464203F90457D7ED2DFC8C8AC* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, String_t* ___1_joinSecret, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___2_callback, RuntimeObject* ___3_object, const RuntimeMethod* method) 
 {
 	void *__d_args[3] = {0};
@@ -2327,7 +2327,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* AcceptActivityInviteCallback_B
 	__d_args[1] = ___1_joinSecret;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___2_callback, (RuntimeObject*)___3_object);
 }
-// Method Definition Index: 98742
+// Method Definition Index: 98818
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AcceptActivityInviteCallback_EndInvoke_mBEF5140303C5CCF339FD75CEB2FA0530ED45D1B7 (AcceptActivityInviteCallback_t9D4CBE37F96351B464203F90457D7ED2DFC8C8AC* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -2382,7 +2382,7 @@ void SendActivityInviteCallback_Invoke_m54532BEA584A89B240EF1386AE3CC0770F173286
 	NullCheck(___0_result);
 	GenericInterfaceActionInvoker0::Invoke(method, ___0_result);
 }
-// Method Definition Index: 98743
+// Method Definition Index: 98819
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SendActivityInviteCallback__ctor_m7C3523B2EB2F815D3C5CAD727C32E100E32A2938 (SendActivityInviteCallback_t31978B466B07B5F41892C4FA114FD70FF6563222* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -2435,20 +2435,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SendActivityInviteCallback__ctor_m7C3523
 	}
 	__this->___extra_arg = (intptr_t)&SendActivityInviteCallback_Invoke_m54532BEA584A89B240EF1386AE3CC0770F173286_Multicast;
 }
-// Method Definition Index: 98744
+// Method Definition Index: 98820
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SendActivityInviteCallback_Invoke_m54532BEA584A89B240EF1386AE3CC0770F173286 (SendActivityInviteCallback_t31978B466B07B5F41892C4FA114FD70FF6563222* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_result, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98745
+// Method Definition Index: 98821
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* SendActivityInviteCallback_BeginInvoke_m06E1AAC5C6D94DE66BC953C668987A40BF348413 (SendActivityInviteCallback_t31978B466B07B5F41892C4FA114FD70FF6563222* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = ___0_result;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 98746
+// Method Definition Index: 98822
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SendActivityInviteCallback_EndInvoke_mE61B167DBE43D9DD36608F5CFF148D68E2031A0A (SendActivityInviteCallback_t31978B466B07B5F41892C4FA114FD70FF6563222* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -2503,7 +2503,7 @@ void ActivityInviteCallback_Invoke_m8CDF986A36949543A2DE858690D8894BF4C40D9E_Ope
 	NullCheck(___0_invite);
 	GenericInterfaceActionInvoker0::Invoke(method, ___0_invite);
 }
-// Method Definition Index: 98747
+// Method Definition Index: 98823
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ActivityInviteCallback__ctor_mAC7544A61355997219478199078D139B4910F6E5 (ActivityInviteCallback_tA05970B94361414427DDE242BB005846CCA8AE9E* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -2556,20 +2556,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ActivityInviteCallback__ctor_mAC7544A613
 	}
 	__this->___extra_arg = (intptr_t)&ActivityInviteCallback_Invoke_m8CDF986A36949543A2DE858690D8894BF4C40D9E_Multicast;
 }
-// Method Definition Index: 98748
+// Method Definition Index: 98824
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ActivityInviteCallback_Invoke_m8CDF986A36949543A2DE858690D8894BF4C40D9E (ActivityInviteCallback_tA05970B94361414427DDE242BB005846CCA8AE9E* __this, ActivityInvite_tE82BB23577DAC44FAD18865AD824289555DF7C4B* ___0_invite, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, ActivityInvite_tE82BB23577DAC44FAD18865AD824289555DF7C4B*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_invite, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98749
+// Method Definition Index: 98825
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ActivityInviteCallback_BeginInvoke_mD95D86D2A1C81DC02616BE0B43446B67EAD9D701 (ActivityInviteCallback_tA05970B94361414427DDE242BB005846CCA8AE9E* __this, ActivityInvite_tE82BB23577DAC44FAD18865AD824289555DF7C4B* ___0_invite, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = ___0_invite;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 98750
+// Method Definition Index: 98826
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ActivityInviteCallback_EndInvoke_m91739095D22BED879948557D93DD6300C6543022 (ActivityInviteCallback_tA05970B94361414427DDE242BB005846CCA8AE9E* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -2617,7 +2617,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_ActivityJoinCallback_t759F56F00960B
 	____0_joinSecret_marshaled = NULL;
 
 }
-// Method Definition Index: 98751
+// Method Definition Index: 98827
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ActivityJoinCallback__ctor_m947E1A1F41C16D841600C4381AD3281F92FB5ADA (ActivityJoinCallback_t759F56F00960B42EDDF2497A31FFB5EB53B70286* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -2654,20 +2654,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ActivityJoinCallback__ctor_m947E1A1F41C1
 	}
 	__this->___extra_arg = (intptr_t)&ActivityJoinCallback_Invoke_mB39FB045699599E9940580E250D07DE3B94B0A12_Multicast;
 }
-// Method Definition Index: 98752
+// Method Definition Index: 98828
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ActivityJoinCallback_Invoke_mB39FB045699599E9940580E250D07DE3B94B0A12 (ActivityJoinCallback_t759F56F00960B42EDDF2497A31FFB5EB53B70286* __this, String_t* ___0_joinSecret, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, String_t*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_joinSecret, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98753
+// Method Definition Index: 98829
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ActivityJoinCallback_BeginInvoke_m70BEEFF23F500E57FE3BB2F92C48F8D14E6E7DCB (ActivityJoinCallback_t759F56F00960B42EDDF2497A31FFB5EB53B70286* __this, String_t* ___0_joinSecret, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = ___0_joinSecret;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 98754
+// Method Definition Index: 98830
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ActivityJoinCallback_EndInvoke_mE0720B22C99848DF2951AC9856D538E2B489481E (ActivityJoinCallback_t759F56F00960B42EDDF2497A31FFB5EB53B70286* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -2714,7 +2714,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_ActivityJoinWithApplicationCallback
 	____1_joinSecret_marshaled = NULL;
 
 }
-// Method Definition Index: 98755
+// Method Definition Index: 98831
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ActivityJoinWithApplicationCallback__ctor_mF56D33A60976014A163DED33BD3101586F942B03 (ActivityJoinWithApplicationCallback_t3C72D340F64FBB459F3F34864530975E57B4FF16* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -2743,13 +2743,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ActivityJoinWithApplicationCallback__cto
 	}
 	__this->___extra_arg = (intptr_t)&ActivityJoinWithApplicationCallback_Invoke_m824B68DEC79382D03F76B9E117B4D3D297604B50_Multicast;
 }
-// Method Definition Index: 98756
+// Method Definition Index: 98832
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ActivityJoinWithApplicationCallback_Invoke_m824B68DEC79382D03F76B9E117B4D3D297604B50 (ActivityJoinWithApplicationCallback_t3C72D340F64FBB459F3F34864530975E57B4FF16* __this, uint64_t ___0_applicationId, String_t* ___1_joinSecret, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, uint64_t, String_t*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_applicationId, ___1_joinSecret, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98757
+// Method Definition Index: 98833
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ActivityJoinWithApplicationCallback_BeginInvoke_m979EC7349677658E5BE87FCAAB14B221F37DEE67 (ActivityJoinWithApplicationCallback_t3C72D340F64FBB459F3F34864530975E57B4FF16* __this, uint64_t ___0_applicationId, String_t* ___1_joinSecret, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___2_callback, RuntimeObject* ___3_object, const RuntimeMethod* method) 
 {
 	void *__d_args[3] = {0};
@@ -2757,7 +2757,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ActivityJoinWithApplicationCal
 	__d_args[1] = ___1_joinSecret;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___2_callback, (RuntimeObject*)___3_object);
 }
-// Method Definition Index: 98758
+// Method Definition Index: 98834
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ActivityJoinWithApplicationCallback_EndInvoke_m5EF5D4717D692565862F0B6750930B0A3899DFDA (ActivityJoinWithApplicationCallback_t3C72D340F64FBB459F3F34864530975E57B4FF16* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -2812,7 +2812,7 @@ void UpdateStatusCallback_Invoke_m85F3A0FBE138714F17103F2B6AC85546776BE689_OpenG
 	NullCheck(___0_result);
 	GenericInterfaceActionInvoker0::Invoke(method, ___0_result);
 }
-// Method Definition Index: 98759
+// Method Definition Index: 98835
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UpdateStatusCallback__ctor_m69F7EEA895811B8C949D0E7FB5F78D4C22ECCC48 (UpdateStatusCallback_t0207BC8F8FD78A75FF8442FA6D45E5B3352A5400* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -2865,20 +2865,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UpdateStatusCallback__ctor_m69F7EEA89581
 	}
 	__this->___extra_arg = (intptr_t)&UpdateStatusCallback_Invoke_m85F3A0FBE138714F17103F2B6AC85546776BE689_Multicast;
 }
-// Method Definition Index: 98760
+// Method Definition Index: 98836
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UpdateStatusCallback_Invoke_m85F3A0FBE138714F17103F2B6AC85546776BE689 (UpdateStatusCallback_t0207BC8F8FD78A75FF8442FA6D45E5B3352A5400* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_result, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98761
+// Method Definition Index: 98837
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* UpdateStatusCallback_BeginInvoke_mA3E98289F1110D22A4FEA2DA388120056DD55625 (UpdateStatusCallback_t0207BC8F8FD78A75FF8442FA6D45E5B3352A5400* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = ___0_result;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 98762
+// Method Definition Index: 98838
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UpdateStatusCallback_EndInvoke_mE372D094F7AF2F526424D9F49F222DE4E8FB1844 (UpdateStatusCallback_t0207BC8F8FD78A75FF8442FA6D45E5B3352A5400* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -2933,7 +2933,7 @@ void UpdateRichPresenceCallback_Invoke_m0B4513EF67172B8BEF9D3814539A1420F0A64AF3
 	NullCheck(___0_result);
 	GenericInterfaceActionInvoker0::Invoke(method, ___0_result);
 }
-// Method Definition Index: 98763
+// Method Definition Index: 98839
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UpdateRichPresenceCallback__ctor_m544C9EF52E82588EEC4043C2CCE51EDCA5729039 (UpdateRichPresenceCallback_t8D04E8305C5E575629C1BECCAD8082A50E6481CE* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -2986,20 +2986,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UpdateRichPresenceCallback__ctor_m544C9E
 	}
 	__this->___extra_arg = (intptr_t)&UpdateRichPresenceCallback_Invoke_m0B4513EF67172B8BEF9D3814539A1420F0A64AF3_Multicast;
 }
-// Method Definition Index: 98764
+// Method Definition Index: 98840
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UpdateRichPresenceCallback_Invoke_m0B4513EF67172B8BEF9D3814539A1420F0A64AF3 (UpdateRichPresenceCallback_t8D04E8305C5E575629C1BECCAD8082A50E6481CE* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_result, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98765
+// Method Definition Index: 98841
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* UpdateRichPresenceCallback_BeginInvoke_m11F0CE42403A182EC06A159D02D8322930C5D54D (UpdateRichPresenceCallback_t8D04E8305C5E575629C1BECCAD8082A50E6481CE* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = ___0_result;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 98766
+// Method Definition Index: 98842
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UpdateRichPresenceCallback_EndInvoke_m7987CFEC7E91549E7C932E4ECECD4C233D8CF267 (UpdateRichPresenceCallback_t8D04E8305C5E575629C1BECCAD8082A50E6481CE* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -3054,7 +3054,7 @@ void UpdateRelationshipCallback_Invoke_mF285A1EA277331740CEDF81B0C5E2316164B1F36
 	NullCheck(___0_result);
 	GenericInterfaceActionInvoker0::Invoke(method, ___0_result);
 }
-// Method Definition Index: 98767
+// Method Definition Index: 98843
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UpdateRelationshipCallback__ctor_mAA4EB00869AE36D2E666AFF92A1261B1A64C1499 (UpdateRelationshipCallback_tC716FF3D45D10A9A39474040A6261FC515066EB9* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -3107,20 +3107,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UpdateRelationshipCallback__ctor_mAA4EB0
 	}
 	__this->___extra_arg = (intptr_t)&UpdateRelationshipCallback_Invoke_mF285A1EA277331740CEDF81B0C5E2316164B1F36_Multicast;
 }
-// Method Definition Index: 98768
+// Method Definition Index: 98844
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UpdateRelationshipCallback_Invoke_mF285A1EA277331740CEDF81B0C5E2316164B1F36 (UpdateRelationshipCallback_tC716FF3D45D10A9A39474040A6261FC515066EB9* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_result, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98769
+// Method Definition Index: 98845
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* UpdateRelationshipCallback_BeginInvoke_m229069A7EA0C6B2DA7B94A36B15BF2BB771A6B39 (UpdateRelationshipCallback_tC716FF3D45D10A9A39474040A6261FC515066EB9* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = ___0_result;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 98770
+// Method Definition Index: 98846
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UpdateRelationshipCallback_EndInvoke_m63D705DF8ACD5708C10C66B7C805FFBE713D92E4 (UpdateRelationshipCallback_tC716FF3D45D10A9A39474040A6261FC515066EB9* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -3175,7 +3175,7 @@ void SendFriendRequestCallback_Invoke_mA0F19C820A27AE0EBA1C42252DEBD12D5AE207B7_
 	NullCheck(___0_result);
 	GenericInterfaceActionInvoker0::Invoke(method, ___0_result);
 }
-// Method Definition Index: 98771
+// Method Definition Index: 98847
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SendFriendRequestCallback__ctor_m46F90893A574144DA0EA0FB4E425050068F5EBED (SendFriendRequestCallback_t7030533D017BCDC8AD38320676AB2A5328FE8FF0* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -3228,20 +3228,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SendFriendRequestCallback__ctor_m46F9089
 	}
 	__this->___extra_arg = (intptr_t)&SendFriendRequestCallback_Invoke_mA0F19C820A27AE0EBA1C42252DEBD12D5AE207B7_Multicast;
 }
-// Method Definition Index: 98772
+// Method Definition Index: 98848
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SendFriendRequestCallback_Invoke_mA0F19C820A27AE0EBA1C42252DEBD12D5AE207B7 (SendFriendRequestCallback_t7030533D017BCDC8AD38320676AB2A5328FE8FF0* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_result, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98773
+// Method Definition Index: 98849
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* SendFriendRequestCallback_BeginInvoke_m77E60FADC56961AABAA7CB473569DBADC88FA1F3 (SendFriendRequestCallback_t7030533D017BCDC8AD38320676AB2A5328FE8FF0* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = ___0_result;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 98774
+// Method Definition Index: 98850
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SendFriendRequestCallback_EndInvoke_m52A111AC23F7AFB9B0F0AB2F4F65EB5241EE9831 (SendFriendRequestCallback_t7030533D017BCDC8AD38320676AB2A5328FE8FF0* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -3282,7 +3282,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_RelationshipCreatedCallback_t275FE5
 	il2cppPInvokeFunc(___0_userId, static_cast<int32_t>(___1_isDiscordRelationshipUpdate));
 
 }
-// Method Definition Index: 98775
+// Method Definition Index: 98851
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RelationshipCreatedCallback__ctor_m6B3C318E7C594EB5F2793F79341AAC8F4F5DC999 (RelationshipCreatedCallback_t275FE567E445EBB9AA23D720D324C0D4C85A469F* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -3311,13 +3311,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RelationshipCreatedCallback__ctor_m6B3C3
 	}
 	__this->___extra_arg = (intptr_t)&RelationshipCreatedCallback_Invoke_m1392EF44A0335BEB8DF8C5B841D86E89F46607D8_Multicast;
 }
-// Method Definition Index: 98776
+// Method Definition Index: 98852
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RelationshipCreatedCallback_Invoke_m1392EF44A0335BEB8DF8C5B841D86E89F46607D8 (RelationshipCreatedCallback_t275FE567E445EBB9AA23D720D324C0D4C85A469F* __this, uint64_t ___0_userId, bool ___1_isDiscordRelationshipUpdate, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, uint64_t, bool, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_userId, ___1_isDiscordRelationshipUpdate, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98777
+// Method Definition Index: 98853
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* RelationshipCreatedCallback_BeginInvoke_mCC387A7308A72D3A0EDC95A6268A5C6CE18C5CD2 (RelationshipCreatedCallback_t275FE567E445EBB9AA23D720D324C0D4C85A469F* __this, uint64_t ___0_userId, bool ___1_isDiscordRelationshipUpdate, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___2_callback, RuntimeObject* ___3_object, const RuntimeMethod* method) 
 {
 	void *__d_args[3] = {0};
@@ -3325,7 +3325,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* RelationshipCreatedCallback_Be
 	__d_args[1] = Box(il2cpp_defaults.boolean_class, &___1_isDiscordRelationshipUpdate);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___2_callback, (RuntimeObject*)___3_object);
 }
-// Method Definition Index: 98778
+// Method Definition Index: 98854
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RelationshipCreatedCallback_EndInvoke_m1102CA81CAEE4F42F64E44FD496CF1D9AEE3C37F (RelationshipCreatedCallback_t275FE567E445EBB9AA23D720D324C0D4C85A469F* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -3366,7 +3366,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_RelationshipDeletedCallback_t1BA526
 	il2cppPInvokeFunc(___0_userId, static_cast<int32_t>(___1_isDiscordRelationshipUpdate));
 
 }
-// Method Definition Index: 98779
+// Method Definition Index: 98855
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RelationshipDeletedCallback__ctor_mB9645D0E30866BE6CBD40D5584BB29A6D65C9F53 (RelationshipDeletedCallback_t1BA5266271DC55056A4CA6DBA7F90B47C1D10D57* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -3395,13 +3395,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RelationshipDeletedCallback__ctor_mB9645
 	}
 	__this->___extra_arg = (intptr_t)&RelationshipDeletedCallback_Invoke_mDDBE990BA5DBCF2F6BD3EA953CCFF4B8B30FA644_Multicast;
 }
-// Method Definition Index: 98780
+// Method Definition Index: 98856
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RelationshipDeletedCallback_Invoke_mDDBE990BA5DBCF2F6BD3EA953CCFF4B8B30FA644 (RelationshipDeletedCallback_t1BA5266271DC55056A4CA6DBA7F90B47C1D10D57* __this, uint64_t ___0_userId, bool ___1_isDiscordRelationshipUpdate, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, uint64_t, bool, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_userId, ___1_isDiscordRelationshipUpdate, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98781
+// Method Definition Index: 98857
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* RelationshipDeletedCallback_BeginInvoke_m7B7F527EB4707115C8356571B05467FC566F8733 (RelationshipDeletedCallback_t1BA5266271DC55056A4CA6DBA7F90B47C1D10D57* __this, uint64_t ___0_userId, bool ___1_isDiscordRelationshipUpdate, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___2_callback, RuntimeObject* ___3_object, const RuntimeMethod* method) 
 {
 	void *__d_args[3] = {0};
@@ -3409,7 +3409,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* RelationshipDeletedCallback_Be
 	__d_args[1] = Box(il2cpp_defaults.boolean_class, &___1_isDiscordRelationshipUpdate);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___2_callback, (RuntimeObject*)___3_object);
 }
-// Method Definition Index: 98782
+// Method Definition Index: 98858
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RelationshipDeletedCallback_EndInvoke_m9440B4DC5199442DD2B3380F5980D49587BD7A09 (RelationshipDeletedCallback_t1BA5266271DC55056A4CA6DBA7F90B47C1D10D57* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -3464,7 +3464,7 @@ void GetDiscordClientConnectedUserCallback_Invoke_m99D71B1735CB08792DC90C68E817D
 	NullCheck(___0_result);
 	GenericInterfaceActionInvoker1< UserHandle_tF889A2147E6C5D82F7739428B455D1C7769A9D39* >::Invoke(method, ___0_result, ___1_user);
 }
-// Method Definition Index: 98783
+// Method Definition Index: 98859
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GetDiscordClientConnectedUserCallback__ctor_m24F42B016D101610774445FE65DC849B7C1084C2 (GetDiscordClientConnectedUserCallback_t4DE0C5BE8DB30C4BB245A5E645472F7763AA5B57* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -3517,13 +3517,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GetDiscordClientConnectedUserCallback__c
 	}
 	__this->___extra_arg = (intptr_t)&GetDiscordClientConnectedUserCallback_Invoke_m99D71B1735CB08792DC90C68E817DBFA058F947B_Multicast;
 }
-// Method Definition Index: 98784
+// Method Definition Index: 98860
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GetDiscordClientConnectedUserCallback_Invoke_m99D71B1735CB08792DC90C68E817DBFA058F947B (GetDiscordClientConnectedUserCallback_t4DE0C5BE8DB30C4BB245A5E645472F7763AA5B57* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, UserHandle_tF889A2147E6C5D82F7739428B455D1C7769A9D39* ___1_user, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC*, UserHandle_tF889A2147E6C5D82F7739428B455D1C7769A9D39*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_result, ___1_user, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98785
+// Method Definition Index: 98861
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GetDiscordClientConnectedUserCallback_BeginInvoke_mAE274FBAB6CB198AD340B1D3582FD8A2D1DA3F89 (GetDiscordClientConnectedUserCallback_t4DE0C5BE8DB30C4BB245A5E645472F7763AA5B57* __this, ClientResult_t31ACA43E13BE142DFD43D9A1E40D0B4F576723DC* ___0_result, UserHandle_tF889A2147E6C5D82F7739428B455D1C7769A9D39* ___1_user, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___2_callback, RuntimeObject* ___3_object, const RuntimeMethod* method) 
 {
 	void *__d_args[3] = {0};
@@ -3531,7 +3531,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GetDiscordClientConnectedUserC
 	__d_args[1] = ___1_user;
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___2_callback, (RuntimeObject*)___3_object);
 }
-// Method Definition Index: 98786
+// Method Definition Index: 98862
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GetDiscordClientConnectedUserCallback_EndInvoke_mF23C72C026270C329DE609C08730C507891EE528 (GetDiscordClientConnectedUserCallback_t4DE0C5BE8DB30C4BB245A5E645472F7763AA5B57* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -3572,7 +3572,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_RelationshipGroupsUpdatedCallback_t
 	il2cppPInvokeFunc(___0_userId);
 
 }
-// Method Definition Index: 98787
+// Method Definition Index: 98863
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RelationshipGroupsUpdatedCallback__ctor_m882A3DD80259F34F1296173B5F38B1118CDDAA08 (RelationshipGroupsUpdatedCallback_t27CE7E39656B63274699FDAFAA998415698DD1CB* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -3601,20 +3601,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RelationshipGroupsUpdatedCallback__ctor_
 	}
 	__this->___extra_arg = (intptr_t)&RelationshipGroupsUpdatedCallback_Invoke_m207555FAA91F3E9B6ADFEC2F87895710918DC504_Multicast;
 }
-// Method Definition Index: 98788
+// Method Definition Index: 98864
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RelationshipGroupsUpdatedCallback_Invoke_m207555FAA91F3E9B6ADFEC2F87895710918DC504 (RelationshipGroupsUpdatedCallback_t27CE7E39656B63274699FDAFAA998415698DD1CB* __this, uint64_t ___0_userId, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, uint64_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_userId, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98789
+// Method Definition Index: 98865
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* RelationshipGroupsUpdatedCallback_BeginInvoke_m6842ACB696443FAF66E393C692A5EDD61771BC40 (RelationshipGroupsUpdatedCallback_t27CE7E39656B63274699FDAFAA998415698DD1CB* __this, uint64_t ___0_userId, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = Box(il2cpp_defaults.uint64_class, &___0_userId);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 98790
+// Method Definition Index: 98866
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RelationshipGroupsUpdatedCallback_EndInvoke_mD911ECC8413812BFC15176844629EE22B6429FF0 (RelationshipGroupsUpdatedCallback_t27CE7E39656B63274699FDAFAA998415698DD1CB* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -3655,7 +3655,7 @@ IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_UserUpdatedCallback_t01420A143C3E56
 	il2cppPInvokeFunc(___0_userId);
 
 }
-// Method Definition Index: 98791
+// Method Definition Index: 98867
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UserUpdatedCallback__ctor_mDC93D4955CFD7B3551092AA3C04E7D836748A952 (UserUpdatedCallback_t01420A143C3E56E92DA7541F44026BAFBE8170F4* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
 {
 	__this->___method_ptr = (intptr_t)il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
@@ -3684,20 +3684,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UserUpdatedCallback__ctor_mDC93D4955CFD7
 	}
 	__this->___extra_arg = (intptr_t)&UserUpdatedCallback_Invoke_m56CA84F11CF384BAB64F1030C0776D7551380209_Multicast;
 }
-// Method Definition Index: 98792
+// Method Definition Index: 98868
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UserUpdatedCallback_Invoke_m56CA84F11CF384BAB64F1030C0776D7551380209 (UserUpdatedCallback_t01420A143C3E56E92DA7541F44026BAFBE8170F4* __this, uint64_t ___0_userId, const RuntimeMethod* method) 
 {
 	typedef void (*FunctionPointerType) (RuntimeObject*, uint64_t, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, ___0_userId, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 98793
+// Method Definition Index: 98869
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* UserUpdatedCallback_BeginInvoke_mCBA3B0DA23611E0226DC6FC5655D7B1E65A16778 (UserUpdatedCallback_t01420A143C3E56E92DA7541F44026BAFBE8170F4* __this, uint64_t ___0_userId, AsyncCallback_t7FEF460CBDCFB9C5FA2EF776984778B9A4145F4C* ___1_callback, RuntimeObject* ___2_object, const RuntimeMethod* method) 
 {
 	void *__d_args[2] = {0};
 	__d_args[0] = Box(il2cpp_defaults.uint64_class, &___0_userId);
 	return (RuntimeObject*)il2cpp_codegen_delegate_begin_invoke((RuntimeDelegate*)__this, __d_args, (RuntimeDelegate*)___1_callback, (RuntimeObject*)___2_object);
 }
-// Method Definition Index: 98794
+// Method Definition Index: 98870
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UserUpdatedCallback_EndInvoke_mD64B7BACE05CE343FA7D65F975F5C8EC1E648821 (UserUpdatedCallback_t01420A143C3E56E92DA7541F44026BAFBE8170F4* __this, RuntimeObject* ___0_result, const RuntimeMethod* method) 
 {
 	il2cpp_codegen_delegate_end_invoke((Il2CppAsyncResult*) ___0_result, 0);
@@ -3710,7 +3710,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UserUpdatedCallback_EndInvoke_mD64B7BACE
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 98795
+// Method Definition Index: 98871
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CallInfoHandle__ctor_m8DADF3DDD6E6492A1D4E2EC0DE1A6475D0BFBB5F (CallInfoHandle_t2150CF34A2188347701B6E09164346711339A044* __this, CallInfoHandle_t10ACB50CB080066B6BA8E5D7DEB1D4550534462E ___0_self, int32_t ___1_disposed, const RuntimeMethod* method) 
 {
 	{
@@ -3726,7 +3726,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CallInfoHandle__ctor_m8DADF3DDD6E6492A1D
 		return;
 	}
 }
-// Method Definition Index: 98796
+// Method Definition Index: 98872
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CallInfoHandle_Finalize_m0471648970B334852559002250FE2D127E6C2325 (CallInfoHandle_t2150CF34A2188347701B6E09164346711339A044* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3758,7 +3758,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 98797
+// Method Definition Index: 98873
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CallInfoHandle_Dispose_m28AE40B66C3B39C5878E27243B41C2CD5280692C (CallInfoHandle_t2150CF34A2188347701B6E09164346711339A044* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3800,7 +3800,7 @@ IL_000f:
 		return;
 	}
 }
-// Method Definition Index: 98798
+// Method Definition Index: 98874
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CallInfoHandle__ctor_m1D079C6ED2B2D9B0BD7D6FCC1ECF8EDB2AF7E23B (CallInfoHandle_t2150CF34A2188347701B6E09164346711339A044* __this, CallInfoHandle_t2150CF34A2188347701B6E09164346711339A044* ___0_other, const RuntimeMethod* method) 
 {
 	CallInfoHandle_t10ACB50CB080066B6BA8E5D7DEB1D4550534462E* V_0 = NULL;
@@ -3881,7 +3881,7 @@ IL_003a:
 		return;
 	}
 }
-// Method Definition Index: 98799
+// Method Definition Index: 98875
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CallInfoHandle__ctor_mF55C0EC432445DE02785F64B4C562476C7FDF4C4 (CallInfoHandle_t2150CF34A2188347701B6E09164346711339A044* __this, CallInfoHandle_t10ACB50CB080066B6BA8E5D7DEB1D4550534462E* ___0_otherPtr, const RuntimeMethod* method) 
 {
 	CallInfoHandle_t10ACB50CB080066B6BA8E5D7DEB1D4550534462E* V_0 = NULL;
@@ -3901,7 +3901,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CallInfoHandle__ctor_mF55C0EC432445DE027
 		return;
 	}
 }
-// Method Definition Index: 98800
+// Method Definition Index: 98876
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint64_t CallInfoHandle_ChannelId_mBB12522247F7F56756DBDB6EA9162D0E3E86C9A5 (CallInfoHandle_t2150CF34A2188347701B6E09164346711339A044* __this, const RuntimeMethod* method) 
 {
 	CallInfoHandle_t10ACB50CB080066B6BA8E5D7DEB1D4550534462E* V_0 = NULL;
@@ -3935,7 +3935,7 @@ IL_0013:
 		return L_4;
 	}
 }
-// Method Definition Index: 98801
+// Method Definition Index: 98877
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR UInt64U5BU5D_tAB1A62450AC0899188486EDB9FC066B8BEED9299* CallInfoHandle_GetParticipants_mAE169DC50863FF1E563D2D6A8CD03E41BF08D1C3 (CallInfoHandle_t2150CF34A2188347701B6E09164346711339A044* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4000,7 +4000,7 @@ IL_0013:
 		return L_10;
 	}
 }
-// Method Definition Index: 98802
+// Method Definition Index: 98878
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR VoiceStateHandle_t15E04504105BF3948A2B6D55EC75DE4947165C5B* CallInfoHandle_GetVoiceStateHandle_mECC5BDFB874A9F3597DC976C64185BCF6850793D (CallInfoHandle_t2150CF34A2188347701B6E09164346711339A044* __this, uint64_t ___0_userId, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4063,7 +4063,7 @@ IL_0034:
 		return L_7;
 	}
 }
-// Method Definition Index: 98803
+// Method Definition Index: 98879
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint64_t CallInfoHandle_GuildId_m40007504B8E04F922907692FFF7A330EACC01A4D (CallInfoHandle_t2150CF34A2188347701B6E09164346711339A044* __this, const RuntimeMethod* method) 
 {
 	CallInfoHandle_t10ACB50CB080066B6BA8E5D7DEB1D4550534462E* V_0 = NULL;

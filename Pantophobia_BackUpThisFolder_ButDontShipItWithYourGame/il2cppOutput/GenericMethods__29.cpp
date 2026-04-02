@@ -5951,7 +5951,7 @@ IL2CPP_EXTERN_C  NativeArray_1_tDB8B8DC66CC8E16ED6D9A8C75D2C1AFC80AC1E18 Culling
 	_returnValue = CullingResults_GetNativeArray_TisIl2CppFullySharedGenericStruct_mAD95E79FFE908C81E8C8514A3F2E8E583998A7C0(_thisAdjusted, ___0_dataPointer, ___1_length, method);
 	return _returnValue;
 }
-// Method Definition Index: 98855
+// Method Definition Index: 98931
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float CurveUtility_GetDistanceToInterpolation_TisSlice_1_tC5190EB10833C24B29B1358B81E020295583DF04_m3E2E70E9779F32AAECC944513305E74FC84CE1B3_gshared (Slice_1_tC5190EB10833C24B29B1358B81E020295583DF04 ___0_lut, float ___1_distance, const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -6082,7 +6082,7 @@ IL_00b2:
 		return (1.0f);
 	}
 }
-// Method Definition Index: 98855
+// Method Definition Index: 98931
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float CurveUtility_GetDistanceToInterpolation_TisRuntimeObject_mC761D5450D1E01F2DC1F8BC2674ADB279121D0E1_gshared (RuntimeObject* ___0_lut, float ___1_distance, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6229,7 +6229,7 @@ IL_00b2:
 		return (1.0f);
 	}
 }
-// Method Definition Index: 98855
+// Method Definition Index: 98931
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float CurveUtility_GetDistanceToInterpolation_TisIl2CppFullySharedGenericAny_m0E36442A2584530F0EC6E53BB601382F762F3ED7_gshared (Il2CppFullySharedGenericAny ___0_lut, float ___1_distance, const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -16699,7 +16699,7 @@ IL_000d:
 		return;
 	}
 }
-// Method Definition Index: 105342
+// Method Definition Index: 105418
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisRuntimeObject_m5360880B2806E797933740D56904CA057C8B23C7_gshared (String_t* ___0_command, String_t* ___1_description, Action_1_t6F9EB113EB3F16226AEF811A2744F4111C116C87* ___2_method, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16726,7 +16726,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisRuntimeObj
 		return;
 	}
 }
-// Method Definition Index: 105342
+// Method Definition Index: 105418
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFullySharedGenericAny_mCBE078D96B68A3B28C9AA9132221D874A1886CE8_gshared (String_t* ___0_command, String_t* ___1_description, Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99* ___2_method, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16753,7 +16753,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFull
 		return;
 	}
 }
-// Method Definition Index: 105343
+// Method Definition Index: 105419
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFullySharedGenericAny_mA51EEA0982EF1B36E3831947FA899FEF51C97655_gshared (String_t* ___0_command, String_t* ___1_description, Func_1_tBB8824FA8746333BFFF3AB3CE4A41B58450AF431* ___2_method, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16780,7 +16780,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFull
 		return;
 	}
 }
-// Method Definition Index: 105344
+// Method Definition Index: 105420
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m9409D01048CA651494D9587F9C4E182FE2588E9F_gshared (String_t* ___0_command, String_t* ___1_description, Action_2_t1D42C7D8DCD2DEB7C556FB3783F0EDAFF694E5E8* ___2_method, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16807,7 +16807,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFull
 		return;
 	}
 }
-// Method Definition Index: 105345
+// Method Definition Index: 105421
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_mF77AA05130F1CF2D8978974193C5A8328FE5139E_gshared (String_t* ___0_command, String_t* ___1_description, Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0* ___2_method, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16834,7 +16834,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFull
 		return;
 	}
 }
-// Method Definition Index: 105346
+// Method Definition Index: 105422
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m407D1730D86BFE38B3681052DC140D6D53FCE1F4_gshared (String_t* ___0_command, String_t* ___1_description, Action_3_t838D6B6BB4BFFC6E8430C389747DB008A0B26146* ___2_method, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16861,7 +16861,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFull
 		return;
 	}
 }
-// Method Definition Index: 105347
+// Method Definition Index: 105423
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m299E569AD64AB44A61B21A963FB7A7C0BC23D818_gshared (String_t* ___0_command, String_t* ___1_description, Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4* ___2_method, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16888,7 +16888,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFull
 		return;
 	}
 }
-// Method Definition Index: 105348
+// Method Definition Index: 105424
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_mF21DFBE5155523358EA5F8DCDF09161B433A951B_gshared (String_t* ___0_command, String_t* ___1_description, Action_4_t6CEEB0D44B0B8BF2ADA36A44186B13F262FF63AC* ___2_method, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16915,7 +16915,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFull
 		return;
 	}
 }
-// Method Definition Index: 105349
+// Method Definition Index: 105425
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m214555325AC3BA4EC5DABD392E5AFD1D733391F9_gshared (String_t* ___0_command, String_t* ___1_description, Func_4_t572D62CCA845BDAD9BC3ABCD839C1AE78144D079* ___2_method, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16942,7 +16942,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFull
 		return;
 	}
 }
-// Method Definition Index: 105350
+// Method Definition Index: 105426
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m04263F8F2BF17C2B6AEC1AF36DE0E63EDD3036FC_gshared (String_t* ___0_command, String_t* ___1_description, Func_5_tB069B44093DF1EBDA5245A604B7AD60C4B638397* ___2_method, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -16969,7 +16969,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFull
 		return;
 	}
 }
-// Method Definition Index: 105352
+// Method Definition Index: 105428
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFullySharedGenericAny_m8CA4E5B955AE1931B3A797AF06B8DF9FA9DEB103_gshared (String_t* ___0_command, String_t* ___1_description, Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99* ___2_method, String_t* ___3_parameterName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17002,7 +17002,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFull
 		return;
 	}
 }
-// Method Definition Index: 105354
+// Method Definition Index: 105430
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m8513D3A53A1838EA3137828C0A013075EAC22940_gshared (String_t* ___0_command, String_t* ___1_description, Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0* ___2_method, String_t* ___3_parameterName, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17035,7 +17035,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFull
 		return;
 	}
 }
-// Method Definition Index: 105353
+// Method Definition Index: 105429
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_mBEAE0444DB2EAAD4CD989A1180FD8E5F1BF2ACE2_gshared (String_t* ___0_command, String_t* ___1_description, Action_2_t1D42C7D8DCD2DEB7C556FB3783F0EDAFF694E5E8* ___2_method, String_t* ___3_parameterName1, String_t* ___4_parameterName2, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17072,7 +17072,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFull
 		return;
 	}
 }
-// Method Definition Index: 105356
+// Method Definition Index: 105432
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_mF6E081C283A7A66FF21A222BAA25126E03119834_gshared (String_t* ___0_command, String_t* ___1_description, Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4* ___2_method, String_t* ___3_parameterName1, String_t* ___4_parameterName2, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17109,7 +17109,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFull
 		return;
 	}
 }
-// Method Definition Index: 105355
+// Method Definition Index: 105431
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m3690F84EAAA3DC017B35FBBC382A98BC2769624B_gshared (String_t* ___0_command, String_t* ___1_description, Action_3_t838D6B6BB4BFFC6E8430C389747DB008A0B26146* ___2_method, String_t* ___3_parameterName1, String_t* ___4_parameterName2, String_t* ___5_parameterName3, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17150,7 +17150,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFull
 		return;
 	}
 }
-// Method Definition Index: 105358
+// Method Definition Index: 105434
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m0AF8E36F85C8730109A7054E633A764B8C4336D7_gshared (String_t* ___0_command, String_t* ___1_description, Func_4_t572D62CCA845BDAD9BC3ABCD839C1AE78144D079* ___2_method, String_t* ___3_parameterName1, String_t* ___4_parameterName2, String_t* ___5_parameterName3, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17191,7 +17191,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFull
 		return;
 	}
 }
-// Method Definition Index: 105357
+// Method Definition Index: 105433
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m9EAB84C26D18E5D6829C61821917CAD267CEB158_gshared (String_t* ___0_command, String_t* ___1_description, Action_4_t6CEEB0D44B0B8BF2ADA36A44186B13F262FF63AC* ___2_method, String_t* ___3_parameterName1, String_t* ___4_parameterName2, String_t* ___5_parameterName3, String_t* ___6_parameterName4, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17236,7 +17236,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFull
 		return;
 	}
 }
-// Method Definition Index: 105359
+// Method Definition Index: 105435
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_mE5D9591C664FAB580DEE92FA1A2CD21163E8580B_gshared (String_t* ___0_command, String_t* ___1_description, Func_5_tB069B44093DF1EBDA5245A604B7AD60C4B638397* ___2_method, String_t* ___3_parameterName1, String_t* ___4_parameterName2, String_t* ___5_parameterName3, String_t* ___6_parameterName4, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17281,7 +17281,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_AddCommand_TisIl2CppFull
 		return;
 	}
 }
-// Method Definition Index: 105365
+// Method Definition Index: 105441
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_RemoveCommand_TisIl2CppFullySharedGenericAny_m33005F0D64A238D5ACA25F52BEFC3A23D47D6A90_gshared (Action_1_t923A20D1D4F6B55B2ED5AE21B90F1A0CE0450D99* ___0_method, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17302,7 +17302,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_RemoveCommand_TisIl2CppF
 		return;
 	}
 }
-// Method Definition Index: 105366
+// Method Definition Index: 105442
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_RemoveCommand_TisIl2CppFullySharedGenericAny_m11D19BF8C3C159AA934A08943D6140A8788B6483_gshared (Func_1_tBB8824FA8746333BFFF3AB3CE4A41B58450AF431* ___0_method, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17323,7 +17323,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_RemoveCommand_TisIl2CppF
 		return;
 	}
 }
-// Method Definition Index: 105367
+// Method Definition Index: 105443
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_RemoveCommand_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m5C6A857E0EF58DA44BF8C38436131DFB4C238979_gshared (Action_2_t1D42C7D8DCD2DEB7C556FB3783F0EDAFF694E5E8* ___0_method, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17344,7 +17344,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_RemoveCommand_TisIl2CppF
 		return;
 	}
 }
-// Method Definition Index: 105368
+// Method Definition Index: 105444
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_RemoveCommand_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_mAAD76085D04385BCA1A98C3B04A33F69088B96A3_gshared (Func_2_t7F5F5324CE2DDB7001B68FFE29A5D9F907139FB0* ___0_method, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17365,7 +17365,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_RemoveCommand_TisIl2CppF
 		return;
 	}
 }
-// Method Definition Index: 105369
+// Method Definition Index: 105445
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_RemoveCommand_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_mFB1C4321A29BEB8B07F8641D7B0D2E47F99E8086_gshared (Action_3_t838D6B6BB4BFFC6E8430C389747DB008A0B26146* ___0_method, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17386,7 +17386,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_RemoveCommand_TisIl2CppF
 		return;
 	}
 }
-// Method Definition Index: 105370
+// Method Definition Index: 105446
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_RemoveCommand_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m05626335ACE1D358FC3CA90ABF350ABBA97C49EC_gshared (Func_3_t009E60D2B88B8B844FB90881977A21CC70E688A4* ___0_method, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17407,7 +17407,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_RemoveCommand_TisIl2CppF
 		return;
 	}
 }
-// Method Definition Index: 105371
+// Method Definition Index: 105447
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_RemoveCommand_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m1E1B18A15E78966BA8790FC2DD7EE687D7CA0314_gshared (Action_4_t6CEEB0D44B0B8BF2ADA36A44186B13F262FF63AC* ___0_method, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17428,7 +17428,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_RemoveCommand_TisIl2CppF
 		return;
 	}
 }
-// Method Definition Index: 105372
+// Method Definition Index: 105448
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_RemoveCommand_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m27C2E3BD86F03FBA5C40CC16F88D597F95C4319C_gshared (Func_4_t572D62CCA845BDAD9BC3ABCD839C1AE78144D079* ___0_method, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -17449,7 +17449,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_RemoveCommand_TisIl2CppF
 		return;
 	}
 }
-// Method Definition Index: 105373
+// Method Definition Index: 105449
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DebugLogConsole_RemoveCommand_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_TisIl2CppFullySharedGenericAny_m6DE20765177A324C7FA1A1191B8230C24AE91F79_gshared (Func_5_tB069B44093DF1EBDA5245A604B7AD60C4B638397* ___0_method, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -26202,7 +26202,7 @@ IL_0042:
 		return L_12;
 	}
 }
-// Method Definition Index: 93221
+// Method Definition Index: 93297
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Dropdown_GetOrAddComponent_TisRuntimeObject_m4CFC452AF36299E564FA54F2B998631D1630083E_gshared (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_go, const RuntimeMethod* method) 
 {
 	if (!il2cpp_rgctx_is_initialized(method))
