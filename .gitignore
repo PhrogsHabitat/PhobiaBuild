@@ -1,0 +1,7 @@
+﻿# Ignore everything in this folder by default
+*
+
+# But allow the two approved build artifacts
+!Windows.zip
+!Android.zip
+
